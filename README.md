@@ -24,3 +24,11 @@ ________________________________________________________________________________
 | RESET# | Entrada digital | Reinicia o sistema, leva 18 ciclos para reiniciar (podendo voltar para o sinal alto), para reiniciar pode-se utilizar o comando RESET (entra em vigor na oitava borda descendente do SCLK) | PC_2 (A2) |
 | PWDN# | Entrada digital | Desliga todos os circuitos do chip, é recomendado que durante o desligamento o relógio externo tbm seja desligado para economizar energia, | PA_4 (A1) |
 | DIN | Entrada digital | Entrada de dados SPI* | PF_9 (A5) SPI5_MOSI |
+
+
+#configuração
+
+Foi utilizado o SPI5 para comunicação com o ADS, o clock fornecido para SPI5 é pelo barramento APB2 que pode ter 108 MHz (max).
+
+![image](https://user-images.githubusercontent.com/86391684/161346022-37294d5f-9cf5-443d-91d5-6c383566594c.png)
+
