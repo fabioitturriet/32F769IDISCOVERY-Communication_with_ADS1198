@@ -33,7 +33,7 @@ Foi utilizado o SPI5 para comunicação com o ADS, o clock fornecido para SPI5 �
 ![image](https://user-images.githubusercontent.com/86391684/161346022-37294d5f-9cf5-443d-91d5-6c383566594c.png)
 
 
-O mínimo periodo para SCLK é 20ns, ou seja é um maximo de 20MHz de frequência, inicialmente foi utilizado o prescaler do SPI5 para diminuir a frequência 12.5MHz.
+O mínimo periodo para SCLK é 50ns, ou seja é um maximo de 20MHz de frequência, inicialmente foi utilizado o prescaler do SPI5 para diminuir a frequência 12.5MHz.
 
 ![image](https://user-images.githubusercontent.com/86391684/161348111-40264f61-53f0-44c4-904e-b83d081161cf.png)
 
