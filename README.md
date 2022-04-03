@@ -26,7 +26,7 @@ ________________________________________________________________________________
 | DIN | Entrada digital | Entrada de dados SPI* | PF_9 (A5) SPI5_MOSI |
 
 
-#configuração
+# Configurações
 
 Foi utilizado o SPI5 para comunicação com o ADS, o clock fornecido para SPI5 é pelo barramento APB2 que pode ter 108 MHz (max).
 
