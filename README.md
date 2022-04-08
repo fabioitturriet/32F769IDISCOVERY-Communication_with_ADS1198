@@ -43,3 +43,12 @@ Conforme o esquematico realizado a alimentação do CI segue os valores tipicos 
 ![image](https://user-images.githubusercontent.com/86391684/162265828-cbb01b2c-2d9b-44ba-9ea8-d5bffacf4442.png)
 
 
+# Atualizações
+
+Há uma irregularidade no projeto da PCB. Conforme a imagem o pino CS foi ligado ao DVDD mantendo este pino sempre em nível lógico alto só que conforme o datasheet esse pino deve permanecer em nível lógico baixo durante toda a comunicação serial. Para esta correção o resistor R15 será retirado do circuito. O capacitor C27 deverá ser soldado para desacoplamento. 
+
+conferir funcionamento do regulador de tensão 1.8V
+
+PWDN ta sendo iniciado em 0 no programa.
+
+![image](https://user-images.githubusercontent.com/86391684/162541843-6c7aae97-c4f3-455b-84a4-45c39fa98e7b.png)
