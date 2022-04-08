@@ -30,17 +30,17 @@ ________________________________________________________________________________
 
 Foi utilizado o SPI5 para comunicação com o ADS, o clock fornecido para SPI5 é pelo barramento APB2 que pode ter 108 MHz (max).
 
-![image](https://user-images.githubusercontent.com/86391684/161346022-37294d5f-9cf5-443d-91d5-6c383566594c.png)
-
+<img src="https://user-images.githubusercontent.com/86391684/161346022-37294d5f-9cf5-443d-91d5-6c383566594c.png" width="800" />
 
 O mínimo periodo para SCLK é 50ns, ou seja é um maximo de 20MHz de frequência, inicialmente foi utilizado o prescaler do SPI5 para diminuir a frequência 12.5MHz. No manual do ADS1198 também vemos outra configurações que devem ser feitas: NOTE: SPI settings are CPOL = 0 and CPHA = 1.
 
-![image](https://user-images.githubusercontent.com/86391684/161348111-40264f61-53f0-44c4-904e-b83d081161cf.png)
+<img src="https://user-images.githubusercontent.com/86391684/161348111-40264f61-53f0-44c4-904e-b83d081161cf.png" width="650" />
 
 # Alimentação
 
 Conforme o esquematico realizado a alimentação do CI segue os valores tipicos de alimentação dada na tabela do datasheet. A alimentação digital (DVDD) tem 1.8V e a alimentação analógica (AVDD) tem 3.3V. Na tabela também notamos que a tensão máxima de entrada digital no CI é de DVDD+0.1 V ou seja 1.9V e a mínima é de 1.44V, ja que a tensao digital disponível nas plataforma de desenvolvimento é 3.3V foi realizado um divisor de tensão reduzindo-a para 1.65V.
-![image](https://user-images.githubusercontent.com/86391684/162265828-cbb01b2c-2d9b-44ba-9ea8-d5bffacf4442.png)
+
+<img src="https://user-images.githubusercontent.com/86391684/162265828-cbb01b2c-2d9b-44ba-9ea8-d5bffacf4442.png" width="700" />
 
 
 # Atualizações
@@ -51,4 +51,4 @@ conferir funcionamento do regulador de tensão 1.8V
 
 PWDN ta sendo iniciado em 0 no programa.
 
-![image](https://user-images.githubusercontent.com/86391684/162541843-6c7aae97-c4f3-455b-84a4-45c39fa98e7b.png)
+<img src="https://user-images.githubusercontent.com/86391684/162541843-6c7aae97-c4f3-455b-84a4-45c39fa98e7b.png" width="400" />
