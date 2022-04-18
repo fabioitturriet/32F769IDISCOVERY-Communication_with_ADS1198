@@ -48,3 +48,7 @@ Conforme o esquematico realizado a alimentação do CI segue os valores tipicos 
 conferir funcionamento do regulador de tensão 1.8V
 
 DGND e AGND deve ser juntado na PCB
+
+# Recursos avançados de depuração: SWV
+
+https://www.youtube.com/watch?v=Zqwq9nzTNF8
