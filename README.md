@@ -45,7 +45,11 @@ Conforme o esquematico realizado a alimentação do CI segue os valores tipicos 
 
 # Atualizações
 
-conferir funcionamento do regulador de tensão 1.8V
+conferir circuito DRL
+
+discutir sobre circuito externo para contador de batimentos cardiacos
+
+
 
 DGND e AGND deve ser juntado na PCB
 
