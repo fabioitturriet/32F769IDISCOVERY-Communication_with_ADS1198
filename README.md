@@ -43,13 +43,20 @@ Conforme o esquematico realizado a alimentação do CI segue os valores tipicos 
 <img src="https://user-images.githubusercontent.com/86391684/162265828-cbb01b2c-2d9b-44ba-9ea8-d5bffacf4442.png" width="700" />
 
 
+# Esquemático do Experimento
+
+![Esquemático do experimento 4](https://user-images.githubusercontent.com/86391684/166409886-f769fd21-f380-4d23-bae3-692ada9fe09e.png)
+
+
 # Atualizações
+
+Adicionar divisores de tensão ao circuito
+
+Trocar conector box header 
 
 conferir circuito DRL
 
-discutir sobre circuito externo para contador de batimentos cardiacos
-
-
+discutir sobre circuito externo para contador de batimentos cardiacos e fonte de clock
 
 DGND e AGND deve ser juntado na PCB
 
