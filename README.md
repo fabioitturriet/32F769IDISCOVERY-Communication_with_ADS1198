@@ -60,6 +60,8 @@ discutir sobre circuito externo para contador de batimentos cardiacos e fonte de
 
 DGND e AGND deve ser juntado na PCB
 
+Ligação dos canais INxN ao GND deverão ser revisados
+
 # Recursos avançados de depuração: SWV
 
 https://www.youtube.com/watch?v=Zqwq9nzTNF8
