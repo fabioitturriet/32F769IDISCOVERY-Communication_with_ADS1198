@@ -6,7 +6,7 @@ Versão: STM32Cube x.xx; TouchGFX x.xx
 
 _________________________________________________________________________________________________________________________________________________________________________________
 
-# Descrição dos pinos do ADS1198 conectados a plataforma
+# Descrição dos pinos do ADS1198 conectados a plataforma versão 1.0
 
 | Pino do ads1198 | Função (lado do ADS1198) | Descrição | Pino correspondente disco-F769NI |
 | --- | --- | --- | --- |
