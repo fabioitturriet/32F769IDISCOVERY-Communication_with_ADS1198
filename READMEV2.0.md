@@ -25,3 +25,8 @@ AVDD foi para 5V e DVDD foi para 3.3V, dessa maneria não são necessários divi
 # Clock
 
 explicar pq o uso do oscilador externo (precisão melhor)
+
+
+# Adicionando biblioteca no cubeIDE
+
+https://www.youtube.com/watch?v=MUZj4YwKVac
