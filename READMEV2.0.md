@@ -30,3 +30,8 @@ explicar pq o uso do oscilador externo (precisão melhor)
 # Adicionando biblioteca no cubeIDE
 
 https://www.youtube.com/watch?v=MUZj4YwKVac
+
+
+# Links inportantes
+
+https://www.youtube.com/watch?v=x_5rYfAyqq0 -> SPI e DMA 
