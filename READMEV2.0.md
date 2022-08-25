@@ -37,3 +37,8 @@ https://www.youtube.com/watch?v=MUZj4YwKVac
 https://www.youtube.com/watch?v=x_5rYfAyqq0 -> SPI e DMA 
 
 https://e2e.ti.com/support/data-converters-group/data-converters/f/data-converters-forum/252003/ads1298-signals-offset -> Ajuste de offset para cada canal deverá ser realizado (utilizar na cadeira de instrumentação)
+
+#  Versão 3.0
+
+- Retirada do curto entre AVSS e DGND nos pinos 32 e 33 respectivamente.
+- Pace_outP e Pace_outN expostos para processos de calibração
