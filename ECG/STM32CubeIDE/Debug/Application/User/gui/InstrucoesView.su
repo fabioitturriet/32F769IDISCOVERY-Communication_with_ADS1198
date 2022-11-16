@@ -1,0 +1,18 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/instrucoes_screen/InstrucoesView.cpp:18:6:virtual void InstrucoesView::tearDownScreen()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<InstrucoesView, short int>::~Callback()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:79:7:touchgfx::DrawableListItems<ContainerListaDeInstrucoes, 5>::~DrawableListItems()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = InstrucoesView; T1 = short int]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = InstrucoesView; T1 = short int]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:101:21:int16_t touchgfx::DrawableListItems<TYPE, SIZE>::getNumberOfDrawables() [with TYPE = ContainerListaDeInstrucoes; int SIZE = 5]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:79:7:virtual touchgfx::DrawableListItems<ContainerListaDeInstrucoes, 5>::~DrawableListItems()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<InstrucoesView, short int>::~Callback()	8	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/instrucoes_screen/InstrucoesView.cpp:12:6:virtual void InstrucoesView::setupScreen()	8	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/instrucoes_screen/InstrucoesView.cpp:23:6:virtual void InstrucoesView::scrollList1UpdateItem(ContainerListaDeInstrucoes&, int16_t)	0	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/instrucoes_screen/InstrucoesView.cpp:29:6:void InstrucoesView::scrollList1_ItemSelectedHandler(int16_t)	24	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:82:23:touchgfx::Drawable* touchgfx::DrawableListItems<TYPE, SIZE>::getDrawable(int16_t) [with TYPE = ContainerListaDeInstrucoes; int SIZE = 5]	8	static
+../../TouchGFX/gui/include/gui/instrucoes_screen/InstrucoesView.hpp:11:13:InstrucoesView::~InstrucoesView()	8	static
+../../TouchGFX/gui/include/gui/instrucoes_screen/InstrucoesView.hpp:11:13:virtual InstrucoesView::~InstrucoesView()	8	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/instrucoes_screen/InstrucoesView.cpp:6:1:InstrucoesView::InstrucoesView()	8	static

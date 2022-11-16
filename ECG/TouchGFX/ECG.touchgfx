@@ -1,0 +1,946 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "MENU",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 123,
+            "Color": {
+              "Red": 20,
+              "Green": 61,
+              "Blue": 89
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "Y": 123,
+            "Width": 800,
+            "Height": 357,
+            "Color": {
+              "Red": 244,
+              "Green": 180,
+              "Blue": 26
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 195,
+            "Y": 11,
+            "Width": 410,
+            "Height": 60,
+            "TextId": "__SingleUse_2B6S",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonExame",
+            "X": 220,
+            "Y": 382,
+            "Width": 360,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Square_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Square_large.png",
+            "TextId": "__SingleUse_NZSU",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style10"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonInstrucoes",
+            "X": 220,
+            "Y": 202,
+            "Width": 360,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Square_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Square_large.png",
+            "TextId": "__SingleUse_BK3R",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style10"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonConfiguracoes",
+            "X": 220,
+            "Y": 262,
+            "Width": 360,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Square_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Square_large.png",
+            "TextId": "__SingleUse_A6V4",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style10"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonCadastro",
+            "X": 220,
+            "Y": 322,
+            "Width": 360,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Square_large_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Square_large.png",
+            "TextId": "__SingleUse_FDRA",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style10"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 605,
+            "Y": 236,
+            "Width": 169,
+            "Height": 173,
+            "Filename": "Logo_Tech4Health.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage2",
+            "X": 24,
+            "Y": 209,
+            "Width": 176,
+            "Height": 227,
+            "Filename": "VersaoVertical_resized.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 96,
+            "Y": 71,
+            "Width": 609,
+            "Height": 40,
+            "TextId": "__SingleUse_IJ05",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 244,
+              "Green": 180,
+              "Blue": 26
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonExame"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen2"
+            }
+          },
+          {
+            "InteractionName": "InteracaoInstrucoes",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonInstrucoes"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Instrucoes"
+            }
+          },
+          {
+            "InteractionName": "InteracaoCadastro",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCadastro"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Cadastro"
+            }
+          },
+          {
+            "InteractionName": "InteracaoConfiguracoes",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonConfiguracoes"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuracoes"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Instrucoes",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 20,
+              "Green": 61,
+              "Blue": 89
+            }
+          },
+          {
+            "Type": "ScrollList",
+            "Name": "scrollList1",
+            "X": 12,
+            "Y": 80,
+            "Width": 500,
+            "Height": 320,
+            "ItemTemplateName": "ContainerListaDeInstrucoes",
+            "NumberofItems": 4,
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 533,
+            "Y": 151,
+            "Width": 250,
+            "Height": 250,
+            "RelativeFilename": "Logo_Tech4Health.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 604,
+            "Y": 81,
+            "Width": 109,
+            "Height": 32,
+            "TextId": "__SingleUse_NTIO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "voltar",
+            "X": 6,
+            "Y": 6,
+            "Width": 28,
+            "Height": 48,
+            "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
+            "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionVoltar",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "voltar"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "MENU"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Configuracoes",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 20,
+              "Green": 61,
+              "Blue": 89
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "voltar",
+            "X": 6,
+            "Y": 6,
+            "Width": 28,
+            "Height": 48,
+            "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
+            "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionVoltar",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "voltar"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "MENU"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Cadastro",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 20,
+              "Green": 61,
+              "Blue": 89
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "voltar",
+            "X": 6,
+            "Y": 6,
+            "Width": 28,
+            "Height": 48,
+            "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
+            "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionVoltar",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "voltar"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "MENU"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 20,
+              "Green": 61,
+              "Blue": 89
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 103,
+            "Y": 107,
+            "Width": 237,
+            "Height": 32,
+            "TextId": "__SingleUse_CCNK",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 59,
+            "Y": 107,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "stopwatch.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 59,
+            "Y": 203,
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "TextId": "__SingleUse_Q9OK",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style4"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel2",
+            "X": 59,
+            "Y": 271,
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "TextId": "__SingleUse_0D0V",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style4"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel3",
+            "X": 59,
+            "Y": 338,
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "TextId": "__SingleUse_YB87",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style4"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel4",
+            "X": 461,
+            "Y": 203,
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "TextId": "__SingleUse_P6FT",
+            "ReleasedColor": {
+              "Red": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style4"
+          },
+          {
+            "Type": "Button",
+            "Name": "button1",
+            "Width": 64,
+            "Height": 64,
+            "Pressed": "icons8-reply-arrow-64.png",
+            "Released": "icons8-reply-arrow-64.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel4"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel4"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "iniciar"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "MENU"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen1",
+        "CanvasBufferSize": 12000,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dynamicGraph1",
+            "Y": -2,
+            "Width": 800,
+            "Height": 480,
+            "DataSeed": -49451018,
+            "NumberOfValues": 800,
+            "MaxY": 120.0,
+            "Precision": "1",
+            "LastIndex": 799,
+            "MapDataPointIndexToCustomValue": true,
+            "XAxisScale": 0.001,
+            "InsertRandomValues": true,
+            "LabelSizeTop": 36,
+            "LabelSizeBottom": 30,
+            "GraphType": "GraphWrapOverwrite",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "Color": {
+                  "Red": 255
+                }
+              }
+            ],
+            "XAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 201,
+                "Green": 201,
+                "Blue": 201
+              },
+              "Interval": 20.0,
+              "LineWidth": 2
+            },
+            "MinorXAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 201,
+                "Green": 201,
+                "Blue": 201
+              },
+              "Interval": 4.0,
+              "LineWidth": 1
+            },
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 201,
+                "Green": 201,
+                "Blue": 201
+              },
+              "Interval": 8.0,
+              "LineWidth": 2
+            },
+            "MinorYAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 201,
+                "Green": 201,
+                "Blue": 201
+              },
+              "Interval": 2.0,
+              "LineWidth": 1
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "Width": 64,
+            "Height": 64,
+            "Color": {
+              "Red": 219,
+              "Green": 219,
+              "Blue": 219
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "X": 64,
+            "Y": -2,
+            "Width": 736,
+            "Height": 37,
+            "Color": {
+              "Red": 219,
+              "Green": 219,
+              "Blue": 219
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "button1",
+            "Width": 64,
+            "Height": 64,
+            "Pressed": "icons8-reply-arrow-64.png",
+            "Released": "icons8-reply-arrow-64.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 576,
+            "Y": 410,
+            "Width": 48,
+            "Height": 48,
+            "RelativeFilename": "icons8-heart-48.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 119,
+            "Y": 1,
+            "Width": 157,
+            "Height": 38,
+            "TextId": "__SingleUse_XRTL",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 624,
+            "Y": 410,
+            "Width": 162,
+            "Height": 48,
+            "TextId": "__SingleUse_1XTZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 88,
+            "Y": 410,
+            "Width": 129,
+            "Height": 48,
+            "TextId": "__SingleUse_NFTU",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 459,
+            "Y": 3,
+            "Width": 187,
+            "Height": 32,
+            "TextId": "__SingleUse_T06K",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 425,
+            "Y": 3,
+            "Width": 34,
+            "Height": 32,
+            "Filename": "icons8-timezone-globe-50.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage2",
+            "X": 87,
+            "Y": 4,
+            "Width": 32,
+            "Height": 31,
+            "Filename": "icons8-patient-64.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage3",
+            "X": 300,
+            "Y": -12,
+            "Width": 66,
+            "Height": 57,
+            "Filename": "icons8-cloud-96.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage4",
+            "X": 317,
+            "Y": 5,
+            "Width": 33,
+            "Height": 28,
+            "Filename": "icons8-wi-fi-50.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage5",
+            "X": 368,
+            "Y": 8,
+            "Width": 24,
+            "Height": 22,
+            "Filename": "icons8-green-circle-48.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage6",
+            "X": 369,
+            "Y": 8,
+            "Width": 24,
+            "Height": 24,
+            "Filename": "icons8-circle-24.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage7",
+            "X": 744,
+            "Y": 3,
+            "Width": 52,
+            "Height": 30,
+            "Filename": "bateria.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5",
+            "X": 686,
+            "Y": 3,
+            "Width": 58,
+            "Height": 30,
+            "TextId": "__SingleUse_KGA4",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage8",
+            "X": 40,
+            "Y": 410,
+            "Width": 48,
+            "Height": 48,
+            "Filename": "icons8-electrode-32.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "ContainerListaDeInstrucoes",
+        "X": -2,
+        "Width": 500,
+        "Height": 80,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 500,
+            "Height": 80,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 15,
+            "Y": 17,
+            "Width": 46,
+            "Height": 46,
+            "RelativeFilename": "__designer\\Blue_Icons_Done_48.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 73,
+            "Y": 24,
+            "Width": 422,
+            "Height": 33,
+            "TextId": "__SingleUse_N733",
+            "TextRotation": "0"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": -134,
+            "Y": 78,
+            "Width": 736,
+            "Height": 2,
+            "RelativeFilename": "__designer\\Blue_Dividers_divider_round_long.png",
+            "Style": "Image22"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "Name": "ECG",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "MENU",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "24": "LCD24bpp",
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32F7",
+    "Platform": "m7",
+    "ProjectFile": "../STM32F769I_DISCO.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": []
+  },
+  "Version": "4.19.0",
+  "CreatedBy": "4.19.0"
+}

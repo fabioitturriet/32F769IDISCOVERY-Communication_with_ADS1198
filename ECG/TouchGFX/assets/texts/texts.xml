@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.19.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1">
+      <Text Id="ResourceId4" Alignment="Left" TypographyId="lista">
+        <Translation Language="GB">Coloque o paciente na posição supina </Translation>
+      </Text>
+      <Text Id="ResourceId3" Alignment="Left" TypographyId="lista">
+        <Translation Language="GB">Oriente o paciente sobre o exame</Translation>
+      </Text>
+      <Text Id="ResourceId2" Alignment="Left" TypographyId="lista">
+        <Translation Language="GB">Limpe a pele e aplique o gel condutor</Translation>
+      </Text>
+      <Text Id="ResourceId1" Alignment="Left" TypographyId="lista">
+        <Translation Language="GB">conecte os eletrodos nestas áreas</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_NTIO" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Exemplo</Translation>
+      </Text>
+      <Text Id="__SingleUse_N733" Alignment="Center" TypographyId="lista">
+        <Translation Language="GB">text area</Translation>
+      </Text>
+      <Text Id="__SingleUse_IJ05" Alignment="Center" TypographyId="subtitulo">
+        <Translation Language="GB">Sistema de assistência médica remota </Translation>
+      </Text>
+      <Text Id="__SingleUse_KGA4" Alignment="Left" TypographyId="bateria">
+        <Translation Language="GB">75%</Translation>
+      </Text>
+      <Text Id="__SingleUse_FDRA" Alignment="Center" TypographyId="menus">
+        <Translation Language="GB">Cadastro</Translation>
+      </Text>
+      <Text Id="__SingleUse_T06K" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">13/10/22 13:45</Translation>
+      </Text>
+      <Text Id="__SingleUse_NFTU" Alignment="Left" TypographyId="Typography_02">
+        <Translation Language="GB">Deriv. I</Translation>
+      </Text>
+      <Text Id="__SingleUse_1XTZ" Alignment="Left" TypographyId="Typography_02">
+        <Translation Language="GB">120 BPM</Translation>
+      </Text>
+      <Text Id="__SingleUse_XRTL" Alignment="Left" TypographyId="paciente">
+        <Translation Language="GB">Paciente 1</Translation>
+      </Text>
+      <Text Id="__SingleUse_P6FT" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Iniciar</Translation>
+      </Text>
+      <Text Id="__SingleUse_YB87" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">24 horas</Translation>
+      </Text>
+      <Text Id="__SingleUse_0D0V" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">1 hora</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q9OK" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">10 min.</Translation>
+      </Text>
+      <Text Id="__SingleUse_CCNK" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Duração do exame</Translation>
+      </Text>
+      <Text Id="__SingleUse_A6V4" Alignment="Center" TypographyId="menus">
+        <Translation Language="GB">Configurações</Translation>
+      </Text>
+      <Text Id="__SingleUse_BK3R" Alignment="Center" TypographyId="menus">
+        <Translation Language="GB">Instruções</Translation>
+      </Text>
+      <Text Id="__SingleUse_NZSU" Alignment="Center" TypographyId="menus">
+        <Translation Language="GB">Exame</Translation>
+      </Text>
+      <Text Id="__SingleUse_2B6S" Alignment="Center" TypographyId="titulo">
+        <Translation Language="GB">Eletrocardiógrafo </Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="arial.ttf" Size="28" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="25" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_00" Font="arial.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="titulo" Font="arial.ttf" Size="52" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="menus" Font="arial.ttf" Size="45" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="bateria" Font="verdana.ttf" Size="25" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_02" Font="ariblk.ttf" Size="34" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="paciente" Font="ariblk.ttf" Size="27" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_03" Font="arial.ttf" Size="16" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="subtitulo" Font="arial.ttf" Size="35" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="lista" Font="calibri.ttf" Size="27" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>

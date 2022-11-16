@@ -1,0 +1,6 @@
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:18:18:virtual void ModelListener::UpdateGraph(uint16_t)	0	static
+../../TouchGFX/gui/include/gui/configuracoes_screen/ConfiguracoesPresenter.hpp:28:13:ConfiguracoesPresenter::~ConfiguracoesPresenter()	0	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesPresenter.cpp:10:6:virtual void ConfiguracoesPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/configuracoes_screen/ConfiguracoesPresenter.hpp:28:13:virtual ConfiguracoesPresenter::~ConfiguracoesPresenter()	8	static
+../../TouchGFX/gui/include/gui/configuracoes_screen/ConfiguracoesPresenter.hpp:28:13:virtual void* ConfiguracoesPresenter::_ZThn4_N22ConfiguracoesPresenterD1Ev()	0	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesPresenter.cpp:4:1:ConfiguracoesPresenter::ConfiguracoesPresenter(ConfiguracoesView&)	8	static

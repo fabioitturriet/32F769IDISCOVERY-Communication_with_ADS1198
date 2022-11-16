@@ -1,0 +1,8 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+../../TouchGFX/gui/include/gui/configuracoes_screen/ConfiguracoesView.hpp:11:13:ConfiguracoesView::~ConfiguracoesView()	0	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:13:6:virtual void ConfiguracoesView::tearDownScreen()	0	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:8:6:virtual void ConfiguracoesView::setupScreen()	0	static
+../../TouchGFX/gui/include/gui/configuracoes_screen/ConfiguracoesView.hpp:11:13:virtual ConfiguracoesView::~ConfiguracoesView()	8	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:3:1:ConfiguracoesView::ConfiguracoesView()	8	static

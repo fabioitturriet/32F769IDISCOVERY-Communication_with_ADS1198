@@ -1,0 +1,6 @@
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:18:18:virtual void ModelListener::UpdateGraph(uint16_t)	0	static
+../../TouchGFX/gui/include/gui/instrucoes_screen/InstrucoesPresenter.hpp:28:13:InstrucoesPresenter::~InstrucoesPresenter()	0	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/instrucoes_screen/InstrucoesPresenter.cpp:10:6:virtual void InstrucoesPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/instrucoes_screen/InstrucoesPresenter.hpp:28:13:virtual InstrucoesPresenter::~InstrucoesPresenter()	8	static
+../../TouchGFX/gui/include/gui/instrucoes_screen/InstrucoesPresenter.hpp:28:13:virtual void* InstrucoesPresenter::_ZThn4_N19InstrucoesPresenterD1Ev()	0	static
+D:/TouchGFXProjects/ECG/TouchGFX/gui/src/instrucoes_screen/InstrucoesPresenter.cpp:4:1:InstrucoesPresenter::InstrucoesPresenter(InstrucoesView&)	8	static
