@@ -25,7 +25,7 @@ ________________________________________________________________________________
 | DIN | Entrada digital | Entrada de dados SPI* | PF_9 (A5) SPI5_MOSI |
 
 _________________________________________________________________________________________________________________________________________________________________________________
-# Alimentação
+## Alimentação
 
 A alimentação digital (DVDD) tem 3,3V e a alimentação analógica (AVDD) tem 5V. Nesta configuração a tensão de referência fornecida ao integrado deve ser de 4V, ao contrário dos 2,4V recomendados para quando o CI é alimentado com tensão analógica menor do que 5V. Uma tensão de referencia maior faz com que resolução do CI diminua porém na tabela a seguir notamos que a tensão máxima de entrada digital no CI é de DVDD+0.1 V. Nesse sentido, a que a tensao digital utilizado na plataforma de desenvolvimento é 3.3V, para não ser necessário a utilização uma interface de regulação de tensao entre o CI e a plataforma foi utilizado, como ja comentado, 3,3V para alimentação digital o que resulta numa elevação da alimentação analógica (para 5V).
 
@@ -34,7 +34,7 @@ A alimentação digital (DVDD) tem 3,3V e a alimentação analógica (AVDD) tem 
 Em sintese AVDD foi definido como 5V e DVDD para 3.3V, dessa maneria não são necessários divisores de tensão na interface entre o ADS e o MCU, reduzindo a complexidade do circuito.
 
 _________________________________________________________________________________________________________________________________________________________________________________
-# Configurações
+## Configurações
 
 Foi utilizado o SPI5 para comunicação com o ADS, o clock fornecido para SPI5 é pelo barramento APB2 que pode ter 108 MHz (max).
 
