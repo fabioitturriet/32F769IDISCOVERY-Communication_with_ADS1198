@@ -4,7 +4,7 @@ Data: 30/03/2022
 Versão: STM32CubeIDE 1.9.0 TouchGFX 4.19.0
 
 _________________________________________________________________________________________________________________________________________________________________________________
-#Importando o projeto
+# Importando o projeto
 
 1. Faça download da pasta **ECG**, é preferível que ela seja salva na pasta raiz como C:\STM32Workspace\ECG.
 
@@ -16,15 +16,15 @@ Execute o STM32CubeIDE para importar o projeto
 3. Selecione Select root diretory > clique em browse... e selecione a pasta do projeto criado no touchGFX
 4. Na área de "Projects:" será reconhecido o diretório do projeto para o STMCube, marque-o e clique em "Finish" 
 
-<img src="https://user-images.githubusercontent.com/86391684/135736267-3fa27dcf-be6a-4530-99ce-b5eca54fbfd7.png" width="500" />
+<img src="https://user-images.githubusercontent.com/86391684/135736267-3fa27dcf-be6a-4530-99ce-b5eca54fbfd7.png" width="300" />
 
 Por ora, a integração esta completa, mas é interessante fazer algumas alterações para facilitar a manipulação do projeto. Para se ter um acesso direto ao arquivo do projeto da tela no cubeIDE, basta ir até a pasta do TouchGFX, dentro da pasta do projeto criado, clicar e segurar no executável do projeto, arrasta-lo para o cubeIDE e soltá-lo no projeto impotado na aba "Project Explorer"
 
-<img src="https://user-images.githubusercontent.com/86391684/135736270-9d54e278-52f9-4b11-80fc-aa89d4a60d7f.png" width="800" />
+<img src="https://user-images.githubusercontent.com/86391684/135736270-9d54e278-52f9-4b11-80fc-aa89d4a60d7f.png" width="600" />
 
 Selecione "Link to files" e clique em "OK"
 
-<img src="https://user-images.githubusercontent.com/86391684/135736271-27ffa1ef-d55a-49c8-b855-ab476a97129e.png" width="450" />
+<img src="https://user-images.githubusercontent.com/86391684/135736271-27ffa1ef-d55a-49c8-b855-ab476a97129e.png" width="300" />
 
 dessa maneira o executável do TouchGFX fica de fácil acesso para fazer alterações.
 
@@ -37,12 +37,12 @@ dessa maneira o executável do TouchGFX fica de fácil acesso para fazer altera�
  
  2. Clique em **Browse** e procure pelo arquivo que contém a GUI que se deja importar
  
- <img src="https://user-images.githubusercontent.com/86391684/209216592-39b5939d-d158-4a64-83be-b69df7e69e02.png" width="450" /
+ <img src="https://user-images.githubusercontent.com/86391684/209216592-39b5939d-d158-4a64-83be-b69df7e69e02.png" width="450" />
 
-3. Será exibido que ao importar, a GUI atual Será discartada e não será possível reverter esse processo, prossiga caso esteja seguro
+3. Será exibido que ao importar a GUI atual será discartada e não será possível reverter esse processo, prossiga caso esteja seguro
 4. Será indicado que a GUI importada possui alterações externas, basta clicar em Não nessa janela e finalmente temos a GUI importada, pode-se então gerar o código que será atualizado no projeto atual.
 
-Ao importar a GUI de um outro projeto, como nesse exemplo, a função de importação importa apenas arquivos que estão localizados nas pastas gui/ e assets/. É importante destacar que para realizar a importação as versões dos projetos TouchGFX devem ser as mesmas, caso o projeto que se deja importar está numa versão antiga do TouchGFX, para atualizado para nova versão basta abri lo com o TouchGFX e salva lo.
+Ao importar a GUI de um outro projeto, como nesse exemplo, a função de importação importa apenas arquivos que estão localizados nas pastas gui/ e assets/. É importante destacar que para realizar a importação as versões dos projetos TouchGFX devem ser as mesmas, caso o projeto que se deseja importar está numa versão antiga do TouchGFX, para atualizado para nova versão basta abri lo com o TouchGFX e salva lo.
 
 ### Configuração do Debugger
 
@@ -53,7 +53,7 @@ Antes de executar o código na plataforma deve configurar o Debugger. Com a plat
 3. Marque "External Loader" e clique em scan
 4. Por fim ao lado de Scan selecione a plataforma que esta sendo usada, aplique as configurações e feche a janela, ou execute o Debugger como desejado
 
-<img src="https://user-images.githubusercontent.com/86391684/135736275-207002f9-3ebe-4645-a1b5-71557c78466e.png" width="800" />
+<img src="https://user-images.githubusercontent.com/86391684/135736275-207002f9-3ebe-4645-a1b5-71557c78466e.png" width="650" />
 
 Obs.: quando não feito esta configuração, ao executar o código a placa muitas vezes não é reconhecida adequadamente e sugem artefatos na tela assim como a falta de componentes graficos que deveriam estar lá.
 
