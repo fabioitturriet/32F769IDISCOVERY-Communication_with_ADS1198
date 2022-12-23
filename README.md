@@ -98,7 +98,7 @@ O mínimo periodo para SCLK é 50ns, ou seja é um maximo de 20MHz de frequênci
 <img src="https://user-images.githubusercontent.com/86391684/161348111-40264f61-53f0-44c4-904e-b83d081161cf.png" width="650" />
 
 _________________________________________________________________________________________________________________________________________________________________________________
-# Links inportantes
+# Links importantes
 
 https://www.youtube.com/watch?v=MUZj4YwKVac -> Adicionando biblioteca no cubeIDE
 
