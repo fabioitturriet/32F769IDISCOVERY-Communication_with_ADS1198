@@ -18,7 +18,7 @@ Execute o STM32CubeIDE para importar o projeto
 
 <img src="https://user-images.githubusercontent.com/86391684/135736267-3fa27dcf-be6a-4530-99ce-b5eca54fbfd7.png" width="300" />
 
-Por ora, a integração esta completa, mas é interessante fazer algumas alterações para facilitar a manipulação do projeto. Para se ter um acesso direto ao arquivo do projeto da tela no cubeIDE, basta ir até a pasta do TouchGFX, dentro da pasta do projeto criado, clicar e segurar no executável do projeto, arrasta-lo para o cubeIDE e soltá-lo no projeto impotado na aba "Project Explorer"
+Por ora, a integração esta completa, mas é interessante fazer algumas alterações para facilitar a manipulação do projeto. Para se ter um acesso direto ao arquivo do projeto da tela no cubeIDE, basta ir até a pasta que contém o projeto, acessar a pasta TouchGFX, clicar e segurar no executável do projeto, arrasta-lo para o cubeIDE e soltá-lo no projeto impotado na aba "Project Explorer"
 
 <img src="https://user-images.githubusercontent.com/86391684/135736270-9d54e278-52f9-4b11-80fc-aa89d4a60d7f.png" width="600" />
 
@@ -28,21 +28,14 @@ Selecione "Link to files" e clique em "OK"
 
 dessa maneira o executável do TouchGFX fica de fácil acesso para fazer alterações.
 
-### Importando uma GUI no TouchGFX 
- 
- Abrindo o arquivo TouchGFX do projeto é possivel importar uma GUI ja existente em outro projeto
- 1. Para isto basta ir na aba Edit > Import GUI 
- 
- <img src="https://user-images.githubusercontent.com/86391684/209214736-7d23b853-eb69-48ec-9fa5-09287214b90b.png" width="550" />
- 
- 2. Clique em **Browse** e procure pelo arquivo que contém a GUI que se deja importar
- 
- <img src="https://user-images.githubusercontent.com/86391684/209216592-39b5939d-d158-4a64-83be-b69df7e69e02.png" width="450" />
+**Importante**: Ao compilar o código pode ocorrer erro como o da figura abaixo.
 
-3. Será exibido que ao importar a GUI atual será discartada e não será possível reverter esse processo, prossiga caso esteja seguro
-4. Será indicado que a GUI importada possui alterações externas, basta clicar em Não nessa janela e finalmente temos a GUI importada, pode-se então gerar o código que será atualizado no projeto atual.
+<img src="https://user-images.githubusercontent.com/86391684/210375682-c94a62ad-0ff7-472a-811e-623a01d7f41f.png" width="600" />
 
-Ao importar a GUI de um outro projeto, como nesse exemplo, a função de importação importa apenas arquivos que estão localizados nas pastas gui/ e assets/. É importante destacar que para realizar a importação as versões dos projetos TouchGFX devem ser as mesmas, caso o projeto que se deseja importar está numa versão antiga do TouchGFX, para atualizado para nova versão basta abri lo com o TouchGFX e salva lo.
+Isto ocorre pois a biblioteca do TouchGFX não está no mesmo caminho em que o projeto foi criado originalmente. Logo este caminho deve ser atualizado conforme o local da área de trabalho utilizada para importar o projeto. 
+Para isto basta ir em Project -> Properties -> C/C++ General -> Paths and Symbols -> Library Paths, e alterar o caminho para a pasta /gcc do projeto 
+
+<img src="https://user-images.githubusercontent.com/86391684/210381415-1e516184-3fda-4add-af82-e8513b31b164.png" width="600" />
 
 ### Configuração do Debugger
 
@@ -56,6 +49,24 @@ Antes de executar o código na plataforma deve configurar o Debugger. Com a plat
 <img src="https://user-images.githubusercontent.com/86391684/135736275-207002f9-3ebe-4645-a1b5-71557c78466e.png" width="650" />
 
 Obs.: quando não feito esta configuração, ao executar o código a placa muitas vezes não é reconhecida adequadamente e sugem artefatos na tela assim como a falta de componentes graficos que deveriam estar lá.
+
+### Importando uma GUI no TouchGFX 
+ 
+ Abrindo o arquivo TouchGFX do projeto é possivel importar uma GUI ja existente em outro projeto
+ 1. Para isto basta ir na aba Edit > Import GUI 
+ 
+ <img src="https://user-images.githubusercontent.com/86391684/209214736-7d23b853-eb69-48ec-9fa5-09287214b90b.png" width="550" />
+ 
+ 2. Clique em **Browse** e procure pelo arquivo que contém a GUI que se deja importar
+ 
+ <img src="https://user-images.githubusercontent.com/86391684/209216592-39b5939d-d158-4a64-83be-b69df7e69e02.png" width="600" />
+
+3. Será exibido que ao importar a GUI atual será discartada e não será possível reverter esse processo, prossiga caso esteja seguro
+4. Será indicado que a GUI importada possui alterações externas, basta clicar em Não nessa janela e finalmente temos a GUI importada, pode-se então gerar o código que será atualizado no projeto atual.
+
+Ao importar a GUI de um outro projeto, como nesse exemplo, a função de importação importa apenas arquivos que estão localizados nas pastas gui/ e assets/. É importante destacar que para realizar a importação as versões dos projetos TouchGFX devem ser as mesmas, caso o projeto que se deseja importar está numa versão antiga do TouchGFX, para atualizado para nova versão basta abri lo com o TouchGFX e salva lo.
+
+
 
 _________________________________________________________________________________________________________________________________________________________________________________
 # Descrição dos pinos do ADS1198 conectados a plataforma versão 2.0
