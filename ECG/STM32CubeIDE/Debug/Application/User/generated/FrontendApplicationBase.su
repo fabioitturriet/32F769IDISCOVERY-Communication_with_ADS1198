@@ -29,19 +29,19 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:89:18:void touchgfx::SlideTransition<templateDirection>::handleTickEvent() [with touchgfx::Direction templateDirection = touchgfx::EAST]	8	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:59:18:virtual void touchgfx::MVPApplication::handlePendingScreenTransition()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:154:18:void touchgfx::SlideTransition<templateDirection>::init() [with touchgfx::Direction templateDirection = touchgfx::EAST]	24	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:61:6:void FrontendApplicationBase::gotoMENUScreenSlideTransitionEastImpl()	48	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:27:1:FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&)	24	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:44:6:void FrontendApplicationBase::gotoMENUScreenNoTransition()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:55:6:void FrontendApplicationBase::gotoMENUScreenSlideTransitionEast()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:68:6:void FrontendApplicationBase::gotoInstrucoesScreenNoTransition()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:81:6:void FrontendApplicationBase::gotoConfiguracoesScreenNoTransition()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:94:6:void FrontendApplicationBase::gotoCadastroScreenNoTransition()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:107:6:void FrontendApplicationBase::gotoScreen2ScreenNoTransition()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:120:6:void FrontendApplicationBase::gotoScreen1ScreenNoTransition()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:61:6:void FrontendApplicationBase::gotoMENUScreenSlideTransitionEastImpl()	48	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:27:1:FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&)	24	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:44:6:void FrontendApplicationBase::gotoMENUScreenNoTransition()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:55:6:void FrontendApplicationBase::gotoMENUScreenSlideTransitionEast()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:68:6:void FrontendApplicationBase::gotoInstrucoesScreenNoTransition()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:81:6:void FrontendApplicationBase::gotoConfiguracoesScreenNoTransition()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:94:6:void FrontendApplicationBase::gotoCadastroScreenNoTransition()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:107:6:void FrontendApplicationBase::gotoScreen2ScreenNoTransition()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:120:6:void FrontendApplicationBase::gotoScreen1ScreenNoTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = touchgfx::NoTransition]	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:126:6:void FrontendApplicationBase::gotoScreen1ScreenNoTransitionImpl()	40	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:113:6:void FrontendApplicationBase::gotoScreen2ScreenNoTransitionImpl()	40	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:100:6:void FrontendApplicationBase::gotoCadastroScreenNoTransitionImpl()	40	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:87:6:void FrontendApplicationBase::gotoConfiguracoesScreenNoTransitionImpl()	40	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:74:6:void FrontendApplicationBase::gotoInstrucoesScreenNoTransitionImpl()	40	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:50:6:void FrontendApplicationBase::gotoMENUScreenNoTransitionImpl()	40	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:126:6:void FrontendApplicationBase::gotoScreen1ScreenNoTransitionImpl()	40	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:113:6:void FrontendApplicationBase::gotoScreen2ScreenNoTransitionImpl()	40	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:100:6:void FrontendApplicationBase::gotoCadastroScreenNoTransitionImpl()	40	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:87:6:void FrontendApplicationBase::gotoConfiguracoesScreenNoTransitionImpl()	40	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:74:6:void FrontendApplicationBase::gotoInstrucoesScreenNoTransitionImpl()	40	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:50:6:void FrontendApplicationBase::gotoMENUScreenNoTransitionImpl()	40	static

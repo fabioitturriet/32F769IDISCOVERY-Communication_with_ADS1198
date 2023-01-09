@@ -45,7 +45,7 @@
 #define LOFF_STATP 0x12
 #define LOFF_STATN 0x13
 #define GPIO 0x14
-#define MISC1 0x15 //PACE
+#define PACE 0x15 //PACE
 #define MISC2 0x16 //reserved
 #define CONFIG4 0x17
 
@@ -62,6 +62,7 @@ extern bool verbose;
 extern int16_t channelData [16];
 
 void ADS_Init(void);
+void ADS_InitTestInt(void);
 
 void ADS_RDATAC(void);
 void ADS_SDATAC(void);
@@ -79,6 +80,7 @@ void ADS_WREGS(uint8_t _address, uint8_t _numRegistersMinusOne);
 void ADS_updateChannelData(void);
 void ADS_RDATA(void);
 void ADS_printRegisterName(uint8_t _address);
+void SetCanaisIguais(uint8_t setcanais);
 
 void ADS_sendUSBData(void);
 

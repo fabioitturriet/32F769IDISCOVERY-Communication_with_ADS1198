@@ -43,6 +43,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+
 #define REFRESH_COUNT        1834
 #define SDRAM_TIMEOUT                            ((uint32_t)0xFFFF)
 #define SDRAM_MODEREG_BURST_LENGTH_1             ((uint16_t)0x0000)
@@ -66,7 +67,14 @@
 
 /* DISPLAY */
 #define LCD_ORIENTATION_LANDSCAPE 0x01
-#define BufferLenPlotECG 60
+
+
+#define BufferLenPlotECG 250
+
+/* ADS1198 */
+enum InitADS1198 {ECG_12_Lead, Teste_interno, Teste_externo};
+#define initADS1198 Teste_interno
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -133,9 +141,11 @@ char msg[10];
 uint8_t ADSData [19];
 uint8_t TxBuf[19]= {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
+
 char errorOffset[120];
-int16_t valorECG [BufferLenPlotECG];
+float valorECG [BufferLenPlotECG];
 uint8_t escrita = 0, leitura = 0;
+float DerivacoesECG[12];
 
 
 int16_t SWDviwe;
@@ -201,8 +211,8 @@ extern xQueueHandle messageQ;
 uint8_t Red_ADS1198_DMA(void){
 
 
-	HAL_GPIO_WritePin( ADS_CS_GPIO_Port  , ADS_CS_Pin, GPIO_PIN_RESET);
 
+	HAL_GPIO_WritePin( ADS_CS_GPIO_Port  , ADS_CS_Pin, GPIO_PIN_RESET);
 
 	res = HAL_SPI_TransmitReceive_DMA(&hspi5, TxBuf, ADSData, 19);
 		if (res == HAL_OK){
@@ -221,23 +231,37 @@ uint8_t Red_ADS1198_DMA(void){
 
 void Red_ADS1198_DMA_Complete(void){
 
-//	HAL_GPIO_WritePin(ADS_CS_GPIO_Port , ADS_CS_Pin, GPIO_PIN_SET); teste osciloscópio
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET);
-	channelData[1] = (int16_t) ((ADSData[5] << 8) | ADSData[6]);
-	//USART_Send(channelData[1]);
-	//xQueueSend(messageQ, &channelData[1], 0);
-//	SWDviwe = channelData[1] + 185;
-//	sprintf(errorOffset, "%d\r\n", channelData[1]);
-//    USB_Print(errorOffset);
+	HAL_GPIO_WritePin(ADS_CS_GPIO_Port , ADS_CS_Pin, GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET); teste oscilo
+	for(uint8_t i=0; i<8; i++){
+	channelData[i] = (int16_t) ((ADSData[(2*i)+3] << 8) | ADSData[((2*i)+3)+1]);
+
+}
+	/*==========================DERIVAÇÕES ECG begin=============================*/
+	DerivacoesECG[0] = channelData[1]/97729.2036626731 - 0.0000613941357867797; //I
+	DerivacoesECG[1] = channelData[2]/97825.5719151117 + 0.000224890072905381; //II
+	DerivacoesECG[2] = DerivacoesECG[1]-DerivacoesECG[0]; //III
+	DerivacoesECG[3] = (-DerivacoesECG[0]-DerivacoesECG[1])/2; //aVR
+	DerivacoesECG[4] = DerivacoesECG[0]-DerivacoesECG[1]/2; //aVL
+	DerivacoesECG[5] = DerivacoesECG[1]-DerivacoesECG[0]/2; //aVF
+	DerivacoesECG[6] = 97780.4205760018*channelData[7] + 0.000143177948279719; //V1
+	DerivacoesECG[7] = 97751.4762438389*channelData[3] + 0.000225060539700920; //V2
+	DerivacoesECG[8] = 97729.6286999963*channelData[4] + 0.0000613938687766674; //V3
+	DerivacoesECG[9] = 97732.9255628785*channelData[5] + 0.000583222078656879; //V4
+ 	DerivacoesECG[10] = 97754.2848007214*channelData[6] - 0.000112527036767997; //V5
+	DerivacoesECG[11] = 97693.3315403843*channelData[0] + 0.000163777811112788; //V6
+
+		/*==========================DERIVAÇÕES ECG begin=============================*/
+
 	escrita++;
 	if(escrita == BufferLenPlotECG){
 		escrita = 0;
 	}
-	valorECG[escrita] = channelData[1] + 75;
+	valorECG[escrita] = (DerivacoesECG[0]*1000000);
 
-	sprintf(errorOffset, "%d\r\n", channelData[1]);
-	USB_Print(errorOffset);
-	bufclear(errorOffset);
+//	sprintf(errorOffset, "%d\r\n", channelData[1]);
+//	USB_Print(errorOffset);
+//	bufclear(errorOffset);
 
 //	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
 }
@@ -316,10 +340,19 @@ int main(void)
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
 
-  ADS_Init();
-//
-//  // modo continuo
- // ADS_RDATAC();
+  switch (initADS1198){
+  case ECG_12_Lead:
+	  ADS_Init();
+	  break;
+
+  case Teste_interno:
+	  ADS_InitTestInt();
+	  break;
+
+  case Teste_externo:
+	  break;
+  }
+
 
 
   /* USER CODE END 2 */

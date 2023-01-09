@@ -6,19 +6,19 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1029:22:virtual uint16_t touchgfx::HAL::getTFTCurrentLine()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1040:21:virtual touchgfx::DMAType touchgfx::HAL::getDMAType()	0	static
 ../../Drivers/CMSIS/Include/core_cm7.h:2427:22:void SCB_CleanInvalidateDCache()	16	static,ignoring_inline_asm
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:63:6:virtual void TouchGFXGeneratedHAL::configureInterrupts()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:68:6:virtual void TouchGFXGeneratedHAL::enableInterrupts()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:78:6:virtual void TouchGFXGeneratedHAL::enableLCDControllerInterrupt()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:100:11:virtual uint16_t* TouchGFXGeneratedHAL::getTFTFrameBuffer() const	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:105:6:virtual void TouchGFXGeneratedHAL::setTFTFrameBuffer(uint16_t*)	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:128:6:virtual void TouchGFXGeneratedHAL::InvalidateCache()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:63:6:virtual void TouchGFXGeneratedHAL::configureInterrupts()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:68:6:virtual void TouchGFXGeneratedHAL::enableInterrupts()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:78:6:virtual void TouchGFXGeneratedHAL::enableLCDControllerInterrupt()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:100:11:virtual uint16_t* TouchGFXGeneratedHAL::getTFTFrameBuffer() const	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:105:6:virtual void TouchGFXGeneratedHAL::setTFTFrameBuffer(uint16_t*)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:128:6:virtual void TouchGFXGeneratedHAL::InvalidateCache()	0	static
 ../../TouchGFX/target/generated/DedicatedBufferVideoController.hpp:32:7:DedicatedBufferController<1, 800, 480, 1600, touchgfx::Bitmap::RGB565>::~DedicatedBufferController()	0	static
 ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:30:7:TouchGFXGeneratedHAL::~TouchGFXGeneratedHAL()	0	static
 ../../TouchGFX/target/generated/DedicatedBufferVideoController.hpp:136:10:void DedicatedBufferController<no_streams, width, height, stride, output_format>::setVideoData(touchgfx::VideoController::Handle, touchgfx::VideoDataReader&) [with long unsigned int no_streams = 1; long unsigned int width = 800; long unsigned int height = 480; long unsigned int stride = 1600; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:51:6:virtual void TouchGFXGeneratedHAL::initialize()	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:82:6:virtual bool TouchGFXGeneratedHAL::beginFrame()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:110:6:virtual void TouchGFXGeneratedHAL::flushFrameBuffer(const touchgfx::Rect&)	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:123:6:virtual bool TouchGFXGeneratedHAL::blockCopy(void*, const void*, uint32_t)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:51:6:virtual void TouchGFXGeneratedHAL::initialize()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:82:6:virtual bool TouchGFXGeneratedHAL::beginFrame()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:110:6:virtual void TouchGFXGeneratedHAL::flushFrameBuffer(const touchgfx::Rect&)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:123:6:virtual bool TouchGFXGeneratedHAL::blockCopy(void*, const void*, uint32_t)	0	static
 ../../TouchGFX/target/generated/DedicatedBufferVideoController.hpp:79:10:void DedicatedBufferController<no_streams, width, height, stride, output_format>::unregisterVideoWidget(touchgfx::VideoController::Handle) [with long unsigned int no_streams = 1; long unsigned int width = 800; long unsigned int height = 480; long unsigned int stride = 1600; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:616:18:virtual void touchgfx::HAL::backPorchExited()	8	static
 ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:106:18:virtual void TouchGFXGeneratedHAL::flushFrameBuffer()	0	static
@@ -36,10 +36,10 @@ D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:123:6
 ../../TouchGFX/target/generated/DedicatedBufferVideoController.hpp:109:10:void DedicatedBufferController<no_streams, width, height, stride, output_format>::setFrameRate(touchgfx::VideoController::Handle, uint32_t, uint32_t) [with long unsigned int no_streams = 1; long unsigned int width = 800; long unsigned int height = 480; long unsigned int stride = 1600; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	8	static
 ../../TouchGFX/target/generated/DedicatedBufferVideoController.hpp:215:10:void DedicatedBufferController<no_streams, width, height, stride, output_format>::draw(touchgfx::VideoController::Handle, const touchgfx::Rect&, const touchgfx::VideoWidget&) [with long unsigned int no_streams = 1; long unsigned int width = 800; long unsigned int height = 480; long unsigned int stride = 1600; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	8	static
 ../../TouchGFX/target/generated/DedicatedBufferVideoController.hpp:187:10:bool DedicatedBufferController<no_streams, width, height, stride, output_format>::updateFrame(touchgfx::VideoController::Handle, touchgfx::VideoWidget&) [with long unsigned int no_streams = 1; long unsigned int width = 800; long unsigned int height = 480; long unsigned int stride = 1600; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:87:6:virtual void TouchGFXGeneratedHAL::endFrame()	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:73:6:virtual void TouchGFXGeneratedHAL::disableInterrupts()	0	static,ignoring_inline_asm
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:87:6:virtual void TouchGFXGeneratedHAL::endFrame()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:73:6:virtual void TouchGFXGeneratedHAL::disableInterrupts()	0	static,ignoring_inline_asm
 ../../TouchGFX/target/generated/DedicatedBufferVideoController.hpp:50:12:touchgfx::VideoController::Handle DedicatedBufferController<no_streams, width, height, stride, output_format>::registerVideoWidget(touchgfx::VideoWidget&) [with long unsigned int no_streams = 1; long unsigned int width = 800; long unsigned int height = 480; long unsigned int stride = 1600; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:35:18:static touchgfx::VideoController& touchgfx::VideoController::getInstance()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:35:18:static touchgfx::VideoController& touchgfx::VideoController::getInstance()	0	static
 ../../TouchGFX/target/generated/DedicatedBufferVideoController.hpp:276:10:void DedicatedBufferController<no_streams, width, height, stride, output_format>::decoderTaskEntry() [with long unsigned int no_streams = 1; long unsigned int width = 800; long unsigned int height = 480; long unsigned int stride = 1600; touchgfx::Bitmap::BitmapFormat output_format = touchgfx::Bitmap::RGB565]	40	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:152:17:void videoTaskFunc(void*)	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:155:1:cpp)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:152:17:void videoTaskFunc(void*)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp:155:1:cpp)	16	static

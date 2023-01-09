@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/generated/HardwareMJPEGDecoder.o: \
- D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp \
+ D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp \
  ../../TouchGFX/target/generated/HardwareMJPEGDecoder.hpp \
  ../../TouchGFX/target/generated/MJPEGDecoder.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \

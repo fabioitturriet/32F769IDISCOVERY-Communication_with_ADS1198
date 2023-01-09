@@ -2,7 +2,19 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../TouchGFX/gui/include/gui/configuracoes_screen/ConfiguracoesView.hpp:11:13:ConfiguracoesView::~ConfiguracoesView()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:13:6:virtual void ConfiguracoesView::tearDownScreen()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:8:6:virtual void ConfiguracoesView::setupScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:13:6:virtual void ConfiguracoesView::tearDownScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:20:6:virtual void ConfiguracoesView::Set1kSPS()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:26:6:virtual void ConfiguracoesView::Set500SPS()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:33:6:virtual void ConfiguracoesView::Set250SPS()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:40:6:virtual void ConfiguracoesView::Set125SPS()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:46:6:virtual void ConfiguracoesView::SetGain12()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:51:6:virtual void ConfiguracoesView::SetGain8()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:56:6:virtual void ConfiguracoesView::SetGain6()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:61:6:virtual void ConfiguracoesView::SetGain4()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:66:6:virtual void ConfiguracoesView::SetGain3()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:71:6:virtual void ConfiguracoesView::SetGain2()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:76:6:virtual void ConfiguracoesView::SetGain1()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:81:6:virtual void ConfiguracoesView::StartRDataC()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:8:6:virtual void ConfiguracoesView::setupScreen()	0	static
 ../../TouchGFX/gui/include/gui/configuracoes_screen/ConfiguracoesView.hpp:11:13:virtual ConfiguracoesView::~ConfiguracoesView()	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:3:1:ConfiguracoesView::ConfiguracoesView()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_screen/ConfiguracoesView.cpp:3:1:ConfiguracoesView::ConfiguracoesView()	8	static

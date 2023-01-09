@@ -45,6 +45,12 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     case Typography::LISTA:
         // calibri_27_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[10]);
+    case Typography::CONFIGURACOES:
+        // arial_22_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[11]);
+    case Typography::CONFIGURACOES1:
+        // arial_20_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[12]);
     default:
         return 0;
     }

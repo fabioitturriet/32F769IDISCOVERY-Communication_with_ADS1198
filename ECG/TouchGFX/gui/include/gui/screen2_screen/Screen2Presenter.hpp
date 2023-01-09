@@ -27,6 +27,8 @@ public:
 
     virtual ~Screen2Presenter() {};
 
+    virtual void PresenterStartRead();
+
 private:
     Screen2Presenter();
 

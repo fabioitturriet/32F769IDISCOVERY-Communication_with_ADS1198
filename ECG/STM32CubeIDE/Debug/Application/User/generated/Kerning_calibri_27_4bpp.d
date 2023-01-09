@@ -1,5 +1,5 @@
 Application/User/generated/Kerning_calibri_27_4bpp.o: \
- D:/TouchGFXProjects/ECG/TouchGFX/generated/fonts/src/Kerning_calibri_27_4bpp.cpp \
+ D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/fonts/src/Kerning_calibri_27_4bpp.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \

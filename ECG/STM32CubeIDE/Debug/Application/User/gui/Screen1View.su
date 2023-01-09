@@ -2,8 +2,11 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:11:13:Screen1View::~Screen1View()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:13:6:virtual void Screen1View::tearDownScreen()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:8:6:virtual void Screen1View::setupScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:13:6:virtual void Screen1View::tearDownScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:24:6:virtual void Screen1View::StopData()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:29:6:virtual void Screen1View::AjusteEscala()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:8:6:virtual void Screen1View::setupScreen()	0	static
 ../../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:11:13:virtual Screen1View::~Screen1View()	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:3:1:Screen1View::Screen1View()	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:17:6:void Screen1View::UpdateGraph(uint16_t)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:34:6:virtual void Screen1View::SetMinMaxEscalaGraph(int16_t, int16_t)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:3:1:Screen1View::Screen1View()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen1_screen/Screen1View.cpp:18:6:void Screen1View::UpdateGraph(float)	0	static

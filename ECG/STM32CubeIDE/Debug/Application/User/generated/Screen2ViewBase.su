@@ -19,8 +19,8 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<Screen2Presenter>::~View()	0	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:20:13:Screen2ViewBase::~Screen2ViewBase()	0	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:26:18:virtual void Screen2ViewBase::iniciar()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/screen2_screen/Screen2ViewBase.cpp:67:6:virtual void Screen2ViewBase::setupScreen()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:26:18:virtual void Screen2ViewBase::StartRead()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/screen2_screen/Screen2ViewBase.cpp:67:6:virtual void Screen2ViewBase::setupScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<Screen2ViewBase, const touchgfx::AbstractButton&>::~Callback()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = Screen2ViewBase; T1 = const touchgfx::AbstractButton&]	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = Screen2ViewBase; T1 = const touchgfx::AbstractButton&]	0	static
@@ -29,10 +29,10 @@ D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/screen2_screen/Scre
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<Screen2Presenter>::~View()	8	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:20:13:virtual Screen2ViewBase::~Screen2ViewBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/screen2_screen/Screen2ViewBase.cpp:72:6:void Screen2ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/screen2_screen/Screen2ViewBase.cpp:72:6:void Screen2ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:33:5:touchgfx::Box::Box()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:132:10:void touchgfx::ButtonWithLabel::updateTextPosition()	24	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/screen2_screen/Screen2ViewBase.cpp:9:1:Screen2ViewBase::Screen2ViewBase()	104	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/screen2_screen/Screen2ViewBase.cpp:9:1:Screen2ViewBase::Screen2ViewBase()	104	static

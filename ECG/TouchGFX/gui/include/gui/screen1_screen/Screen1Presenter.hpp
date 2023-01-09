@@ -26,7 +26,14 @@ public:
     virtual void deactivate();
 
     virtual ~Screen1Presenter() {};
-    void UpdateGraph(uint16_t value);
+
+    void UpdateGraph(float value);
+
+    virtual void PresenterStopData();
+
+    virtual void PresenterAjusteEscala();
+
+    virtual void SetMinMaxEscalaGraph(int16_t SetMinEscala, int16_t SetMaxEscala);
 
 private:
     Screen1Presenter();

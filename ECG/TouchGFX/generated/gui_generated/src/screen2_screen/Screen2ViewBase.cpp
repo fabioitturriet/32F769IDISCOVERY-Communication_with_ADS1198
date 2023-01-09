@@ -42,16 +42,16 @@ Screen2ViewBase::Screen2ViewBase() :
     buttonWithLabel3.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
 
-    buttonWithLabel4.setXY(461, 203);
+    buttonWithLabel4.setXY(465, 203);
     buttonWithLabel4.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonWithLabel4.setLabelText(touchgfx::TypedText(T___SINGLEUSE_P6FT));
     buttonWithLabel4.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     buttonWithLabel4.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel4.setAction(buttonCallback);
 
-    button1.setXY(0, 0);
-    button1.setBitmaps(touchgfx::Bitmap(BITMAP_ICONS8_REPLY_ARROW_64_ID), touchgfx::Bitmap(BITMAP_ICONS8_REPLY_ARROW_64_ID));
-    button1.setAction(buttonCallback);
+    voltar.setXY(12, 10);
+    voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID));
+    voltar.setAction(buttonCallback);
 
     add(__background);
     add(box1);
@@ -61,7 +61,7 @@ Screen2ViewBase::Screen2ViewBase() :
     add(buttonWithLabel2);
     add(buttonWithLabel3);
     add(buttonWithLabel4);
-    add(button1);
+    add(voltar);
 }
 
 void Screen2ViewBase::setupScreen()
@@ -80,13 +80,13 @@ void Screen2ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 
         //Interaction2
         //When buttonWithLabel4 clicked call virtual function
-        //Call iniciar
-        iniciar();
+        //Call StartRead
+        StartRead();
     }
-    else if (&src == &button1)
+    else if (&src == &voltar)
     {
         //Interaction3
-        //When button1 clicked change screen to MENU
+        //When voltar clicked change screen to MENU
         //Go to MENU with screen transition towards East
         application().gotoMENUScreenSlideTransitionEast();
     }

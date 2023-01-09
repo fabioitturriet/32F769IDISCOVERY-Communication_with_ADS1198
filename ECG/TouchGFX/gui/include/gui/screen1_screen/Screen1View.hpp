@@ -11,7 +11,12 @@ public:
     virtual ~Screen1View() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    void UpdateGraph(uint16_t value);
+
+    void UpdateGraph(float value);
+
+    virtual void StopData();
+    virtual void AjusteEscala();
+    virtual void SetMinMaxEscalaGraph(int16_t SetMinEscala, int16_t SetMaxEscala);
 protected:
 };
 

@@ -1,3 +1,3 @@
-../../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp:47:7:ApplicationFontProvider::~ApplicationFontProvider()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/fonts/src/ApplicationFontProvider.cpp:8:17:virtual touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId)	8	static
-../../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp:47:7:virtual ApplicationFontProvider::~ApplicationFontProvider()	8	static
+../../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp:51:7:ApplicationFontProvider::~ApplicationFontProvider()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/fonts/src/ApplicationFontProvider.cpp:8:17:virtual touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId)	8	static
+../../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp:51:7:virtual ApplicationFontProvider::~ApplicationFontProvider()	8	static

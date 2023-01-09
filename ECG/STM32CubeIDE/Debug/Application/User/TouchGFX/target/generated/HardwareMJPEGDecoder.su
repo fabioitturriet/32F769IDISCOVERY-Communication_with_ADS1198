@@ -1,30 +1,30 @@
 ../../TouchGFX/target/generated/HardwareMJPEGDecoder.hpp:44:22:virtual uint32_t HardwareMJPEGDecoder::getCurrentFrameNumber() const	0	static
 ../../TouchGFX/target/generated/HardwareMJPEGDecoder.hpp:51:15:virtual MJPEGDecoder::AVIErrors HardwareMJPEGDecoder::getLastError()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:291:6:virtual bool HardwareMJPEGDecoder::hasVideo()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:473:10:virtual uint32_t HardwareMJPEGDecoder::getNumberOfFrames()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:478:6:virtual void HardwareMJPEGDecoder::setRepeatVideo(bool)	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:483:6:virtual void HardwareMJPEGDecoder::getVideoInfo(touchgfx::VideoInformation*)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:291:6:virtual bool HardwareMJPEGDecoder::hasVideo()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:473:10:virtual uint32_t HardwareMJPEGDecoder::getNumberOfFrames()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:478:6:virtual void HardwareMJPEGDecoder::setRepeatVideo(bool)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:483:6:virtual void HardwareMJPEGDecoder::getVideoInfo(touchgfx::VideoInformation*)	8	static
 ../../TouchGFX/target/generated/HardwareMJPEGDecoder.hpp:27:7:HardwareMJPEGDecoder::~HardwareMJPEGDecoder()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:447:6:virtual bool HardwareMJPEGDecoder::decodeThumbnail(uint32_t, uint8_t*, uint16_t, uint16_t)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:447:6:virtual bool HardwareMJPEGDecoder::decodeThumbnail(uint32_t, uint8_t*, uint16_t, uint16_t)	8	static
 ../../TouchGFX/target/generated/HardwareMJPEGDecoder.hpp:27:7:virtual HardwareMJPEGDecoder::~HardwareMJPEGDecoder()	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:99:1:HardwareMJPEGDecoder::HardwareMJPEGDecoder()	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:116:5:int HardwareMJPEGDecoder::compare(uint32_t, const char*, uint32_t)	4	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:131:17:uint32_t HardwareMJPEGDecoder::getU32(uint32_t)	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:146:17:uint32_t HardwareMJPEGDecoder::getU16(uint32_t)	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:161:16:const uint8_t* HardwareMJPEGDecoder::readData(uint32_t, uint32_t)	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:236:6:virtual bool HardwareMJPEGDecoder::gotoNextFrame()	32	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:453:6:virtual void HardwareMJPEGDecoder::gotoFrame(uint32_t)	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:296:6:void HardwareMJPEGDecoder::readVideoHeader()	32	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:273:6:virtual void HardwareMJPEGDecoder::setVideoData(const uint8_t*, uint32_t)	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:282:6:virtual void HardwareMJPEGDecoder::setVideoData(touchgfx::VideoDataReader&)	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:500:10:uint32_t JPEG_Decode_DMA(JPEG_HandleTypeDef*, uint8_t*, uint32_t, uint8_t*)	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:530:6:void HAL_JPEG_InfoReadyCallback(JPEG_HandleTypeDef*, JPEG_ConfTypeDef*)	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:581:6:void HAL_JPEG_GetDataCallback(JPEG_HandleTypeDef*, uint32_t)	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:600:6:void HAL_JPEG_DataReadyCallback(JPEG_HandleTypeDef*, uint8_t*, uint32_t)	24	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:628:6:void HAL_JPEG_ErrorCallback(JPEG_HandleTypeDef*)	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:640:6:void HAL_JPEG_DecodeCpltCallback(JPEG_HandleTypeDef*)	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:651:10:uint32_t JPEG_OutputHandler(JPEG_HandleTypeDef*)	40	static,ignoring_inline_asm
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:398:6:void HardwareMJPEGDecoder::decodeMJPEGFrame(const uint8_t*, uint32_t, uint8_t*, uint16_t, uint16_t, uint32_t)	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:398:6:void HardwareMJPEGDecoder::decodeMJPEGFrame(const uint8_t*, uint32_t, uint8_t*, uint16_t, uint16_t, uint32_t)	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:184:6:virtual bool HardwareMJPEGDecoder::decodeNextFrame(uint8_t*, uint16_t, uint16_t, uint32_t)	24	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:422:6:virtual bool HardwareMJPEGDecoder::decodeFrame(const touchgfx::Rect&, uint8_t*, uint32_t)	24	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:99:1:HardwareMJPEGDecoder::HardwareMJPEGDecoder()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:116:5:int HardwareMJPEGDecoder::compare(uint32_t, const char*, uint32_t)	4	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:131:17:uint32_t HardwareMJPEGDecoder::getU32(uint32_t)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:146:17:uint32_t HardwareMJPEGDecoder::getU16(uint32_t)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:161:16:const uint8_t* HardwareMJPEGDecoder::readData(uint32_t, uint32_t)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:236:6:virtual bool HardwareMJPEGDecoder::gotoNextFrame()	32	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:453:6:virtual void HardwareMJPEGDecoder::gotoFrame(uint32_t)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:296:6:void HardwareMJPEGDecoder::readVideoHeader()	32	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:273:6:virtual void HardwareMJPEGDecoder::setVideoData(const uint8_t*, uint32_t)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:282:6:virtual void HardwareMJPEGDecoder::setVideoData(touchgfx::VideoDataReader&)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:500:10:uint32_t JPEG_Decode_DMA(JPEG_HandleTypeDef*, uint8_t*, uint32_t, uint8_t*)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:530:6:void HAL_JPEG_InfoReadyCallback(JPEG_HandleTypeDef*, JPEG_ConfTypeDef*)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:581:6:void HAL_JPEG_GetDataCallback(JPEG_HandleTypeDef*, uint32_t)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:600:6:void HAL_JPEG_DataReadyCallback(JPEG_HandleTypeDef*, uint8_t*, uint32_t)	24	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:628:6:void HAL_JPEG_ErrorCallback(JPEG_HandleTypeDef*)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:640:6:void HAL_JPEG_DecodeCpltCallback(JPEG_HandleTypeDef*)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:651:10:uint32_t JPEG_OutputHandler(JPEG_HandleTypeDef*)	40	static,ignoring_inline_asm
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:398:6:void HardwareMJPEGDecoder::decodeMJPEGFrame(const uint8_t*, uint32_t, uint8_t*, uint16_t, uint16_t, uint32_t)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:398:6:void HardwareMJPEGDecoder::decodeMJPEGFrame(const uint8_t*, uint32_t, uint8_t*, uint16_t, uint16_t, uint32_t)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:184:6:virtual bool HardwareMJPEGDecoder::decodeNextFrame(uint8_t*, uint16_t, uint16_t, uint32_t)	24	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/generated/HardwareMJPEGDecoder.cpp:422:6:virtual bool HardwareMJPEGDecoder::decodeFrame(const touchgfx::Rect&, uint8_t*, uint32_t)	24	static

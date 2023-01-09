@@ -23,7 +23,7 @@ public:
     /*
      * Virtual Action Handlers
      */
-    virtual void iniciar()
+    virtual void StartRead()
     {
         // Override and implement this function in Screen2
     }
@@ -44,7 +44,7 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabel2;
     touchgfx::ButtonWithLabel buttonWithLabel3;
     touchgfx::ButtonWithLabel buttonWithLabel4;
-    touchgfx::Button button1;
+    touchgfx::Button voltar;
 
 private:
 

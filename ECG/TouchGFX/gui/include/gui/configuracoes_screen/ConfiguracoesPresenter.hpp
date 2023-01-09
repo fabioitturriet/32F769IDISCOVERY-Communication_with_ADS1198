@@ -27,6 +27,21 @@ public:
 
     virtual ~ConfiguracoesPresenter() {};
 
+    virtual void P_1kSPS_selected();
+    virtual void P_500SPS_selected();
+    virtual void P_250SPS_selected();
+    virtual void P_125SPS_selected();
+
+    virtual void P_Gain12_selected();
+    virtual void P_Gain8_selected();
+    virtual void P_Gain6_selected();
+    virtual void P_Gain4_selected();
+    virtual void P_Gain3_selected();
+    virtual void P_Gain2_selected();
+    virtual void P_Gain1_selected();
+
+    virtual void PresenterStartRDataC();
+
 private:
     ConfiguracoesPresenter();
 

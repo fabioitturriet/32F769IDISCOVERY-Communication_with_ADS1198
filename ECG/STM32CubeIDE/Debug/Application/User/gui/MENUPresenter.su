@@ -1,6 +1,7 @@
-../../TouchGFX/gui/include/gui/model/ModelListener.hpp:18:18:virtual void ModelListener::UpdateGraph(uint16_t)	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:15:18:virtual void ModelListener::SetMinMaxEscalaGraph(int16_t, int16_t)	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:21:18:virtual void ModelListener::UpdateGraph(float)	0	static
 ../../TouchGFX/gui/include/gui/menu_screen/MENUPresenter.hpp:28:13:MENUPresenter::~MENUPresenter()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/menu_screen/MENUPresenter.cpp:10:6:virtual void MENUPresenter::activate()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/menu_screen/MENUPresenter.cpp:10:6:virtual void MENUPresenter::activate()	0	static
 ../../TouchGFX/gui/include/gui/menu_screen/MENUPresenter.hpp:28:13:virtual MENUPresenter::~MENUPresenter()	8	static
 ../../TouchGFX/gui/include/gui/menu_screen/MENUPresenter.hpp:28:13:virtual void* MENUPresenter::_ZThn4_N13MENUPresenterD1Ev()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/menu_screen/MENUPresenter.cpp:4:1:MENUPresenter::MENUPresenter(MENUView&)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/menu_screen/MENUPresenter.cpp:4:1:MENUPresenter::MENUPresenter(MENUView&)	8	static

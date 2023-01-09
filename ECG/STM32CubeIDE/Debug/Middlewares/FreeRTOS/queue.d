@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/queue.o: \
- D:/TouchGFXProjects/ECG/Middlewares/Third_Party/FreeRTOS/Source/queue.c \
+ D:/ProjetoSTM32ECG/ECG/Middlewares/Third_Party/FreeRTOS/Source/queue.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

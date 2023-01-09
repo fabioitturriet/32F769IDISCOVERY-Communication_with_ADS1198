@@ -19,6 +19,57 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_8O3B" Alignment="Left" TypographyId="paciente">
+        <Translation Language="GB">Escala</Translation>
+      </Text>
+      <Text Id="__SingleUse_6667" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_4XY9" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_HEVB" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_GB6Y" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_2APE" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">6</Translation>
+      </Text>
+      <Text Id="__SingleUse_BQ92" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">8</Translation>
+      </Text>
+      <Text Id="__SingleUse_2GRA" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">12</Translation>
+      </Text>
+      <Text Id="__SingleUse_72N9" Alignment="Left" TypographyId="menus">
+        <Translation Language="GB">Configurações</Translation>
+      </Text>
+      <Text Id="__SingleUse_F1Q4" Alignment="Left" TypographyId="menus">
+        <Translation Language="GB">Intruções</Translation>
+      </Text>
+      <Text Id="__SingleUse_5AGV" Alignment="Right" TypographyId="Configuracoes">
+        <Translation Language="GB">Entrada dos&#10;canais:</Translation>
+      </Text>
+      <Text Id="__SingleUse_G1L5" Alignment="Right" TypographyId="Configuracoes">
+        <Translation Language="GB">Ganho dos&#10;canais:</Translation>
+      </Text>
+      <Text Id="__SingleUse_9M2J" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">125SPS</Translation>
+      </Text>
+      <Text Id="__SingleUse_OWUG" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">250SPS</Translation>
+      </Text>
+      <Text Id="__SingleUse_96UY" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">500SPS</Translation>
+      </Text>
+      <Text Id="__SingleUse_1JPQ" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">1kSPS</Translation>
+      </Text>
+      <Text Id="__SingleUse_UBY0" Alignment="Right" TypographyId="Configuracoes">
+        <Translation Language="GB" Alignment="Right">Frequência de&#10;amostragem:</Translation>
+      </Text>
       <Text Id="__SingleUse_NTIO" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Exemplo</Translation>
       </Text>
@@ -88,5 +139,7 @@
     <Typography Id="Typography_03" Font="arial.ttf" Size="16" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="subtitulo" Font="arial.ttf" Size="35" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="lista" Font="calibri.ttf" Size="27" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Configuracoes" Font="arial.ttf" Size="22" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="configuracoes1" Font="arial.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

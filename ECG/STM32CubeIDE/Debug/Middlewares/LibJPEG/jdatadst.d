@@ -1,5 +1,5 @@
 Middlewares/LibJPEG/jdatadst.o: \
- D:/TouchGFXProjects/ECG/Middlewares/Third_Party/LibJPEG/source/jdatadst.c \
+ D:/ProjetoSTM32ECG/ECG/Middlewares/Third_Party/LibJPEG/source/jdatadst.c \
  ../../Middlewares/Third_Party/LibJPEG/include/jinclude.h \
  ../../LIBJPEG/Target/jconfig.h ../../LIBJPEG/Target/jdata_conf.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \

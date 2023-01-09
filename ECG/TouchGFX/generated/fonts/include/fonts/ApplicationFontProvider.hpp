@@ -25,23 +25,27 @@ struct Typography
     static const touchgfx::FontId TYPOGRAPHY_03 = 9;
     static const touchgfx::FontId SUBTITULO = 10;
     static const touchgfx::FontId LISTA = 11;
+    static const touchgfx::FontId CONFIGURACOES = 12;
+    static const touchgfx::FontId CONFIGURACOES1 = 13;
 };
 
 struct TypographyFontIndex
 {
-    static const touchgfx::FontId DEFAULT = 0;       // arial_28_4bpp
-    static const touchgfx::FontId LARGE = 1;         // verdana_40_4bpp
-    static const touchgfx::FontId SMALL = 2;         // verdana_25_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_00 = 3; // arial_40_4bpp
-    static const touchgfx::FontId TITULO = 4;        // arial_52_4bpp
-    static const touchgfx::FontId MENUS = 5;         // arial_45_4bpp
-    static const touchgfx::FontId BATERIA = 2;       // verdana_25_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_02 = 6; // ariblk_34_4bpp
-    static const touchgfx::FontId PACIENTE = 7;      // ariblk_27_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_03 = 8; // arial_16_4bpp
-    static const touchgfx::FontId SUBTITULO = 9;     // arial_35_4bpp
-    static const touchgfx::FontId LISTA = 10;         // calibri_27_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 11;
+    static const touchgfx::FontId DEFAULT = 0;        // arial_28_4bpp
+    static const touchgfx::FontId LARGE = 1;          // verdana_40_4bpp
+    static const touchgfx::FontId SMALL = 2;          // verdana_25_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_00 = 3;  // arial_40_4bpp
+    static const touchgfx::FontId TITULO = 4;         // arial_52_4bpp
+    static const touchgfx::FontId MENUS = 5;          // arial_45_4bpp
+    static const touchgfx::FontId BATERIA = 2;        // verdana_25_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_02 = 6;  // ariblk_34_4bpp
+    static const touchgfx::FontId PACIENTE = 7;       // ariblk_27_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_03 = 8;  // arial_16_4bpp
+    static const touchgfx::FontId SUBTITULO = 9;      // arial_35_4bpp
+    static const touchgfx::FontId LISTA = 10;          // calibri_27_4bpp
+    static const touchgfx::FontId CONFIGURACOES = 11;  // arial_22_4bpp
+    static const touchgfx::FontId CONFIGURACOES1 = 12; // arial_20_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 13;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

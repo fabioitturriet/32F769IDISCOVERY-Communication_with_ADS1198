@@ -1,5 +1,5 @@
 Application/User/generated/Texts.o: \
- D:/TouchGFXProjects/ECG/TouchGFX/generated/texts/src/Texts.cpp \
+ D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/texts/src/Texts.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TextProvider.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \

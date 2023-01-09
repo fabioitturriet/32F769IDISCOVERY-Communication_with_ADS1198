@@ -1,2 +1,16 @@
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/model/Model.cpp:24:1:Model::Model()	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/model/Model.cpp:29:6:void Model::tick()	32	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:39:1:Model::Model()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:44:6:void Model::tick()	32	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:74:6:void Model::M_1kSPS_selected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:79:6:void Model::M_500SPS_selected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:84:6:void Model::M_250SPS_selected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:89:6:void Model::M_125SPS_selected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:94:6:void Model::M_Gain12_selected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:105:6:void Model::M_Gain8_selected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:116:6:void Model::M_Gain6_selected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:127:6:void Model::M_Gain4_selected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:138:6:void Model::M_Gain3_selected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:149:6:void Model::M_Gain2_selected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:160:6:void Model::M_Gain1_selected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:171:6:void Model::StartRDataC()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:177:6:void Model::StopRDataC()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/model/Model.cpp:182:6:void Model::AjusteEscala()	8	static

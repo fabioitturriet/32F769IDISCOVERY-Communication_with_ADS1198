@@ -1,6 +1,7 @@
-../../TouchGFX/gui/include/gui/model/ModelListener.hpp:18:18:virtual void ModelListener::UpdateGraph(uint16_t)	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:15:18:virtual void ModelListener::SetMinMaxEscalaGraph(int16_t, int16_t)	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:21:18:virtual void ModelListener::UpdateGraph(float)	0	static
 ../../TouchGFX/gui/include/gui/cadastro_screen/CadastroPresenter.hpp:28:13:CadastroPresenter::~CadastroPresenter()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/cadastro_screen/CadastroPresenter.cpp:10:6:virtual void CadastroPresenter::activate()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/cadastro_screen/CadastroPresenter.cpp:10:6:virtual void CadastroPresenter::activate()	0	static
 ../../TouchGFX/gui/include/gui/cadastro_screen/CadastroPresenter.hpp:28:13:virtual CadastroPresenter::~CadastroPresenter()	8	static
 ../../TouchGFX/gui/include/gui/cadastro_screen/CadastroPresenter.hpp:28:13:virtual void* CadastroPresenter::_ZThn4_N17CadastroPresenterD1Ev()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/cadastro_screen/CadastroPresenter.cpp:4:1:CadastroPresenter::CadastroPresenter(CadastroView&)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/cadastro_screen/CadastroPresenter.cpp:4:1:CadastroPresenter::CadastroPresenter(CadastroView&)	8	static

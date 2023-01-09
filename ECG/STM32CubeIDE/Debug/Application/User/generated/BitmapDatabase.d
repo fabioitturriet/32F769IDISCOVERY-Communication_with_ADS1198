@@ -1,5 +1,5 @@
 Application/User/generated/BitmapDatabase.o: \
- D:/TouchGFXProjects/ECG/TouchGFX/generated/images/src/BitmapDatabase.cpp \
+ D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/images/src/BitmapDatabase.cpp \
  ../../TouchGFX/generated/images/include/BitmapDatabase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp \

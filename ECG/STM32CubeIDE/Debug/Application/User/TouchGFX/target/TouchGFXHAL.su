@@ -5,34 +5,34 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1002:18:virtual void touchgfx::HAL::taskDelay(uint16_t)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1029:22:virtual uint16_t touchgfx::HAL::getTFTCurrentLine()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1040:21:virtual touchgfx::DMAType touchgfx::HAL::getDMAType()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:170:11:virtual uint16_t* TouchGFXHAL::getTFTFrameBuffer() const	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:170:11:virtual uint16_t* TouchGFXHAL::getTFTFrameBuffer() const	0	static
 ../../TouchGFX/target/TouchGFXHAL.hpp:38:7:TouchGFXHAL::~TouchGFXHAL()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:206:6:virtual void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect&)	16	static,ignoring_inline_asm
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:252:6:virtual void TouchGFXHAL::enableInterrupts()	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:316:6:virtual void TouchGFXHAL::endFrame()	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:187:6:virtual void TouchGFXHAL::setTFTFrameBuffer(uint16_t*)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:206:6:virtual void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect&)	16	static,ignoring_inline_asm
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:252:6:virtual void TouchGFXHAL::enableInterrupts()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:316:6:virtual void TouchGFXHAL::endFrame()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:187:6:virtual void TouchGFXHAL::setTFTFrameBuffer(uint16_t*)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:616:18:virtual void touchgfx::HAL::backPorchExited()	8	static
 ../../TouchGFX/target/TouchGFXHAL.hpp:111:18:virtual void TouchGFXHAL::flushFrameBuffer()	0	static
 ../../TouchGFX/target/TouchGFXHAL.hpp:38:7:virtual TouchGFXHAL::~TouchGFXHAL()	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:310:6:virtual bool TouchGFXHAL::beginFrame()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:112:6:virtual void TouchGFXHAL::initialize()	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:137:6:virtual void TouchGFXHAL::taskEntry()	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:232:6:virtual void TouchGFXHAL::configureInterrupts()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:310:6:virtual bool TouchGFXHAL::beginFrame()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:112:6:virtual void TouchGFXHAL::initialize()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:137:6:virtual void TouchGFXHAL::taskEntry()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:232:6:virtual void TouchGFXHAL::configureInterrupts()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:298:28:virtual touchgfx::BlitOperations touchgfx::HAL::getBlitCaps()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:1150:18:virtual void touchgfx::HAL::performDisplayOrientationChange()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:156:18:virtual void touchgfx::HAL::setFrameBufferSize(uint16_t, uint16_t)	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:268:6:virtual void TouchGFXHAL::disableInterrupts()	8	static,ignoring_inline_asm
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:304:6:virtual void TouchGFXHAL::setFrameBufferStartAddresses(void*, void*, void*)	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:98:1:TouchGFXHAL::TouchGFXHAL(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, uint16_t, uint16_t)	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:333:17:void OTM8009A_IO_Delay(uint32_t)	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:345:10:void DSI_IO_WriteCmd(uint32_t, uint8_t*)	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:360:10:void LCD_ReqEnable()	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:384:10:void LCD_ReqTear()	24	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:285:6:virtual void TouchGFXHAL::enableLCDControllerInterrupt()	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:397:10:void LCD_SetUpdateRegion(int)	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:402:10:void LCD_SetUpdateRegionLeft()	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:407:10:void LCD_SetUpdateRegionRight()	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:421:10:void HAL_DSI_TearingEffectCallback(DSI_HandleTypeDef*)	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:458:10:void HAL_DSI_EndOfRefreshCallback(DSI_HandleTypeDef*)	16	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:559:19:long int IdleTaskHook(void*)	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/target/TouchGFXHAL.cpp:571:1:cpp)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:268:6:virtual void TouchGFXHAL::disableInterrupts()	8	static,ignoring_inline_asm
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:304:6:virtual void TouchGFXHAL::setFrameBufferStartAddresses(void*, void*, void*)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:98:1:TouchGFXHAL::TouchGFXHAL(touchgfx::DMA_Interface&, touchgfx::LCD&, touchgfx::TouchController&, uint16_t, uint16_t)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:333:17:void OTM8009A_IO_Delay(uint32_t)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:345:10:void DSI_IO_WriteCmd(uint32_t, uint8_t*)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:360:10:void LCD_ReqEnable()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:384:10:void LCD_ReqTear()	24	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:285:6:virtual void TouchGFXHAL::enableLCDControllerInterrupt()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:397:10:void LCD_SetUpdateRegion(int)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:402:10:void LCD_SetUpdateRegionLeft()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:407:10:void LCD_SetUpdateRegionRight()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:421:10:void HAL_DSI_TearingEffectCallback(DSI_HandleTypeDef*)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:458:10:void HAL_DSI_EndOfRefreshCallback(DSI_HandleTypeDef*)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:559:19:long int IdleTaskHook(void*)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/target/TouchGFXHAL.cpp:571:1:cpp)	0	static

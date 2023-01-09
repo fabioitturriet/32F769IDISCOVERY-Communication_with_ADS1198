@@ -1,5 +1,5 @@
 Application/User/generated/Table_calibri_27_4bpp.o: \
- D:/TouchGFXProjects/ECG/TouchGFX/generated/fonts/src/Table_calibri_27_4bpp.cpp \
+ D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/fonts/src/Table_calibri_27_4bpp.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/GeneratedFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/ConstFont.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

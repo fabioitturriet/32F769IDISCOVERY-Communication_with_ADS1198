@@ -19,7 +19,7 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<MENUPresenter>::~View()	0	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/menu_screen/MENUViewBase.hpp:19:13:MENUViewBase::~MENUViewBase()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/menu_screen/MENUViewBase.cpp:81:6:virtual void MENUViewBase::setupScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/menu_screen/MENUViewBase.cpp:81:6:virtual void MENUViewBase::setupScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<MENUViewBase, const touchgfx::AbstractButton&>::~Callback()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = MENUViewBase; T1 = const touchgfx::AbstractButton&]	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = MENUViewBase; T1 = const touchgfx::AbstractButton&]	0	static
@@ -28,10 +28,10 @@ D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/menu_screen/MENUVie
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<MENUPresenter>::~View()	8	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/menu_screen/MENUViewBase.hpp:19:13:virtual MENUViewBase::~MENUViewBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/menu_screen/MENUViewBase.cpp:86:6:void MENUViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/menu_screen/MENUViewBase.cpp:86:6:void MENUViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:33:5:touchgfx::Box::Box()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:132:10:void touchgfx::ButtonWithLabel::updateTextPosition()	24	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/gui_generated/src/menu_screen/MENUViewBase.cpp:9:1:MENUViewBase::MENUViewBase()	112	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/menu_screen/MENUViewBase.cpp:9:1:MENUViewBase::MENUViewBase()	112	static

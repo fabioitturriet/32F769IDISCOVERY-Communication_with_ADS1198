@@ -1,6 +1,6 @@
 Utilities/jpeg_utils.o: \
- D:/TouchGFXProjects/ECG/Utilities/JPEG/jpeg_utils.c \
- D:/TouchGFXProjects/ECG/Utilities/JPEG/jpeg_utils.h \
+ D:/ProjetoSTM32ECG/ECG/Utilities/JPEG/jpeg_utils.c \
+ D:/ProjetoSTM32ECG/ECG/Utilities/JPEG/jpeg_utils.h \
  ../../Core/Inc/jpeg_utils_conf.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
@@ -45,7 +45,7 @@ Utilities/jpeg_utils.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dsi.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_jpeg.h
-D:/TouchGFXProjects/ECG/Utilities/JPEG/jpeg_utils.h:
+D:/ProjetoSTM32ECG/ECG/Utilities/JPEG/jpeg_utils.h:
 ../../Core/Inc/jpeg_utils_conf.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:

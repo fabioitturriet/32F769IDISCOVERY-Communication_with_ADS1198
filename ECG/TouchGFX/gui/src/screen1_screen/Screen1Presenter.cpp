@@ -16,7 +16,24 @@ void Screen1Presenter::deactivate()
 {
 
 }
-void Screen1Presenter::UpdateGraph(uint16_t value)
+
+void Screen1Presenter::UpdateGraph(float value)
 {
 	view.UpdateGraph(value); //atualiza o gráfico com o valor
+}
+
+void Screen1Presenter::PresenterStopData()
+{
+	model->StopRDataC();
+}
+
+void Screen1Presenter::PresenterAjusteEscala()
+{
+	model->AjusteEscala();
+}
+
+void Screen1Presenter::SetMinMaxEscalaGraph(int16_t SetMinEscala, int16_t SetMaxEscala)
+{
+	view.SetMinMaxEscalaGraph(SetMinEscala, SetMaxEscala);
+
 }

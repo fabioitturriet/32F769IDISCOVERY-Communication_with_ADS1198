@@ -1,11 +1,11 @@
 Application/User/TouchGFX/target/STM32TouchController.o: \
- D:/TouchGFXProjects/ECG/TouchGFX/target/STM32TouchController.cpp \
+ D:/ProjetoSTM32ECG/ECG/TouchGFX/target/STM32TouchController.cpp \
  ../../TouchGFX/target/STM32TouchController.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp \
  ../../Drivers/BSP/Components/Common/../ft6x06/ft6x06.h \
- d:\touchgfxprojects\ecg\drivers\bsp\components\common\ts.h \
+ d:\projetostm32ecg\ecg\drivers\bsp\components\common\ts.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \
@@ -54,7 +54,7 @@ Application/User/TouchGFX/target/STM32TouchController.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp:
 ../../Drivers/BSP/Components/Common/../ft6x06/ft6x06.h:
-d:\touchgfxprojects\ecg\drivers\bsp\components\common\ts.h:
+d:\projetostm32ecg\ecg\drivers\bsp\components\common\ts.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:

@@ -1,6 +1,6 @@
 Application/User/LIBJPEG/App/libjpeg.o: \
- D:/TouchGFXProjects/ECG/LIBJPEG/App/libjpeg.c \
- D:/TouchGFXProjects/ECG/LIBJPEG/App/libjpeg.h \
+ D:/ProjetoSTM32ECG/ECG/LIBJPEG/App/libjpeg.c \
+ D:/ProjetoSTM32ECG/ECG/LIBJPEG/App/libjpeg.h \
  ../../Middlewares/Third_Party/LibJPEG/include/jpeglib.h \
  ../../LIBJPEG/Target/jconfig.h ../../LIBJPEG/Target/jdata_conf.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
@@ -15,7 +15,7 @@ Application/User/LIBJPEG/App/libjpeg.o: \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../../LIBJPEG/Target/jmorecfg.h
-D:/TouchGFXProjects/ECG/LIBJPEG/App/libjpeg.h:
+D:/ProjetoSTM32ECG/ECG/LIBJPEG/App/libjpeg.h:
 ../../Middlewares/Third_Party/LibJPEG/include/jpeglib.h:
 ../../LIBJPEG/Target/jconfig.h:
 ../../LIBJPEG/Target/jdata_conf.h:

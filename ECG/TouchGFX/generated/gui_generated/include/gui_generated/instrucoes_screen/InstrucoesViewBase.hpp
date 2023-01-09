@@ -13,6 +13,7 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/containers/buttons/Buttons.hpp>
 
 class InstrucoesViewBase : public touchgfx::View<InstrucoesPresenter>
 {
@@ -41,6 +42,8 @@ protected:
     touchgfx::Image image1;
     touchgfx::TextArea textArea1;
     touchgfx::Button voltar;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger > CliqueImagem;
+    touchgfx::TextArea textArea2;
 
 private:
 
@@ -48,12 +51,14 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<InstrucoesViewBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<InstrucoesViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
     touchgfx::Callback<InstrucoesViewBase, touchgfx::DrawableListItemsInterface*, int16_t, int16_t> updateItemCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
     void updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex);
 
 };

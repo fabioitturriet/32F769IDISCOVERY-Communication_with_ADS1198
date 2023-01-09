@@ -7,8 +7,9 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
 
 class ContainerListaDeInstrucoesBase : public touchgfx::Container
 {
@@ -26,9 +27,9 @@ protected:
      * Member Declarations
      */
     touchgfx::Box box1;
-    touchgfx::Image image1;
     touchgfx::TextArea textArea1;
     touchgfx::Image image2;
+    touchgfx::ToggleButton toggleButton1;
 
 private:
 

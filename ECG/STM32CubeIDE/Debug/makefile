@@ -90,8 +90,8 @@ all: main-build
 main-build: STM32F769I_DISCO.elf secondary-outputs
 
 # Tool invocations
-STM32F769I_DISCO.elf STM32F769I_DISCO.map: $(OBJS) $(USER_OBJS) D:\TouchGFXProjects\ECG\STM32CubeIDE\STM32F769NIHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "STM32F769I_DISCO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\TouchGFXProjects\ECG\STM32CubeIDE\STM32F769NIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F769I_DISCO.map" -Wl,--gc-sections -static -LC:/dev/strangerthings/test_ats/unknown_aecbb7dcce63/target/at/stm32f769i_disco/STM32F769I_DISCO/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc -LD:/TouchGFXProjects/ECG/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+STM32F769I_DISCO.elf STM32F769I_DISCO.map: $(OBJS) $(USER_OBJS) D:\ProjetoSTM32ECG\ECG\STM32CubeIDE\STM32F769NIHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "STM32F769I_DISCO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\ProjetoSTM32ECG\ECG\STM32CubeIDE\STM32F769NIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F769I_DISCO.map" -Wl,--gc-sections -static -LC:/dev/strangerthings/test_ats/unknown_aecbb7dcce63/target/at/stm32f769i_disco/STM32F769I_DISCO/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc -LD:/TouchGFXProjects/ECG/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc -LD:/ProjetoSTM32ECG/ECG/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

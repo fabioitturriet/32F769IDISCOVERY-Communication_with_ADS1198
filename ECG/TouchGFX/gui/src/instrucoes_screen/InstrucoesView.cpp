@@ -30,24 +30,25 @@ void InstrucoesView::scrollList1_ItemSelectedHandler(int16_t itemSelected)
 {
 	image1.invalidate();
 	//textArea1.invalidate();
-
+	CliqueImagem.setVisible(false);
     switch (itemSelected)
     {
     case 0:
-    	image1.setBitmap(Bitmap(BITMAP_LOGO_TECH4HEALTH_ID));
+    	image1.setBitmap(Bitmap(BITMAP_DEITADOEDIT_ID));
     	//textArea2.setTypedText(TypedText(T_RESOURCEID4));
     	break;
     case 1:
-    	image1.setBitmap(Bitmap(BITMAP_VERSAOVERTICAL_RESIZED_ID));
+    	image1.setBitmap(Bitmap(BITMAP_ORIENTACAOEDIT_ID));
     	//textArea2.setTypedText(TypedText(T_RESOURCEID3));
     	break;
     case 2:
-    	image1.setBitmap(Bitmap(BITMAP_ICONS8_CLOUD_96_ID));
+    	image1.setBitmap(Bitmap(BITMAP_GELCONDUTOREDIT_ID));
     	//textArea2.setTypedText(TypedText(T_RESOURCEID2));
     	break;
     case 3:
-    	image1.setBitmap(Bitmap(BITMAP_ICONS8_PATIENT_64_ID));
+    	image1.setBitmap(Bitmap(BITMAP_LOCAL_ELETRODOS_CORPO_ID));
     	//textArea2.setTypedText(TypedText(T_RESOURCEID1));
+    	CliqueImagem.setVisible(true);
     	break;
     default:
     	break;
@@ -55,3 +56,5 @@ void InstrucoesView::scrollList1_ItemSelectedHandler(int16_t itemSelected)
 
 	image1.invalidate();
 }
+
+

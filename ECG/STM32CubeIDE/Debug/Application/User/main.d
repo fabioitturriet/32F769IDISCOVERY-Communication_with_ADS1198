@@ -1,4 +1,4 @@
-Application/User/main.o: D:/TouchGFXProjects/ECG/Core/Src/main.c \
+Application/User/main.o: D:/ProjetoSTM32ECG/ECG/Core/Src/main.c \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../../Core/Inc/stm32f7xx_hal_conf.h \
@@ -60,7 +60,7 @@ Application/User/main.o: D:/TouchGFXProjects/ECG/Core/Src/main.c \
  ../../LIBJPEG/Target/jmorecfg.h ../../TouchGFX/App/app_touchgfx.h \
  ../../Drivers/BSP/Components/Common/../mx25l512/mx25l512.h \
  ../../Drivers/BSP/Components/Common/../otm8009a/otm8009a.h \
- D:/TouchGFXProjects/ECG/STM32CubeIDE/Application/User/biblioteca_ADS1198/ADS1298.h \
+ D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_ADS1198/ADS1298.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 ../../Core/Inc/main.h:
@@ -126,6 +126,6 @@ Application/User/main.o: D:/TouchGFXProjects/ECG/Core/Src/main.c \
 ../../TouchGFX/App/app_touchgfx.h:
 ../../Drivers/BSP/Components/Common/../mx25l512/mx25l512.h:
 ../../Drivers/BSP/Components/Common/../otm8009a/otm8009a.h:
-D:/TouchGFXProjects/ECG/STM32CubeIDE/Application/User/biblioteca_ADS1198/ADS1298.h:
+D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_ADS1198/ADS1298.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:

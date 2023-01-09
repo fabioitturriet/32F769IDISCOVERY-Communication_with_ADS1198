@@ -255,10 +255,10 @@
             "Type": "Image",
             "Name": "image1",
             "X": 533,
-            "Y": 151,
+            "Y": 125,
             "Width": 250,
             "Height": 250,
-            "RelativeFilename": "Logo_Tech4Health.png"
+            "RelativeFilename": "deitadoedit.png"
           },
           {
             "Type": "TextArea",
@@ -279,12 +279,66 @@
           {
             "Type": "Button",
             "Name": "voltar",
-            "X": 6,
-            "Y": 6,
+            "X": 12,
+            "Y": 10,
             "Width": 28,
             "Height": 48,
             "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
             "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "CliqueImagem",
+            "X": 533,
+            "Y": 126,
+            "Width": 250,
+            "Height": 311,
+            "Visible": false,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 250,
+                "Height": 311,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 308,
+            "Width": 185,
+            "Height": 52,
+            "TextId": "__SingleUse_F1Q4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -298,6 +352,18 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "MENU"
+            }
+          },
+          {
+            "InteractionName": "InteractionCliqueImagem",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "CliqueImagem"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Includes": "",
+              "Code": "image1.invalidate();\r\nif(image1.getBitmap() == BITMAP_LOCAL_ELETRODOS_CORPO_ID){\r\n\timage1.setBitmap(Bitmap(BITMAP_LOCAL_ELETRODOS_PEITO_ID));\r\n}else{\r\n\timage1.setBitmap(Bitmap(BITMAP_LOCAL_ELETRODOS_CORPO_ID));\r\n}\r\nimage1.invalidate();"
             }
           }
         ]
@@ -319,12 +385,449 @@
           {
             "Type": "Button",
             "Name": "voltar",
-            "X": 6,
-            "Y": 6,
+            "X": 12,
+            "Y": 10,
             "Width": 28,
             "Height": 48,
             "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
             "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "FreqAmostragem",
+            "X": 27,
+            "Y": 84,
+            "Width": 141,
+            "Height": 50,
+            "TextId": "__SingleUse_UBY0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "barra_divisoria",
+            "X": 26,
+            "Y": 80,
+            "Width": 775,
+            "Height": 2,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 252,
+            "Y": 98,
+            "Width": 61,
+            "Height": 23,
+            "TextId": "__SingleUse_1JPQ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_1",
+            "X": 383,
+            "Y": 98,
+            "Width": 74,
+            "Height": 23,
+            "TextId": "__SingleUse_96UY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_1_1",
+            "X": 514,
+            "Y": 98,
+            "Width": 74,
+            "Height": 23,
+            "TextId": "__SingleUse_OWUG",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_1_1_1",
+            "X": 645,
+            "Y": 98,
+            "Width": 74,
+            "Height": 23,
+            "TextId": "__SingleUse_9M2J",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 60,
+            "Y": 147,
+            "Width": 108,
+            "Height": 50,
+            "TextId": "__SingleUse_G1L5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "barra_divisoria_1",
+            "X": 27,
+            "Y": 143,
+            "Width": 775,
+            "Height": 2,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1",
+            "X": 50,
+            "Y": 206,
+            "Width": 118,
+            "Height": 50,
+            "TextId": "__SingleUse_5AGV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "barra_divisoria_1_1",
+            "X": 26,
+            "Y": 203,
+            "Width": 775,
+            "Height": 2,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButton1kSPS",
+            "X": 217,
+            "Y": 94,
+            "Width": 30,
+            "Height": 30,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupFreqAmost"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButton500SPS",
+            "X": 348,
+            "Y": 94,
+            "Width": 30,
+            "Height": 30,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupFreqAmost"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButton250SPS",
+            "X": 479,
+            "Y": 94,
+            "Width": 30,
+            "Height": 30,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupFreqAmost"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButton125SPS",
+            "X": 610,
+            "Y": 94,
+            "Width": 30,
+            "Height": 30,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupFreqAmost"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 255,
+            "Width": 290,
+            "Height": 52,
+            "TextId": "__SingleUse_72N9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "ConfigtoExame",
+            "X": 719,
+            "Y": 399,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "IconPressed": "__designer\\Blue_Icons_Play_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Play_32.png",
+            "IconX": 20,
+            "IconY": 15,
+            "IconHeight": 30,
+            "IconWidth": 21
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonGain12",
+            "X": 207,
+            "Y": 157,
+            "Width": 30,
+            "Height": 30,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupGain"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonGain8",
+            "X": 286,
+            "Y": 157,
+            "Width": 30,
+            "Height": 30,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupGain"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonGain6",
+            "X": 368,
+            "Y": 157,
+            "Width": 30,
+            "Height": 30,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupGain"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonGain4",
+            "X": 450,
+            "Y": 157,
+            "Width": 30,
+            "Height": 30,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupGain"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonGain3",
+            "X": 532,
+            "Y": 157,
+            "Width": 30,
+            "Height": 30,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupGain"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonGain2",
+            "X": 614,
+            "Y": 157,
+            "Width": 30,
+            "Height": 30,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupGain"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonGain1",
+            "X": 696,
+            "Y": 157,
+            "Width": 30,
+            "Height": 30,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupGain"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_2",
+            "X": 241,
+            "Y": 161,
+            "Width": 22,
+            "Height": 23,
+            "TextId": "__SingleUse_2GRA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_2_1",
+            "X": 320,
+            "Y": 161,
+            "Width": 11,
+            "Height": 23,
+            "TextId": "__SingleUse_BQ92",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_2_1_1",
+            "X": 403,
+            "Y": 161,
+            "Width": 11,
+            "Height": 23,
+            "TextId": "__SingleUse_2APE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_2_1_1_1",
+            "X": 484,
+            "Y": 161,
+            "Width": 11,
+            "Height": 23,
+            "TextId": "__SingleUse_GB6Y",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_2_1_1_1_1",
+            "X": 566,
+            "Y": 161,
+            "Width": 11,
+            "Height": 23,
+            "TextId": "__SingleUse_HEVB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_2_1_1_1_1_1",
+            "X": 648,
+            "Y": 161,
+            "Width": 11,
+            "Height": 23,
+            "TextId": "__SingleUse_4XY9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_2_1_1_1_1_1_1",
+            "X": 730,
+            "Y": 161,
+            "Width": 11,
+            "Height": 23,
+            "TextId": "__SingleUse_6667",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -338,6 +841,150 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "MENU"
+            }
+          },
+          {
+            "InteractionName": "Interaction1kSPS",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButton1kSPS"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Set1kSPS"
+            }
+          },
+          {
+            "InteractionName": "Interaction500SPS",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButton500SPS"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Set500SPS"
+            }
+          },
+          {
+            "InteractionName": "Interaction250SPS",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButton250SPS"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Set250SPS"
+            }
+          },
+          {
+            "InteractionName": "Interaction125SPS",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButton125SPS"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Set125SPS"
+            }
+          },
+          {
+            "InteractionName": "InteractionConfigToExame",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ConfigtoExame"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "InteractionGain12",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonGain12"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SetGain12"
+            }
+          },
+          {
+            "InteractionName": "InteractionGain8",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonGain8"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SetGain8"
+            }
+          },
+          {
+            "InteractionName": "InteractionGain6",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonGain6"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SetGain6"
+            }
+          },
+          {
+            "InteractionName": "InteractionGain4",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonGain4"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SetGain4"
+            }
+          },
+          {
+            "InteractionName": "InteractionGain3",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonGain3"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SetGain4"
+            }
+          },
+          {
+            "InteractionName": "InteractionGain2",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonGain2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SetGain2"
+            }
+          },
+          {
+            "InteractionName": "InteractionGain1",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonGain1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SetGain1"
+            }
+          },
+          {
+            "InteractionName": "InteractionStartRDataC",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ConfigtoExame"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "StartRDataC"
             }
           }
         ]
@@ -359,8 +1006,8 @@
           {
             "Type": "Button",
             "Name": "voltar",
-            "X": 6,
-            "Y": 6,
+            "X": 12,
+            "Y": 10,
             "Width": 28,
             "Height": 48,
             "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
@@ -493,7 +1140,7 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel4",
-            "X": 461,
+            "X": 465,
             "Y": 203,
             "Width": 170,
             "Height": 60,
@@ -513,11 +1160,13 @@
           },
           {
             "Type": "Button",
-            "Name": "button1",
-            "Width": 64,
-            "Height": 64,
-            "Pressed": "icons8-reply-arrow-64.png",
-            "Released": "icons8-reply-arrow-64.png"
+            "Name": "voltar",
+            "X": 12,
+            "Y": 10,
+            "Width": 28,
+            "Height": 48,
+            "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
+            "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
           }
         ],
         "Interactions": [
@@ -541,14 +1190,14 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "iniciar"
+              "FunctionName": "StartRead"
             }
           },
           {
             "InteractionName": "Interaction3",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "button1"
+              "TriggerComponent": "voltar"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -577,19 +1226,17 @@
           {
             "Type": "DynamicGraph",
             "Name": "dynamicGraph1",
-            "Y": -2,
             "Width": 800,
             "Height": 480,
             "DataSeed": -49451018,
             "NumberOfValues": 800,
-            "MaxY": 120.0,
+            "MaxY": 1250.0,
+            "MinY": -1250.0,
             "Precision": "1",
             "LastIndex": 799,
-            "MapDataPointIndexToCustomValue": true,
-            "XAxisScale": 0.001,
+            "XAxisScale": 1.0,
             "InsertRandomValues": true,
             "LabelSizeTop": 36,
-            "LabelSizeBottom": 30,
             "GraphType": "GraphWrapOverwrite",
             "GraphDrawers": [
               {
@@ -603,61 +1250,49 @@
             "XAxisGrid": {
               "Type": "GraphGrid",
               "Color": {
-                "Red": 201,
-                "Green": 201,
-                "Blue": 201
+                "Red": 97,
+                "Green": 97,
+                "Blue": 97
               },
-              "Interval": 20.0,
+              "Interval": 100.0,
               "LineWidth": 2
             },
             "MinorXAxisGrid": {
               "Type": "GraphGrid",
               "Color": {
-                "Red": 201,
-                "Green": 201,
-                "Blue": 201
+                "Red": 97,
+                "Green": 97,
+                "Blue": 97
               },
-              "Interval": 4.0,
+              "Interval": 20.0,
               "LineWidth": 1
             },
             "YAxisGrid": {
               "Type": "GraphGrid",
               "Color": {
-                "Red": 201,
-                "Green": 201,
-                "Blue": 201
+                "Red": 89,
+                "Green": 89,
+                "Blue": 89
               },
-              "Interval": 8.0,
+              "Interval": 500.0,
               "LineWidth": 2
             },
             "MinorYAxisGrid": {
               "Type": "GraphGrid",
               "Color": {
-                "Red": 201,
-                "Green": 201,
-                "Blue": 201
+                "Red": 97,
+                "Green": 97,
+                "Blue": 97
               },
-              "Interval": 2.0,
+              "Interval": 100.0,
               "LineWidth": 1
             }
           },
           {
             "Type": "Box",
-            "Name": "box2",
-            "Width": 64,
-            "Height": 64,
-            "Color": {
-              "Red": 219,
-              "Green": 219,
-              "Blue": 219
-            }
-          },
-          {
-            "Type": "Box",
             "Name": "box3",
-            "X": 64,
             "Y": -2,
-            "Width": 736,
+            "Width": 800,
             "Height": 37,
             "Color": {
               "Red": 219,
@@ -666,21 +1301,13 @@
             }
           },
           {
-            "Type": "Button",
-            "Name": "button1",
-            "Width": 64,
-            "Height": 64,
-            "Pressed": "icons8-reply-arrow-64.png",
-            "Released": "icons8-reply-arrow-64.png"
-          },
-          {
             "Type": "Image",
             "Name": "image2",
             "X": 576,
             "Y": 410,
-            "Width": 48,
-            "Height": 48,
-            "RelativeFilename": "icons8-heart-48.png"
+            "Width": 250,
+            "Height": 250,
+            "RelativeFilename": "deitadoedit.png"
           },
           {
             "Type": "TextArea",
@@ -697,7 +1324,7 @@
             "Type": "TextArea",
             "Name": "textArea2",
             "X": 624,
-            "Y": 410,
+            "Y": 426,
             "Width": 162,
             "Height": 48,
             "TextId": "__SingleUse_1XTZ",
@@ -711,7 +1338,7 @@
             "Type": "TextArea",
             "Name": "textArea3",
             "X": 88,
-            "Y": 410,
+            "Y": 426,
             "Width": 129,
             "Height": 48,
             "TextId": "__SingleUse_NFTU",
@@ -814,24 +1441,122 @@
             "Type": "ScalableImage",
             "Name": "scalableImage8",
             "X": 40,
-            "Y": 410,
+            "Y": 426,
             "Width": 48,
             "Height": 48,
             "Filename": "icons8-electrode-32.png",
             "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Button",
+            "Name": "voltar",
+            "X": 12,
+            "Y": 10,
+            "Width": 28,
+            "Height": 48,
+            "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
+            "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "ConfigExame",
+            "X": 492,
+            "Y": 420,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "IconPressed": "__designer\\Blue_Icons_Settings_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Settings_32.png",
+            "IconX": 15,
+            "IconY": 15,
+            "IconHeight": 30,
+            "IconWidth": 30
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1",
+            "X": 270,
+            "Y": 420,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "IconPressed": "__designer\\Blue_Icons_Refresh_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Refresh_32.png",
+            "IconX": 15,
+            "IconY": 16,
+            "IconHeight": 28,
+            "IconWidth": 30
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea6",
+            "X": 332,
+            "Y": 431,
+            "Width": 99,
+            "Height": 38,
+            "TextId": "__SingleUse_8O3B",
+            "TextRotation": "0",
+            "AutoSize": true
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "interationVoltar",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "button1"
+              "TriggerComponent": "voltar"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Screen2"
+            }
+          },
+          {
+            "InteractionName": "interationExameToConfig",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ConfigExame"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuracoes"
+            }
+          },
+          {
+            "InteractionName": "InteractionStopData1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "voltar"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "StopData"
+            }
+          },
+          {
+            "InteractionName": "InteractionStopData2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "ConfigExame"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "StopData"
+            }
+          },
+          {
+            "InteractionName": "Interactionescala",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "AjusteEscala"
             }
           }
         ]
@@ -840,7 +1565,6 @@
     "CustomContainerDefinitions": [
       {
         "Name": "ContainerListaDeInstrucoes",
-        "X": -2,
         "Width": 500,
         "Height": 80,
         "Components": [
@@ -854,15 +1578,6 @@
               "Green": 255,
               "Blue": 255
             }
-          },
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "X": 15,
-            "Y": 17,
-            "Width": 46,
-            "Height": 46,
-            "RelativeFilename": "__designer\\Blue_Icons_Done_48.png"
           },
           {
             "Type": "TextArea",
@@ -883,6 +1598,16 @@
             "Height": 2,
             "RelativeFilename": "__designer\\Blue_Dividers_divider_round_long.png",
             "Style": "Image22"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton1",
+            "X": 13,
+            "Y": 17,
+            "Width": 46,
+            "Height": 46,
+            "Pressed": "Blue_Icon_Done_Cliked_48.png",
+            "Released": "__designer\\Blue_Icons_Done_48.png"
           }
         ],
         "Interactions": []

@@ -1,6 +1,6 @@
-D:/TouchGFXProjects/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:70:43:const touchgfx::TypedText::TypedTextData* TypedTextDatabase::getInstance(touchgfx::LanguageId)	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:75:10:uint16_t TypedTextDatabase::getInstanceSize()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:80:24:const touchgfx::Font** TypedTextDatabase::getFonts()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:85:23:const touchgfx::Font* TypedTextDatabase::setFont(touchgfx::FontId, const touchgfx::Font*)	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:92:6:void TypedTextDatabase::resetFont(touchgfx::FontId)	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:131:1:cpp)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:91:43:const touchgfx::TypedText::TypedTextData* TypedTextDatabase::getInstance(touchgfx::LanguageId)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:96:10:uint16_t TypedTextDatabase::getInstanceSize()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:101:24:const touchgfx::Font** TypedTextDatabase::getFonts()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:106:23:const touchgfx::Font* TypedTextDatabase::setFont(touchgfx::FontId, const touchgfx::Font*)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:113:6:void TypedTextDatabase::resetFont(touchgfx::FontId)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/texts/src/TypedTextDatabase.cpp:158:1:cpp)	8	static

@@ -2,7 +2,7 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../TouchGFX/gui/include/gui/cadastro_screen/CadastroView.hpp:11:13:CadastroView::~CadastroView()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/cadastro_screen/CadastroView.cpp:13:6:virtual void CadastroView::tearDownScreen()	0	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/cadastro_screen/CadastroView.cpp:8:6:virtual void CadastroView::setupScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/cadastro_screen/CadastroView.cpp:13:6:virtual void CadastroView::tearDownScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/cadastro_screen/CadastroView.cpp:8:6:virtual void CadastroView::setupScreen()	0	static
 ../../TouchGFX/gui/include/gui/cadastro_screen/CadastroView.hpp:11:13:virtual CadastroView::~CadastroView()	8	static
-D:/TouchGFXProjects/ECG/TouchGFX/gui/src/cadastro_screen/CadastroView.cpp:3:1:CadastroView::CadastroView()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/cadastro_screen/CadastroView.cpp:3:1:CadastroView::CadastroView()	8	static

@@ -14,3 +14,8 @@ void Screen2View::tearDownScreen()
 {
     Screen2ViewBase::tearDownScreen();
 }
+
+void Screen2View::StartRead()
+{
+	presenter->PresenterStartRead();
+}

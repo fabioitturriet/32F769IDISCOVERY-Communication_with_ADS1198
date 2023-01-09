@@ -11,10 +11,11 @@
 #include <touchgfx/widgets/graph/GraphWrapAndOverwrite.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -22,6 +23,19 @@ public:
     Screen1ViewBase();
     virtual ~Screen1ViewBase() {}
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void StopData()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void AjusteEscala()
+    {
+        // Override and implement this function in Screen1
+    }
 
 protected:
     FrontendApplication& application() {
@@ -40,9 +54,7 @@ protected:
     touchgfx::GraphElementGridY dynamicGraph1MinorYAxisGrid;
     touchgfx::GraphElementGridX dynamicGraph1MajorXAxisGrid;
     touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
-    touchgfx::Box box2;
     touchgfx::Box box3;
-    touchgfx::Button button1;
     touchgfx::Image image2;
     touchgfx::TextArea textArea1;
     touchgfx::TextArea textArea2;
@@ -57,6 +69,10 @@ protected:
     touchgfx::ScalableImage scalableImage7;
     touchgfx::TextArea textArea5;
     touchgfx::ScalableImage scalableImage8;
+    touchgfx::Button voltar;
+    touchgfx::ButtonWithIcon ConfigExame;
+    touchgfx::ButtonWithIcon buttonWithIcon1;
+    touchgfx::TextArea textArea6;
 
 private:
 

@@ -20,8 +20,7 @@ uint8_t regData[24];	// array with data from all registers
 int16_t channelData [16];
 
 
-
-
+uint8_t CanaisSet;
 
 
 uint32_t pila = 0;
@@ -44,37 +43,44 @@ void ADS_Init(){
 	HAL_Delay(1000);
 
 	//Work settings
-	ADS_WREG(CONFIG1,0b00000100); //00000110 fMOD/1024 125SPS  100 500SPS  011 1000SPS
+	ADS_WREG(CONFIG1,0b00000100);
 	HAL_Delay(100);
-	ADS_WREG(CONFIG2,0x30);   //00110000 fonte de sinal de teste interno
+	ADS_WREG(CONFIG2,0b00100000);
 	HAL_Delay(100);
-	ADS_WREG(CONFIG3,0b11101100);  //testar E8 caso de erro // RLD conectado, VREFP = 2.4V, sinal RLD_IN (sem conexao no nosso projeto deixei esse bit desativado inicialmente) é roteado para o canal que possui o MUX_Setting 010 (VREF)
+	ADS_WREG(CONFIG3,0b11101100);
 	HAL_Delay(100);
 	
 	//ADS_WREG(LOFF,0x03);  //00000011
 	HAL_Delay(10);
 	
-	ADS_WREG(CH1SET,0b01100000);  //00010000
-	HAL_Delay(10);
-	ADS_WREG(CH2SET,0b01100000);  //00010100 medir DC
-	HAL_Delay(10);
-	ADS_WREG(CH3SET,0b01100000);  //10010000 canal desligado, entrada normal
-	HAL_Delay(10);
-	ADS_WREG(CH4SET,0b01100000);
-	HAL_Delay(10);
-	ADS_WREG(CH5SET,0b01100000);  //01010101
-	HAL_Delay(10);
-	ADS_WREG(CH6SET,0b01100000);
-	HAL_Delay(10);
-	ADS_WREG(CH7SET,0b01100000);  //01100101
-	HAL_Delay(10);
-	ADS_WREG(CH8SET,0b01100000);  //00010000
+
+	CanaisSet = 0b01100000;
+	 SetCanaisIguais(CanaisSet);
+//	ADS_WREG(CH1SET,0b10000001);
+//	HAL_Delay(10);
+//	ADS_WREG(CH2SET,0b01100000);
+//	HAL_Delay(10);
+//	ADS_WREG(CH3SET,0010000001);
+//	HAL_Delay(10);
+//	ADS_WREG(CH4SET,0b10000001);
+//	HAL_Delay(10);
+//	ADS_WREG(CH5SET,0b10000001);
+//	HAL_Delay(10);
+//	ADS_WREG(CH6SET,0b10000001);
+//	HAL_Delay(10);
+//	ADS_WREG(CH7SET,0b10000001);
+//	HAL_Delay(10);
+//	ADS_WREG(CH8SET,0b10000001);
+//	HAL_Delay(10);
+
+	ADS_WREG(BIAS_SENSP,0b00000010);
 	HAL_Delay(10);
 
-	ADS_WREG(BIAS_SENSP,0b00000110);
-	HAL_Delay(10);
 	ADS_WREG(BIAS_SENSN,0b00000010);
 	HAL_Delay(10);
+
+
+
 	/*
 	ADS_WREG(LOFF_SENSP,0xFF);
 	HAL_Delay(10);
@@ -127,6 +133,65 @@ void ADS_Init(){
 		HAL_Delay(3000);
 	}
 	
+}
+
+void ADS_InitTestInt(void){
+	if(verbose){
+			HAL_Delay(6000);
+			USB_Print("\n\r**************************************\n\r");
+			USB_Print("Start ADS1298\n\r");
+		}
+
+	/*================================TEST SIGNAL Begin================================*/
+			ADS_RESET();
+			HAL_Delay(1000);
+
+			ADS_SDATAC();
+			HAL_Delay(1);
+
+			ADS_getDeviceID();
+			HAL_Delay(1000);
+
+			ADS_WREG(CONFIG1,0b00000011);
+			HAL_Delay(100);
+
+			ADS_WREG(CONFIG2,0b00110000);
+			HAL_Delay(100);
+
+			ADS_WREG(CONFIG3,0b11100000);
+			HAL_Delay(100);
+
+			CanaisSet = 0b01100101;
+			SetCanaisIguais(CanaisSet);
+//				ADS_WREG(CH1SET,0b01100101);
+//				HAL_Delay(10);
+//				ADS_WREG(CH2SET,0b01100101);
+//				HAL_Delay(10);
+//				ADS_WREG(CH3SET,0b01100101);
+//				HAL_Delay(10);
+//				ADS_WREG(CH4SET,0b01100101);
+//				HAL_Delay(10);
+//				ADS_WREG(CH5SET,0b01100101);
+//				HAL_Delay(10);
+//				ADS_WREG(CH6SET,0b01100101);
+//				HAL_Delay(10);
+//				ADS_WREG(CH7SET,0b01100101);
+//				HAL_Delay(10);
+//				ADS_WREG(CH8SET,0b01100101);
+//				HAL_Delay(10);
+
+				ADS_RREGS(0,17);
+				HAL_Delay(1000);
+
+
+	/*================================TEST SIGNAL end================================*/
+
+
+	if(verbose){
+		USB_Print("\n\rADS1298 configure ..... DONE!\n\r");
+		USB_Print("\n\r**************************************\n\r");
+		HAL_Delay(3000);
+	}
 }
 
 void ADS_SDATAC(){
@@ -486,8 +551,8 @@ void ADS_printRegisterName(uint8_t _address) {
     else if(_address == GPIO){
         USB_Print("GPIO ");
     }
-    else if(_address == MISC1){
-        USB_Print("MISC1 ");
+    else if(_address == PACE){
+        USB_Print("PACE ");
     }
     else if(_address == MISC2){
         USB_Print("MISC2 ");
@@ -591,5 +656,24 @@ int16_t* getChannelData(){
 	return channelData;
 }
 
+void SetCanaisIguais(uint8_t setcanais){
+
+	ADS_WREG(CH1SET,setcanais);
+	HAL_Delay(10);
+	ADS_WREG(CH2SET,setcanais);
+	HAL_Delay(10);
+	ADS_WREG(CH3SET,setcanais);
+	HAL_Delay(10);
+	ADS_WREG(CH4SET,setcanais);
+	HAL_Delay(10);
+	ADS_WREG(CH5SET,setcanais);
+	HAL_Delay(10);
+	ADS_WREG(CH6SET,setcanais);
+	HAL_Delay(10);
+	ADS_WREG(CH7SET,setcanais);
+	HAL_Delay(10);
+	ADS_WREG(CH8SET,setcanais);
+	HAL_Delay(10);
+}
 
 

@@ -15,7 +15,7 @@ CadastroViewBase::CadastroViewBase() :
     box1.setPosition(0, 0, 800, 480);
     box1.setColor(touchgfx::Color::getColorFromRGB(20, 61, 89));
 
-    voltar.setXY(6, 6);
+    voltar.setXY(12, 10);
     voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID));
     voltar.setAction(buttonCallback);
 
