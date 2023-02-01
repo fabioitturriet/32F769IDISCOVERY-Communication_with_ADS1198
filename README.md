@@ -124,4 +124,5 @@ ________________________________________________________________________________
 
 - Retirada do curto entre AVSS e DGND nos pinos 32 e 33 respectivamente.
 - Pace_outP e Pace_outN expostos para processos de calibração
+- Ver a posssibilidade de trocar de SPI para se comunicar com o ADS (utilização SPI com DMA diferentes para o ADS e o cartão MicroSD)
 
