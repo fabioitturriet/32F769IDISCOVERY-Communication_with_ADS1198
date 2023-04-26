@@ -11,6 +11,7 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
+#include <gui/containers/ContainerBatteryCharge.hpp>
 
 class MENUViewBase : public touchgfx::View<MENUPresenter>
 {
@@ -18,6 +19,14 @@ public:
     MENUViewBase();
     virtual ~MENUViewBase() {}
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void CadastroClicked()
+    {
+        // Override and implement this function in MENU
+    }
 
 protected:
     FrontendApplication& application() {
@@ -38,6 +47,7 @@ protected:
     touchgfx::ScalableImage scalableImage1;
     touchgfx::ScalableImage scalableImage2;
     touchgfx::TextArea textArea2;
+    ContainerBatteryCharge containerBatteryCharge1;
 
 private:
 

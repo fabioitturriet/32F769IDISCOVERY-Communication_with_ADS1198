@@ -37,7 +37,7 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
         // ariblk_27_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[7]);
     case Typography::TYPOGRAPHY_03:
-        // arial_16_4bpp
+        // calibri_18_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[8]);
     case Typography::SUBTITULO:
         // arial_35_4bpp
@@ -46,11 +46,26 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
         // calibri_27_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[10]);
     case Typography::CONFIGURACOES:
-        // arial_22_4bpp
+        // arial_27_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[11]);
     case Typography::CONFIGURACOES1:
-        // arial_20_4bpp
+        // arial_24_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[12]);
+    case Typography::LISTA2:
+        // arial_28_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[0]);
+    case Typography::DISPLAY:
+        // arial_28_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[0]);
+    case Typography::KEYBOARD:
+        // arial_20_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[13]);
+    case Typography::MODE:
+        // arial_20_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[13]);
+    case Typography::TYPOGRAPHY_BPM:
+        // arial_60_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[14]);
     default:
         return 0;
     }

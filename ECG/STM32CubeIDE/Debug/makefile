@@ -17,7 +17,10 @@ RM := rm -rf
 -include Drivers/BSP/Components/subdir.mk
 -include Application/User/gui/subdir.mk
 -include Application/User/generated/subdir.mk
+-include Application/User/biblioteca_panTompkins/subdir.mk
+-include Application/User/biblioteca_ESP01/subdir.mk
 -include Application/User/biblioteca_ADS1198/subdir.mk
+-include Application/User/UartRingBuffer/subdir.mk
 -include Application/User/TouchGFX/target/generated/subdir.mk
 -include Application/User/TouchGFX/target/subdir.mk
 -include Application/User/TouchGFX/App/subdir.mk

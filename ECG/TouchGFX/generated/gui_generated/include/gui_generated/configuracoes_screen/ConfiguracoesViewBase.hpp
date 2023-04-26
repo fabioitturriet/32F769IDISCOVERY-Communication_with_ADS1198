@@ -8,11 +8,9 @@
 #include <mvp/View.hpp>
 #include <gui/configuracoes_screen/ConfiguracoesPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/RadioButton.hpp>
-#include <touchgfx/widgets/ButtonWithIcon.hpp>
-#include <touchgfx/widgets/RadioButtonGroup.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/Button.hpp>
 
 class ConfiguracoesViewBase : public touchgfx::View<ConfiguracoesPresenter>
 {
@@ -20,64 +18,6 @@ public:
     ConfiguracoesViewBase();
     virtual ~ConfiguracoesViewBase() {}
     virtual void setupScreen();
-
-    /*
-     * Virtual Action Handlers
-     */
-    virtual void Set1kSPS()
-    {
-        // Override and implement this function in Configuracoes
-    }
-
-    virtual void Set500SPS()
-    {
-        // Override and implement this function in Configuracoes
-    }
-
-    virtual void Set250SPS()
-    {
-        // Override and implement this function in Configuracoes
-    }
-
-    virtual void Set125SPS()
-    {
-        // Override and implement this function in Configuracoes
-    }
-
-    virtual void SetGain12()
-    {
-        // Override and implement this function in Configuracoes
-    }
-
-    virtual void SetGain8()
-    {
-        // Override and implement this function in Configuracoes
-    }
-
-    virtual void SetGain6()
-    {
-        // Override and implement this function in Configuracoes
-    }
-
-    virtual void SetGain4()
-    {
-        // Override and implement this function in Configuracoes
-    }
-
-    virtual void SetGain2()
-    {
-        // Override and implement this function in Configuracoes
-    }
-
-    virtual void SetGain1()
-    {
-        // Override and implement this function in Configuracoes
-    }
-
-    virtual void StartRDataC()
-    {
-        // Override and implement this function in Configuracoes
-    }
 
 protected:
     FrontendApplication& application() {
@@ -89,39 +29,11 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box box1;
+    touchgfx::TextArea textArea1;
+    touchgfx::ButtonWithLabel buttonADS1198;
+    touchgfx::ButtonWithLabel buttonFiltros;
     touchgfx::Button voltar;
-    touchgfx::TextArea FreqAmostragem;
-    touchgfx::Box barra_divisoria;
-    touchgfx::TextArea textArea2;
-    touchgfx::TextArea textArea2_1;
-    touchgfx::TextArea textArea2_1_1;
-    touchgfx::TextArea textArea2_1_1_1;
-    touchgfx::TextArea textArea1_1;
-    touchgfx::Box barra_divisoria_1;
-    touchgfx::TextArea textArea1_1_1;
-    touchgfx::Box barra_divisoria_1_1;
-    touchgfx::RadioButton radioButton1kSPS;
-    touchgfx::RadioButton radioButton500SPS;
-    touchgfx::RadioButton radioButton250SPS;
-    touchgfx::RadioButton radioButton125SPS;
-    touchgfx::TextArea textArea3;
-    touchgfx::ButtonWithIcon ConfigtoExame;
-    touchgfx::RadioButton radioButtonGain12;
-    touchgfx::RadioButton radioButtonGain8;
-    touchgfx::RadioButton radioButtonGain6;
-    touchgfx::RadioButton radioButtonGain4;
-    touchgfx::RadioButton radioButtonGain3;
-    touchgfx::RadioButton radioButtonGain2;
-    touchgfx::RadioButton radioButtonGain1;
-    touchgfx::TextArea textArea2_2;
-    touchgfx::TextArea textArea2_2_1;
-    touchgfx::TextArea textArea2_2_1_1;
-    touchgfx::TextArea textArea2_2_1_1_1;
-    touchgfx::TextArea textArea2_2_1_1_1_1;
-    touchgfx::TextArea textArea2_2_1_1_1_1_1;
-    touchgfx::TextArea textArea2_2_1_1_1_1_1_1;
-    touchgfx::RadioButtonGroup<4> radioButtonGroupFreqAmost;
-    touchgfx::RadioButtonGroup<7> radioButtonGroupGain;
+    touchgfx::ButtonWithLabel buttonExtras;
 
 private:
 
@@ -129,13 +41,11 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<ConfiguracoesViewBase, const touchgfx::AbstractButton&> buttonCallback;
-    touchgfx::Callback<ConfiguracoesViewBase, const touchgfx::AbstractButton&> radioButtonSelectedCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
-    void radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

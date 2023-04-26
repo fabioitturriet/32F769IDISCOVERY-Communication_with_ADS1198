@@ -1,0 +1,4 @@
+../Application/User/biblioteca_panTompkins/panTompkins.c:206:6:init	0	static
+../Application/User/biblioteca_panTompkins/panTompkins.c:216:10:input	16	static
+../Application/User/biblioteca_panTompkins/panTompkins.c:246:6:output	0	static
+../Application/User/biblioteca_panTompkins/panTompkins.c:262:6:panTompkins	17576	static

@@ -62,5 +62,6 @@ D:/ProjetoSTM32ECG/ECG/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cms
 D:/ProjetoSTM32ECG/ECG/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:1801:12:osMessageQueueReset	8	static,ignoring_inline_asm
 D:/ProjetoSTM32ECG/ECG/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:1819:12:osMessageQueueDelete	0	static
 D:/ProjetoSTM32ECG/ECG/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:1858:13:vApplicationIdleHook	0	static
+D:/ProjetoSTM32ECG/ECG/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:1886:13:vApplicationStackOverflowHook	0	static
 D:/ProjetoSTM32ECG/ECG/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:1910:6:vApplicationGetIdleTaskMemory	0	static
 D:/ProjetoSTM32ECG/ECG/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c:1920:6:vApplicationGetTimerTaskMemory	0	static

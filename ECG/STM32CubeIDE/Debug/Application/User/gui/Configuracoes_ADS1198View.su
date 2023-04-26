@@ -1,0 +1,27 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+../../TouchGFX/gui/include/gui/configuracoes_ads1198_screen/Configuracoes_ADS1198View.hpp:11:13:Configuracoes_ADS1198View::~Configuracoes_ADS1198View()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:13:6:virtual void Configuracoes_ADS1198View::tearDownScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:20:6:virtual void Configuracoes_ADS1198View::Set1kSPS()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:26:6:virtual void Configuracoes_ADS1198View::Set500SPS()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:33:6:virtual void Configuracoes_ADS1198View::Set250SPS()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:40:6:virtual void Configuracoes_ADS1198View::Set125SPS()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:46:6:virtual void Configuracoes_ADS1198View::SetGain12()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:51:6:virtual void Configuracoes_ADS1198View::SetGain8()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:56:6:virtual void Configuracoes_ADS1198View::SetGain6()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:61:6:virtual void Configuracoes_ADS1198View::SetGain4()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:66:6:virtual void Configuracoes_ADS1198View::SetGain3()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:71:6:virtual void Configuracoes_ADS1198View::SetGain2()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:76:6:virtual void Configuracoes_ADS1198View::SetGain1()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:81:6:virtual void Configuracoes_ADS1198View::StartRDataC()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:86:6:virtual void Configuracoes_ADS1198View::SetModoNormal()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:91:6:virtual void Configuracoes_ADS1198View::SetModoTeste()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:96:6:virtual void Configuracoes_ADS1198View::SetModoMensRuido()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:101:6:virtual void Configuracoes_ADS1198View::LOFF_off()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:106:6:virtual void Configuracoes_ADS1198View::LOFF_DCResistor()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:111:6:virtual void Configuracoes_ADS1198View::LOFF_DCSource()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:116:6:virtual void Configuracoes_ADS1198View::LOFF_AC()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:8:6:virtual void Configuracoes_ADS1198View::setupScreen()	0	static
+../../TouchGFX/gui/include/gui/configuracoes_ads1198_screen/Configuracoes_ADS1198View.hpp:11:13:virtual Configuracoes_ADS1198View::~Configuracoes_ADS1198View()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_ads1198_screen/Configuracoes_ADS1198View.cpp:3:1:Configuracoes_ADS1198View::Configuracoes_ADS1198View()	8	static

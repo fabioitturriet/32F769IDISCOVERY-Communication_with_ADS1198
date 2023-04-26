@@ -19,3 +19,13 @@ void Screen2View::StartRead()
 {
 	presenter->PresenterStartRead();
 }
+
+void Screen2View::Tipo12DevECG()
+{
+	presenter->PresenterConfig12Dev();
+}
+
+void Screen2View::Tipo3DevECG()
+{
+	presenter->PresenterConfig3Dev();
+}

@@ -15,8 +15,16 @@
 #include <gui/instrucoes_screen/InstrucoesPresenter.hpp>
 #include <gui/configuracoes_screen/ConfiguracoesView.hpp>
 #include <gui/configuracoes_screen/ConfiguracoesPresenter.hpp>
+#include <gui/configuracoes_ads1198_screen/Configuracoes_ADS1198View.hpp>
+#include <gui/configuracoes_ads1198_screen/Configuracoes_ADS1198Presenter.hpp>
+#include <gui/configuracoes_extras_screen/Configuracoes_ExtrasView.hpp>
+#include <gui/configuracoes_extras_screen/Configuracoes_ExtrasPresenter.hpp>
 #include <gui/cadastro_screen/CadastroView.hpp>
 #include <gui/cadastro_screen/CadastroPresenter.hpp>
+#include <gui/novopaciente_screen/NovoPacienteView.hpp>
+#include <gui/novopaciente_screen/NovoPacientePresenter.hpp>
+#include <gui/screenkeyboard_screen/ScreenKeyboardView.hpp>
+#include <gui/screenkeyboard_screen/ScreenKeyboardPresenter.hpp>
 #include <gui/screen2_screen/Screen2View.hpp>
 #include <gui/screen2_screen/Screen2Presenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
@@ -89,6 +97,32 @@ void FrontendApplicationBase::gotoConfiguracoesScreenNoTransitionImpl()
     touchgfx::makeTransition<ConfiguracoesView, ConfiguracoesPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
+// Configuracoes_ADS1198
+
+void FrontendApplicationBase::gotoConfiguracoes_ADS1198ScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoConfiguracoes_ADS1198ScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoConfiguracoes_ADS1198ScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<Configuracoes_ADS1198View, Configuracoes_ADS1198Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// Configuracoes_Extras
+
+void FrontendApplicationBase::gotoConfiguracoes_ExtrasScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoConfiguracoes_ExtrasScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoConfiguracoes_ExtrasScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<Configuracoes_ExtrasView, Configuracoes_ExtrasPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
 // Cadastro
 
 void FrontendApplicationBase::gotoCadastroScreenNoTransition()
@@ -100,6 +134,32 @@ void FrontendApplicationBase::gotoCadastroScreenNoTransition()
 void FrontendApplicationBase::gotoCadastroScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<CadastroView, CadastroPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// NovoPaciente
+
+void FrontendApplicationBase::gotoNovoPacienteScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoNovoPacienteScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoNovoPacienteScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<NovoPacienteView, NovoPacientePresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// ScreenKeyboard
+
+void FrontendApplicationBase::gotoScreenKeyboardScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreenKeyboardScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoScreenKeyboardScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<ScreenKeyboardView, ScreenKeyboardPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // Screen2

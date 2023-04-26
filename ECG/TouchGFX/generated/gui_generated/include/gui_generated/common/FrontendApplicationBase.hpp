@@ -31,8 +31,20 @@ public:
     // Configuracoes
     void gotoConfiguracoesScreenNoTransition();
 
+    // Configuracoes_ADS1198
+    void gotoConfiguracoes_ADS1198ScreenNoTransition();
+
+    // Configuracoes_Extras
+    void gotoConfiguracoes_ExtrasScreenNoTransition();
+
     // Cadastro
     void gotoCadastroScreenNoTransition();
+
+    // NovoPaciente
+    void gotoNovoPacienteScreenNoTransition();
+
+    // ScreenKeyboard
+    void gotoScreenKeyboardScreenNoTransition();
 
     // Screen2
     void gotoScreen2ScreenNoTransition();
@@ -56,8 +68,20 @@ protected:
     // Configuracoes
     void gotoConfiguracoesScreenNoTransitionImpl();
 
+    // Configuracoes_ADS1198
+    void gotoConfiguracoes_ADS1198ScreenNoTransitionImpl();
+
+    // Configuracoes_Extras
+    void gotoConfiguracoes_ExtrasScreenNoTransitionImpl();
+
     // Cadastro
     void gotoCadastroScreenNoTransitionImpl();
+
+    // NovoPaciente
+    void gotoNovoPacienteScreenNoTransitionImpl();
+
+    // ScreenKeyboard
+    void gotoScreenKeyboardScreenNoTransitionImpl();
 
     // Screen2
     void gotoScreen2ScreenNoTransitionImpl();

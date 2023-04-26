@@ -12,6 +12,9 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/RadioButton.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/widgets/RadioButtonGroup.hpp>
 
 class Screen2ViewBase : public touchgfx::View<Screen2Presenter>
 {
@@ -28,6 +31,16 @@ public:
         // Override and implement this function in Screen2
     }
 
+    virtual void Tipo12DevECG()
+    {
+        // Override and implement this function in Screen2
+    }
+
+    virtual void Tipo3DevECG()
+    {
+        // Override and implement this function in Screen2
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -40,11 +53,32 @@ protected:
     touchgfx::Box box1;
     touchgfx::TextArea textArea1;
     touchgfx::Image image1;
-    touchgfx::ButtonWithLabel buttonWithLabel1;
-    touchgfx::ButtonWithLabel buttonWithLabel2;
-    touchgfx::ButtonWithLabel buttonWithLabel3;
     touchgfx::ButtonWithLabel buttonWithLabel4;
     touchgfx::Button voltar;
+    touchgfx::TextArea textArea2;
+    touchgfx::TextArea textArea3;
+    touchgfx::Image image2;
+    touchgfx::RadioButton radioButton1;
+    touchgfx::RadioButton radioButton2;
+    touchgfx::RadioButton radioButton3;
+    touchgfx::RadioButton radioButton4;
+    touchgfx::RadioButton radioButton5;
+    touchgfx::TextArea textArea4;
+    touchgfx::TextArea textArea5;
+    touchgfx::TextArea textArea6;
+    touchgfx::Box barra_divisoria_1;
+    touchgfx::Box barra_divisoria_1_1;
+    touchgfx::TextArea textArea7;
+    touchgfx::TextArea textArea8;
+    touchgfx::TextArea textArea3_1;
+    touchgfx::RadioButton radioButton6;
+    touchgfx::RadioButton radioButton7;
+    touchgfx::TextArea textArea9;
+    touchgfx::TextArea textArea9_1;
+    touchgfx::ScalableImage scalableImage1;
+    touchgfx::RadioButtonGroup<2> radioButtonGroup1;
+    touchgfx::RadioButtonGroup<3> radioButtonGroup2;
+    touchgfx::RadioButtonGroup<2> radioButtonGroup3;
 
 private:
 
@@ -52,11 +86,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<Screen2ViewBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<Screen2ViewBase, const touchgfx::AbstractButton&> radioButtonSelectedCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

@@ -9,6 +9,15 @@
 #include <gui/cadastro_screen/CadastroPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/containers/scrollers/ScrollList.hpp>
+#include <gui/containers/ContainerConexaoWIFI.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
+#include <gui/containers/ContainerLoadingAnimation.hpp>
+#include <touchgfx/containers/buttons/Buttons.hpp>
+#include <gui/containers/ContainerPopup.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class CadastroViewBase : public touchgfx::View<CadastroPresenter>
 {
@@ -16,6 +25,40 @@ public:
     CadastroViewBase();
     virtual ~CadastroViewBase() {}
     virtual void setupScreen();
+    virtual void afterTransition();
+
+    virtual void scrollList1UpdateItem(ContainerConexaoWIFI& item, int16_t itemIndex)
+    {
+        // Override and implement this function in Cadastro
+    }
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void AtualizarRedes()
+    {
+        // Override and implement this function in Cadastro
+    }
+
+    virtual void ToggleWiFi()
+    {
+        // Override and implement this function in Cadastro
+    }
+
+    virtual void initCadastro()
+    {
+        // Override and implement this function in Cadastro
+    }
+
+    virtual void FechaPopup()
+    {
+        // Override and implement this function in Cadastro
+    }
+
+    virtual void FechaPopup1()
+    {
+        // Override and implement this function in Cadastro
+    }
 
 protected:
     FrontendApplication& application() {
@@ -28,6 +71,18 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box box1;
     touchgfx::Button voltar;
+    touchgfx::TextArea textArea3;
+    touchgfx::ScrollList scrollList1;
+    touchgfx::DrawableListItems<ContainerConexaoWIFI, 8> scrollList1ListItems;
+    touchgfx::TextArea textArea4;
+    touchgfx::ButtonWithIcon buttonAtualizarRedes;
+    touchgfx::ToggleButton toggleInitWIFI;
+    touchgfx::TextArea textArea3_1;
+    ContainerLoadingAnimation containerLoadingAnimation1;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger > buttonFecharPopup1;
+    ContainerPopup containerPopup1;
+    touchgfx::ButtonWithIcon buttonFecharPopup;
+    touchgfx::ButtonWithLabel buttonNewPacient;
 
 private:
 
@@ -35,11 +90,15 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<CadastroViewBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<CadastroViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
+    touchgfx::Callback<CadastroViewBase, touchgfx::DrawableListItemsInterface*, int16_t, int16_t> updateItemCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
+    void updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex);
 
 };
 

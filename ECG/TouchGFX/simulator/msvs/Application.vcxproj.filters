@@ -256,6 +256,54 @@
     <Filter Include="Source Files\generated\gui_generated\containers">
       <UniqueIdentifier>43CE4D7C-31D4-A4A0-FE17-7213074C621A</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\screenkeyboard_screen">
+      <UniqueIdentifier>04699425-3FA8-8DED-81E9-0C047B85F1D3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screenkeyboard_screen">
+      <UniqueIdentifier>73592AC6-4A16-C63B-DFE9-601BAAD43366</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screenkeyboard_screen">
+      <UniqueIdentifier>132E3B2D-06B0-46E6-5F71-80B51D7CF129</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screenkeyboard_screen">
+      <UniqueIdentifier>0D8A0ACE-0F49-433B-9E19-B207816920F6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\novopaciente_screen">
+      <UniqueIdentifier>64E6E37C-8443-105F-A274-A7AD19B36EF7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\novopaciente_screen">
+      <UniqueIdentifier>9362D1B3-5B5A-3E02-5F1A-4ADD7E73D26C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\novopaciente_screen">
+      <UniqueIdentifier>74CBEF2F-8D5C-6677-F2CE-1F54FA4F5B4E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\novopaciente_screen">
+      <UniqueIdentifier>F9C2BC09-CE5E-CD08-7A40-2AAAFA3D5527</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\configuracoes_ads1198_screen">
+      <UniqueIdentifier>C8BD403B-AB71-7ADA-C022-FB7C1AE78B18</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\configuracoes_ads1198_screen">
+      <UniqueIdentifier>37811AC0-EDAF-3306-565C-DD8C3577557A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\configuracoes_extras_screen">
+      <UniqueIdentifier>0B1D7079-FAA9-FE20-73F8-E7430CB24293</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\configuracoes_extras_screen">
+      <UniqueIdentifier>54D5FEC5-918F-BA52-0F65-F714357B83C0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\configuracoes_extras_screen">
+      <UniqueIdentifier>C6302CDE-F2D5-2D8B-B878-DE9357675D2C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\configuracoes_extras_screen">
+      <UniqueIdentifier>A8ACD372-D2A2-C1F3-32C7-203B64E46ECA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\configuracoes_ads1198_screen">
+      <UniqueIdentifier>126D4879-CF7B-7935-3289-D2448E479659</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\configuracoes_ads1198_screen">
+      <UniqueIdentifier>9A39DF62-1EA8-1286-D75B-CFC77A980D5A</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -346,6 +394,75 @@
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ContainerListaDeInstrucoesBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\ContainerConexaoWIFI.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ContainerConexaoWIFIBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenkeyboard_screen\ScreenKeyboardPresenter.cpp">
+      <Filter>Source Files\gui\screenkeyboard_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenkeyboard_screen\ScreenKeyboardView.cpp">
+      <Filter>Source Files\gui\screenkeyboard_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screenkeyboard_screen\ScreenKeyboardViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screenkeyboard_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\CustomKeyboard.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\ContainerLoadingAnimation.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ContainerLoadingAnimationBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\ContainerPopup.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ContainerPopupBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\novopaciente_screen\NovoPacientePresenter.cpp">
+      <Filter>Source Files\gui\novopaciente_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\novopaciente_screen\NovoPacienteView.cpp">
+      <Filter>Source Files\gui\novopaciente_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\novopaciente_screen\NovoPacienteViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\novopaciente_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\ContainerBatteryCharge.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ContainerBatteryChargeBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuracoes_ads1198_screen\Configuracoes_ADS1198Presenter.cpp">
+      <Filter>Source Files\gui\configuracoes_ads1198_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuracoes_ads1198_screen\Configuracoes_ADS1198View.cpp">
+      <Filter>Source Files\gui\configuracoes_ads1198_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\configuracoes_ads1198_screen\Configuracoes_ADS1198ViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\configuracoes_ads1198_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuracoes_extras_screen\Configuracoes_ExtrasPresenter.cpp">
+      <Filter>Source Files\gui\configuracoes_extras_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuracoes_extras_screen\Configuracoes_ExtrasView.cpp">
+      <Filter>Source Files\gui\configuracoes_extras_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\configuracoes_extras_screen\Configuracoes_ExtrasViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\configuracoes_extras_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\ContainerLOFFMatrix.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ContainerLOFFMatrixBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -848,6 +965,81 @@
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ContainerListaDeInstrucoesBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\ContainerConexaoWIFI.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ContainerConexaoWIFIBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenkeyboard_screen\ScreenKeyboardPresenter.hpp">
+      <Filter>Header Files\gui\screenkeyboard_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenkeyboard_screen\ScreenKeyboardView.hpp">
+      <Filter>Header Files\gui\screenkeyboard_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screenkeyboard_screen\ScreenKeyboardViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screenkeyboard_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\CustomKeyboard.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardKeyMapping.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardLayout.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\ContainerLoadingAnimation.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ContainerLoadingAnimationBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\ContainerPopup.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ContainerPopupBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\novopaciente_screen\NovoPacientePresenter.hpp">
+      <Filter>Header Files\gui\novopaciente_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\novopaciente_screen\NovoPacienteView.hpp">
+      <Filter>Header Files\gui\novopaciente_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\novopaciente_screen\NovoPacienteViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\novopaciente_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\ContainerBatteryCharge.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ContainerBatteryChargeBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuracoes_ads1198_screen\Configuracoes_ADS1198Presenter.hpp">
+      <Filter>Header Files\gui\configuracoes_ads1198_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuracoes_ads1198_screen\Configuracoes_ADS1198View.hpp">
+      <Filter>Header Files\gui\configuracoes_ads1198_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuracoes_ads1198_screen\Configuracoes_ADS1198ViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\configuracoes_ads1198_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuracoes_extras_screen\Configuracoes_ExtrasPresenter.hpp">
+      <Filter>Header Files\gui\configuracoes_extras_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuracoes_extras_screen\Configuracoes_ExtrasView.hpp">
+      <Filter>Header Files\gui\configuracoes_extras_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuracoes_extras_screen\Configuracoes_ExtrasViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\configuracoes_extras_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\ContainerLOFFMatrix.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ContainerLOFFMatrixBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>

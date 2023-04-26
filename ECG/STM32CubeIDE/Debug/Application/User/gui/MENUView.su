@@ -1,8 +1,10 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/menu_screen/MENUViewBase.hpp:26:18:virtual void MENUViewBase::CadastroClicked()	0	static
 ../../TouchGFX/gui/include/gui/menu_screen/MENUView.hpp:11:13:MENUView::~MENUView()	0	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/menu_screen/MENUView.cpp:13:6:virtual void MENUView::tearDownScreen()	0	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/menu_screen/MENUView.cpp:8:6:virtual void MENUView::setupScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/menu_screen/MENUView.cpp:21:6:virtual void MENUView::tearDownScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/menu_screen/MENUView.cpp:13:6:virtual void MENUView::setupScreen()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/menu_screen/MENUView.cpp:26:6:virtual void MENUView::UpdateBatteryChargeLevel()	0	static
 ../../TouchGFX/gui/include/gui/menu_screen/MENUView.hpp:11:13:virtual MENUView::~MENUView()	8	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/menu_screen/MENUView.cpp:3:1:MENUView::MENUView()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/menu_screen/MENUView.cpp:8:1:MENUView::MENUView()	8	static

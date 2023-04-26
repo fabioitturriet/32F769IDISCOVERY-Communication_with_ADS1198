@@ -10,24 +10,64 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:498:18:virtual void touchgfx::Drawable::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:585:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	4	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:700:18:virtual void touchgfx::Drawable::setupDrawChain(const touchgfx::Rect&, touchgfx::Drawable**)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:93:18:virtual void touchgfx::Screen::setupScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:47:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp:114:18:virtual void touchgfx::AbstractButtonContainer::handlePressedUpdated()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp:119:18:virtual void touchgfx::AbstractButtonContainer::handleAlphaUpdated()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp:34:7:touchgfx::AbstractButtonContainer::~AbstractButtonContainer()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<CadastroPresenter>::~View()	0	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp:17:13:CadastroViewBase::~CadastroViewBase()	0	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/cadastro_screen/CadastroViewBase.cpp:27:6:virtual void CadastroViewBase::setupScreen()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp:30:18:virtual void CadastroViewBase::scrollList1UpdateItem(ContainerConexaoWIFI&, int16_t)	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp:38:18:virtual void CadastroViewBase::AtualizarRedes()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp:43:18:virtual void CadastroViewBase::ToggleWiFi()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp:48:18:virtual void CadastroViewBase::initCadastro()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp:53:18:virtual void CadastroViewBase::FechaPopup()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp:58:18:virtual void CadastroViewBase::FechaPopup1()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/cadastro_screen/CadastroViewBase.cpp:116:6:virtual void CadastroViewBase::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:touchgfx::ClickButtonTrigger::~ClickButtonTrigger()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:101:21:int16_t touchgfx::DrawableListItems<TYPE, SIZE>::getNumberOfDrawables() [with TYPE = ContainerConexaoWIFI; int SIZE = 8]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:123:18:void touchgfx::BoxWithBorderButtonStyle<T>::handlePressedUpdated() [with T = touchgfx::ClickButtonTrigger]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:218:8:touchgfx::Callback<CadastroViewBase, touchgfx::DrawableListItemsInterface*, short int, short int>::~Callback()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<CadastroViewBase, const touchgfx::AbstractButtonContainer&>::~Callback()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<CadastroViewBase, const touchgfx::AbstractButton&>::~Callback()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:41:7:touchgfx::BoxWithBorderButtonStyle<touchgfx::ClickButtonTrigger>::~BoxWithBorderButtonStyle()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:79:7:touchgfx::DrawableListItems<ContainerConexaoWIFI, 8>::~DrawableListItems()	16	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp:26:13:CadastroViewBase::~CadastroViewBase()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:250:18:void touchgfx::Callback<dest_type, T1, T2, T3>::execute(T1, T2, T3) [with dest_type = CadastroViewBase; T1 = touchgfx::DrawableListItemsInterface*; T2 = short int; T3 = short int]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:260:18:bool touchgfx::Callback<dest_type, T1, T2, T3>::isValid() const [with dest_type = CadastroViewBase; T1 = touchgfx::DrawableListItemsInterface*; T2 = short int; T3 = short int]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = CadastroViewBase; T1 = const touchgfx::AbstractButtonContainer&]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = CadastroViewBase; T1 = const touchgfx::AbstractButtonContainer&]	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = CadastroViewBase; T1 = const touchgfx::AbstractButton&]	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = CadastroViewBase; T1 = const touchgfx::AbstractButton&]	0	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<CadastroViewBase, const touchgfx::AbstractButton&>::~Callback()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:131:18:void touchgfx::BoxWithBorderButtonStyle<T>::handleAlphaUpdated() [with T = touchgfx::ClickButtonTrigger]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:79:7:virtual touchgfx::DrawableListItems<ContainerConexaoWIFI, 8>::~DrawableListItems()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<CadastroPresenter>::~View()	8	static
-../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp:17:13:virtual CadastroViewBase::~CadastroViewBase()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp:34:7:virtual touchgfx::AbstractButtonContainer::~AbstractButtonContainer()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:virtual touchgfx::ClickButtonTrigger::~ClickButtonTrigger()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:41:7:virtual touchgfx::BoxWithBorderButtonStyle<touchgfx::ClickButtonTrigger>::~BoxWithBorderButtonStyle()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<CadastroViewBase, const touchgfx::AbstractButton&>::~Callback()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<CadastroViewBase, const touchgfx::AbstractButtonContainer&>::~Callback()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:218:8:virtual touchgfx::Callback<CadastroViewBase, touchgfx::DrawableListItemsInterface*, short int, short int>::~Callback()	8	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp:26:13:virtual CadastroViewBase::~CadastroViewBase()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/cadastro_screen/CadastroViewBase.cpp:104:6:virtual void CadastroViewBase::setupScreen()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/cadastro_screen/CadastroViewBase.cpp:32:6:void CadastroViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp:99:18:virtual void touchgfx::AbstractButtonContainer::executeAction()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/cadastro_screen/CadastroViewBase.cpp:163:6:void CadastroViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/cadastro_screen/CadastroViewBase.cpp:174:6:void CadastroViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInterface*, int16_t, int16_t)	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:82:23:touchgfx::Drawable* touchgfx::DrawableListItems<TYPE, SIZE>::getDrawable(int16_t) [with TYPE = ContainerConexaoWIFI; int SIZE = 8]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:47:18:virtual void touchgfx::ClickButtonTrigger::handleClickEvent(const touchgfx::ClickEvent&)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/cadastro_screen/CadastroViewBase.cpp:124:6:void CadastroViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	16	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:33:5:touchgfx::Box::Box()	0	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/cadastro_screen/CadastroViewBase.cpp:8:1:CadastroViewBase::CadastroViewBase()	56	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:33:5:touchgfx::Box::Box()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:36:5:touchgfx::AbstractButton::AbstractButton()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:132:10:void touchgfx::ButtonWithLabel::updateTextPosition()	24	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/cadastro_screen/CadastroViewBase.cpp:9:1:CadastroViewBase::CadastroViewBase()	136	static

@@ -11,9 +11,9 @@
 #include <touchgfx/containers/scrollers/ScrollList.hpp>
 #include <gui/containers/ContainerListaDeInstrucoes.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class InstrucoesViewBase : public touchgfx::View<InstrucoesPresenter>
 {
@@ -40,7 +40,6 @@ protected:
     touchgfx::ScrollList scrollList1;
     touchgfx::DrawableListItems<ContainerListaDeInstrucoes, 5> scrollList1ListItems;
     touchgfx::Image image1;
-    touchgfx::TextArea textArea1;
     touchgfx::Button voltar;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger > CliqueImagem;
     touchgfx::TextArea textArea2;

@@ -1,0 +1,20 @@
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:15:18:virtual void ModelListener::SetMinMaxEscalaGraph(int16_t, int16_t)	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:17:18:virtual void ModelListener::UpdateScrollList()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:19:18:virtual void ModelListener::ToCadastro()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:21:18:virtual void ModelListener::AtualizarBPM()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:23:18:virtual void ModelListener::AtualizarIconHeart()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:27:18:virtual void ModelListener::PreStopLoadingAnimation()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:29:18:virtual void ModelListener::DefNumRedes(uint8_t)	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:31:18:virtual void ModelListener::UpdateBatChargeLevel()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:33:18:virtual void ModelListener::UpdateMatrixLOFF()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:39:18:virtual void ModelListener::UpdateGraph(float)	0	static
+../../TouchGFX/gui/include/gui/screenkeyboard_screen/ScreenKeyboardPresenter.hpp:28:13:ScreenKeyboardPresenter::~ScreenKeyboardPresenter()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screenkeyboard_screen/ScreenKeyboardPresenter.cpp:10:6:virtual void ScreenKeyboardPresenter::activate()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screenkeyboard_screen/ScreenKeyboardPresenter.cpp:25:6:virtual void ScreenKeyboardPresenter::GeraPopup()	0	static
+../../TouchGFX/gui/include/gui/screenkeyboard_screen/ScreenKeyboardPresenter.hpp:28:13:virtual ScreenKeyboardPresenter::~ScreenKeyboardPresenter()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screenkeyboard_screen/ScreenKeyboardPresenter.cpp:20:6:virtual void ScreenKeyboardPresenter::PConnectWiFi()	0	static
+../../TouchGFX/gui/include/gui/screenkeyboard_screen/ScreenKeyboardPresenter.hpp:28:13:virtual void* ScreenKeyboardPresenter::_ZThn4_N23ScreenKeyboardPresenterD1Ev()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screenkeyboard_screen/ScreenKeyboardPresenter.cpp:4:1:ScreenKeyboardPresenter::ScreenKeyboardPresenter(ScreenKeyboardView&)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screenkeyboard_screen/ScreenKeyboardPresenter.cpp:28:1:cpp)	0	static

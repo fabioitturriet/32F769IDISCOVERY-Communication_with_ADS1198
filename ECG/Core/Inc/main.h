@@ -60,14 +60,12 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define VSYNC_FREQ2_Pin GPIO_PIN_13
 #define VSYNC_FREQ2_GPIO_Port GPIOJ
+#define WIFI_RST_Pin GPIO_PIN_14
+#define WIFI_RST_GPIO_Port GPIOJ
 #define DSI_RESET_Pin GPIO_PIN_15
 #define DSI_RESET_GPIO_Port GPIOJ
 #define ADS_DAISY_Pin GPIO_PIN_8
 #define ADS_DAISY_GPIO_Port GPIOC
-#define RENDER_TIME_Pin GPIO_PIN_7
-#define RENDER_TIME_GPIO_Port GPIOC
-#define VSYNC_FREQ_Pin GPIO_PIN_6
-#define VSYNC_FREQ_GPIO_Port GPIOC
 #define ADS_DRDY_Pin GPIO_PIN_6
 #define ADS_DRDY_GPIO_Port GPIOF
 #define ADS_DRDY_EXTI_IRQn EXTI9_5_IRQn
@@ -77,6 +75,8 @@ void Error_Handler(void);
 #define RENDER_TIME2_GPIO_Port GPIOJ
 #define PW_KEY_Pin GPIO_PIN_4
 #define PW_KEY_GPIO_Port GPIOA
+#define WIFI_CH_PD_Pin GPIO_PIN_7
+#define WIFI_CH_PD_GPIO_Port GPIOH
 #define ADS_CS_Pin GPIO_PIN_0
 #define ADS_CS_GPIO_Port GPIOJ
 #define FRAMERATE_Pin GPIO_PIN_1

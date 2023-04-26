@@ -7,7 +7,8 @@
 #include <BitmapDatabase.hpp>
 
 Screen2ViewBase::Screen2ViewBase() :
-    buttonCallback(this, &Screen2ViewBase::buttonCallbackHandler)
+    buttonCallback(this, &Screen2ViewBase::buttonCallbackHandler),
+    radioButtonSelectedCallback(this, &Screen2ViewBase::radioButtonSelectedCallbackHandler)
 {
 
     __background.setPosition(0, 0, 800, 480);
@@ -16,52 +17,158 @@ Screen2ViewBase::Screen2ViewBase() :
     box1.setPosition(0, 0, 800, 480);
     box1.setColor(touchgfx::Color::getColorFromRGB(20, 61, 89));
 
-    textArea1.setXY(103, 107);
+    textArea1.setXY(169, 10);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CCNK));
 
-    image1.setXY(59, 107);
+    image1.setXY(62, 204);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_STOPWATCH_ID));
 
-    buttonWithLabel1.setXY(59, 203);
-    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_Q9OK));
-    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-
-    buttonWithLabel2.setXY(59, 271);
-    buttonWithLabel2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    buttonWithLabel2.setLabelText(touchgfx::TypedText(T___SINGLEUSE_0D0V));
-    buttonWithLabel2.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel2.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-
-    buttonWithLabel3.setXY(59, 338);
-    buttonWithLabel3.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    buttonWithLabel3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_YB87));
-    buttonWithLabel3.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-
-    buttonWithLabel4.setXY(465, 203);
+    buttonWithLabel4.setXY(617, 411);
     buttonWithLabel4.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
     buttonWithLabel4.setLabelText(touchgfx::TypedText(T___SINGLEUSE_P6FT));
-    buttonWithLabel4.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    buttonWithLabel4.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel4.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel4.setAction(buttonCallback);
 
     voltar.setXY(12, 10);
-    voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID));
+    voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID));
     voltar.setAction(buttonCallback);
+
+    textArea2.setXY(106, 86);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea2.setLinespacing(0);
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZY60));
+
+    textArea3.setXY(106, 200);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FC9F));
+
+    image2.setXY(62, 94);
+    image2.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_ELECTRODE_32_ID));
+
+    radioButton1.setXY(147, 138);
+    radioButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID));
+    radioButton1.setSelected(true);
+    radioButton1.setDeselectionEnabled(false);
+
+    radioButton2.setXY(348, 138);
+    radioButton2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID));
+    radioButton2.setSelected(false);
+    radioButton2.setDeselectionEnabled(false);
+
+    radioButton3.setXY(147, 257);
+    radioButton3.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID));
+    radioButton3.setSelected(true);
+    radioButton3.setDeselectionEnabled(false);
+
+    radioButton4.setXY(348, 257);
+    radioButton4.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID));
+    radioButton4.setSelected(false);
+    radioButton4.setDeselectionEnabled(false);
+
+    radioButton5.setXY(541, 257);
+    radioButton5.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID));
+    radioButton5.setSelected(false);
+    radioButton5.setDeselectionEnabled(false);
+
+    textArea4.setXY(193, 145);
+    textArea4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea4.setLinespacing(0);
+    textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I24O));
+
+    textArea5.setXY(392, 145);
+    textArea5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea5.setLinespacing(0);
+    textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ML9K));
+
+    textArea6.setXY(195, 270);
+    textArea6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea6.setLinespacing(0);
+    textArea6.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LAYJ));
+
+    barra_divisoria_1.setPosition(25, 189, 775, 2);
+    barra_divisoria_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+
+    barra_divisoria_1_1.setPosition(25, 313, 775, 2);
+    barra_divisoria_1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+
+    textArea7.setXY(394, 263);
+    textArea7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea7.setLinespacing(0);
+    textArea7.setTypedText(touchgfx::TypedText(T___SINGLEUSE_W39F));
+
+    textArea8.setXY(585, 263);
+    textArea8.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea8.setLinespacing(0);
+    textArea8.setTypedText(touchgfx::TypedText(T___SINGLEUSE_N0Y2));
+
+    textArea3_1.setXY(106, 323);
+    textArea3_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3_1.setLinespacing(0);
+    textArea3_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_B947));
+
+    radioButton6.setXY(147, 381);
+    radioButton6.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID));
+    radioButton6.setSelected(true);
+    radioButton6.setDeselectionEnabled(false);
+
+    radioButton7.setXY(424, 381);
+    radioButton7.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID));
+    radioButton7.setSelected(false);
+    radioButton7.setDeselectionEnabled(false);
+
+    textArea9.setXY(193, 388);
+    textArea9.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea9.setLinespacing(0);
+    textArea9.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VBHY));
+
+    textArea9_1.setXY(469, 388);
+    textArea9_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea9_1.setLinespacing(0);
+    textArea9_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y3JJ));
+
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_WI_FI_50_ID));
+    scalableImage1.setPosition(62, 327, 32, 32);
+    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
     add(__background);
     add(box1);
     add(textArea1);
     add(image1);
-    add(buttonWithLabel1);
-    add(buttonWithLabel2);
-    add(buttonWithLabel3);
     add(buttonWithLabel4);
     add(voltar);
+    add(textArea2);
+    add(textArea3);
+    add(image2);
+    add(radioButton1);
+    add(radioButton2);
+    add(radioButton3);
+    add(radioButton4);
+    add(radioButton5);
+    add(textArea4);
+    add(textArea5);
+    add(textArea6);
+    add(barra_divisoria_1);
+    add(barra_divisoria_1_1);
+    add(textArea7);
+    add(textArea8);
+    add(textArea3_1);
+    add(radioButton6);
+    add(radioButton7);
+    add(textArea9);
+    add(textArea9_1);
+    add(scalableImage1);
+    radioButtonGroup1.add(radioButton1);
+    radioButtonGroup1.add(radioButton2);
+    radioButtonGroup2.add(radioButton3);
+    radioButtonGroup2.add(radioButton4);
+    radioButtonGroup2.add(radioButton5);
+    radioButtonGroup3.add(radioButton6);
+    radioButtonGroup3.add(radioButton7);
+    radioButtonGroup1.setRadioButtonSelectedHandler(radioButtonSelectedCallback);
 }
 
 void Screen2ViewBase::setupScreen()
@@ -89,5 +196,23 @@ void Screen2ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When voltar clicked change screen to MENU
         //Go to MENU with screen transition towards East
         application().gotoMENUScreenSlideTransitionEast();
+    }
+}
+
+void Screen2ViewBase::radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &radioButton1)
+    {
+        //InteractionTipo12DevECG
+        //When radioButton1 selected call virtual function
+        //Call Tipo12DevECG
+        Tipo12DevECG();
+    }
+    else if (&src == &radioButton2)
+    {
+        //Tipo3DevECG
+        //When radioButton2 selected call virtual function
+        //Call Tipo3DevECG
+        Tipo3DevECG();
     }
 }

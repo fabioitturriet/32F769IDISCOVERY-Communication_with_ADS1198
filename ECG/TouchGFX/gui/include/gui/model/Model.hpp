@@ -31,8 +31,35 @@ public:
     void StartRDataC();
     void StopRDataC();
 
+    void Config12Dev();
+    void Config3Dev();
+
     void AjusteEscala();
 
+
+    void M_InitESP();
+    void WiFiESP_OFF();
+
+    void SetModoNormal();
+    void SetModoTeste();
+    void SetModoMensRuido();
+
+    void AtualizarListaRedes();
+
+    void NextDerivSelect();
+    void BackDerivSelect();
+
+    void MConnectWifi();
+
+    void TransmiteWifiECG();
+
+    void CalcularBPM();
+    void StopPanTompkins();
+
+    void Set_LOFF_off();
+    void Set_LOFF_DCResistor();
+    void Set_LOFF_DCSource();
+    void Set_LOFF_AC();
 protected:
     ModelListener* modelListener;
 };

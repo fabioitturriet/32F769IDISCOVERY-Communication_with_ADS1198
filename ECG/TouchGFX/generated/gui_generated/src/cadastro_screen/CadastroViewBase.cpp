@@ -4,9 +4,12 @@
 #include <gui_generated/cadastro_screen/CadastroViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 CadastroViewBase::CadastroViewBase() :
-    buttonCallback(this, &CadastroViewBase::buttonCallbackHandler)
+    buttonCallback(this, &CadastroViewBase::buttonCallbackHandler),
+    flexButtonCallback(this, &CadastroViewBase::flexButtonCallbackHandler),
+    updateItemCallback(this, &CadastroViewBase::updateItemCallbackHandler)
 {
 
     __background.setPosition(0, 0, 800, 480);
@@ -16,17 +19,106 @@ CadastroViewBase::CadastroViewBase() :
     box1.setColor(touchgfx::Color::getColorFromRGB(20, 61, 89));
 
     voltar.setXY(12, 10);
-    voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID));
+    voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID));
     voltar.setAction(buttonCallback);
+
+    textArea3.setXY(251, 0);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_6LB2));
+
+    scrollList1.setPosition(381, 166, 400, 280);
+    scrollList1.setHorizontal(false);
+    scrollList1.setCircular(false);
+    scrollList1.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
+    scrollList1.setSwipeAcceleration(10);
+    scrollList1.setDragAcceleration(10);
+    scrollList1.setNumberOfItems(0);
+    scrollList1.setPadding(0, 0);
+    scrollList1.setSnapping(false);
+    scrollList1.setDrawableSize(40, 0);
+    scrollList1.setDrawables(scrollList1ListItems, updateItemCallback);
+
+    textArea4.setXY(467, 113);
+    textArea4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea4.setLinespacing(0);
+    textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0ZJL));
+
+    buttonAtualizarRedes.setXY(381, 99);
+    buttonAtualizarRedes.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_REFRESH_32_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_REFRESH_32_ID));
+    buttonAtualizarRedes.setIconXY(15, 16);
+    buttonAtualizarRedes.setAction(buttonCallback);
+
+    toggleInitWIFI.setXY(121, 256);
+    toggleInitWIFI.setBitmaps(touchgfx::Bitmap(BITMAP_WIFIDESLIGADO_ID), touchgfx::Bitmap(BITMAP_WIFILIGADO_ID));
+    toggleInitWIFI.setAction(buttonCallback);
+
+    textArea3_1.setXY(119, 188);
+    textArea3_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3_1.setLinespacing(0);
+    textArea3_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_T6Y1));
+
+    containerLoadingAnimation1.setXY(281, 254);
+    containerLoadingAnimation1.setVisible(false);
+
+    buttonFecharPopup1.setBoxWithBorderPosition(0, 0, 800, 480);
+    buttonFecharPopup1.setBorderSize(5);
+    buttonFecharPopup1.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    buttonFecharPopup1.setPosition(0, 0, 800, 480);
+    buttonFecharPopup1.setVisible(false);
+    buttonFecharPopup1.setAlpha(0);
+    buttonFecharPopup1.setAction(flexButtonCallback);
+
+    containerPopup1.setXY(0, 0);
+    containerPopup1.setVisible(false);
+
+    buttonFecharPopup.setXY(601, 110);
+    buttonFecharPopup.setVisible(false);
+    buttonFecharPopup.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_32_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_32_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_ADD_NEW_32_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_ADD_NEW_32_ID));
+    buttonFecharPopup.setIconXY(1, 1);
+    buttonFecharPopup.setAction(buttonCallback);
+
+    buttonNewPacient.setXY(66, 357);
+    buttonNewPacient.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_MEDIUM_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_MEDIUM_PRESSED_ID));
+    buttonNewPacient.setLabelText(touchgfx::TypedText(T___SINGLEUSE_F41R));
+    buttonNewPacient.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonNewPacient.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonNewPacient.setAction(buttonCallback);
 
     add(__background);
     add(box1);
     add(voltar);
+    add(textArea3);
+    add(scrollList1);
+    add(textArea4);
+    add(buttonAtualizarRedes);
+    add(toggleInitWIFI);
+    add(textArea3_1);
+    add(containerLoadingAnimation1);
+    add(buttonFecharPopup1);
+    add(containerPopup1);
+    add(buttonFecharPopup);
+    add(buttonNewPacient);
 }
 
 void CadastroViewBase::setupScreen()
 {
+    scrollList1.initialize();
+    for (int i = 0; i < scrollList1ListItems.getNumberOfDrawables(); i++)
+    {
+        scrollList1ListItems[i].initialize();
+    }
+    containerLoadingAnimation1.initialize();
+    containerPopup1.initialize();
+}
 
+//Called when the screen transition ends
+void CadastroViewBase::afterTransition()
+{
+    //initCadastro
+    //When screen transition ends call virtual function
+    //Call initCadastro
+    initCadastro();
 }
 
 void CadastroViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -37,5 +129,54 @@ void CadastroViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When voltar clicked change screen to MENU
         //Go to MENU with no screen transition
         application().gotoMENUScreenNoTransition();
+    }
+    else if (&src == &buttonAtualizarRedes)
+    {
+        //AtualizarRedes
+        //When buttonAtualizarRedes clicked call virtual function
+        //Call AtualizarRedes
+        AtualizarRedes();
+    }
+    else if (&src == &toggleInitWIFI)
+    {
+        //ToggleWiFi
+        //When toggleInitWIFI clicked call virtual function
+        //Call ToggleWiFi
+        ToggleWiFi();
+    }
+    else if (&src == &buttonFecharPopup)
+    {
+        //FechaJanelaPopup
+        //When buttonFecharPopup clicked call virtual function
+        //Call FechaPopup
+        FechaPopup();
+    }
+    else if (&src == &buttonNewPacient)
+    {
+        //Cadastrar
+        //When buttonNewPacient clicked change screen to NovoPaciente
+        //Go to NovoPaciente with no screen transition
+        application().gotoNovoPacienteScreenNoTransition();
+    }
+}
+
+void CadastroViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+{
+    if (&src == &buttonFecharPopup1)
+    {
+        //FechaJanelaPopup1
+        //When buttonFecharPopup1 clicked call virtual function
+        //Call FechaPopup1
+        FechaPopup1();
+    }
+}
+
+void CadastroViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInterface* items, int16_t containerIndex, int16_t itemIndex)
+{
+    if (items == &scrollList1ListItems)
+    {
+        touchgfx::Drawable* d = items->getDrawable(containerIndex);
+        ContainerConexaoWIFI* cc = (ContainerConexaoWIFI*)d;
+        scrollList1UpdateItem(*cc, itemIndex);
     }
 }

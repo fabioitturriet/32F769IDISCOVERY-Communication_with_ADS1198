@@ -1,0 +1,15 @@
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:42:6:Ringbuf_init	0	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:58:6:store_char	0	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:73:5:Look_for	24	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:106:6:GetDataFromBuffer	32	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:164:6:Uart_flush	8	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:180:5:Uart_peek	0	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:209:5:Uart_read	0	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:244:6:Uart_write	8	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:278:5:IsDataAvailable	0	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:299:6:Uart_sendstring	16	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:304:6:Uart_printbase	56	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:325:5:Copy_upto	48	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:361:5:Wait_for	24	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:287:5:Get_after	24	static
+../Application/User/UartRingBuffer/UartRingbuffer_multi.c:392:6:Uart_isr	0	static

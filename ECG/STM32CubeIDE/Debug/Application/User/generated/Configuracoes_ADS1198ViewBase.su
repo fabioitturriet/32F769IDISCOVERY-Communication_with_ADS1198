@@ -1,0 +1,103 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:147:23:virtual touchgfx::Drawable* touchgfx::Drawable::getFirstChild()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:315:18:virtual void touchgfx::Drawable::setX(int16_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:356:18:virtual void touchgfx::Drawable::setWidth(int16_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:368:18:virtual void touchgfx::Drawable::setHeight(int16_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:378:18:virtual void touchgfx::Drawable::childGeometryChanged()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:389:18:virtual void touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:400:18:virtual void touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:488:18:virtual void touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:498:18:virtual void touchgfx::Drawable::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:585:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	4	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:700:18:virtual void touchgfx::Drawable::setupDrawChain(const touchgfx::Rect&, touchgfx::Drawable**)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:93:18:virtual void touchgfx::Screen::setupScreen()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:47:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	0	static
+../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<Configuracoes_ADS1198Presenter>::~View()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:21:13:Configuracoes_ADS1198ViewBase::~Configuracoes_ADS1198ViewBase()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:27:18:virtual void Configuracoes_ADS1198ViewBase::Set1kSPS()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:32:18:virtual void Configuracoes_ADS1198ViewBase::Set500SPS()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:37:18:virtual void Configuracoes_ADS1198ViewBase::Set250SPS()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:42:18:virtual void Configuracoes_ADS1198ViewBase::Set125SPS()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:47:18:virtual void Configuracoes_ADS1198ViewBase::SetGain12()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:52:18:virtual void Configuracoes_ADS1198ViewBase::SetGain8()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:57:18:virtual void Configuracoes_ADS1198ViewBase::SetGain6()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:62:18:virtual void Configuracoes_ADS1198ViewBase::SetGain4()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:67:18:virtual void Configuracoes_ADS1198ViewBase::SetGain2()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:72:18:virtual void Configuracoes_ADS1198ViewBase::SetGain1()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:77:18:virtual void Configuracoes_ADS1198ViewBase::StartRDataC()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:82:18:virtual void Configuracoes_ADS1198ViewBase::SetModoNormal()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:87:18:virtual void Configuracoes_ADS1198ViewBase::SetModoTeste()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:92:18:virtual void Configuracoes_ADS1198ViewBase::SetModoMensRuido()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:97:18:virtual void Configuracoes_ADS1198ViewBase::LOFF_off()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:102:18:virtual void Configuracoes_ADS1198ViewBase::LOFF_DCResistor()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:107:18:virtual void Configuracoes_ADS1198ViewBase::LOFF_DCSource()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:112:18:virtual void Configuracoes_ADS1198ViewBase::LOFF_AC()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.cpp:319:6:virtual void Configuracoes_ADS1198ViewBase::setupScreen()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<touchgfx::RadioButtonGroup<4>, const touchgfx::AbstractButton&, void, void>::~Callback()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:53:13:touchgfx::RadioButtonGroup<CAPACITY>::~RadioButtonGroup() [with short unsigned int CAPACITY = 4]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<touchgfx::RadioButtonGroup<7>, const touchgfx::AbstractButton&, void, void>::~Callback()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:53:13:touchgfx::RadioButtonGroup<CAPACITY>::~RadioButtonGroup() [with short unsigned int CAPACITY = 7]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<touchgfx::RadioButtonGroup<3>, const touchgfx::AbstractButton&, void, void>::~Callback()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:53:13:touchgfx::RadioButtonGroup<CAPACITY>::~RadioButtonGroup() [with short unsigned int CAPACITY = 3]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<Configuracoes_ADS1198ViewBase, const touchgfx::AbstractButton&>::~Callback()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = Configuracoes_ADS1198ViewBase; T1 = const touchgfx::AbstractButton&]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = Configuracoes_ADS1198ViewBase; T1 = const touchgfx::AbstractButton&]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:78:26:touchgfx::RadioButton* touchgfx::RadioButtonGroup<CAPACITY>::getRadioButton(uint16_t) const [with short unsigned int CAPACITY = 3]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:89:21:int32_t touchgfx::RadioButtonGroup<CAPACITY>::getSelectedRadioButtonIndex() const [with short unsigned int CAPACITY = 3]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:107:26:touchgfx::RadioButton* touchgfx::RadioButtonGroup<CAPACITY>::getSelectedRadioButton() const [with short unsigned int CAPACITY = 3]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:138:18:void touchgfx::RadioButtonGroup<CAPACITY>::setDeselectionEnabled(bool) [with short unsigned int CAPACITY = 3]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = touchgfx::RadioButtonGroup<3>; T1 = const touchgfx::AbstractButton&]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = touchgfx::RadioButtonGroup<3>; T1 = const touchgfx::AbstractButton&]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:78:26:touchgfx::RadioButton* touchgfx::RadioButtonGroup<CAPACITY>::getRadioButton(uint16_t) const [with short unsigned int CAPACITY = 7]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:89:21:int32_t touchgfx::RadioButtonGroup<CAPACITY>::getSelectedRadioButtonIndex() const [with short unsigned int CAPACITY = 7]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:107:26:touchgfx::RadioButton* touchgfx::RadioButtonGroup<CAPACITY>::getSelectedRadioButton() const [with short unsigned int CAPACITY = 7]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:138:18:void touchgfx::RadioButtonGroup<CAPACITY>::setDeselectionEnabled(bool) [with short unsigned int CAPACITY = 7]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = touchgfx::RadioButtonGroup<7>; T1 = const touchgfx::AbstractButton&]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = touchgfx::RadioButtonGroup<7>; T1 = const touchgfx::AbstractButton&]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:78:26:touchgfx::RadioButton* touchgfx::RadioButtonGroup<CAPACITY>::getRadioButton(uint16_t) const [with short unsigned int CAPACITY = 4]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:89:21:int32_t touchgfx::RadioButtonGroup<CAPACITY>::getSelectedRadioButtonIndex() const [with short unsigned int CAPACITY = 4]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:107:26:touchgfx::RadioButton* touchgfx::RadioButtonGroup<CAPACITY>::getSelectedRadioButton() const [with short unsigned int CAPACITY = 4]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:138:18:void touchgfx::RadioButtonGroup<CAPACITY>::setDeselectionEnabled(bool) [with short unsigned int CAPACITY = 4]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = touchgfx::RadioButtonGroup<4>; T1 = const touchgfx::AbstractButton&]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = touchgfx::RadioButtonGroup<4>; T1 = const touchgfx::AbstractButton&]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:122:18:void touchgfx::RadioButtonGroup<CAPACITY>::setSelected(touchgfx::RadioButton&) [with short unsigned int CAPACITY = 7]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:122:18:void touchgfx::RadioButtonGroup<CAPACITY>::setSelected(touchgfx::RadioButton&) [with short unsigned int CAPACITY = 3]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:122:18:void touchgfx::RadioButtonGroup<CAPACITY>::setSelected(touchgfx::RadioButton&) [with short unsigned int CAPACITY = 4]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:53:13:touchgfx::RadioButtonGroup<CAPACITY>::~RadioButtonGroup() [with short unsigned int CAPACITY = 7]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<touchgfx::RadioButtonGroup<7>, const touchgfx::AbstractButton&, void, void>::~Callback()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:53:13:touchgfx::RadioButtonGroup<CAPACITY>::~RadioButtonGroup() [with short unsigned int CAPACITY = 3]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<touchgfx::RadioButtonGroup<3>, const touchgfx::AbstractButton&, void, void>::~Callback()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:53:13:touchgfx::RadioButtonGroup<CAPACITY>::~RadioButtonGroup() [with short unsigned int CAPACITY = 4]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<touchgfx::RadioButtonGroup<4>, const touchgfx::AbstractButton&, void, void>::~Callback()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<Configuracoes_ADS1198ViewBase, const touchgfx::AbstractButton&>::~Callback()	8	static
+../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<Configuracoes_ADS1198Presenter>::~View()	8	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:21:13:virtual Configuracoes_ADS1198ViewBase::~Configuracoes_ADS1198ViewBase()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.cpp:347:6:void Configuracoes_ADS1198ViewBase::radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton&)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:227:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonDeselectedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 4]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:227:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonDeselectedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 7]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:227:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonDeselectedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 3]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:63:18:void touchgfx::RadioButtonGroup<CAPACITY>::add(touchgfx::RadioButton&) [with short unsigned int CAPACITY = 7]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:63:18:void touchgfx::RadioButtonGroup<CAPACITY>::add(touchgfx::RadioButton&) [with short unsigned int CAPACITY = 3]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:63:18:void touchgfx::RadioButtonGroup<CAPACITY>::add(touchgfx::RadioButton&) [with short unsigned int CAPACITY = 4]	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:153:18:bool touchgfx::RadioButtonGroup<CAPACITY>::getDeselectionEnabled() const [with short unsigned int CAPACITY = 7]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:153:18:bool touchgfx::RadioButtonGroup<CAPACITY>::getDeselectionEnabled() const [with short unsigned int CAPACITY = 3]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:153:18:bool touchgfx::RadioButtonGroup<CAPACITY>::getDeselectionEnabled() const [with short unsigned int CAPACITY = 4]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:202:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonClickedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 7]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:202:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonClickedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 3]	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:202:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonClickedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 4]	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.cpp:324:6:void Configuracoes_ADS1198ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:33:5:touchgfx::Box::Box()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:36:5:touchgfx::AbstractButton::AbstractButton()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButton.hpp:41:5:touchgfx::RadioButton::RadioButton()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.cpp:9:1:Configuracoes_ADS1198ViewBase::Configuracoes_ADS1198ViewBase()	304	static

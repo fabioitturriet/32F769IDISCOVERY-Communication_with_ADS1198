@@ -49,17 +49,16 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<InstrucoesViewBase, const touchgfx::AbstractButtonContainer&>::~Callback()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:218:8:virtual touchgfx::Callback<InstrucoesViewBase, touchgfx::DrawableListItemsInterface*, short int, short int>::~Callback()	8	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/instrucoes_screen/InstrucoesViewBase.hpp:22:13:virtual InstrucoesViewBase::~InstrucoesViewBase()	8	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/instrucoes_screen/InstrucoesViewBase.cpp:68:6:virtual void InstrucoesViewBase::setupScreen()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/instrucoes_screen/InstrucoesViewBase.cpp:62:6:virtual void InstrucoesViewBase::setupScreen()	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp:99:18:virtual void touchgfx::AbstractButtonContainer::executeAction()	8	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/instrucoes_screen/InstrucoesViewBase.cpp:105:6:void InstrucoesViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInterface*, int16_t, int16_t)	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/instrucoes_screen/InstrucoesViewBase.cpp:99:6:void InstrucoesViewBase::updateItemCallbackHandler(touchgfx::DrawableListItemsInterface*, int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:82:23:touchgfx::Drawable* touchgfx::DrawableListItems<TYPE, SIZE>::getDrawable(int16_t) [with TYPE = ContainerListaDeInstrucoes; int SIZE = 5]	8	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/instrucoes_screen/InstrucoesViewBase.cpp:88:6:void InstrucoesViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	24	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/instrucoes_screen/InstrucoesViewBase.cpp:82:6:void InstrucoesViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:47:18:virtual void touchgfx::ClickButtonTrigger::handleClickEvent(const touchgfx::ClickEvent&)	16	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/instrucoes_screen/InstrucoesViewBase.cpp:77:6:void InstrucoesViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/instrucoes_screen/InstrucoesViewBase.cpp:71:6:void InstrucoesViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:33:5:touchgfx::Box::Box()	8	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	8	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/instrucoes_screen/InstrucoesViewBase.cpp:9:1:InstrucoesViewBase::InstrucoesViewBase()	96	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/instrucoes_screen/InstrucoesViewBase.cpp:9:1:InstrucoesViewBase::InstrucoesViewBase()	104	static

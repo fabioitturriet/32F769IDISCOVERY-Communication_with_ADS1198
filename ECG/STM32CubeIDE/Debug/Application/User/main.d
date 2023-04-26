@@ -20,6 +20,8 @@ Application/User/main.o: D:/ProjetoSTM32ECG/ECG/Core/Src/main.c \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma2d.h \
@@ -61,8 +63,10 @@ Application/User/main.o: D:/ProjetoSTM32ECG/ECG/Core/Src/main.c \
  ../../Drivers/BSP/Components/Common/../mx25l512/mx25l512.h \
  ../../Drivers/BSP/Components/Common/../otm8009a/otm8009a.h \
  D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_ADS1198/ADS1298.h \
+ D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_ESP01/ESP8266.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+ ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_panTompkins/panTompkins.h
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
@@ -84,6 +88,8 @@ Application/User/main.o: D:/ProjetoSTM32ECG/ECG/Core/Src/main.c \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma2d.h:
@@ -127,5 +133,7 @@ Application/User/main.o: D:/ProjetoSTM32ECG/ECG/Core/Src/main.c \
 ../../Drivers/BSP/Components/Common/../mx25l512/mx25l512.h:
 ../../Drivers/BSP/Components/Common/../otm8009a/otm8009a.h:
 D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_ADS1198/ADS1298.h:
+D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_ESP01/ESP8266.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_panTompkins/panTompkins.h:

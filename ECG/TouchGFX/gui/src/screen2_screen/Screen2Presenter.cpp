@@ -21,3 +21,13 @@ void Screen2Presenter::PresenterStartRead()
 {
 	model->StartRDataC();
 }
+
+void Screen2Presenter::PresenterConfig12Dev()
+{
+	model->Config12Dev();
+}
+
+void Screen2Presenter::PresenterConfig3Dev()
+{
+	model->Config3Dev();
+}

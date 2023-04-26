@@ -30,16 +30,11 @@ InstrucoesViewBase::InstrucoesViewBase() :
     scrollList1.setDrawableSize(80, 0);
     scrollList1.setDrawables(scrollList1ListItems, updateItemCallback);
 
-    image1.setXY(533, 125);
+    image1.setXY(533, 124);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_DEITADOEDIT_ID));
 
-    textArea1.setXY(604, 81);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NTIO));
-
     voltar.setXY(12, 10);
-    voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID));
+    voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID));
     voltar.setAction(buttonCallback);
 
     CliqueImagem.setBoxWithBorderPosition(0, 0, 250, 311);
@@ -59,7 +54,6 @@ InstrucoesViewBase::InstrucoesViewBase() :
     add(box1);
     add(scrollList1);
     add(image1);
-    add(textArea1);
     add(voltar);
     add(CliqueImagem);
     add(textArea2);

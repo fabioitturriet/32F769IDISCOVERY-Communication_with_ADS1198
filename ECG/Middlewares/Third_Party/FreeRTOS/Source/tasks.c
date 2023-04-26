@@ -3586,7 +3586,6 @@ static void prvCheckTasksWaitingTermination( void )
 
 		/* uxDeletedTasksWaitingCleanUp is used to prevent taskENTER_CRITICAL()
 		being called too often in the idle task. */
-
 		while( uxDeletedTasksWaitingCleanUp > ( UBaseType_t ) 0U )
 		{
 			taskENTER_CRITICAL();

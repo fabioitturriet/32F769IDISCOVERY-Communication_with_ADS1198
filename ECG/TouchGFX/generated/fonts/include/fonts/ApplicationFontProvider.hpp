@@ -27,6 +27,11 @@ struct Typography
     static const touchgfx::FontId LISTA = 11;
     static const touchgfx::FontId CONFIGURACOES = 12;
     static const touchgfx::FontId CONFIGURACOES1 = 13;
+    static const touchgfx::FontId LISTA2 = 14;
+    static const touchgfx::FontId DISPLAY = 15;
+    static const touchgfx::FontId KEYBOARD = 16;
+    static const touchgfx::FontId MODE = 17;
+    static const touchgfx::FontId TYPOGRAPHY_BPM = 18;
 };
 
 struct TypographyFontIndex
@@ -40,12 +45,17 @@ struct TypographyFontIndex
     static const touchgfx::FontId BATERIA = 2;        // verdana_25_4bpp
     static const touchgfx::FontId TYPOGRAPHY_02 = 6;  // ariblk_34_4bpp
     static const touchgfx::FontId PACIENTE = 7;       // ariblk_27_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_03 = 8;  // arial_16_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_03 = 8;  // calibri_18_4bpp
     static const touchgfx::FontId SUBTITULO = 9;      // arial_35_4bpp
     static const touchgfx::FontId LISTA = 10;          // calibri_27_4bpp
-    static const touchgfx::FontId CONFIGURACOES = 11;  // arial_22_4bpp
-    static const touchgfx::FontId CONFIGURACOES1 = 12; // arial_20_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 13;
+    static const touchgfx::FontId CONFIGURACOES = 11;  // arial_27_4bpp
+    static const touchgfx::FontId CONFIGURACOES1 = 12; // arial_24_4bpp
+    static const touchgfx::FontId LISTA2 = 0;         // arial_28_4bpp
+    static const touchgfx::FontId DISPLAY = 0;        // arial_28_4bpp
+    static const touchgfx::FontId KEYBOARD = 13;       // arial_20_4bpp
+    static const touchgfx::FontId MODE = 13;           // arial_20_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_BPM = 14; // arial_60_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 15;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

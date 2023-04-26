@@ -29,11 +29,28 @@ public:
 
     void UpdateGraph(float value);
 
+    void UpdateMatrixLOFF();
+
     virtual void PresenterStopData();
 
     virtual void PresenterAjusteEscala();
 
     virtual void SetMinMaxEscalaGraph(int16_t SetMinEscala, int16_t SetMaxEscala);
+
+    virtual void PBackDeriv();
+    virtual void PNextDeriv();
+
+    virtual void PWifiECG();
+
+    virtual void PresenterAtualizarBPM();
+    virtual void PreStopPanTompkins();
+
+    virtual void GeraPopup();
+
+    void AtualizarBPM();
+    void AtualizarIconHeart();
+
+    virtual void PreStopLoadingAnimation();
 
 private:
     Screen1Presenter();

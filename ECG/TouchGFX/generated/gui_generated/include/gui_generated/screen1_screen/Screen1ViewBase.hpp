@@ -11,11 +11,17 @@
 #include <touchgfx/widgets/graph/GraphWrapAndOverwrite.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <gui/containers/ContainerLoadingAnimation.hpp>
+#include <touchgfx/containers/buttons/Buttons.hpp>
+#include <gui/containers/ContainerPopup.hpp>
+#include <gui/containers/ContainerLOFFMatrix.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -33,6 +39,41 @@ public:
     }
 
     virtual void AjusteEscala()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void NextDeriv()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void BackDeriv()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void WifiECG()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void FechaPopup()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void FechaPopup1()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void FechaStatLead()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void AbreStatLead()
     {
         // Override and implement this function in Screen1
     }
@@ -55,24 +96,43 @@ protected:
     touchgfx::GraphElementGridX dynamicGraph1MajorXAxisGrid;
     touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
     touchgfx::Box box3;
-    touchgfx::Image image2;
-    touchgfx::TextArea textArea1;
-    touchgfx::TextArea textArea2;
+    touchgfx::BoxWithBorder boxWithBorder1;
+    touchgfx::TextAreaWithOneWildcard textArea1;
+    touchgfx::TextAreaWithOneWildcard textArea2;
     touchgfx::TextArea textArea3;
     touchgfx::TextArea textArea4;
+    touchgfx::TextArea textArea6;
     touchgfx::ScalableImage scalableImage1;
     touchgfx::ScalableImage scalableImage2;
     touchgfx::ScalableImage scalableImage3;
     touchgfx::ScalableImage scalableImage4;
     touchgfx::ScalableImage scalableImage5;
     touchgfx::ScalableImage scalableImage6;
-    touchgfx::ScalableImage scalableImage7;
-    touchgfx::TextArea textArea5;
-    touchgfx::ScalableImage scalableImage8;
     touchgfx::Button voltar;
     touchgfx::ButtonWithIcon ConfigExame;
     touchgfx::ButtonWithIcon buttonWithIcon1;
-    touchgfx::TextArea textArea6;
+    touchgfx::TextArea textoffset;
+    touchgfx::ButtonWithIcon buttonNextDeriv;
+    touchgfx::ButtonWithIcon buttoBackDeriv;
+    touchgfx::ButtonWithLabel buttonTransmit;
+    touchgfx::ScalableImage scalableImage4_1;
+    ContainerLoadingAnimation containerLoadingAnimation1;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger > buttonFechaPopup;
+    touchgfx::ButtonWithIcon buttonFechaPopup1;
+    touchgfx::ScalableImage scalableImage9;
+    touchgfx::ScalableImage scalableImage8;
+    ContainerPopup containerPopup1;
+    touchgfx::ButtonWithIcon buttonOpenStatLead;
+    ContainerLOFFMatrix containerLOFFMatrix1;
+    touchgfx::ButtonWithIcon buttonFechaStatLead;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREA1_SIZE = 12;
+    touchgfx::Unicode::UnicodeChar textArea1Buffer[TEXTAREA1_SIZE];
+    static const uint16_t TEXTAREA2_SIZE = 4;
+    touchgfx::Unicode::UnicodeChar textArea2Buffer[TEXTAREA2_SIZE];
 
 private:
 
@@ -80,11 +140,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
     /*
      * Canvas Buffer Size

@@ -73,6 +73,8 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma2d.h \
@@ -105,6 +107,9 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
+ ../../TouchGFX/gui/include/gui/containers/ContainerBatteryCharge.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerBatteryChargeBase.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  ../../TouchGFX/gui/include/gui/instrucoes_screen/InstrucoesView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/instrucoes_screen/InstrucoesViewBase.hpp \
  ../../TouchGFX/gui/include/gui/instrucoes_screen/InstrucoesPresenter.hpp \
@@ -130,17 +135,42 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
  ../../TouchGFX/gui/include/gui/configuracoes_screen/ConfiguracoesView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_screen/ConfiguracoesViewBase.hpp \
  ../../TouchGFX/gui/include/gui/configuracoes_screen/ConfiguracoesPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/configuracoes_ads1198_screen/Configuracoes_ADS1198View.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/configuracoes_ads1198_screen/Configuracoes_ADS1198Presenter.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButton.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp \
+ ../../TouchGFX/gui/include/gui/configuracoes_extras_screen/Configuracoes_ExtrasView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_extras_screen/Configuracoes_ExtrasViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/configuracoes_extras_screen/Configuracoes_ExtrasPresenter.hpp \
  ../../TouchGFX/gui/include/gui/cadastro_screen/CadastroView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp \
  ../../TouchGFX/gui/include/gui/cadastro_screen/CadastroPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/containers/ContainerConexaoWIFI.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerConexaoWIFIBase.hpp \
+ ../../TouchGFX/gui/include/gui/containers/ContainerLoadingAnimation.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerLoadingAnimationBase.hpp \
+ ../../TouchGFX/gui/include/gui/containers/ContainerPopup.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerPopupBase.hpp \
+ ../../TouchGFX/gui/include/gui/novopaciente_screen/NovoPacienteView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/novopaciente_screen/NovoPacienteViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/novopaciente_screen/NovoPacientePresenter.hpp \
+ ../../TouchGFX/gui/include/gui/common/CustomKeyboard.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Keyboard.hpp \
+ ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp \
+ ../../TouchGFX/gui/include/gui/common/KeyboardLayout.hpp \
+ ../../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/FontManager.hpp \
+ ../../TouchGFX/generated/images/include/BitmapDatabase.hpp \
+ ../../TouchGFX/gui/include/gui/common/KeyboardKeyMapping.hpp \
+ ../../TouchGFX/gui/include/gui/screenkeyboard_screen/ScreenKeyboardView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/screenkeyboard_screen/ScreenKeyboardViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/screenkeyboard_screen/ScreenKeyboardPresenter.hpp \
  ../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp \
  ../../TouchGFX/gui/include/gui/screen2_screen/Screen2Presenter.hpp \
@@ -164,6 +194,8 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
+ ../../TouchGFX/gui/include/gui/containers/ContainerLOFFMatrix.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerLOFFMatrixBase.hpp \
  ../../TouchGFX/target/generated/HardwareMJPEGDecoder.hpp \
  ../../TouchGFX/target/generated/MJPEGDecoder.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VideoController.hpp \
@@ -254,6 +286,8 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_cortex.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_adc_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_crc_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_dma2d.h:
@@ -286,6 +320,9 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
+../../TouchGFX/gui/include/gui/containers/ContainerBatteryCharge.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerBatteryChargeBase.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 ../../TouchGFX/gui/include/gui/instrucoes_screen/InstrucoesView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/instrucoes_screen/InstrucoesViewBase.hpp:
 ../../TouchGFX/gui/include/gui/instrucoes_screen/InstrucoesPresenter.hpp:
@@ -311,17 +348,42 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
 ../../TouchGFX/gui/include/gui/configuracoes_screen/ConfiguracoesView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_screen/ConfiguracoesViewBase.hpp:
 ../../TouchGFX/gui/include/gui/configuracoes_screen/ConfiguracoesPresenter.hpp:
+../../TouchGFX/gui/include/gui/configuracoes_ads1198_screen/Configuracoes_ADS1198View.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_ads1198_screen/Configuracoes_ADS1198ViewBase.hpp:
+../../TouchGFX/gui/include/gui/configuracoes_ads1198_screen/Configuracoes_ADS1198Presenter.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButton.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:
+../../TouchGFX/gui/include/gui/configuracoes_extras_screen/Configuracoes_ExtrasView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_extras_screen/Configuracoes_ExtrasViewBase.hpp:
+../../TouchGFX/gui/include/gui/configuracoes_extras_screen/Configuracoes_ExtrasPresenter.hpp:
 ../../TouchGFX/gui/include/gui/cadastro_screen/CadastroView.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/cadastro_screen/CadastroViewBase.hpp:
 ../../TouchGFX/gui/include/gui/cadastro_screen/CadastroPresenter.hpp:
+../../TouchGFX/gui/include/gui/containers/ContainerConexaoWIFI.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerConexaoWIFIBase.hpp:
+../../TouchGFX/gui/include/gui/containers/ContainerLoadingAnimation.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerLoadingAnimationBase.hpp:
+../../TouchGFX/gui/include/gui/containers/ContainerPopup.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerPopupBase.hpp:
+../../TouchGFX/gui/include/gui/novopaciente_screen/NovoPacienteView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/novopaciente_screen/NovoPacienteViewBase.hpp:
+../../TouchGFX/gui/include/gui/novopaciente_screen/NovoPacientePresenter.hpp:
+../../TouchGFX/gui/include/gui/common/CustomKeyboard.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Keyboard.hpp:
+../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:
+../../TouchGFX/gui/include/gui/common/KeyboardLayout.hpp:
+../../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/FontManager.hpp:
+../../TouchGFX/generated/images/include/BitmapDatabase.hpp:
+../../TouchGFX/gui/include/gui/common/KeyboardKeyMapping.hpp:
+../../TouchGFX/gui/include/gui/screenkeyboard_screen/ScreenKeyboardView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/screenkeyboard_screen/ScreenKeyboardViewBase.hpp:
+../../TouchGFX/gui/include/gui/screenkeyboard_screen/ScreenKeyboardPresenter.hpp:
 ../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:
 ../../TouchGFX/gui/include/gui/screen2_screen/Screen2Presenter.hpp:
@@ -345,6 +407,8 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
+../../TouchGFX/gui/include/gui/containers/ContainerLOFFMatrix.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerLOFFMatrixBase.hpp:
 ../../TouchGFX/target/generated/HardwareMJPEGDecoder.hpp:
 ../../TouchGFX/target/generated/MJPEGDecoder.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/VideoController.hpp:

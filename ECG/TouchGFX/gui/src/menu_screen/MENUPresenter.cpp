@@ -16,3 +16,8 @@ void MENUPresenter::deactivate()
 {
 
 }
+
+void MENUPresenter::UpdateBatChargeLevel()
+{
+	view.UpdateBatteryChargeLevel();
+}

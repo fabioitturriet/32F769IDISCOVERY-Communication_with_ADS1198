@@ -48,6 +48,8 @@
 #define PACE 0x15 //PACE
 #define MISC2 0x16 //reserved
 #define CONFIG4 0x17
+#define WCT1 0x18
+#define WCT2 0x19
 
 #define CONFIG1_HR 							0x80
 #define CONFIG1_LP 							0x00
@@ -61,8 +63,16 @@ extern bool verbose;
 
 extern int16_t channelData [16];
 
+void ADS_Config12Dev(void);
+void ADS_Config3Dev(void);
+
 void ADS_Init(void);
 void ADS_InitTestInt(void);
+
+void ADS_LOFF_DC_Resistor(void);
+void ADS_LOFF_DC_CurrentSource(void);
+void ADS_LOFF_AC(void);
+void ADS_LOFF_OFF(void);
 
 void ADS_RDATAC(void);
 void ADS_SDATAC(void);

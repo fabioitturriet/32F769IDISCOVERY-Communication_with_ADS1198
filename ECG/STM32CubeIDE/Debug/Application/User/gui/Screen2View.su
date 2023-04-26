@@ -4,6 +4,8 @@
 ../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp:11:13:Screen2View::~Screen2View()	0	static
 D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:13:6:virtual void Screen2View::tearDownScreen()	0	static
 D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:18:6:virtual void Screen2View::StartRead()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:23:6:virtual void Screen2View::Tipo12DevECG()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:28:6:virtual void Screen2View::Tipo3DevECG()	0	static
 D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:8:6:virtual void Screen2View::setupScreen()	0	static
 ../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp:11:13:virtual Screen2View::~Screen2View()	8	static
 D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:3:1:Screen2View::Screen2View()	8	static

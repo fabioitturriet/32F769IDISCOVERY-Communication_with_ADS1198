@@ -30,9 +30,9 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 195,
+            "X": 306,
             "Y": 11,
-            "Width": 410,
+            "Width": 188,
             "Height": 60,
             "TextId": "__SingleUse_2B6S",
             "TextRotation": "0",
@@ -170,6 +170,15 @@
               "Blue": 26
             },
             "AutoSize": true
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "containerBatteryCharge1",
+            "X": 654,
+            "Y": 11,
+            "Width": 135,
+            "Height": 40,
+            "CustomContainerDefinitionName": "ContainerBatteryCharge"
           }
         ],
         "Interactions": [
@@ -220,6 +229,17 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Configuracoes"
             }
+          },
+          {
+            "InteractionName": "CadastroClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCadastro"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "CadastroClicked"
+            }
           }
         ]
       },
@@ -255,36 +275,20 @@
             "Type": "Image",
             "Name": "image1",
             "X": 533,
-            "Y": 125,
+            "Y": 124,
             "Width": 250,
             "Height": 250,
             "RelativeFilename": "deitadoedit.png"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 604,
-            "Y": 81,
-            "Width": 109,
-            "Height": 32,
-            "TextId": "__SingleUse_NTIO",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
           },
           {
             "Type": "Button",
             "Name": "voltar",
             "X": 12,
             "Y": 10,
-            "Width": 28,
+            "Width": 50,
             "Height": 48,
-            "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
-            "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
+            "Pressed": "Dark_Icons_Back_arrow_edit.png",
+            "Released": "Dark_Icons_Back_arrow_edit.png"
           },
           {
             "Type": "FlexButton",
@@ -383,22 +387,171 @@
             }
           },
           {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 255,
+            "Y": 12,
+            "Width": 290,
+            "Height": 52,
+            "TextId": "__SingleUse_B0FN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonADS1198",
+            "X": 285,
+            "Y": 166,
+            "Width": 230,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_medium_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_medium.png",
+            "TextId": "__SingleUse_9P11",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style7"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonFiltros",
+            "X": 285,
+            "Y": 256,
+            "Width": 230,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_medium_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_medium.png",
+            "TextId": "__SingleUse_5VKY",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style7"
+          },
+          {
             "Type": "Button",
             "Name": "voltar",
             "X": 12,
             "Y": 10,
-            "Width": 28,
+            "Width": 50,
             "Height": 48,
-            "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
-            "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
+            "Pressed": "Dark_Icons_Back_arrow_edit.png",
+            "Released": "Dark_Icons_Back_arrow_edit.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonExtras",
+            "X": 285,
+            "Y": 343,
+            "Width": 230,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_medium_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_medium.png",
+            "TextId": "__SingleUse_Y6FA",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style7"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionVoltar",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "voltar"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "MENU"
+            }
+          },
+          {
+            "InteractionName": "InteractionADS1198",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonADS1198"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuracoes_ADS1198"
+            }
+          },
+          {
+            "InteractionName": "InteractionExtras",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonExtras"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuracoes_Extras"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Configuracoes_ADS1198",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 20,
+              "Green": 61,
+              "Blue": 89
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "voltar",
+            "X": 12,
+            "Y": 10,
+            "Width": 50,
+            "Height": 48,
+            "Pressed": "Dark_Icons_Back_arrow_edit.png",
+            "Released": "Dark_Icons_Back_arrow_edit.png"
           },
           {
             "Type": "TextArea",
             "Name": "FreqAmostragem",
-            "X": 27,
-            "Y": 84,
-            "Width": 141,
-            "Height": 50,
+            "X": 18,
+            "Y": 90,
+            "Width": 173,
+            "Height": 62,
             "TextId": "__SingleUse_UBY0",
             "TextRotation": "0",
             "Color": {
@@ -411,7 +564,7 @@
           {
             "Type": "Box",
             "Name": "barra_divisoria",
-            "X": 26,
+            "X": 21,
             "Y": 80,
             "Width": 775,
             "Height": 2,
@@ -423,11 +576,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2",
-            "X": 252,
-            "Y": 98,
-            "Width": 61,
-            "Height": 23,
+            "Name": "textArea1_1",
+            "X": 255,
+            "Y": 106,
+            "Width": 74,
+            "Height": 27,
             "TextId": "__SingleUse_1JPQ",
             "TextRotation": "0",
             "Color": {
@@ -439,11 +592,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2_1",
-            "X": 383,
-            "Y": 98,
-            "Width": 74,
-            "Height": 23,
+            "Name": "textArea1_2",
+            "X": 392,
+            "Y": 106,
+            "Width": 88,
+            "Height": 27,
             "TextId": "__SingleUse_96UY",
             "TextRotation": "0",
             "Color": {
@@ -455,11 +608,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2_1_1",
-            "X": 514,
-            "Y": 98,
-            "Width": 74,
-            "Height": 23,
+            "Name": "textArea1_3",
+            "X": 545,
+            "Y": 106,
+            "Width": 88,
+            "Height": 27,
             "TextId": "__SingleUse_OWUG",
             "TextRotation": "0",
             "Color": {
@@ -471,11 +624,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2_1_1_1",
-            "X": 645,
-            "Y": 98,
-            "Width": 74,
-            "Height": 23,
+            "Name": "textArea1_4",
+            "X": 698,
+            "Y": 106,
+            "Width": 88,
+            "Height": 27,
             "TextId": "__SingleUse_9M2J",
             "TextRotation": "0",
             "Color": {
@@ -487,11 +640,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1_1",
-            "X": 60,
-            "Y": 147,
-            "Width": 108,
-            "Height": 50,
+            "Name": "GanhoCanais",
+            "X": 59,
+            "Y": 170,
+            "Width": 132,
+            "Height": 62,
             "TextId": "__SingleUse_G1L5",
             "TextRotation": "0",
             "Color": {
@@ -504,8 +657,8 @@
           {
             "Type": "Box",
             "Name": "barra_divisoria_1",
-            "X": 27,
-            "Y": 143,
+            "X": 21,
+            "Y": 161,
             "Width": 775,
             "Height": 2,
             "Color": {
@@ -516,11 +669,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1_1_1",
-            "X": 50,
-            "Y": 206,
-            "Width": 118,
-            "Height": 50,
+            "Name": "EntradaCanais",
+            "X": 45,
+            "Y": 252,
+            "Width": 146,
+            "Height": 62,
             "TextId": "__SingleUse_5AGV",
             "TextRotation": "0",
             "Color": {
@@ -532,9 +685,9 @@
           },
           {
             "Type": "Box",
-            "Name": "barra_divisoria_1_1",
-            "X": 26,
-            "Y": 203,
+            "Name": "barra_divisoria_2",
+            "X": 21,
+            "Y": 239,
             "Width": 775,
             "Height": 2,
             "Color": {
@@ -546,10 +699,10 @@
           {
             "Type": "RadioButton",
             "Name": "radioButton1kSPS",
-            "X": 217,
-            "Y": 94,
-            "Width": 30,
-            "Height": 30,
+            "X": 205,
+            "Y": 96,
+            "Width": 50,
+            "Height": 50,
             "FileNameSelected": "RadioButton_selected_released.png",
             "FileNameSelectedPressed": "RadioButton_selected_released.png",
             "FileNameUnselected": "RadioButton_unselected_released.png",
@@ -559,10 +712,10 @@
           {
             "Type": "RadioButton",
             "Name": "radioButton500SPS",
-            "X": 348,
+            "X": 342,
             "Y": 94,
-            "Width": 30,
-            "Height": 30,
+            "Width": 50,
+            "Height": 50,
             "FileNameSelected": "RadioButton_selected_released.png",
             "FileNameSelectedPressed": "RadioButton_selected_released.png",
             "FileNameUnselected": "RadioButton_unselected_released.png",
@@ -572,10 +725,10 @@
           {
             "Type": "RadioButton",
             "Name": "radioButton250SPS",
-            "X": 479,
+            "X": 495,
             "Y": 94,
-            "Width": 30,
-            "Height": 30,
+            "Width": 50,
+            "Height": 50,
             "FileNameSelected": "RadioButton_selected_released.png",
             "FileNameSelectedPressed": "RadioButton_selected_released.png",
             "FileNameUnselected": "RadioButton_unselected_released.png",
@@ -585,10 +738,10 @@
           {
             "Type": "RadioButton",
             "Name": "radioButton125SPS",
-            "X": 610,
+            "X": 648,
             "Y": 94,
-            "Width": 30,
-            "Height": 30,
+            "Width": 50,
+            "Height": 50,
             "FileNameSelected": "RadioButton_selected_released.png",
             "FileNameSelectedPressed": "RadioButton_selected_released.png",
             "FileNameUnselected": "RadioButton_unselected_released.png",
@@ -597,9 +750,10 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea3",
-            "X": 255,
-            "Width": 290,
+            "Name": "textArea",
+            "X": 123,
+            "Y": 8,
+            "Width": 552,
             "Height": 52,
             "TextId": "__SingleUse_72N9",
             "TextRotation": "0",
@@ -613,8 +767,8 @@
           {
             "Type": "ButtonWithIcon",
             "Name": "ConfigtoExame",
-            "X": 719,
-            "Y": 399,
+            "X": 726,
+            "Y": 412,
             "Width": 60,
             "Height": 60,
             "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
@@ -629,10 +783,10 @@
           {
             "Type": "RadioButton",
             "Name": "radioButtonGain12",
-            "X": 207,
-            "Y": 157,
-            "Width": 30,
-            "Height": 30,
+            "X": 214,
+            "Y": 176,
+            "Width": 50,
+            "Height": 50,
             "FileNameSelected": "RadioButton_selected_released.png",
             "FileNameSelectedPressed": "RadioButton_selected_released.png",
             "FileNameUnselected": "RadioButton_unselected_released.png",
@@ -642,10 +796,10 @@
           {
             "Type": "RadioButton",
             "Name": "radioButtonGain8",
-            "X": 286,
-            "Y": 157,
-            "Width": 30,
-            "Height": 30,
+            "X": 297,
+            "Y": 176,
+            "Width": 50,
+            "Height": 50,
             "FileNameSelected": "RadioButton_selected_released.png",
             "FileNameSelectedPressed": "RadioButton_selected_released.png",
             "FileNameUnselected": "RadioButton_unselected_released.png",
@@ -655,10 +809,10 @@
           {
             "Type": "RadioButton",
             "Name": "radioButtonGain6",
-            "X": 368,
-            "Y": 157,
-            "Width": 30,
-            "Height": 30,
+            "X": 380,
+            "Y": 176,
+            "Width": 50,
+            "Height": 50,
             "FileNameSelected": "RadioButton_selected_released.png",
             "FileNameSelectedPressed": "RadioButton_selected_released.png",
             "FileNameUnselected": "RadioButton_unselected_released.png",
@@ -668,10 +822,10 @@
           {
             "Type": "RadioButton",
             "Name": "radioButtonGain4",
-            "X": 450,
-            "Y": 157,
-            "Width": 30,
-            "Height": 30,
+            "X": 463,
+            "Y": 176,
+            "Width": 50,
+            "Height": 50,
             "FileNameSelected": "RadioButton_selected_released.png",
             "FileNameSelectedPressed": "RadioButton_selected_released.png",
             "FileNameUnselected": "RadioButton_unselected_released.png",
@@ -681,10 +835,10 @@
           {
             "Type": "RadioButton",
             "Name": "radioButtonGain3",
-            "X": 532,
-            "Y": 157,
-            "Width": 30,
-            "Height": 30,
+            "X": 546,
+            "Y": 176,
+            "Width": 50,
+            "Height": 50,
             "FileNameSelected": "RadioButton_selected_released.png",
             "FileNameSelectedPressed": "RadioButton_selected_released.png",
             "FileNameUnselected": "RadioButton_unselected_released.png",
@@ -694,10 +848,10 @@
           {
             "Type": "RadioButton",
             "Name": "radioButtonGain2",
-            "X": 614,
-            "Y": 157,
-            "Width": 30,
-            "Height": 30,
+            "X": 629,
+            "Y": 176,
+            "Width": 50,
+            "Height": 50,
             "FileNameSelected": "RadioButton_selected_released.png",
             "FileNameSelectedPressed": "RadioButton_selected_released.png",
             "FileNameUnselected": "RadioButton_unselected_released.png",
@@ -707,10 +861,10 @@
           {
             "Type": "RadioButton",
             "Name": "radioButtonGain1",
-            "X": 696,
-            "Y": 157,
-            "Width": 30,
-            "Height": 30,
+            "X": 712,
+            "Y": 176,
+            "Width": 50,
+            "Height": 50,
             "FileNameSelected": "RadioButton_selected_released.png",
             "FileNameSelectedPressed": "RadioButton_selected_released.png",
             "FileNameUnselected": "RadioButton_unselected_released.png",
@@ -719,11 +873,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2_2",
-            "X": 241,
-            "Y": 161,
-            "Width": 22,
-            "Height": 23,
+            "Name": "textArea2_1",
+            "X": 264,
+            "Y": 188,
+            "Width": 26,
+            "Height": 27,
             "TextId": "__SingleUse_2GRA",
             "TextRotation": "0",
             "Color": {
@@ -735,11 +889,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2_2_1",
-            "X": 320,
-            "Y": 161,
-            "Width": 11,
-            "Height": 23,
+            "Name": "textArea2_2",
+            "X": 347,
+            "Y": 188,
+            "Width": 14,
+            "Height": 27,
             "TextId": "__SingleUse_BQ92",
             "TextRotation": "0",
             "Color": {
@@ -751,11 +905,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2_2_1_1",
-            "X": 403,
-            "Y": 161,
-            "Width": 11,
-            "Height": 23,
+            "Name": "textArea2_3",
+            "X": 430,
+            "Y": 188,
+            "Width": 14,
+            "Height": 27,
             "TextId": "__SingleUse_2APE",
             "TextRotation": "0",
             "Color": {
@@ -767,11 +921,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2_2_1_1_1",
-            "X": 484,
-            "Y": 161,
-            "Width": 11,
-            "Height": 23,
+            "Name": "textArea2_4",
+            "X": 513,
+            "Y": 188,
+            "Width": 14,
+            "Height": 27,
             "TextId": "__SingleUse_GB6Y",
             "TextRotation": "0",
             "Color": {
@@ -783,11 +937,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2_2_1_1_1_1",
-            "X": 566,
-            "Y": 161,
-            "Width": 11,
-            "Height": 23,
+            "Name": "textArea2_5",
+            "X": 596,
+            "Y": 188,
+            "Width": 14,
+            "Height": 27,
             "TextId": "__SingleUse_HEVB",
             "TextRotation": "0",
             "Color": {
@@ -799,11 +953,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2_2_1_1_1_1_1",
-            "X": 648,
-            "Y": 161,
-            "Width": 11,
-            "Height": 23,
+            "Name": "textArea2_6",
+            "X": 679,
+            "Y": 188,
+            "Width": 14,
+            "Height": 27,
             "TextId": "__SingleUse_4XY9",
             "TextRotation": "0",
             "Color": {
@@ -815,12 +969,244 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea2_2_1_1_1_1_1_1",
-            "X": 730,
-            "Y": 161,
-            "Width": 11,
-            "Height": 23,
+            "Name": "textArea2_7",
+            "X": 762,
+            "Y": 188,
+            "Width": 14,
+            "Height": 27,
             "TextId": "__SingleUse_6667",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonModoNormal",
+            "X": 205,
+            "Y": 258,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupModo"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonModoTeste",
+            "X": 406,
+            "Y": 258,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupModo"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonModoMNoise",
+            "X": 603,
+            "Y": 258,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupModo"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3_1",
+            "X": 255,
+            "Y": 270,
+            "Width": 144,
+            "Height": 27,
+            "TextId": "__SingleUse_ZYMX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3_2",
+            "X": 456,
+            "Y": 270,
+            "Width": 138,
+            "Height": 27,
+            "TextId": "__SingleUse_KWMU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3_3",
+            "X": 653,
+            "Y": 270,
+            "Width": 146,
+            "Height": 27,
+            "TextId": "__SingleUse_QBZD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "LoffDetect",
+            "X": 25,
+            "Y": 332,
+            "Width": 166,
+            "Height": 93,
+            "TextId": "__SingleUse_XTRL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "barra_divisoria_3",
+            "X": 21,
+            "Y": 326,
+            "Width": 775,
+            "Height": 2,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonLOFF_Off",
+            "X": 205,
+            "Y": 340,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupLOFF"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonLOFF_DCResistor",
+            "X": 311,
+            "Y": 340,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupLOFF"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonLOFF_DCSource",
+            "X": 565,
+            "Y": 340,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupLOFF"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonLOFF_AC",
+            "X": 419,
+            "Y": 417,
+            "Width": 50,
+            "Height": 50,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroupLOFF"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4_1",
+            "X": 259,
+            "Y": 352,
+            "Width": 31,
+            "Height": 27,
+            "TextId": "__SingleUse_2FTC",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4_2",
+            "X": 366,
+            "Y": 338,
+            "Width": 182,
+            "Height": 55,
+            "TextId": "__SingleUse_O517",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4_3",
+            "X": 618,
+            "Y": 338,
+            "Width": 94,
+            "Height": 55,
+            "TextId": "__SingleUse_274B",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4_4",
+            "X": 474,
+            "Y": 429,
+            "Width": 100,
+            "Height": 27,
+            "TextId": "__SingleUse_0LF8",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -840,7 +1226,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "MENU"
+              "ActionComponent": "Configuracoes"
             }
           },
           {
@@ -986,6 +1372,243 @@
               "Type": "ActionCustom",
               "FunctionName": "StartRDataC"
             }
+          },
+          {
+            "InteractionName": "SetModoNormal",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonModoNormal"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SetModoNormal"
+            }
+          },
+          {
+            "InteractionName": "SetModoTeste",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonModoTeste"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SetModoTeste"
+            }
+          },
+          {
+            "InteractionName": "SetModoMensRuido",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonModoMNoise"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SetModoMensRuido"
+            }
+          },
+          {
+            "InteractionName": "InteractionLOFF_off",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonLOFF_Off"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "LOFF_off"
+            }
+          },
+          {
+            "InteractionName": "InteractionLOFF_DCResistor",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonLOFF_DCResistor"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "LOFF_DCResistor"
+            }
+          },
+          {
+            "InteractionName": "InteractionLOFF_DCSource",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonLOFF_DCSource"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "LOFF_DCSource"
+            }
+          },
+          {
+            "InteractionName": "InteractionLOFF_AC",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonLOFF_AC"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "LOFF_AC"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Configuracoes_Extras",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 20,
+              "Green": 61,
+              "Blue": 89
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea",
+            "X": 185,
+            "Y": 10,
+            "Width": 430,
+            "Height": 52,
+            "TextId": "__SingleUse_WM1H",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "barra_divisoria",
+            "X": 21,
+            "Y": 80,
+            "Width": 775,
+            "Height": 2,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "FreqAmostragem",
+            "X": 18,
+            "Y": 90,
+            "Width": 306,
+            "Height": 31,
+            "TextId": "__SingleUse_J0H8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "barra_divisoria_1",
+            "X": 21,
+            "Y": 141,
+            "Width": 775,
+            "Height": 2,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "FreqAmostragem_1",
+            "X": 18,
+            "Y": 151,
+            "Width": 363,
+            "Height": 31,
+            "TextId": "__SingleUse_GIU7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonPanTompkins",
+            "X": 420,
+            "Y": 90,
+            "Width": 128,
+            "Height": 38,
+            "InitialStatePressed": true,
+            "Pressed": "__designer\\Blue_Togglebars_Toggle_round_large_button_ON.png",
+            "Released": "__designer\\Blue_Togglebars_Toggle_round_large_button_OFF.png",
+            "Style": "Style4"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonBatteryLevelVisible",
+            "X": 420,
+            "Y": 151,
+            "Width": 128,
+            "Height": 38,
+            "InitialStatePressed": true,
+            "Pressed": "__designer\\Blue_Togglebars_Toggle_round_large_button_ON.png",
+            "Released": "__designer\\Blue_Togglebars_Toggle_round_large_button_OFF.png",
+            "Style": "Style4"
+          },
+          {
+            "Type": "Button",
+            "Name": "voltar",
+            "X": 12,
+            "Y": 10,
+            "Width": 50,
+            "Height": 48,
+            "Pressed": "Dark_Icons_Back_arrow_edit.png",
+            "Released": "Dark_Icons_Back_arrow_edit.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionVoltar",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "voltar"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuracoes"
+            }
+          },
+          {
+            "InteractionName": "InteractionPanTompkinsSet",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButtonPanTompkins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "TogglePanTompkinsSet"
+            }
+          },
+          {
+            "InteractionName": "InteractionBatteryLevelSetVisible",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButtonBatteryLevelVisible"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "BatteryLevelSetVisible"
+            }
           }
         ]
       },
@@ -1008,10 +1631,192 @@
             "Name": "voltar",
             "X": 12,
             "Y": 10,
-            "Width": 28,
+            "Width": 50,
             "Height": 48,
-            "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
-            "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
+            "Pressed": "Dark_Icons_Back_arrow_edit.png",
+            "Released": "Dark_Icons_Back_arrow_edit.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 251,
+            "Width": 298,
+            "Height": 52,
+            "TextId": "__SingleUse_6LB2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ScrollList",
+            "Name": "scrollList1",
+            "X": 381,
+            "Y": 166,
+            "Width": 400,
+            "Height": 280,
+            "ItemTemplateName": "ContainerConexaoWIFI",
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 467,
+            "Y": 113,
+            "Width": 229,
+            "Height": 32,
+            "TextId": "__SingleUse_0ZJL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonAtualizarRedes",
+            "X": 381,
+            "Y": 99,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "IconPressed": "__designer\\Blue_Icons_Refresh_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Refresh_32.png",
+            "IconX": 15,
+            "IconY": 16,
+            "IconHeight": 28,
+            "IconWidth": 30
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleInitWIFI",
+            "X": 121,
+            "Y": 256,
+            "Width": 120,
+            "Height": 60,
+            "Pressed": "WIFIligado.png",
+            "Released": "WIFIdesligado.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3_1",
+            "X": 119,
+            "Y": 188,
+            "Width": 122,
+            "Height": 60,
+            "TextId": "__SingleUse_T6Y1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "containerLoadingAnimation1",
+            "X": 281,
+            "Y": 254,
+            "Width": 62,
+            "Height": 62,
+            "Visible": false,
+            "CustomContainerDefinitionName": "ContainerLoadingAnimation"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "buttonFecharPopup1",
+            "Width": 800,
+            "Height": 480,
+            "Visible": false,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 800,
+                "Height": 480,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "containerPopup1",
+            "Width": 800,
+            "Height": 480,
+            "Visible": false,
+            "CustomContainerDefinitionName": "ContainerPopup"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonFecharPopup",
+            "X": 601,
+            "Y": 110,
+            "Width": 31,
+            "Height": 31,
+            "Visible": false,
+            "Pressed": "__designer\\Dark_Icons_Remove_32.png",
+            "Released": "__designer\\Dark_Icons_Remove_32.png",
+            "IconPressed": "__designer\\Blue_Icons_Add_new_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Add_new_32.png",
+            "IconX": 1,
+            "IconY": 1,
+            "IconHeight": 29,
+            "IconWidth": 29,
+            "IconStyle": "Icon1"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonNewPacient",
+            "X": 66,
+            "Y": 357,
+            "Width": 230,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_medium_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_medium.png",
+            "TextId": "__SingleUse_F41R",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style3"
           }
         ],
         "Interactions": [
@@ -1025,6 +1830,1041 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "MENU"
+            }
+          },
+          {
+            "InteractionName": "AtualizarRedes",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonAtualizarRedes"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "AtualizarRedes"
+            }
+          },
+          {
+            "InteractionName": "ToggleWiFi",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleInitWIFI"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ToggleWiFi"
+            }
+          },
+          {
+            "InteractionName": "initCadastro",
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "initCadastro"
+            }
+          },
+          {
+            "InteractionName": "RedeSelecionada",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "ScreenKeyboard"
+            }
+          },
+          {
+            "InteractionName": "FechaJanelaPopup",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonFecharPopup"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FechaPopup"
+            }
+          },
+          {
+            "InteractionName": "FechaJanelaPopup1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonFecharPopup1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FechaPopup1"
+            }
+          },
+          {
+            "InteractionName": "Cadastrar",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonNewPacient"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "NovoPaciente"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "NovoPaciente",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 20,
+              "Green": 61,
+              "Blue": 89
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "voltar",
+            "X": 12,
+            "Y": 10,
+            "Width": 50,
+            "Height": 48,
+            "Pressed": "Dark_Icons_Back_arrow_edit.png",
+            "Released": "Dark_Icons_Back_arrow_edit.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 98,
+            "Y": 106,
+            "Width": 103,
+            "Height": 40,
+            "TextId": "__SingleUse_NAFB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 215,
+            "Width": 370,
+            "Height": 52,
+            "TextId": "__SingleUse_XZ6Q",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 69,
+            "Y": 170,
+            "Width": 132,
+            "Height": 40,
+            "TextId": "__SingleUse_MARS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 75,
+            "Y": 233,
+            "Width": 126,
+            "Height": 40,
+            "TextId": "__SingleUse_CLV6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5",
+            "X": 12,
+            "Y": 293,
+            "Width": 189,
+            "Height": 77,
+            "TextId": "__SingleUse_H0MB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea6",
+            "X": 271,
+            "Y": 233,
+            "Width": 29,
+            "Height": 40,
+            "TextId": "__SingleUse_ZZGE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea7",
+            "X": 395,
+            "Y": 233,
+            "Width": 22,
+            "Height": 40,
+            "TextId": "__SingleUse_5HVZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea9",
+            "X": 271,
+            "Y": 338,
+            "Width": 8,
+            "Height": 32,
+            "TextId": "__SingleUse_A5LR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea10",
+            "X": 341,
+            "Y": 338,
+            "Width": 8,
+            "Height": 32,
+            "TextId": "__SingleUse_ORLE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 215,
+            "Y": 106,
+            "Width": 450,
+            "Height": 40,
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textNome",
+            "X": 229,
+            "Y": 108,
+            "Width": 423,
+            "Height": 36,
+            "TextId": "__SingleUse_EEPL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 32
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButtonNome",
+            "X": 215,
+            "Y": 106,
+            "Width": 450,
+            "Height": 40,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 450,
+                "Height": 40,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "X": 215,
+            "Y": 170,
+            "Width": 571,
+            "Height": 40,
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textContato",
+            "X": 229,
+            "Y": 170,
+            "Width": 543,
+            "Height": 40,
+            "TextId": "__SingleUse_XBH8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 32
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButtonContato",
+            "X": 215,
+            "Y": 170,
+            "Width": 571,
+            "Height": 40,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 571,
+                "Height": 40,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonSexoM",
+            "X": 221,
+            "Y": 228,
+            "Width": 50,
+            "Height": 50,
+            "Deselectable": true,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroup1"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButtonSexoF",
+            "X": 345,
+            "Y": 228,
+            "Width": 50,
+            "Height": 50,
+            "Deselectable": true,
+            "FileNameSelected": "RadioButton_selected_released.png",
+            "FileNameSelectedPressed": "RadioButton_selected_released.png",
+            "FileNameUnselected": "RadioButton_unselected_released.png",
+            "FileNameUnselectedPressed": "RadioButton_unselected_released.png",
+            "RadioButtonGroup": "radioButtonGroup1"
+          },
+          {
+            "Type": "Box",
+            "Name": "box5",
+            "X": 215,
+            "Y": 330,
+            "Width": 50,
+            "Height": 40,
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textDataNascDia",
+            "X": 223,
+            "Y": 337,
+            "Width": 42,
+            "Height": 33,
+            "TextId": "__SingleUse_S06B",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButtonNascimentoDia",
+            "X": 215,
+            "Y": 331,
+            "Width": 50,
+            "Height": 39,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 50,
+                "Height": 39,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Box",
+            "Name": "box6",
+            "X": 285,
+            "Y": 330,
+            "Width": 50,
+            "Height": 40,
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textDataNascMes",
+            "X": 292,
+            "Y": 334,
+            "Width": 44,
+            "Height": 36,
+            "TextId": "__SingleUse_P6FV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButtonNascimentoMes",
+            "X": 286,
+            "Y": 331,
+            "Width": 50,
+            "Height": 39,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 50,
+                "Height": 39,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Box",
+            "Name": "box7",
+            "X": 353,
+            "Y": 331,
+            "Width": 73,
+            "Height": 39,
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textDataNascAno",
+            "X": 357,
+            "Y": 334,
+            "Width": 69,
+            "Height": 36,
+            "TextId": "__SingleUse_EE5V",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 5
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButtonNascimentoAno",
+            "X": 353,
+            "Y": 330,
+            "Width": 73,
+            "Height": 40,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 73,
+                "Height": 40,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonSalvarCadastro",
+            "X": 616,
+            "Y": 415,
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_small.png",
+            "TextId": "__SingleUse_X5T1",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonSalvarDados",
+            "X": 563,
+            "Y": 188,
+            "Width": 44,
+            "Height": 44,
+            "Visible": false,
+            "Pressed": "__designer\\Blue_Check_buttons_Check_Round_mark_pressed.png",
+            "Released": "__designer\\Blue_Check_buttons_Check_Round_mark_normal.png",
+            "IconPressed": "__designer\\Blue_Check_buttons_Check_Round_mark_pressed.png",
+            "IconReleased": "__designer\\Blue_Check_buttons_Check_Round_mark_normal.png",
+            "IconHeight": 44,
+            "IconWidth": 44
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonLimparDados",
+            "X": 12,
+            "Y": 415,
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\Dark_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Dark_Buttons_Round_Edge_small.png",
+            "TextId": "__SingleUse_QRPU",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonInfoSalvar",
+            "X": 561,
+            "Y": 421,
+            "Width": 48,
+            "Height": 48,
+            "Pressed": "__designer\\Dark_Icons_Question_48.png",
+            "Released": "__designer\\Dark_Icons_Question_48.png",
+            "IconPressed": "__designer\\Dark_Icons_Question_48.png",
+            "IconReleased": "__designer\\Dark_Icons_Question_48.png",
+            "IconHeight": 48,
+            "IconWidth": 48
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionVoltar",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "voltar"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Cadastro"
+            }
+          },
+          {
+            "InteractionName": "CliqueSalvarCadastro",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonSalvarCadastro"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SalvarCadastro"
+            }
+          },
+          {
+            "InteractionName": "NewNamePacient",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButtonNome"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "NewNamePacient"
+            }
+          },
+          {
+            "InteractionName": "NewContatoPacient",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButtonContato"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "NewContatoPacient"
+            }
+          },
+          {
+            "InteractionName": "MaculinoSelected",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonSexoM"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "MaculinoSelected"
+            }
+          },
+          {
+            "InteractionName": "FemininoSelected",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButtonSexoF"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FemininoSelected"
+            }
+          },
+          {
+            "InteractionName": "NewDataNascDia",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButtonNascimentoDia"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "NewDataNascDia"
+            }
+          },
+          {
+            "InteractionName": "NewDataNascMes",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButtonNascimentoMes"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "NewDataNascMes"
+            }
+          },
+          {
+            "InteractionName": "NewDataNascAno",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButtonNascimentoAno"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "NewDataNascAno"
+            }
+          },
+          {
+            "InteractionName": "SalvarDadosTeclado",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonSalvarDados"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "SalvarDadosTeclado"
+            }
+          },
+          {
+            "InteractionName": "InformacoesSalvarServidor",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonInfoSalvar"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "InfoSalvar"
+            }
+          },
+          {
+            "InteractionName": "LimpaDadosDosBuffers",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonLimparDados"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "LimpaDados"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "ScreenKeyboard",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 20,
+              "Green": 61,
+              "Blue": 89
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "voltar",
+            "X": 12,
+            "Y": 10,
+            "Width": 50,
+            "Height": 48,
+            "Pressed": "Dark_Icons_Back_arrow_edit.png",
+            "Released": "Dark_Icons_Back_arrow_edit.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonSalvarPassword",
+            "X": 625,
+            "Y": 415,
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_small.png",
+            "TextId": "__SingleUse_HKYG",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 25,
+            "Y": 85,
+            "Width": 700,
+            "Height": 35,
+            "TextId": "__SingleUse_N43D",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 25,
+            "Y": 188,
+            "Width": 186,
+            "Height": 32,
+            "TextId": "__SingleUse_L09I",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "containerLoadingAnimation1",
+            "X": 679,
+            "Y": 337,
+            "Width": 62,
+            "Height": 62,
+            "Visible": false,
+            "CustomContainerDefinitionName": "ContainerLoadingAnimation"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "buttonFecharPopup1",
+            "Width": 800,
+            "Height": 480,
+            "Visible": false,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 800,
+                "Height": 480,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "containerPopup1",
+            "Width": 800,
+            "Height": 480,
+            "Visible": false,
+            "CustomContainerDefinitionName": "ContainerPopup"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonFecharPopup",
+            "X": 601,
+            "Y": 110,
+            "Width": 31,
+            "Height": 31,
+            "Visible": false,
+            "Pressed": "__designer\\Dark_Icons_Remove_32.png",
+            "Released": "__designer\\Dark_Icons_Remove_32.png",
+            "IconPressed": "__designer\\Blue_Icons_Add_new_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Add_new_32.png",
+            "IconX": 1,
+            "IconY": 1,
+            "IconHeight": 29,
+            "IconWidth": 29,
+            "IconStyle": "Icon1"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ButtonVoltar",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "voltar"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Cadastro"
+            }
+          },
+          {
+            "InteractionName": "InteractionButtonSalvar",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonSalvarPassword"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "getBuffer"
+            }
+          },
+          {
+            "InteractionName": "FechaJanelaPopup",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonFecharPopup"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FechaPopup"
+            }
+          },
+          {
+            "InteractionName": "FechaJanelaPopup1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonFecharPopup1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FechaPopup1"
             }
           }
         ]
@@ -1046,10 +2886,10 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 103,
-            "Y": 107,
-            "Width": 237,
-            "Height": 32,
+            "X": 169,
+            "Y": 10,
+            "Width": 462,
+            "Height": 52,
             "TextId": "__SingleUse_CCNK",
             "TextRotation": "0",
             "Color": {
@@ -1062,93 +2902,26 @@
           {
             "Type": "Image",
             "Name": "image1",
-            "X": 59,
-            "Y": 107,
+            "X": 62,
+            "Y": 204,
             "Width": 32,
             "Height": 32,
             "RelativeFilename": "stopwatch.png"
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel1",
-            "X": 59,
-            "Y": 203,
-            "Width": 170,
-            "Height": 60,
-            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
-            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
-            "TextId": "__SingleUse_Q9OK",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Style": "Style4"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel2",
-            "X": 59,
-            "Y": 271,
-            "Width": 170,
-            "Height": 60,
-            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
-            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
-            "TextId": "__SingleUse_0D0V",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Style": "Style4"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel3",
-            "X": 59,
-            "Y": 338,
-            "Width": 170,
-            "Height": 60,
-            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
-            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
-            "TextId": "__SingleUse_YB87",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Style": "Style4"
-          },
-          {
-            "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel4",
-            "X": 465,
-            "Y": 203,
+            "X": 617,
+            "Y": 411,
             "Width": 170,
             "Height": 60,
             "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
             "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
             "TextId": "__SingleUse_P6FT",
             "ReleasedColor": {
-              "Red": 255
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             },
             "PressedColor": {
               "Red": 255,
@@ -1163,10 +2936,316 @@
             "Name": "voltar",
             "X": 12,
             "Y": 10,
-            "Width": 28,
+            "Width": 50,
             "Height": 48,
-            "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
-            "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
+            "Pressed": "Dark_Icons_Back_arrow_edit.png",
+            "Released": "Dark_Icons_Back_arrow_edit.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 106,
+            "Y": 86,
+            "Width": 244,
+            "Height": 40,
+            "TextId": "__SingleUse_ZY60",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 106,
+            "Y": 200,
+            "Width": 142,
+            "Height": 40,
+            "TextId": "__SingleUse_FC9F",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 62,
+            "Y": 94,
+            "Width": 32,
+            "Height": 32,
+            "RelativeFilename": "icons8-electrode-32.png"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButton1",
+            "X": 147,
+            "Y": 138,
+            "Width": 44,
+            "Height": 44,
+            "Selected": true,
+            "FileNameSelected": "__designer\\Blue_Radio_buttons_Radio_Round_button_active.png",
+            "FileNameSelectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_normal.png",
+            "FileNameUnselected": "__designer\\Blue_Radio_buttons_Radio_Round_button_inactive.png",
+            "FileNameUnselectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_pressed.png",
+            "RadioButtonGroup": "radioButtonGroup1",
+            "Style": "Style3"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButton2",
+            "X": 348,
+            "Y": 138,
+            "Width": 44,
+            "Height": 44,
+            "FileNameSelected": "__designer\\Blue_Radio_buttons_Radio_Round_button_active.png",
+            "FileNameSelectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_normal.png",
+            "FileNameUnselected": "__designer\\Blue_Radio_buttons_Radio_Round_button_inactive.png",
+            "FileNameUnselectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_pressed.png",
+            "RadioButtonGroup": "radioButtonGroup1",
+            "Style": "Style3"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButton3",
+            "X": 147,
+            "Y": 257,
+            "Width": 44,
+            "Height": 44,
+            "Selected": true,
+            "FileNameSelected": "__designer\\Blue_Radio_buttons_Radio_Round_button_active.png",
+            "FileNameSelectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_normal.png",
+            "FileNameUnselected": "__designer\\Blue_Radio_buttons_Radio_Round_button_inactive.png",
+            "FileNameUnselectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_pressed.png",
+            "RadioButtonGroup": "radioButtonGroup2",
+            "Style": "Style3"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButton4",
+            "X": 348,
+            "Y": 257,
+            "Width": 44,
+            "Height": 44,
+            "FileNameSelected": "__designer\\Blue_Radio_buttons_Radio_Round_button_active.png",
+            "FileNameSelectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_normal.png",
+            "FileNameUnselected": "__designer\\Blue_Radio_buttons_Radio_Round_button_inactive.png",
+            "FileNameUnselectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_pressed.png",
+            "RadioButtonGroup": "radioButtonGroup2",
+            "Style": "Style3"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButton5",
+            "X": 541,
+            "Y": 257,
+            "Width": 44,
+            "Height": 44,
+            "FileNameSelected": "__designer\\Blue_Radio_buttons_Radio_Round_button_active.png",
+            "FileNameSelectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_normal.png",
+            "FileNameUnselected": "__designer\\Blue_Radio_buttons_Radio_Round_button_inactive.png",
+            "FileNameUnselectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_pressed.png",
+            "RadioButtonGroup": "radioButtonGroup2",
+            "Style": "Style3"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 193,
+            "Y": 145,
+            "Width": 91,
+            "Height": 31,
+            "TextId": "__SingleUse_I24O",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5",
+            "X": 392,
+            "Y": 145,
+            "Width": 76,
+            "Height": 31,
+            "TextId": "__SingleUse_ML9K",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea6",
+            "X": 195,
+            "Y": 270,
+            "Width": 89,
+            "Height": 31,
+            "TextId": "__SingleUse_LAYJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "barra_divisoria_1",
+            "X": 25,
+            "Y": 189,
+            "Width": 775,
+            "Height": 2,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "barra_divisoria_1_1",
+            "X": 25,
+            "Y": 313,
+            "Width": 775,
+            "Height": 2,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea7",
+            "X": 394,
+            "Y": 263,
+            "Width": 74,
+            "Height": 31,
+            "TextId": "__SingleUse_W39F",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea8",
+            "X": 585,
+            "Y": 263,
+            "Width": 77,
+            "Height": 31,
+            "TextId": "__SingleUse_N0Y2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3_1",
+            "X": 106,
+            "Y": 323,
+            "Width": 209,
+            "Height": 40,
+            "TextId": "__SingleUse_B947",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButton6",
+            "X": 147,
+            "Y": 381,
+            "Width": 44,
+            "Height": 44,
+            "Selected": true,
+            "FileNameSelected": "__designer\\Blue_Radio_buttons_Radio_Round_button_active.png",
+            "FileNameSelectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_normal.png",
+            "FileNameUnselected": "__designer\\Blue_Radio_buttons_Radio_Round_button_inactive.png",
+            "FileNameUnselectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_pressed.png",
+            "RadioButtonGroup": "radioButtonGroup3",
+            "Style": "Style3"
+          },
+          {
+            "Type": "RadioButton",
+            "Name": "radioButton7",
+            "X": 424,
+            "Y": 381,
+            "Width": 44,
+            "Height": 44,
+            "FileNameSelected": "__designer\\Blue_Radio_buttons_Radio_Round_button_active.png",
+            "FileNameSelectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_normal.png",
+            "FileNameUnselected": "__designer\\Blue_Radio_buttons_Radio_Round_button_inactive.png",
+            "FileNameUnselectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_pressed.png",
+            "RadioButtonGroup": "radioButtonGroup3",
+            "Style": "Style3"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea9",
+            "X": 193,
+            "Y": 388,
+            "Width": 205,
+            "Height": 31,
+            "TextId": "__SingleUse_VBHY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea9_1",
+            "X": 469,
+            "Y": 388,
+            "Width": 72,
+            "Height": 31,
+            "TextId": "__SingleUse_Y3JJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 62,
+            "Y": 327,
+            "Width": 32,
+            "Height": 32,
+            "Filename": "icons8-wi-fi-50.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
           }
         ],
         "Interactions": [
@@ -1205,6 +3284,28 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "MENU"
             }
+          },
+          {
+            "InteractionName": "InteractionTipo12DevECG",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButton1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Tipo12DevECG"
+            }
+          },
+          {
+            "InteractionName": "Tipo3DevECG",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "radioButton2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Tipo3DevECG"
+            }
           }
         ]
       },
@@ -1235,7 +3336,6 @@
             "Precision": "1",
             "LastIndex": 799,
             "XAxisScale": 1.0,
-            "InsertRandomValues": true,
             "LabelSizeTop": 36,
             "GraphType": "GraphWrapOverwrite",
             "GraphDrawers": [
@@ -1301,43 +3401,53 @@
             }
           },
           {
-            "Type": "Image",
-            "Name": "image2",
-            "X": 576,
-            "Y": 410,
-            "Width": 250,
-            "Height": 250,
-            "RelativeFilename": "deitadoedit.png"
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder1",
+            "X": 630,
+            "Y": 41,
+            "Width": 164,
+            "Height": 85,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 3
           },
           {
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 119,
             "Y": 1,
-            "Width": 157,
+            "Width": 130,
             "Height": 38,
             "TextId": "__SingleUse_XRTL",
             "TextRotation": "0",
-            "AutoSize": true
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_GXG2",
+              "UseBuffer": true,
+              "BufferSize": 12
+            }
           },
           {
             "Type": "TextArea",
             "Name": "textArea2",
-            "X": 624,
-            "Y": 426,
-            "Width": 162,
-            "Height": 48,
+            "X": 640,
+            "Y": 56,
+            "Width": 98,
+            "Height": 66,
             "TextId": "__SingleUse_1XTZ",
             "TextRotation": "0",
-            "Color": {
-              "Red": 255
-            },
-            "AutoSize": true
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 4
+            }
           },
           {
             "Type": "TextArea",
             "Name": "textArea3",
-            "X": 88,
+            "X": 133,
             "Y": 426,
             "Width": 129,
             "Height": 48,
@@ -1353,6 +3463,17 @@
             "Width": 187,
             "Height": 32,
             "TextId": "__SingleUse_T06K",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea6",
+            "X": 746,
+            "Y": 100,
+            "Width": 34,
+            "Height": 22,
+            "TextId": "__SingleUse_6536",
             "TextRotation": "0",
             "AutoSize": true
           },
@@ -1417,51 +3538,20 @@
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
-            "Type": "ScalableImage",
-            "Name": "scalableImage7",
-            "X": 744,
-            "Y": 3,
-            "Width": 52,
-            "Height": 30,
-            "Filename": "bateria.png",
-            "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea5",
-            "X": 686,
-            "Y": 3,
-            "Width": 58,
-            "Height": 30,
-            "TextId": "__SingleUse_KGA4",
-            "TextRotation": "0",
-            "AutoSize": true
-          },
-          {
-            "Type": "ScalableImage",
-            "Name": "scalableImage8",
-            "X": 40,
-            "Y": 426,
-            "Width": 48,
-            "Height": 48,
-            "Filename": "icons8-electrode-32.png",
-            "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
             "Type": "Button",
             "Name": "voltar",
             "X": 12,
             "Y": 10,
-            "Width": 28,
+            "Width": 50,
             "Height": 48,
-            "Pressed": "__designer\\Dark_Icons_Back_arrow_48.png",
-            "Released": "__designer\\Dark_Icons_Back_arrow_48.png"
+            "Pressed": "Dark_Icons_Back_arrow_edit.png",
+            "Released": "Dark_Icons_Back_arrow_edit.png"
           },
           {
             "Type": "ButtonWithIcon",
             "Name": "ConfigExame",
-            "X": 492,
-            "Y": 420,
+            "X": 7,
+            "Y": 68,
             "Width": 60,
             "Height": 60,
             "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
@@ -1476,7 +3566,7 @@
           {
             "Type": "ButtonWithIcon",
             "Name": "buttonWithIcon1",
-            "X": 270,
+            "X": 317,
             "Y": 420,
             "Width": 60,
             "Height": 60,
@@ -1491,14 +3581,215 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea6",
-            "X": 332,
+            "Name": "textoffset",
+            "X": 377,
             "Y": 431,
-            "Width": 99,
+            "Width": 90,
             "Height": 38,
             "TextId": "__SingleUse_8O3B",
             "TextRotation": "0",
             "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonNextDeriv",
+            "X": 73,
+            "Y": 420,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+            "IconPressed": "__designer\\Blue_Icons_Next_arrow_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Next_arrow_32.png",
+            "IconX": 22,
+            "IconY": 15,
+            "IconHeight": 30,
+            "IconWidth": 17,
+            "ButtonStyle": "Style1",
+            "IconStyle": "Icon39"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttoBackDeriv",
+            "X": 10,
+            "Y": 420,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+            "IconPressed": "__designer\\Blue_Icons_Back_arrow_32.png",
+            "IconReleased": "__designer\\Blue_Icons_Back_arrow_32.png",
+            "IconX": 22,
+            "IconY": 15,
+            "IconHeight": 30,
+            "IconWidth": 17,
+            "ButtonStyle": "Style1",
+            "IconStyle": "Icon5"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonTransmit",
+            "X": 534,
+            "Y": 420,
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "TextId": "__SingleUse_0VZY",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style4"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage4_1",
+            "X": 715,
+            "Y": 429,
+            "Width": 41,
+            "Height": 43,
+            "Filename": "icons8-wi-fi-50.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "containerLoadingAnimation1",
+            "X": 704,
+            "Y": 418,
+            "Width": 62,
+            "Height": 62,
+            "Visible": false,
+            "CustomContainerDefinitionName": "ContainerLoadingAnimation"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "buttonFechaPopup",
+            "Width": 800,
+            "Height": 480,
+            "Visible": false,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 800,
+                "Height": 480,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonFechaPopup1",
+            "X": 603,
+            "Y": 112,
+            "Width": 31,
+            "Height": 31,
+            "Visible": false,
+            "Pressed": "__designer\\Dark_Icons_Remove_32.png",
+            "Released": "__designer\\Dark_Icons_Remove_32.png",
+            "IconPressed": "__designer\\Dark_Icons_Remove_32.png",
+            "IconReleased": "__designer\\Dark_Icons_Remove_32.png",
+            "IconHeight": 31,
+            "IconWidth": 31
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage9",
+            "X": 738,
+            "Y": 47,
+            "Width": 51,
+            "Height": 60,
+            "Filename": "icons8-heart-48Cinza.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage8",
+            "X": 738,
+            "Y": 47,
+            "Width": 51,
+            "Height": 60,
+            "Visible": false,
+            "Filename": "icons8-heart-48.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "containerPopup1",
+            "Width": 800,
+            "Height": 480,
+            "Visible": false,
+            "CustomContainerDefinitionName": "ContainerPopup"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonOpenStatLead",
+            "X": 559,
+            "Y": 53,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Dark_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Dark_Buttons_Round_icon_button.png",
+            "IconPressed": "icons8-electrode-32.png",
+            "IconReleased": "icons8-electrode-32.png",
+            "IconX": 14,
+            "IconY": 14,
+            "IconHeight": 32,
+            "IconWidth": 32
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "containerLOFFMatrix1",
+            "X": 224,
+            "Y": 69,
+            "Width": 353,
+            "Height": 342,
+            "Visible": false,
+            "CustomContainerDefinitionName": "ContainerLOFFMatrix"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonFechaStatLead",
+            "X": 526,
+            "Y": 71,
+            "Width": 48,
+            "Height": 48,
+            "Visible": false,
+            "Pressed": "__designer\\Dark_Icons_Remove_48.png",
+            "Released": "__designer\\Dark_Icons_Remove_48.png",
+            "IconPressed": "__designer\\Dark_Icons_Remove_48.png",
+            "IconReleased": "__designer\\Dark_Icons_Remove_48.png",
+            "IconHeight": 48,
+            "IconWidth": 48
           }
         ],
         "Interactions": [
@@ -1523,7 +3814,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Configuracoes"
+              "ActionComponent": "Configuracoes_ADS1198"
             }
           },
           {
@@ -1557,6 +3848,83 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "AjusteEscala"
+            }
+          },
+          {
+            "InteractionName": "ProximaDerivacao",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonNextDeriv"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "NextDeriv"
+            }
+          },
+          {
+            "InteractionName": "DerivacaoAnterior",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttoBackDeriv"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "BackDeriv"
+            }
+          },
+          {
+            "InteractionName": "TransmiteWifiECG",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonTransmit"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "WifiECG"
+            }
+          },
+          {
+            "InteractionName": "FechaJanelaPopup",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonFechaPopup"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FechaPopup"
+            }
+          },
+          {
+            "InteractionName": "FechaJanelaPopup1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonFechaPopup1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FechaPopup1"
+            }
+          },
+          {
+            "InteractionName": "FechaJanelaStatLead",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonFechaStatLead"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "FechaStatLead"
+            }
+          },
+          {
+            "InteractionName": "AbreJanelaStatLead",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonOpenStatLead"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "AbreStatLead"
             }
           }
         ]
@@ -1608,6 +3976,629 @@
             "Height": 46,
             "Pressed": "Blue_Icon_Done_Cliked_48.png",
             "Released": "__designer\\Blue_Icons_Done_48.png"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "ContainerConexaoWIFI",
+        "Width": 400,
+        "Height": 40,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 400,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "Y": 5,
+            "Width": 400,
+            "Height": 31,
+            "TextId": "__SingleUse_AAKT",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 32
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": -90,
+            "Y": 38,
+            "Width": 736,
+            "Height": 2,
+            "RelativeFilename": "__designer\\Blue_Dividers_divider_round_long.png",
+            "Style": "Image22"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "ContainerLoadingAnimation",
+        "Width": 62,
+        "Height": 62,
+        "Components": [
+          {
+            "Type": "AnimatedImage",
+            "Name": "animatedImage1",
+            "Width": 62,
+            "Height": 62,
+            "FileNameFirst": "Loading_01.png",
+            "FileNameLast": "Loading_10.png",
+            "UpdateTicksInterval": 50,
+            "LoopEnabled": true
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "ContainerPopup",
+        "Width": 800,
+        "Height": 480,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 160,
+            "Y": 104,
+            "Width": 480,
+            "Height": 272,
+            "RelativeFilename": "__designer\\Dark_Backgrounds_Main_bg_texture_480x272px.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 588,
+            "Y": 324,
+            "Width": 48,
+            "Height": 48,
+            "RelativeFilename": "__designer\\Dark_Icons_Warning_48.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 173,
+            "Y": 162,
+            "Width": 454,
+            "Height": 156,
+            "TextId": "__SingleUse_OVUX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 120
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "ContainerBatteryCharge",
+        "Width": 135,
+        "Height": 40,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 135,
+            "Height": 40,
+            "Color": {
+              "Red": 219,
+              "Green": 219,
+              "Blue": 219
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 7,
+            "Y": 5,
+            "Width": 76,
+            "Height": 30,
+            "TextId": "__SingleUse_YB8A",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 4
+            }
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 83,
+            "Y": 5,
+            "Width": 45,
+            "Height": 30,
+            "Filename": "bateria.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "ContainerLOFFMatrix",
+        "Width": 353,
+        "Height": 342,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 353,
+            "Height": 342,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 55,
+            "Y": 15,
+            "Width": 242,
+            "Height": 32,
+            "TextId": "__SingleUse_T4QB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder1",
+            "X": 27,
+            "Y": 66,
+            "Width": 132,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder2",
+            "X": 27,
+            "Y": 119,
+            "Width": 132,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder3",
+            "X": 27,
+            "Y": 173,
+            "Width": 132,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "BorderColor": {
+              "Red": 255
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder4",
+            "X": 27,
+            "Y": 226,
+            "Width": 132,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "BorderColor": {
+              "Red": 60,
+              "Green": 255
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder5",
+            "X": 27,
+            "Y": 278,
+            "Width": 132,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "BorderColor": {
+              "Red": 255
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder6",
+            "X": 195,
+            "Y": 66,
+            "Width": 132,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "BorderColor": {
+              "Red": 252,
+              "Green": 255,
+              "Blue": 46
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder7",
+            "X": 195,
+            "Y": 119,
+            "Width": 132,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "BorderColor": {
+              "Red": 39,
+              "Green": 214
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder8",
+            "X": 195,
+            "Y": 226,
+            "Width": 132,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "BorderColor": {
+              "Red": 255,
+              "Green": 94
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder9",
+            "X": 195,
+            "Y": 278,
+            "Width": 132,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "BorderColor": {
+              "Red": 83,
+              "Green": 52,
+              "Blue": 140
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder10",
+            "X": 195,
+            "Y": 173,
+            "Width": 132,
+            "Height": 40,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "BorderColor": {
+              "Red": 57,
+              "Green": 13,
+              "Blue": 255
+            },
+            "BorderSize": 2
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 34,
+            "Y": 71,
+            "Width": 33,
+            "Height": 31,
+            "TextId": "__SingleUse_HLPS",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea3",
+            "X": 34,
+            "Y": 124,
+            "Width": 38,
+            "Height": 31,
+            "TextId": "__SingleUse_Q76M",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea4",
+            "X": 34,
+            "Y": 178,
+            "Width": 30,
+            "Height": 31,
+            "TextId": "__SingleUse_N45G",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5",
+            "X": 34,
+            "Y": 231,
+            "Width": 34,
+            "Height": 31,
+            "TextId": "__SingleUse_VLE4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 60,
+              "Green": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea6",
+            "X": 34,
+            "Y": 283,
+            "Width": 33,
+            "Height": 31,
+            "TextId": "__SingleUse_X02Q",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea7",
+            "X": 202,
+            "Y": 71,
+            "Width": 33,
+            "Height": 31,
+            "TextId": "__SingleUse_UYTN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 252,
+              "Green": 255,
+              "Blue": 46
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea8",
+            "X": 202,
+            "Y": 124,
+            "Width": 33,
+            "Height": 31,
+            "TextId": "__SingleUse_K0WL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 39,
+              "Green": 214
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea9",
+            "X": 202,
+            "Y": 178,
+            "Width": 33,
+            "Height": 31,
+            "TextId": "__SingleUse_WCNP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 57,
+              "Green": 13,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea10",
+            "X": 202,
+            "Y": 231,
+            "Width": 33,
+            "Height": 31,
+            "TextId": "__SingleUse_3RME",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 94
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea11",
+            "X": 202,
+            "Y": 283,
+            "Width": 33,
+            "Height": 31,
+            "TextId": "__SingleUse_XPBB",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 83,
+              "Green": 52,
+              "Blue": 140
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonLA",
+            "X": 72,
+            "Y": 66,
+            "Width": 90,
+            "Height": 40,
+            "Pressed": "on.png",
+            "Released": "OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonRA",
+            "X": 72,
+            "Y": 119,
+            "Width": 90,
+            "Height": 40,
+            "Pressed": "on.png",
+            "Released": "OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonLL",
+            "X": 72,
+            "Y": 173,
+            "Width": 90,
+            "Height": 40,
+            "Pressed": "on.png",
+            "Released": "OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonRL",
+            "X": 72,
+            "Y": 226,
+            "Width": 90,
+            "Height": 40,
+            "Visible": false,
+            "Pressed": "on.png",
+            "Released": "OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonV1",
+            "X": 72,
+            "Y": 278,
+            "Width": 90,
+            "Height": 40,
+            "Pressed": "on.png",
+            "Released": "OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonV2",
+            "X": 240,
+            "Y": 66,
+            "Width": 90,
+            "Height": 40,
+            "Pressed": "on.png",
+            "Released": "OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonV3",
+            "X": 240,
+            "Y": 119,
+            "Width": 90,
+            "Height": 40,
+            "Pressed": "on.png",
+            "Released": "OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonV4",
+            "X": 240,
+            "Y": 173,
+            "Width": 90,
+            "Height": 40,
+            "Pressed": "on.png",
+            "Released": "OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonV5",
+            "X": 240,
+            "Y": 226,
+            "Width": 90,
+            "Height": 40,
+            "Pressed": "on.png",
+            "Released": "OFF.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButtonV6",
+            "X": 240,
+            "Y": 278,
+            "Width": 90,
+            "Height": 40,
+            "Pressed": "on.png",
+            "Released": "OFF.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 76,
+            "Y": 227,
+            "Width": 82,
+            "Height": 38,
+            "Color": {
+              "Red": 173,
+              "Green": 173,
+              "Blue": 173
+            }
           }
         ],
         "Interactions": []

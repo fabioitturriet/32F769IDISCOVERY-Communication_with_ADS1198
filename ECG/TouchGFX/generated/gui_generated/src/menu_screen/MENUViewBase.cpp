@@ -19,7 +19,7 @@ MENUViewBase::MENUViewBase() :
     box2.setPosition(0, 123, 800, 357);
     box2.setColor(touchgfx::Color::getColorFromRGB(244, 180, 26));
 
-    textArea1.setXY(195, 11);
+    textArea1.setXY(306, 11);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2B6S));
@@ -65,6 +65,8 @@ MENUViewBase::MENUViewBase() :
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IJ05));
 
+    containerBatteryCharge1.setXY(654, 11);
+
     add(__background);
     add(box1);
     add(box2);
@@ -76,11 +78,12 @@ MENUViewBase::MENUViewBase() :
     add(scalableImage1);
     add(scalableImage2);
     add(textArea2);
+    add(containerBatteryCharge1);
 }
 
 void MENUViewBase::setupScreen()
 {
-
+    containerBatteryCharge1.initialize();
 }
 
 void MENUViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -112,5 +115,10 @@ void MENUViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonCadastro clicked change screen to Cadastro
         //Go to Cadastro with no screen transition
         application().gotoCadastroScreenNoTransition();
+
+        //CadastroClicked
+        //When buttonCadastro clicked call virtual function
+        //Call CadastroClicked
+        CadastroClicked();
     }
 }

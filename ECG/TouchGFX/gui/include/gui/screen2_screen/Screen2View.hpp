@@ -14,6 +14,9 @@ public:
 
     virtual void StartRead();
 
+    virtual void Tipo12DevECG();
+    virtual void Tipo3DevECG();
+
 protected:
 };
 

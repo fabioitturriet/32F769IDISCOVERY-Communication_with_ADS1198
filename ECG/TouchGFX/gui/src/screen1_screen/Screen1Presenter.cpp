@@ -37,3 +37,51 @@ void Screen1Presenter::SetMinMaxEscalaGraph(int16_t SetMinEscala, int16_t SetMax
 	view.SetMinMaxEscalaGraph(SetMinEscala, SetMaxEscala);
 
 }
+
+void Screen1Presenter::PNextDeriv()
+{
+	model->NextDerivSelect();
+}
+
+void Screen1Presenter::PBackDeriv()
+{
+	model->BackDerivSelect();
+}
+
+void Screen1Presenter::PWifiECG()
+{
+	model->TransmiteWifiECG();
+}
+
+void Screen1Presenter::PresenterAtualizarBPM()
+{
+	model->CalcularBPM();
+}
+
+void Screen1Presenter::AtualizarBPM(){
+	view.AtualizaBPM();
+}
+
+void Screen1Presenter::AtualizarIconHeart(){
+	view.AtualizaIconHeart();
+}
+
+void Screen1Presenter::GeraPopup()
+{
+	view.PopUp();
+}
+
+void Screen1Presenter::PreStopPanTompkins()
+{
+	model->StopPanTompkins();
+}
+
+void Screen1Presenter::PreStopLoadingAnimation()
+{
+	view.StopLoadingAnimation();
+}
+
+void Screen1Presenter::UpdateMatrixLOFF()
+{
+	view.MUpdateMatrixLOFF();
+}

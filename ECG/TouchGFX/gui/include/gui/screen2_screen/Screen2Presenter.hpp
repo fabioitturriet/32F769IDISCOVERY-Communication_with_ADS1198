@@ -29,6 +29,9 @@ public:
 
     virtual void PresenterStartRead();
 
+    virtual void PresenterConfig12Dev();
+    virtual void PresenterConfig3Dev();
+
 private:
     Screen2Presenter();
 

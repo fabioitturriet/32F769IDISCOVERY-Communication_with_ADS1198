@@ -1,0 +1,16 @@
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:15:18:virtual void ModelListener::SetMinMaxEscalaGraph(int16_t, int16_t)	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:17:18:virtual void ModelListener::UpdateScrollList()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:19:18:virtual void ModelListener::ToCadastro()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:21:18:virtual void ModelListener::AtualizarBPM()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:23:18:virtual void ModelListener::AtualizarIconHeart()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:25:18:virtual void ModelListener::GeraPopup()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:27:18:virtual void ModelListener::PreStopLoadingAnimation()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:29:18:virtual void ModelListener::DefNumRedes(uint8_t)	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:31:18:virtual void ModelListener::UpdateBatChargeLevel()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:33:18:virtual void ModelListener::UpdateMatrixLOFF()	0	static
+../../TouchGFX/gui/include/gui/model/ModelListener.hpp:39:18:virtual void ModelListener::UpdateGraph(float)	0	static
+../../TouchGFX/gui/include/gui/configuracoes_extras_screen/Configuracoes_ExtrasPresenter.hpp:28:13:Configuracoes_ExtrasPresenter::~Configuracoes_ExtrasPresenter()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_extras_screen/Configuracoes_ExtrasPresenter.cpp:10:6:virtual void Configuracoes_ExtrasPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/configuracoes_extras_screen/Configuracoes_ExtrasPresenter.hpp:28:13:virtual Configuracoes_ExtrasPresenter::~Configuracoes_ExtrasPresenter()	8	static
+../../TouchGFX/gui/include/gui/configuracoes_extras_screen/Configuracoes_ExtrasPresenter.hpp:28:13:virtual void* Configuracoes_ExtrasPresenter::_ZThn4_N29Configuracoes_ExtrasPresenterD1Ev()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_extras_screen/Configuracoes_ExtrasPresenter.cpp:4:1:Configuracoes_ExtrasPresenter::Configuracoes_ExtrasPresenter(Configuracoes_ExtrasView&)	8	static

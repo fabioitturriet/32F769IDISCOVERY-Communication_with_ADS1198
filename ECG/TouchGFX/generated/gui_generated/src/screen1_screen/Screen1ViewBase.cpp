@@ -3,13 +3,14 @@
 /*********************************************************************************/
 #include <gui_generated/screen1_screen/Screen1ViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <BitmapDatabase.hpp>
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
 Screen1ViewBase::Screen1ViewBase() :
-    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler)
+    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler),
+    flexButtonCallback(this, &Screen1ViewBase::flexButtonCallbackHandler)
 {
 
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
@@ -57,824 +58,30 @@ Screen1ViewBase::Screen1ViewBase() :
     dynamicGraph1Line1.setLineWidth(2);
     dynamicGraph1.addGraphElement(dynamicGraph1Line1);
 
-    dynamicGraph1.addDataPoint(-957.7592479303094f);
-    dynamicGraph1.addDataPoint(-992.9357328138276f);
-    dynamicGraph1.addDataPoint(-1025.9309843539088f);
-    dynamicGraph1.addDataPoint(-1056.6444069906288f);
-    dynamicGraph1.addDataPoint(-1084.983238199044f);
-    dynamicGraph1.addDataPoint(-1110.8628934885382f);
-    dynamicGraph1.addDataPoint(-1134.2072802071475f);
-    dynamicGraph1.addDataPoint(-1154.9490795658578f);
-    dynamicGraph1.addDataPoint(-1173.0299940767468f);
-    dynamicGraph1.addDataPoint(-1188.4009614760766f);
-    dynamicGraph1.addDataPoint(-1201.0223326395208f);
-    dynamicGraph1.addDataPoint(-1210.8640135296432f);
-    dynamicGraph1.addDataPoint(-1217.9055710904868f);
-    dynamicGraph1.addDataPoint(-1222.1363013815217f);
-    dynamicGraph1.addDataPoint(-1223.555261222994f);
-    dynamicGraph1.addDataPoint(-1222.1712619849682f);
-    dynamicGraph1.addDataPoint(-1218.0028261134196f);
-    dynamicGraph1.addDataPoint(-1211.078106853753f);
-    dynamicGraph1.addDataPoint(-1201.434770621773f);
-    dynamicGraph1.addDataPoint(-1189.1198434963007f);
-    dynamicGraph1.addDataPoint(-1174.1895216214957f);
-    dynamicGraph1.addDataPoint(-1156.708946653692f);
-    dynamicGraph1.addDataPoint(-1136.75194723716f);
-    dynamicGraph1.addDataPoint(-1114.4007470991296f);
-    dynamicGraph1.addDataPoint(-1089.7456413797318f);
-    dynamicGraph1.addDataPoint(-1062.884642094798f);
-    dynamicGraph1.addDataPoint(-1033.9230943296038f);
-    dynamicGraph1.addDataPoint(-1002.9732645850793f);
-    dynamicGraph1.addDataPoint(-970.1539029156011f);
-    dynamicGraph1.addDataPoint(-935.5897804974667f);
-    dynamicGraph1.addDataPoint(-899.4112045189672f);
-    dynamicGraph1.addDataPoint(-861.7535123158823f);
-    dynamicGraph1.addDataPoint(-822.7565464670007f);
-    dynamicGraph1.addDataPoint(-782.5641133813244f);
-    dynamicGraph1.addDataPoint(-741.3234268750264f);
-    dynamicGraph1.addDataPoint(-699.1845394458854f);
-    dynamicGraph1.addDataPoint(-656.2997633109436f);
-    dynamicGraph1.addDataPoint(-612.8230830279406f);
-    dynamicGraph1.addDataPoint(-568.9095629189371f);
-    dynamicGraph1.addDataPoint(-524.7147504581957f);
-    dynamicGraph1.addDataPoint(-480.3940789304206f);
-    dynamicGraph1.addDataPoint(-436.10227135466107f);
-    dynamicGraph1.addDataPoint(-391.99274738864517f);
-    dynamicGraph1.addDataPoint(-348.21703688263904f);
-    dynamicGraph1.addDataPoint(-304.92420070315f);
-    dynamicGraph1.addDataPoint(-262.2602624906863f);
-    dynamicGraph1.addDataPoint(-220.36765305632736f);
-    dynamicGraph1.addDataPoint(-179.38466881077142f);
-    dynamicGraph1.addDataPoint(-139.44494810099764f);
-    dynamicGraph1.addDataPoint(-100.67696533793941f);
-    dynamicGraph1.addDataPoint(-63.20354669744171f);
-    dynamicGraph1.addDataPoint(-27.141408602568163f);
-    dynamicGraph1.addDataPoint(7.399280137425251f);
-    dynamicGraph1.addDataPoint(40.31530868152197f);
-    dynamicGraph1.addDataPoint(71.51080802188415f);
-    dynamicGraph1.addDataPoint(100.89760467733879f);
-    dynamicGraph1.addDataPoint(128.39554367560004f);
-    dynamicGraph1.addDataPoint(153.9327806263658f);
-    dynamicGraph1.addDataPoint(177.44603925827823f);
-    dynamicGraph1.addDataPoint(198.88083645075488f);
-    dynamicGraph1.addDataPoint(218.19167135691185f);
-    dynamicGraph1.addDataPoint(235.34217886552102f);
-    dynamicGraph1.addDataPoint(250.30524798600038f);
-    dynamicGraph1.addDataPoint(263.0631019000948f);
-    dynamicGraph1.addDataPoint(273.6073427740975f);
-    dynamicGraph1.addDataPoint(281.9389583289311f);
-    dynamicGraph1.addDataPoint(288.0682912586143f);
-    dynamicGraph1.addDataPoint(292.014972901218f);
-    dynamicGraph1.addDataPoint(293.8078183632945f);
-    dynamicGraph1.addDataPoint(293.48468723037576f);
-    dynamicGraph1.addDataPoint(291.0923073212474f);
-    dynamicGraph1.addDataPoint(286.6860634027082f);
-    dynamicGraph1.addDataPoint(280.32975305594385f);
-    dynamicGraph1.addDataPoint(272.0953073735594f);
-    dynamicGraph1.addDataPoint(262.06248155951266f);
-    dynamicGraph1.addDataPoint(250.31851334356682f);
-    dynamicGraph1.addDataPoint(236.9577518657473f);
-    dynamicGraph1.addDataPoint(222.08125990612214f);
-    dynamicGraph1.addDataPoint(205.79638757373556f);
-    dynamicGraph1.addDataPoint(188.2163232973778f);
-    dynamicGraph1.addDataPoint(169.4596204160565f);
-    dynamicGraph1.addDataPoint(149.6497026119281f);
-    dynamicGraph1.addDataPoint(128.91435158088706f);
-    dynamicGraph1.addDataPoint(107.38517539050066f);
-    dynamicGraph1.addDataPoint(85.19706391047362f);
-    dynamicGraph1.addDataPoint(62.4876298816635f);
-    dynamicGraph1.addDataPoint(39.3966392511147f);
-    dynamicGraph1.addDataPoint(16.06543447652495f);
-    dynamicGraph1.addDataPoint(-7.363650554902815f);
-    dynamicGraph1.addDataPoint(-30.747877335417293f);
-    dynamicGraph1.addDataPoint(-53.94469259196269f);
-    dynamicGraph1.addDataPoint(-76.81231741128158f);
-    dynamicGraph1.addDataPoint(-99.21033186358693f);
-    dynamicGraph1.addDataPoint(-121.00025644868903f);
-    dynamicGraph1.addDataPoint(-142.0461237252626f);
-    dynamicGraph1.addDataPoint(-162.2150414941206f);
-    dynamicGraph1.addDataPoint(-181.377743858004f);
-    dynamicGraph1.addDataPoint(-199.4091265663097f);
-    dynamicGraph1.addDataPoint(-216.1887681045886f);
-    dynamicGraph1.addDataPoint(-231.60143019766156f);
-    dynamicGraph1.addDataPoint(-245.53753931185196f);
-    dynamicGraph1.addDataPoint(-257.8936458156594f);
-    dynamicGraph1.addDataPoint(-268.57285761969445f);
-    dynamicGraph1.addDataPoint(-277.48525004097246f);
-    dynamicGraph1.addDataPoint(-284.5482461342592f);
-    dynamicGraph1.addDataPoint(-289.6869694268839f);
-    dynamicGraph1.addDataPoint(-292.8345662598168f);
-    dynamicGraph1.addDataPoint(-293.9324951652752f);
-    dynamicGraph1.addDataPoint(-292.9307854237528f);
-    dynamicGraph1.addDataPoint(-289.78825983839357f);
-    dynamicGraph1.addDataPoint(-284.47272410663794f);
-    dynamicGraph1.addDataPoint(-276.9611206926639f);
-    dynamicGraph1.addDataPoint(-267.23964538437684f);
-    dynamicGraph1.addDataPoint(-255.30382913608338f);
-    dynamicGraph1.addDataPoint(-241.1585811908949f);
-    dynamicGraph1.addDataPoint(-224.81819634186445f);
-    dynamicGraph1.addDataPoint(-206.30632503048884f);
-    dynamicGraph1.addDataPoint(-185.65590529855172f);
-    dynamicGraph1.addDataPoint(-162.9090596510132f);
-    dynamicGraph1.addDataPoint(-138.11695386991084f);
-    dynamicGraph1.addDataPoint(-111.33962108829678f);
-    dynamicGraph1.addDataPoint(-82.64575064202421f);
-    dynamicGraph1.addDataPoint(-52.11244155488481f);
-    dynamicGraph1.addDataPoint(-19.82492410383543f);
-    dynamicGraph1.addDataPoint(14.123752435131166f);
-    dynamicGraph1.addDataPoint(49.63306219616675f);
-    dynamicGraph1.addDataPoint(86.59537499778833f);
-    dynamicGraph1.addDataPoint(124.89635785056078f);
-    dynamicGraph1.addDataPoint(164.41540199289585f);
-    dynamicGraph1.addDataPoint(205.0260763514737f);
-    dynamicGraph1.addDataPoint(246.59660356145434f);
-    dynamicGraph1.addDataPoint(288.9903575963061f);
-    dynamicGraph1.addDataPoint(332.0663817264372f);
-    dynamicGraph1.addDataPoint(375.6799230265521f);
-    dynamicGraph1.addDataPoint(419.68298344588294f);
-    dynamicGraph1.addDataPoint(463.92488357886845f);
-    dynamicGraph1.addDataPoint(508.2528376908407f);
-    dynamicGraph1.addDataPoint(552.5125382456258f);
-    dynamicGraph1.addDataPoint(596.5487463024474f);
-    dynamicGraph1.addDataPoint(640.2058870825737f);
-    dynamicGraph1.addDataPoint(683.3286470797789f);
-    dynamicGraph1.addDataPoint(725.762570974586f);
-    dynamicGraph1.addDataPoint(767.3546563359921f);
-    dynamicGraph1.addDataPoint(807.9539428668165f);
-    dynamicGraph1.addDataPoint(847.4120949770909f);
-    dynamicGraph1.addDataPoint(885.5839745408418f);
-    dynamicGraph1.addDataPoint(922.3282020177036f);
-    dynamicGraph1.addDataPoint(957.5077038801861f);
-    dynamicGraph1.addDataPoint(990.9902437302119f);
-    dynamicGraph1.addDataPoint(1022.6489355788713f);
-    dynamicGraph1.addDataPoint(1052.3627368594516f);
-    dynamicGraph1.addDataPoint(1080.016919486426f);
-    dynamicGraph1.addDataPoint(1105.503517068207f);
-    dynamicGraph1.addDataPoint(1128.7217464989583f);
-    dynamicGraph1.addDataPoint(1149.5784022850903f);
-    dynamicGraph1.addDataPoint(1167.9882220917618f);
-    dynamicGraph1.addDataPoint(1183.874222135967f);
-    dynamicGraph1.addDataPoint(1197.168000879894f);
-    dynamicGraph1.addDataPoint(1207.8100102610742f);
-    dynamicGraph1.addDataPoint(1215.7497928560638f);
-    dynamicGraph1.addDataPoint(1220.9461845270641f);
-    dynamicGraph1.addDataPoint(1223.3674816294642f);
-    dynamicGraph1.addDataPoint(1222.9915717105723f);
-    dynamicGraph1.addDataPoint(1219.8060280557745f);
-    dynamicGraph1.addDataPoint(1213.8081666312637f);
-    dynamicGraph1.addDataPoint(1205.0050661194468f);
-    dynamicGraph1.addDataPoint(1193.4135506554355f);
-    dynamicGraph1.addDataPoint(1179.0601347415586f);
-    dynamicGraph1.addDataPoint(1161.9809318522816f);
-    dynamicGraph1.addDataPoint(1142.221525484096f);
-    dynamicGraph1.addDataPoint(1119.8368045010134f);
-    dynamicGraph1.addDataPoint(1094.8907629274968f);
-    dynamicGraph1.addDataPoint(1067.4562642156816f);
-    dynamicGraph1.addDataPoint(1037.614772615122f);
-    dynamicGraph1.addDataPoint(1005.4560505960526f);
-    dynamicGraph1.addDataPoint(971.0778252624029f);
-    dynamicGraph1.addDataPoint(934.5854243959573f);
-    dynamicGraph1.addDataPoint(896.0913826452536f);
-    dynamicGraph1.addDataPoint(855.7150214885269f);
-    dynamicGraph1.addDataPoint(813.5820020499962f);
-    dynamicGraph1.addDataPoint(769.8238546506268f);
-    dynamicGraph1.addDataPoint(724.5774861094105f);
-    dynamicGraph1.addDataPoint(677.9846656729673f);
-    dynamicGraph1.addDataPoint(630.1914940235167f);
-    dynamicGraph1.addDataPoint(581.3478544548311f);
-    dynamicGraph1.addDataPoint(531.6068508410999f);
-    dynamicGraph1.addDataPoint(481.124233625388f);
-    dynamicGraph1.addDataPoint(430.0578149008132f);
-    dynamicGraph1.addDataPoint(378.5668776241731f);
-    dynamicGraph1.addDataPoint(326.8115779087232f);
-    dynamicGraph1.addDataPoint(274.9523455200943f);
-    dynamicGraph1.addDataPoint(223.14928381648082f);
-    dynamicGraph1.addDataPoint(171.56157020397438f);
-    dynamicGraph1.addDataPoint(120.3468624739042f);
-    dynamicGraph1.addDataPoint(69.66070965615009f);
-    dynamicGraph1.addDataPoint(19.65597274362142f);
-    dynamicGraph1.addDataPoint(-29.517743664676573f);
-    dynamicGraph1.addDataPoint(-77.71464793902919f);
-    dynamicGraph1.addDataPoint(-124.7933007909786f);
-    dynamicGraph1.addDataPoint(-170.6171392863851f);
-    dynamicGraph1.addDataPoint(-215.0549801817694f);
-    dynamicGraph1.addDataPoint(-257.9815019288153f);
-    dynamicGraph1.addDataPoint(-299.2777048842289f);
-    dynamicGraph1.addDataPoint(-338.8313445072709f);
-    dynamicGraph1.addDataPoint(-376.53734000891416f);
-    dynamicGraph1.addDataPoint(-412.2981534193884f);
-    dynamicGraph1.addDataPoint(-446.02413897957547f);
-    dynamicGraph1.addDataPoint(-477.6338629520979f);
-    dynamicGraph1.addDataPoint(-507.0543890639397f);
-    dynamicGraph1.addDataPoint(-534.221532761507f);
-    dynamicGraph1.addDataPoint(-559.0800797355237f);
-    dynamicGraph1.addDataPoint(-581.5839693018287f);
-    dynamicGraph1.addDataPoint(-601.6964434002044f);
-    dynamicGraph1.addDataPoint(-619.3901570265791f);
-    dynamicGraph1.addDataPoint(-634.6472540358772f);
-    dynamicGraph1.addDataPoint(-647.4594044128805f);
-    dynamicGraph1.addDataPoint(-657.8278043361898f);
-    dynamicGraph1.addDataPoint(-665.763140508209f);
-    dynamicGraph1.addDataPoint(-671.2855152803384f);
-    dynamicGraph1.addDataPoint(-674.4243372390513f);
-    dynamicGraph1.addDataPoint(-675.218174072879f);
-    dynamicGraph1.addDataPoint(-673.7145697737707f);
-    dynamicGraph1.addDataPoint(-669.9698283317805f);
-    dynamicGraph1.addDataPoint(-664.0487612066969f);
-    dynamicGraph1.addDataPoint(-656.0244038725511f);
-    dynamicGraph1.addDataPoint(-645.9776989903555f);
-    dynamicGraph1.addDataPoint(-633.9971489103838f);
-    dynamicGraph1.addDataPoint(-620.1784402555068f);
-    dynamicGraph1.addDataPoint(-604.6240385951354f);
-    dynamicGraph1.addDataPoint(-587.4427589716681f);
-    dynamicGraph1.addDataPoint(-568.7493105160962f);
-    dynamicGraph1.addDataPoint(-548.6638183574966f);
-    dynamicGraph1.addDataPoint(-527.3113260155355f);
-    dynamicGraph1.addDataPoint(-504.82127692124004f);
-    dynamicGraph1.addDataPoint(-481.32698107386454f);
-    dynamicGraph1.addDataPoint(-456.9650656409091f);
-    dynamicGraph1.addDataPoint(-431.8749130132453f);
-    dynamicGraph1.addDataPoint(-406.198089738934f);
-    dynamicGraph1.addDataPoint(-380.0777654778641f);
-    dynamicGraph1.addDataPoint(-353.6581279712714f);
-    dynamicGraph1.addDataPoint(-327.0837932509442f);
-    dynamicGraph1.addDataPoint(-300.4992146765643f);
-    dynamicGraph1.addDataPoint(-274.0480942259179f);
-    dynamicGraph1.addDataPoint(-247.87279550720152f);
-    dynamicGraph1.addDataPoint(-222.11376419447402f);
-    dynamicGraph1.addDataPoint(-196.90895535336986f);
-    dynamicGraph1.addDataPoint(-172.39327107740036f);
-    dynamicGraph1.addDataPoint(-148.69801161829702f);
-    dynamicGraph1.addDataPoint(-125.95033962640747f);
-    dynamicGraph1.addDataPoint(-104.27276263273848f);
-    dynamicGraph1.addDataPoint(-83.78263330475932f);
-    dynamicGraph1.addDataPoint(-64.59167049174027f);
-    dynamicGraph1.addDataPoint(-46.805503772359884f);
-    dynamicGraph1.addDataPoint(-30.523241097597293f);
-    dynamicGraph1.addDataPoint(-15.837063839877715f);
-    dynamicGraph1.addDataPoint(-2.831848687138745f);
-    dynamicGraph1.addDataPoint(8.415181213776236f);
-    dynamicGraph1.addDataPoint(17.834773817842233f);
-    dynamicGraph1.addDataPoint(25.365935016247704f);
-    dynamicGraph1.addDataPoint(30.95618145951596f);
-    dynamicGraph1.addDataPoint(34.56176014518519f);
-    dynamicGraph1.addDataPoint(36.14783313549606f);
-    dynamicGraph1.addDataPoint(35.688626168327005f);
-    dynamicGraph1.addDataPoint(33.16754198653348f);
-    dynamicGraph1.addDataPoint(28.577236269830337f);
-    dynamicGraph1.addDataPoint(21.91965722872942f);
-    dynamicGraph1.addDataPoint(13.206048091834191f);
-    dynamicGraph1.addDataPoint(2.456912138206917f);
-    dynamicGraph1.addDataPoint(-10.29805860923193f);
-    dynamicGraph1.addDataPoint(-25.020091906476864f);
-    dynamicGraph1.addDataPoint(-41.66147967581219f);
-    dynamicGraph1.addDataPoint(-60.16575813548411f);
-    dynamicGraph1.addDataPoint(-80.46792312468267f);
-    dynamicGraph1.addDataPoint(-102.49467924493524f);
-    dynamicGraph1.addDataPoint(-126.16472246498432f);
-    dynamicGraph1.addDataPoint(-151.3890546005004f);
-    dynamicGraph1.addDataPoint(-178.07132870267242f);
-    dynamicGraph1.addDataPoint(-206.10822397875683f);
-    dynamicGraph1.addDataPoint(-235.38984869221872f);
-    dynamicGraph1.addDataPoint(-265.80016954374736f);
-    dynamicGraph1.addDataPoint(-297.2174658216198f);
-    dynamicGraph1.addDataPoint(-329.514806626506f);
-    dynamicGraph1.addDataPoint(-362.5605490948194f);
-    dynamicGraph1.addDataPoint(-396.21885603788144f);
-    dynamicGraph1.addDataPoint(-430.3502305035954f);
-    dynamicGraph1.addDataPoint(-464.81206558920246f);
-    dynamicGraph1.addDataPoint(-499.459207251886f);
-    dynamicGraph1.addDataPoint(-534.1445275262763f);
-    dynamicGraph1.addDataPoint(-568.7195067187351f);
-    dynamicGraph1.addDataPoint(-603.0348212938685f);
-    dynamicGraph1.addDataPoint(-636.940936017935f);
-    dynamicGraph1.addDataPoint(-670.288697757512f);
-    dynamicGraph1.addDataPoint(-702.9299280467541f);
-    dynamicGraph1.addDataPoint(-734.7180133504155f);
-    dynamicGraph1.addDataPoint(-765.5084891831885f);
-    dynamicGraph1.addDataPoint(-795.1596170956439f);
-    dynamicGraph1.addDataPoint(-823.532951805729f);
-    dynamicGraph1.addDataPoint(-850.4938955274524f);
-    dynamicGraph1.addDataPoint(-875.9122389867259f);
-    dynamicGraph1.addDataPoint(-899.6626849777872f);
-    dynamicGraph1.addDataPoint(-921.6253541177382f);
-    dynamicGraph1.addDataPoint(-941.6862701850299f);
-    dynamicGraph1.addDataPoint(-959.7378222585123f);
-    dynamicGraph1.addDataPoint(-975.6792038946984f);
-    dynamicGraph1.addDataPoint(-989.4168251266276f);
-    dynamicGraph1.addDataPoint(-1000.8646977616986f);
-    dynamicGraph1.addDataPoint(-1009.9447916733614f);
-    dynamicGraph1.addDataPoint(-1016.5873596666801f);
-    dynamicGraph1.addDataPoint(-1020.7312320472572f);
-    dynamicGraph1.addDataPoint(-1022.3240768129326f);
-    dynamicGraph1.addDataPoint(-1021.3226268900717f);
-    dynamicGraph1.addDataPoint(-1017.6928725777386f);
-    dynamicGraph1.addDataPoint(-1011.410217295098f);
-    dynamicGraph1.addDataPoint(-1002.4595987403166f);
-    dynamicGraph1.addDataPoint(-990.8355716745984f);
-    dynamicGraph1.addDataPoint(-976.5423547595415f);
-    dynamicGraph1.addDataPoint(-959.593840181556f);
-    dynamicGraph1.addDataPoint(-940.0135647661084f);
-    dynamicGraph1.addDataPoint(-917.8346456870283f);
-    dynamicGraph1.addDataPoint(-893.0996773774584f);
-    dynamicGraph1.addDataPoint(-865.8605930671242f);
-    dynamicGraph1.addDataPoint(-836.1784902861596f);
-    dynamicGraph1.addDataPoint(-804.1234196703953f);
-    dynamicGraph1.addDataPoint(-769.7741411145614f);
-    dynamicGraph1.addDataPoint(-733.2178443067676f);
-    dynamicGraph1.addDataPoint(-694.5498379811978f);
-    dynamicGraph1.addDataPoint(-653.8732078036478f);
-    dynamicGraph1.addDataPoint(-611.2984428135396f);
-    dynamicGraph1.addDataPoint(-566.9430352818988f);
-    dynamicGraph1.addDataPoint(-520.9310514157768f);
-    dynamicGraph1.addDataPoint(-473.39267800399637f);
-    dynamicGraph1.addDataPoint(-424.46374539762115f);
-    dynamicGraph1.addDataPoint(-374.2852272318014f);
-    dynamicGraph1.addDataPoint(-323.0027223692691f);
-    dynamicGraph1.addDataPoint(-270.7659168076825f);
-    dynamicGraph1.addDataPoint(-217.72803119006232f);
-    dynamicGraph1.addDataPoint(-164.04525464222536f);
-    dynamicGraph1.addDataPoint(-109.87616567090832f);
-    dynamicGraph1.addDataPoint(-55.38114598157287f);
-    dynamicGraph1.addDataPoint(-0.7217851421874796f);
-    dynamicGraph1.addDataPoint(53.93971797993328f);
-    dynamicGraph1.addDataPoint(108.44115613865428f);
-    dynamicGraph1.addDataPoint(162.6209161155013f);
-    dynamicGraph1.addDataPoint(216.31857664732797f);
-    dynamicGraph1.addDataPoint(269.3755039168627f);
-    dynamicGraph1.addDataPoint(321.6354386703613f);
-    dynamicGraph1.addDataPoint(372.94507414882116f);
-    dynamicGraph1.addDataPoint(423.1546240261166f);
-    dynamicGraph1.addDataPoint(472.1183745654739f);
-    dynamicGraph1.addDataPoint(519.6952231602819f);
-    dynamicGraph1.addDataPoint(565.7491975940923f);
-    dynamicGraph1.addDataPoint(610.1499554595152f);
-    dynamicGraph1.addDataPoint(652.7732631883147f);
-    dynamicGraph1.addDataPoint(693.5014493486276f);
-    dynamicGraph1.addDataPoint(732.223834639457f);
-    dynamicGraph1.addDataPoint(768.8371334450023f);
-    dynamicGraph1.addDataPoint(803.2458268135258f);
-    dynamicGraph1.addDataPoint(835.3625067372882f);
-    dynamicGraph1.addDataPoint(865.1081870671892f);
-    dynamicGraph1.addDataPoint(892.412583860835f);
-    dynamicGraph1.addDataPoint(917.2143607687653f);
-    dynamicGraph1.addDataPoint(939.461339876369f);
-    dynamicGraph1.addDataPoint(959.1106784208457f);
-    dynamicGraph1.addDataPoint(976.1290075745301f);
-    dynamicGraph1.addDataPoint(990.4925365154256f);
-    dynamicGraph1.addDataPoint(1002.1871182873415f);
-    dynamicGraph1.addDataPoint(1011.2082784897423f);
-    dynamicGraph1.addDataPoint(1017.5612078182545f);
-    dynamicGraph1.addDataPoint(1021.260715618369f);
-    dynamicGraph1.addDataPoint(1022.3311480877439f);
-    dynamicGraph1.addDataPoint(1020.806268612848f);
-    dynamicGraph1.addDataPoint(1016.7291019058164f);
-    dynamicGraph1.addDataPoint(1010.151743555737f);
-    dynamicGraph1.addDataPoint(1001.1351331682345f);
-    dynamicGraph1.addDataPoint(989.7487950706029f);
-    dynamicGraph1.addDataPoint(976.0705450631079f);
-    dynamicGraph1.addDataPoint(960.186165442768f);
-    dynamicGraph1.addDataPoint(942.1890504311252f);
-    dynamicGraph1.addDataPoint(922.1798211576308f);
-    dynamicGraph1.addDataPoint(900.2659143825841f);
-    dynamicGraph1.addDataPoint(876.561144375006f);
-    dynamicGraph1.addDataPoint(851.1852406031985f);
-    dynamicGraph1.addDataPoint(824.263363749239f);
-    dynamicGraph1.addDataPoint(795.9256000760877f);
-    dynamicGraph1.addDataPoint(766.3064383495249f);
-    dynamicGraph1.addDataPoint(735.5442295423265f);
-    dynamicGraph1.addDataPoint(703.78063222836f);
-    dynamicGraph1.addDataPoint(671.160046370702f);
-    dynamicGraph1.addDataPoint(637.8290362542926f);
-    dynamicGraph1.addDataPoint(603.935746556798f);
-    dynamicGraph1.addDataPoint(569.6293124264917f);
-    dynamicGraph1.addDataPoint(535.0592665071163f);
-    dynamicGraph1.addDataPoint(500.374945587694f);
-    dynamicGraph1.addDataPoint(465.72489815731217f);
-    dynamicGraph1.addDataPoint(431.25629640395414f);
-    dynamicGraph1.addDataPoint(397.11435396789244f);
-    dynamicGraph1.addDataPoint(363.44175218819066f);
-    dynamicGraph1.addDataPoint(330.37807726360825f);
-    dynamicGraph1.addDataPoint(298.0592699285015f);
-    dynamicGraph1.addDataPoint(266.61709048453986f);
-    dynamicGraph1.addDataPoint(236.1786007328398f);
-    dynamicGraph1.addDataPoint(206.86566511575705f);
-    dynamicGraph1.addDataPoint(178.79447301272427f);
-    dynamicGraph1.addDataPoint(152.07508390731647f);
-    dynamicGraph1.addDataPoint(126.81099734890142f);
-    dynamicGraph1.addDataPoint(103.09874929340754f);
-    dynamicGraph1.addDataPoint(81.02753650252612f);
-    dynamicGraph1.addDataPoint(60.678870280036335f);
-    dynamicGraph1.addDataPoint(42.12626120051323f);
-    dynamicGraph1.addDataPoint(25.434935661920804f);
-    dynamicGraph1.addDataPoint(10.661585725349255f);
-    dynamicGraph1.addDataPoint(-2.1458468629667777f);
-    dynamicGraph1.addDataPoint(-12.948351993432652f);
-    dynamicGraph1.addDataPoint(-21.715996400893687f);
-    dynamicGraph1.addDataPoint(-28.428033131674738f);
-    dynamicGraph1.addDataPoint(-33.072974040394456f);
-    dynamicGraph1.addDataPoint(-35.64862529868151f);
-    dynamicGraph1.addDataPoint(-36.16208632228654f);
-    dynamicGraph1.addDataPoint(-34.62971093613146f);
-    dynamicGraph1.addDataPoint(-31.07703239515888f);
-    dynamicGraph1.addDataPoint(-25.538651318698385f);
-    dynamicGraph1.addDataPoint(-18.058087420537618f);
-    dynamicGraph1.addDataPoint(-8.68759632602496f);
-    dynamicGraph1.addDataPoint(2.512049409558472f);
-    dynamicGraph1.addDataPoint(15.471812256943622f);
-    dynamicGraph1.addDataPoint(30.11467530813809f);
-    dynamicGraph1.addDataPoint(46.35595977877381f);
-    dynamicGraph1.addDataPoint(64.10367230930626f);
-    dynamicGraph1.addDataPoint(83.25888270139586f);
-    dynamicGraph1.addDataPoint(103.71612817277702f);
-    dynamicGraph1.addDataPoint(125.36384458896964f);
-    dynamicGraph1.addDataPoint(148.08482220810407f);
-    dynamicGraph1.addDataPoint(171.75668314828033f);
-    dynamicGraph1.addDataPoint(196.25238106585985f);
-    dynamicGraph1.addDataPoint(221.44071821756035f);
-    dynamicGraph1.addDataPoint(247.18688028049587f);
-    dynamicGraph1.addDataPoint(273.3529859112988f);
-    dynamicGraph1.addDataPoint(299.7986477606708f);
-    dynamicGraph1.addDataPoint(326.38154542914987f);
-    dynamicGraph1.addDataPoint(352.9580048614485f);
-    dynamicGraph1.addDataPoint(379.38358462904336f);
-    dynamicGraph1.addDataPoint(405.51366574509206f);
-    dynamicGraph1.addDataPoint(431.2040414618447f);
-    dynamicGraph1.addDataPoint(456.3115077058152f);
-    dynamicGraph1.addDataPoint(480.69444824139447f);
-    dynamicGraph1.addDataPoint(504.2134152666781f);
-    dynamicGraph1.addDataPoint(526.7317019883335f);
-    dynamicGraph1.addDataPoint(548.1159036034667f);
-    dynamicGraph1.addDataPoint(568.2364676919873f);
-    dynamicGraph1.addDataPoint(586.9682279843394f);
-    dynamicGraph1.addDataPoint(604.1909226390495f);
-    dynamicGraph1.addDataPoint(619.7896937193216f);
-    dynamicGraph1.addDataPoint(633.6555645134015f);
-    dynamicGraph1.addDataPoint(645.685896214779f);
-    dynamicGraph1.addDataPoint(655.7848180714874f);
-    dynamicGraph1.addDataPoint(663.8636327233412f);
-    dynamicGraph1.addDataPoint(669.8411937764922f);
-    dynamicGraph1.addDataPoint(673.6442526893045f);
-    dynamicGraph1.addDataPoint(675.2077771280742f);
-    dynamicGraph1.addDataPoint(674.4752352845649f);
-    dynamicGraph1.addDataPoint(671.3988485703843f);
-    dynamicGraph1.addDataPoint(665.939810274129f);
-    dynamicGraph1.addDataPoint(658.068467851755f);
-    dynamicGraph1.addDataPoint(647.7644717297509f);
-    dynamicGraph1.addDataPoint(635.0168856842783f);
-    dynamicGraph1.addDataPoint(619.824261962247f);
-    dynamicGraph1.addDataPoint(602.1946793864114f);
-    dynamicGraph1.addDataPoint(582.1457428189283f);
-    dynamicGraph1.addDataPoint(559.7045475991375f);
-    dynamicGraph1.addDataPoint(534.9076047157532f);
-    dynamicGraph1.addDataPoint(507.800730618235f);
-    dynamicGraph1.addDataPoint(478.4389006186648f);
-    dynamicGraph1.addDataPoint(446.88606500178724f);
-    dynamicGraph1.addDataPoint(413.21493214084705f);
-    dynamicGraph1.addDataPoint(377.5067151328615f);
-    dynamicGraph1.addDataPoint(339.8508465144905f);
-    dynamicGraph1.addDataPoint(300.3446607022513f);
-    dynamicGraph1.addDataPoint(259.09304398700795f);
-    dynamicGraph1.addDataPoint(216.2080569390576f);
-    dynamicGraph1.addDataPoint(171.80852647803957f);
-    dynamicGraph1.addDataPoint(126.01961267588115f);
-    dynamicGraph1.addDataPoint(78.97235054573963f);
-    dynamicGraph1.addDataPoint(30.803167262788975f);
-    dynamicGraph1.addDataPoint(-18.346619952793446f);
-    dynamicGraph1.addDataPoint(-68.33132737128034f);
-    dynamicGraph1.addDataPoint(-119.00144433840029f);
-    dynamicGraph1.addDataPoint(-170.20418818741817f);
-    dynamicGraph1.addDataPoint(-221.78407356719163f);
-    dynamicGraph1.addDataPoint(-273.5834908145177f);
-    dynamicGraph1.addDataPoint(-325.44329491169225f);
-    dynamicGraph1.addDataPoint(-377.20339960756377f);
-    dynamicGraph1.addDataPoint(-428.70337569095955f);
-    dynamicGraph1.addDataPoint(-479.78305222882955f);
-    dynamicGraph1.addDataPoint(-530.2831155185825f);
-    dynamicGraph1.addDataPoint(-580.0457069139491f);
-    dynamicGraph1.addDataPoint(-628.9150143193683f);
-    dynamicGraph1.addDataPoint(-676.7378562559372f);
-    dynamicGraph1.addDataPoint(-723.3642572415835f);
-    dynamicGraph1.addDataPoint(-768.6480096269856f);
-    dynamicGraph1.addDataPoint(-812.4472228356908f);
-    dynamicGraph1.addDataPoint(-854.6248552893034f);
-    dynamicGraph1.addDataPoint(-895.0492280383666f);
-    dynamicGraph1.addDataPoint(-933.5945189755237f);
-    dynamicGraph1.addDataPoint(-970.1412334212536f);
-    dynamicGraph1.addDataPoint(-1004.5766519821099f);
-    dynamicGraph1.addDataPoint(-1036.7952516945504f);
-    dynamicGraph1.addDataPoint(-1066.699099775415f);
-    dynamicGraph1.addDataPoint(-1094.1982191688764f);
-    dynamicGraph1.addDataPoint(-1119.2109225499912f);
-    dynamicGraph1.addDataPoint(-1141.6641157705635f);
-    dynamicGraph1.addDataPoint(-1161.493567695571f);
-    dynamicGraph1.addDataPoint(-1178.6441461948411f);
-    dynamicGraph1.addDataPoint(-1193.0700199295961f);
-    dynamicGraph1.addDataPoint(-1204.734823630718f);
-    dynamicGraph1.addDataPoint(-1213.6117880300053f);
-    dynamicGraph1.addDataPoint(-1219.6838324706173f);
-    dynamicGraph1.addDataPoint(-1222.943620493454f);
-    dynamicGraph1.addDataPoint(-1223.393578568572f);
-    dynamicGraph1.addDataPoint(-1221.045876804194f);
-    dynamicGraph1.addDataPoint(-1215.9223730038239f);
-    dynamicGraph1.addDataPoint(-1208.0545192467507f);
-    dynamicGraph1.addDataPoint(-1197.4832318448657f);
-    dynamicGraph1.addDataPoint(-1184.25872538874f);
-    dynamicGraph1.addDataPoint(-1168.4403108746696f);
-    dynamicGraph1.addDataPoint(-1150.096159464474f);
-    dynamicGraph1.addDataPoint(-1129.3030321969172f);
-    dynamicGraph1.addDataPoint(-1106.1459770164624f);
-    dynamicGraph1.addDataPoint(-1080.7179943233475f);
-    dynamicGraph1.addDataPoint(-1053.1196721428776f);
-    dynamicGraph1.addDataPoint(-1023.458792558428f);
-    dynamicGraph1.addDataPoint(-991.8499107903516f);
-    dynamicGraph1.addDataPoint(-958.4139086919755f);
-    dynamicGraph1.addDataPoint(-923.277524242622f);
-    dynamicGraph1.addDataPoint(-886.5728591182885f);
-    dynamicGraph1.addDataPoint(-848.4368659357046f);
-    dynamicGraph1.addDataPoint(-809.0108174687505f);
-    dynamicGraph1.addDataPoint(-768.4397598527156f);
-    dynamicGraph1.addDataPoint(-726.8719515659675f);
-    dynamicGraph1.addDataPoint(-684.4582910707622f);
-    dynamicGraph1.addDataPoint(-641.3517344790887f);
-    dynamicGraph1.addDataPoint(-597.7067062609719f);
-    dynamicGraph1.addDataPoint(-553.6785050553611f);
-    dynamicGraph1.addDataPoint(-509.4227063816312f);
-    dynamicGraph1.addDataPoint(-465.0945657119332f);
-    dynamicGraph1.addDataPoint(-420.8484228378453f);
-    dynamicGraph1.addDataPoint(-376.8371110358105f);
-    dynamicGraph1.addDataPoint(-333.2113729174532f);
-    dynamicGraph1.addDataPoint(-290.1192845551378f);
-    dynamicGraph1.addDataPoint(-247.70569167865318f);
-    dynamicGraph1.addDataPoint(-206.1116582405482f);
-    dynamicGraph1.addDataPoint(-165.47393109875867f);
-    dynamicGraph1.addDataPoint(-125.92442231232201f);
-    dynamicGraph1.addDataPoint(-87.58971022340216f);
-    dynamicGraph1.addDataPoint(-50.59056321612172f);
-    dynamicGraph1.addDataPoint(-15.041485630931447f);
-    dynamicGraph1.addDataPoint(18.94971040513542f);
-    dynamicGraph1.addDataPoint(51.28230631915068f);
-    dynamicGraph1.addDataPoint(81.86305102953997f);
-    dynamicGraph1.addDataPoint(110.60650371262034f);
-    dynamicGraph1.addDataPoint(137.43534688062147f);
-    dynamicGraph1.addDataPoint(162.28066620063458f);
-    dynamicGraph1.addDataPoint(185.0821968729947f);
-    dynamicGraph1.addDataPoint(205.78853672878859f);
-    dynamicGraph1.addDataPoint(224.35732257847314f);
-    dynamicGraph1.addDataPoint(240.75537233935103f);
-    dynamicGraph1.addDataPoint(254.95878971470142f);
-    dynamicGraph1.addDataPoint(266.9530320651467f);
-    dynamicGraph1.addDataPoint(276.7329424404552f);
-    dynamicGraph1.addDataPoint(284.3027427231342f);
-    dynamicGraph1.addDataPoint(289.67599147247677f);
-    dynamicGraph1.addDataPoint(292.87550367897717f);
-    dynamicGraph1.addDataPoint(293.9332339136045f);
-    dynamicGraph1.addDataPoint(292.8901246536692f);
-    dynamicGraph1.addDataPoint(289.79591721193833f);
-    dynamicGraph1.addDataPoint(284.708929859126f);
-    dynamicGraph1.addDataPoint(277.69580081508803f);
-    dynamicGraph1.addDataPoint(268.83119838697246f);
-    dynamicGraph1.addDataPoint(258.1975007831786f);
-    dynamicGraph1.addDataPoint(245.88444349515092f);
-    dynamicGraph1.addDataPoint(231.98873970559657f);
-    dynamicGraph1.addDataPoint(216.613671827726f);
-    dynamicGraph1.addDataPoint(199.8686571287992f);
-    dynamicGraph1.addDataPoint(181.86879058087558f);
-    dynamicGraph1.addDataPoint(162.73436322536708f);
-    dynamicGraph1.addDataPoint(142.59036217991766f);
-    dynamicGraph1.addDataPoint(121.56595072847813f);
-    dynamicGraph1.addDataPoint(99.79393194548722f);
-    dynamicGraph1.addDataPoint(77.41019942250404f);
-    dynamicGraph1.addDataPoint(54.55317365796503f);
-    dynamicGraph1.addDataPoint(31.363230658535784f);
-    dynamicGraph1.addDataPoint(7.982121392669272f);
-    dynamicGraph1.addDataPoint(-15.447614175684294f);
-    dynamicGraph1.addDataPoint(-38.783234707076836f);
-    dynamicGraph1.addDataPoint(-61.8823880795937f);
-    dynamicGraph1.addDataPoint(-84.60369826908362f);
-    dynamicGraph1.addDataPoint(-106.80734983858521f);
-    dynamicGraph1.addDataPoint(-128.35566627615307f);
-    dynamicGraph1.addDataPoint(-149.11367846365363f);
-    dynamicGraph1.addDataPoint(-168.94968464398033f);
-    dynamicGraph1.addDataPoint(-187.73579535679627f);
-    dynamicGraph1.addDataPoint(-205.34846479526672f);
-    dynamicGraph1.addDataPoint(-221.66900503608173f);
-    dynamicGraph1.addDataPoint(-236.58407971736654f);
-    dynamicGraph1.addDataPoint(-249.98617874135041f);
-    dynamicGraph1.addDataPoint(-261.7740679089794f);
-    dynamicGraph1.addDataPoint(-271.85321522188644f);
-    dynamicGraph1.addDataPoint(-280.13619074285236f);
-    dynamicGraph1.addDataPoint(-286.5430370997716f);
-    dynamicGraph1.addDataPoint(-291.0016125536586f);
-    dynamicGraph1.addDataPoint(-293.44790122218495f);
-    dynamicGraph1.addDataPoint(-293.82629259487584f);
-    dynamicGraph1.addDataPoint(-292.08982785543736f);
-    dynamicGraph1.addDataPoint(-288.2004107807117f);
-    dynamicGraph1.addDataPoint(-282.1289855701841f);
-    dynamicGraph1.addDataPoint(-273.8556770765454f);
-    dynamicGraph1.addDataPoint(-263.3698960413453f);
-    dynamicGraph1.addDataPoint(-250.67040760463283f);
-    dynamicGraph1.addDataPoint(-235.7653616571626f);
-    dynamicGraph1.addDataPoint(-218.6722878546642f);
-    dynamicGraph1.addDataPoint(-199.41805177217856f);
-    dynamicGraph1.addDataPoint(-178.0387752762141f);
-    dynamicGraph1.addDataPoint(-154.57972019898136f);
-    dynamicGraph1.addDataPoint(-129.09513472794163f);
-    dynamicGraph1.addDataPoint(-101.648065763244f);
-    dynamicGraph1.addDataPoint(-72.31013478319022f);
-    dynamicGraph1.addDataPoint(-41.161280709059895f);
-    dynamicGraph1.addDataPoint(-8.289469659324595f);
-    dynamicGraph1.addDataPoint(26.20962817522235f);
-    dynamicGraph1.addDataPoint(62.23299094760176f);
-    dynamicGraph1.addDataPoint(99.6706282797739f);
-    dynamicGraph1.addDataPoint(138.40599131584264f);
-    dynamicGraph1.addDataPoint(178.31640908617095f);
-    dynamicGraph1.addDataPoint(219.27355022708747f);
-    dynamicGraph1.addDataPoint(261.14390629014923f);
-    dynamicGraph1.addDataPoint(303.7892971052608f);
-    dynamicGraph1.addDataPoint(347.0673943063281f);
-    dynamicGraph1.addDataPoint(390.8322618138185f);
-    dynamicGraph1.addDataPoint(434.93491174744247f);
-    dynamicGraph1.addDataPoint(479.22387202872335f);
-    dynamicGraph1.addDataPoint(523.5457653296062f);
-    dynamicGraph1.addDataPoint(567.7458955852929f);
-    dynamicGraph1.addDataPoint(611.668840461266f);
-    dynamicGraph1.addDataPoint(655.1590478707221f);
-    dynamicGraph1.addDataPoint(698.0614330617415f);
-    dynamicGraph1.addDataPoint(740.2219753069934f);
-    dynamicGraph1.addDataPoint(781.4883107654832f);
-    dynamicGraph1.addDataPoint(821.7103197124472f);
-    dynamicGraph1.addDataPoint(860.7407060736834f);
-    dynamicGraph1.addDataPoint(898.4355662860373f);
-    dynamicGraph1.addDataPoint(934.6549460975743f);
-    dynamicGraph1.addDataPoint(969.263382470471f);
-    dynamicGraph1.addDataPoint(1002.1304288046922f);
-    dynamicGraph1.addDataPoint(1033.131161476902f);
-    dynamicGraph1.addDataPoint(1062.146665448617f);
-    dynamicGraph1.addDataPoint(1089.064497339704f);
-    dynamicGraph1.addDataPoint(1113.7791239443602f);
-    dynamicGraph1.addDataPoint(1136.192334629111f);
-    dynamicGraph1.addDataPoint(1156.2136258631829f);
-    dynamicGraph1.addDataPoint(1173.7605565631202f);
-    dynamicGraph1.addDataPoint(1188.7590726093356f);
-    dynamicGraph1.addDataPoint(1201.143799504241f);
-    dynamicGraph1.addDataPoint(1210.8583019964549f);
-    dynamicGraph1.addDataPoint(1217.855309335506f);
-    dynamicGraph1.addDataPoint(1222.096905909435f);
-    dynamicGraph1.addDataPoint(1223.5546857230443f);
-    dynamicGraph1.addDataPoint(1222.2098707981982f);
-    dynamicGraph1.addDataPoint(1218.053392817024f);
-    dynamicGraph1.addDataPoint(1211.0859371899664f);
-    dynamicGraph1.addDataPoint(1201.3179504473235f);
-    dynamicGraph1.addDataPoint(1188.7696095969202f);
-    dynamicGraph1.addDataPoint(1173.4707546892828f);
-    dynamicGraph1.addDataPoint(1155.460784456125f);
-    dynamicGraph1.addDataPoint(1134.7885147607412f);
-    dynamicGraph1.addDataPoint(1111.5120019057606f);
-    dynamicGraph1.addDataPoint(1085.6983296498283f);
-    dynamicGraph1.addDataPoint(1057.4233623061796f);
-    dynamicGraph1.addDataPoint(1026.7714643152026f);
-    dynamicGraph1.addDataPoint(993.8351865578745f);
-    dynamicGraph1.addDataPoint(958.714922526399f);
-    dynamicGraph1.addDataPoint(921.5185333750371f);
-    dynamicGraph1.addDataPoint(882.3609452520869f);
-    dynamicGraph1.addDataPoint(841.3637197477774f);
-    dynamicGraph1.addDataPoint(798.6545981609486f);
-    dynamicGraph1.addDataPoint(754.3670236247272f);
-    dynamicGraph1.addDataPoint(708.6396401925758f);
-    dynamicGraph1.addDataPoint(661.6157731428591f);
-    dynamicGraph1.addDataPoint(613.4428916395908f);
-    dynamicGraph1.addDataPoint(564.272054742016f);
-    dynamicGraph1.addDataPoint(514.2573455208376f);
-    dynamicGraph1.addDataPoint(463.55529232422947f);
-    dynamicGraph1.addDataPoint(412.3242820850378f);
-    dynamicGraph1.addDataPoint(360.72396692828545f);
-    dynamicGraph1.addDataPoint(308.9146651766474f);
-    dynamicGraph1.addDataPoint(257.0567619808659f);
-    dynamicGraph1.addDataPoint(205.31010839651745f);
-    dynamicGraph1.addDataPoint(153.83342417348734f);
-    dynamicGraph1.addDataPoint(102.78370543427036f);
-    dynamicGraph1.addDataPoint(52.31563823973892f);
-    dynamicGraph1.addDataPoint(2.5810234686587137f);
-    dynamicGraph1.addDataPoint(-46.27178855991059f);
-    dynamicGraph1.addDataPoint(-94.09844835103013f);
-    dynamicGraph1.addDataPoint(-140.75914149835137f);
-    dynamicGraph1.addDataPoint(-186.11910625104096f);
-    dynamicGraph1.addDataPoint(-230.04912902639106f);
-    dynamicGraph1.addDataPoint(-272.42601998786904f);
-    dynamicGraph1.addDataPoint(-313.13306347557113f);
-    dynamicGraph1.addDataPoint(-352.0604428785117f);
-    dynamicGraph1.addDataPoint(-389.10563973098084f);
-    dynamicGraph1.addDataPoint(-424.17380199146703f);
-    dynamicGraph1.addDataPoint(-457.17808429548654f);
-    dynamicGraph1.addDataPoint(-488.039955356704f);
-    dynamicGraph1.addDataPoint(-516.6894727295943f);
-    dynamicGraph1.addDataPoint(-543.0655253322277f);
-    dynamicGraph1.addDataPoint(-567.1160392060784f);
-    dynamicGraph1.addDataPoint(-588.7981500475811f);
-    dynamicGraph1.addDataPoint(-608.0783382543082f);
-    dynamicGraph1.addDataPoint(-624.9325274152984f);
-    dynamicGraph1.addDataPoint(-639.3461473396673f);
-    dynamicGraph1.addDataPoint(-651.3141577641088f);
-    dynamicGraph1.addDataPoint(-660.8410370259817f);
-    dynamicGraph1.addDataPoint(-667.9407321322677f);
-    dynamicGraph1.addDataPoint(-672.636571896775f);
-    dynamicGraph1.addDataPoint(-674.9611449476438f);
-    dynamicGraph1.addDataPoint(-674.9561394874488f);
-    dynamicGraph1.addDataPoint(-672.672149783611f);
-    dynamicGraph1.addDataPoint(-668.1684465566859f);
-    dynamicGraph1.addDataPoint(-661.5127136379929f);
-    dynamicGraph1.addDataPoint(-652.780753349103f);
-    dynamicGraph1.addDataPoint(-642.0561582348432f);
-    dynamicGraph1.addDataPoint(-629.4299546884813f);
-    dynamicGraph1.addDataPoint(-615.0002163544831f);
-    dynamicGraph1.addDataPoint(-598.8716502677689f);
-    dynamicGraph1.addDataPoint(-581.155158708839f);
-    dynamicGraph1.addDataPoint(-561.9673750970564f);
-    dynamicGraph1.addDataPoint(-541.4301798295787f);
-    dynamicGraph1.addDataPoint(-519.6701945868933f);
-    dynamicGraph1.addDataPoint(-496.818258480773f);
-    dynamicGraph1.addDataPoint(-473.0088893713448f);
-    dynamicGraph1.addDataPoint(-448.37972925120647f);
-    dynamicGraph1.addDataPoint(-423.0709797319969f);
-    dynamicGraph1.addDataPoint(-397.2248266572865f);
-    dynamicGraph1.addDataPoint(-370.98485741970967f);
-    dynamicGraph1.addDataPoint(-344.4954744365828f);
-    dynamicGraph1.addDataPoint(-317.90130410183593f);
-    dynamicGraph1.addDataPoint(-291.34660710601787f);
-    dynamicGraph1.addDataPoint(-264.9746894852901f);
-    dynamicGraph1.addDataPoint(-238.92731793948346f);
-    dynamicGraph1.addDataPoint(-213.3441427606877f);
-    dynamicGraph1.addDataPoint(-188.36212793274711f);
-    dynamicGraph1.addDataPoint(-164.11499386900886f);
-    dynamicGraph1.addDataPoint(-140.73267230732336f);
-    dynamicGraph1.addDataPoint(-118.3407766209877f);
-    dynamicGraph1.addDataPoint(-97.06009053526299f);
-    dynamicGraph1.addDataPoint(-77.00607487441772f);
-    dynamicGraph1.addDataPoint(-58.288397114919576f);
-    dynamicGraph1.addDataPoint(-41.0104832508996f);
-    dynamicGraph1.addDataPoint(-25.269094724109777f);
-    dynamicGraph1.addDataPoint(-11.153932840194102f);
-    dynamicGraph1.addDataPoint(1.2527297970899554f);
-    dynamicGraph1.addDataPoint(11.876386981867995f);
-    dynamicGraph1.addDataPoint(20.650606382110368f);
-    dynamicGraph1.addDataPoint(27.517304736049937f);
-    dynamicGraph1.addDataPoint(32.42698908816055f);
-    dynamicGraph1.addDataPoint(35.33896474587857f);
-    dynamicGraph1.addDataPoint(36.2215072069431f);
-    dynamicGraph1.addDataPoint(35.05199896119916f);
-    dynamicGraph1.addDataPoint(31.817029930673584f);
-    dynamicGraph1.addDataPoint(26.512460722388482f);
-    dynamicGraph1.addDataPoint(19.143449654882488f);
-    dynamicGraph1.addDataPoint(9.724442019622416f);
-    dynamicGraph1.addDataPoint(-1.7208772233602758f);
-    dynamicGraph1.addDataPoint(-15.159667665063125f);
-    dynamicGraph1.addDataPoint(-30.55005450708404f);
-    dynamicGraph1.addDataPoint(-47.84128521454295f);
-    dynamicGraph1.addDataPoint(-66.97392205676738f);
-    dynamicGraph1.addDataPoint(-87.88006906234375f);
-    dynamicGraph1.addDataPoint(-110.48363286032657f);
-    dynamicGraph1.addDataPoint(-134.70061645898681f);
-    dynamicGraph1.addDataPoint(-160.43944448717002f);
-    dynamicGraph1.addDataPoint(-187.60131899305924f);
-    dynamicGraph1.addDataPoint(-216.0806041365566f);
-    dynamicGraph1.addDataPoint(-245.76523844939453f);
-    dynamicGraph1.addDataPoint(-276.53717293831954f);
-    dynamicGraph1.addDataPoint(-308.2728334441085f);
-    dynamicGraph1.addDataPoint(-340.8436052687953f);
-    dynamicGraph1.addDataPoint(-374.11633835566124f);
-    dynamicGraph1.addDataPoint(-407.9538710411284f);
-    dynamicGraph1.addDataPoint(-442.21557003556563f);
-    dynamicGraph1.addDataPoint(-476.75788509728136f);
-    dynamicGraph1.addDataPoint(-511.43491550746006f);
-    dynamicGraph1.addDataPoint(-546.0989867596345f);
-    dynamicGraph1.addDataPoint(-580.6012350192426f);
-    dynamicGraph1.addDataPoint(-614.7921965949041f);
-    dynamicGraph1.addDataPoint(-648.5224011328379f);
-    dynamicGraph1.addDataPoint(-681.6429649589545f);
-    dynamicGraph1.addDataPoint(-714.0061833161875f);
-    dynamicGraph1.addDataPoint(-745.466118810558f);
-    dynamicGraph1.addDataPoint(-775.8791831211524f);
-    dynamicGraph1.addDataPoint(-805.1047111403432f);
-    dynamicGraph1.addDataPoint(-833.0055235300293f);
-
     box3.setPosition(0, -2, 800, 37);
     box3.setColor(touchgfx::Color::getColorFromRGB(219, 219, 219));
 
-    image2.setXY(576, 410);
-    image2.setBitmap(touchgfx::Bitmap(BITMAP_DEITADOEDIT_ID));
+    boxWithBorder1.setPosition(630, 41, 164, 85);
+    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorder1.setBorderSize(3);
 
     textArea1.setXY(119, 1);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1.setLinespacing(0);
+    Unicode::snprintf(textArea1Buffer, TEXTAREA1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_GXG2).getText());
+    textArea1.setWildcard(textArea1Buffer);
+    textArea1.resizeToCurrentText();
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XRTL));
 
-    textArea2.setXY(624, 426);
-    textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    textArea2.setPosition(640, 56, 98, 66);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea2.setLinespacing(0);
+    textArea2Buffer[0] = 0;
+    textArea2.setWildcard(textArea2Buffer);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1XTZ));
 
-    textArea3.setXY(88, 426);
+    textArea3.setXY(133, 426);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea3.setLinespacing(0);
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NFTU));
@@ -883,6 +90,11 @@ Screen1ViewBase::Screen1ViewBase() :
     textArea4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea4.setLinespacing(0);
     textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_T06K));
+
+    textArea6.setXY(746, 100);
+    textArea6.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea6.setLinespacing(0);
+    textArea6.setTypedText(touchgfx::TypedText(T___SINGLEUSE_6536));
 
     scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_TIMEZONE_GLOBE_50_ID));
     scalableImage1.setPosition(425, 3, 34, 32);
@@ -908,65 +120,129 @@ Screen1ViewBase::Screen1ViewBase() :
     scalableImage6.setPosition(369, 8, 24, 24);
     scalableImage6.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
-    scalableImage7.setBitmap(touchgfx::Bitmap(BITMAP_BATERIA_ID));
-    scalableImage7.setPosition(744, 3, 52, 30);
-    scalableImage7.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-
-    textArea5.setXY(686, 3);
-    textArea5.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea5.setLinespacing(0);
-    textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KGA4));
-
-    scalableImage8.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_ELECTRODE_32_ID));
-    scalableImage8.setPosition(40, 426, 48, 48);
-    scalableImage8.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-
     voltar.setXY(12, 10);
-    voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_48_ID));
+    voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID));
     voltar.setAction(buttonCallback);
 
-    ConfigExame.setXY(492, 420);
+    ConfigExame.setXY(7, 68);
     ConfigExame.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_SETTINGS_32_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_SETTINGS_32_ID));
     ConfigExame.setIconXY(15, 15);
     ConfigExame.setAction(buttonCallback);
 
-    buttonWithIcon1.setXY(270, 420);
+    buttonWithIcon1.setXY(317, 420);
     buttonWithIcon1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_REFRESH_32_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_REFRESH_32_ID));
     buttonWithIcon1.setIconXY(15, 16);
     buttonWithIcon1.setAction(buttonCallback);
 
-    textArea6.setXY(332, 431);
-    textArea6.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea6.setLinespacing(0);
-    textArea6.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8O3B));
+    textoffset.setXY(377, 431);
+    textoffset.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textoffset.setLinespacing(0);
+    textoffset.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8O3B));
+
+    buttonNextDeriv.setXY(73, 420);
+    buttonNextDeriv.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_NEXT_ARROW_32_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_NEXT_ARROW_32_ID));
+    buttonNextDeriv.setIconXY(22, 15);
+    buttonNextDeriv.setAction(buttonCallback);
+
+    buttoBackDeriv.setXY(10, 420);
+    buttoBackDeriv.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_BACK_ARROW_32_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_BACK_ARROW_32_ID));
+    buttoBackDeriv.setIconXY(22, 15);
+    buttoBackDeriv.setAction(buttonCallback);
+
+    buttonTransmit.setXY(534, 420);
+    buttonTransmit.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonTransmit.setLabelText(touchgfx::TypedText(T___SINGLEUSE_0VZY));
+    buttonTransmit.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonTransmit.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonTransmit.setAction(buttonCallback);
+
+    scalableImage4_1.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_WI_FI_50_ID));
+    scalableImage4_1.setPosition(715, 429, 41, 43);
+    scalableImage4_1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+
+    containerLoadingAnimation1.setXY(704, 418);
+    containerLoadingAnimation1.setVisible(false);
+
+    buttonFechaPopup.setBoxWithBorderPosition(0, 0, 800, 480);
+    buttonFechaPopup.setBorderSize(5);
+    buttonFechaPopup.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    buttonFechaPopup.setPosition(0, 0, 800, 480);
+    buttonFechaPopup.setVisible(false);
+    buttonFechaPopup.setAlpha(0);
+    buttonFechaPopup.setAction(flexButtonCallback);
+
+    buttonFechaPopup1.setXY(603, 112);
+    buttonFechaPopup1.setVisible(false);
+    buttonFechaPopup1.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_32_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_32_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_32_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_32_ID));
+    buttonFechaPopup1.setIconXY(0, 0);
+    buttonFechaPopup1.setAction(buttonCallback);
+
+    scalableImage9.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_HEART_48CINZA_ID));
+    scalableImage9.setPosition(738, 47, 51, 60);
+    scalableImage9.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+
+    scalableImage8.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_HEART_48_ID));
+    scalableImage8.setPosition(738, 47, 51, 60);
+    scalableImage8.setVisible(false);
+    scalableImage8.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+
+    containerPopup1.setXY(0, 0);
+    containerPopup1.setVisible(false);
+
+    buttonOpenStatLead.setXY(559, 53);
+    buttonOpenStatLead.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICONS8_ELECTRODE_32_ID), touchgfx::Bitmap(BITMAP_ICONS8_ELECTRODE_32_ID));
+    buttonOpenStatLead.setIconXY(14, 14);
+    buttonOpenStatLead.setAction(buttonCallback);
+
+    containerLOFFMatrix1.setXY(224, 69);
+    containerLOFFMatrix1.setVisible(false);
+
+    buttonFechaStatLead.setXY(526, 71);
+    buttonFechaStatLead.setVisible(false);
+    buttonFechaStatLead.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_48_ID));
+    buttonFechaStatLead.setIconXY(0, 0);
+    buttonFechaStatLead.setAction(buttonCallback);
 
     add(__background);
     add(box1);
     add(dynamicGraph1);
     add(box3);
-    add(image2);
+    add(boxWithBorder1);
     add(textArea1);
     add(textArea2);
     add(textArea3);
     add(textArea4);
+    add(textArea6);
     add(scalableImage1);
     add(scalableImage2);
     add(scalableImage3);
     add(scalableImage4);
     add(scalableImage5);
     add(scalableImage6);
-    add(scalableImage7);
-    add(textArea5);
-    add(scalableImage8);
     add(voltar);
     add(ConfigExame);
     add(buttonWithIcon1);
-    add(textArea6);
+    add(textoffset);
+    add(buttonNextDeriv);
+    add(buttoBackDeriv);
+    add(buttonTransmit);
+    add(scalableImage4_1);
+    add(containerLoadingAnimation1);
+    add(buttonFechaPopup);
+    add(buttonFechaPopup1);
+    add(scalableImage9);
+    add(scalableImage8);
+    add(containerPopup1);
+    add(buttonOpenStatLead);
+    add(containerLOFFMatrix1);
+    add(buttonFechaStatLead);
 }
 
 void Screen1ViewBase::setupScreen()
 {
-
+    containerLoadingAnimation1.initialize();
+    containerPopup1.initialize();
+    containerLOFFMatrix1.initialize();
 }
 
 void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -986,9 +262,9 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
     else if (&src == &ConfigExame)
     {
         //interationExameToConfig
-        //When ConfigExame clicked change screen to Configuracoes
-        //Go to Configuracoes with no screen transition
-        application().gotoConfiguracoesScreenNoTransition();
+        //When ConfigExame clicked change screen to Configuracoes_ADS1198
+        //Go to Configuracoes_ADS1198 with no screen transition
+        application().gotoConfiguracoes_ADS1198ScreenNoTransition();
 
         //InteractionStopData2
         //When ConfigExame clicked call virtual function
@@ -1001,5 +277,58 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonWithIcon1 clicked call virtual function
         //Call AjusteEscala
         AjusteEscala();
+    }
+    else if (&src == &buttonNextDeriv)
+    {
+        //ProximaDerivacao
+        //When buttonNextDeriv clicked call virtual function
+        //Call NextDeriv
+        NextDeriv();
+    }
+    else if (&src == &buttoBackDeriv)
+    {
+        //DerivacaoAnterior
+        //When buttoBackDeriv clicked call virtual function
+        //Call BackDeriv
+        BackDeriv();
+    }
+    else if (&src == &buttonTransmit)
+    {
+        //TransmiteWifiECG
+        //When buttonTransmit clicked call virtual function
+        //Call WifiECG
+        WifiECG();
+    }
+    else if (&src == &buttonFechaPopup1)
+    {
+        //FechaJanelaPopup1
+        //When buttonFechaPopup1 clicked call virtual function
+        //Call FechaPopup1
+        FechaPopup1();
+    }
+    else if (&src == &buttonOpenStatLead)
+    {
+        //AbreJanelaStatLead
+        //When buttonOpenStatLead clicked call virtual function
+        //Call AbreStatLead
+        AbreStatLead();
+    }
+    else if (&src == &buttonFechaStatLead)
+    {
+        //FechaJanelaStatLead
+        //When buttonFechaStatLead clicked call virtual function
+        //Call FechaStatLead
+        FechaStatLead();
+    }
+}
+
+void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+{
+    if (&src == &buttonFechaPopup)
+    {
+        //FechaJanelaPopup
+        //When buttonFechaPopup clicked call virtual function
+        //Call FechaPopup
+        FechaPopup();
     }
 }

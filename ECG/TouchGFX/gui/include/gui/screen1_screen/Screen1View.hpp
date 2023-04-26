@@ -14,9 +14,32 @@ public:
 
     void UpdateGraph(float value);
 
+    void MUpdateMatrixLOFF();
+
     virtual void StopData();
     virtual void AjusteEscala();
     virtual void SetMinMaxEscalaGraph(int16_t SetMinEscala, int16_t SetMaxEscala);
+
+    virtual void NextDeriv();
+    virtual void BackDeriv();
+
+    virtual void AtualizaTextDerv();
+
+	virtual void WifiECG();
+
+    virtual void FechaPopup();
+    virtual void FechaPopup1();
+
+    virtual void PopUp();
+
+    virtual void FechaStatLead();
+
+    virtual void AbreStatLead();
+
+	void AtualizaBPM();
+	void AtualizaIconHeart();
+
+	virtual void StopLoadingAnimation();
 protected:
 };
 

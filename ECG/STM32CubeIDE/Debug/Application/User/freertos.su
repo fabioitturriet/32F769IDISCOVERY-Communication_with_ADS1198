@@ -1,1 +1,2 @@
-D:/ProjetoSTM32ECG/ECG/Core/Src/freertos.c:60:6:vApplicationIdleHook	0	static
+D:/ProjetoSTM32ECG/ECG/Core/Src/freertos.c:61:6:vApplicationIdleHook	0	static
+D:/ProjetoSTM32ECG/ECG/Core/Src/freertos.c:78:6:vApplicationStackOverflowHook	0	static

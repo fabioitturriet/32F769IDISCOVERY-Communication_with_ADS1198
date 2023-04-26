@@ -27,6 +27,16 @@ public:
 
     virtual ~CadastroPresenter() {};
 
+    virtual void P_InitESP();
+    virtual void PWiFi_OFF();
+
+    virtual void UpdateScrollList();
+
+    virtual void DefNumRedes(uint8_t NumeroRedes);
+
+    virtual void PAtualizarRedes();
+
+    virtual void GeraPopup();
 private:
     CadastroPresenter();
 

@@ -37,7 +37,10 @@ Application/User/LIBJPEG/App \
 Application/User/TouchGFX/App \
 Application/User/TouchGFX/target \
 Application/User/TouchGFX/target/generated \
+Application/User/UartRingBuffer \
 Application/User/biblioteca_ADS1198 \
+Application/User/biblioteca_ESP01 \
+Application/User/biblioteca_panTompkins \
 Application/User \
 Application/User/generated \
 Application/User/gui \

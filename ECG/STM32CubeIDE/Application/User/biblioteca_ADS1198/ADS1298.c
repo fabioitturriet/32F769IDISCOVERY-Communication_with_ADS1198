@@ -7,7 +7,7 @@
 //bool intDRDY = false; // Flag to ready data from ADS1298
 
 bool isDaisy = false;		// does this have a daisy chain board?
-bool intDRDY = false; // Flag to ready data from ADS1298
+//bool intDRDY = false; // Flag to ready data from ADS1298
 
 int stat_1 = 0, stat_2;    	// used to hold the status register for boards 1 and 2
 
@@ -25,8 +25,57 @@ uint8_t CanaisSet;
 
 uint32_t pila = 0;
 /*------------------------------- FUNCTIIONS -----------------------------*/
+void ADS_Config12Dev(){
+
+	CanaisSet = 0b01100000;
+	SetCanaisIguais(CanaisSet);
+
+	ADS_WREG(BIAS_SENSP,0b11111111);
+	HAL_Delay(10);
+
+	ADS_WREG(BIAS_SENSN,0b00000010);
+	HAL_Delay(10);
+
+	ADS_WREG(WCT1,0b00001011);
+	HAL_Delay(10);
+
+	ADS_WREG(WCT2,0b11010100);
+
+}
+
+void ADS_Config3Dev(){
+
+	ADS_WREG(CH1SET,0b10000001);
+	HAL_Delay(10);
+	ADS_WREG(CH2SET,0b01100000);
+	HAL_Delay(10);
+	ADS_WREG(CH3SET,0b01100000);
+	HAL_Delay(10);
+	ADS_WREG(CH4SET,0b10000001);
+	HAL_Delay(10);
+	ADS_WREG(CH5SET,0b10000001);
+	HAL_Delay(10);
+	ADS_WREG(CH6SET,0b10000001);
+	HAL_Delay(10);
+	ADS_WREG(CH7SET,0b10000001);
+	HAL_Delay(10);
+	ADS_WREG(CH8SET,0b10000001);
+
+	ADS_WREG(BIAS_SENSP,0b00000110);
+	HAL_Delay(10);
+
+	ADS_WREG(BIAS_SENSN,0b00000010);
+	HAL_Delay(10);
+
+	ADS_WREG(WCT1,0b00000011);
+	HAL_Delay(10);
+
+	ADS_WREG(WCT2,0b00010100);
+
+}
 
 void ADS_Init(){
+
 	if(verbose){
 		HAL_Delay(6000);
 		USB_Print("\n\r**************************************\n\r");
@@ -45,13 +94,10 @@ void ADS_Init(){
 	//Work settings
 	ADS_WREG(CONFIG1,0b00000100);
 	HAL_Delay(100);
-	ADS_WREG(CONFIG2,0b00100000);
+	ADS_WREG(CONFIG2,0b00110000);
 	HAL_Delay(100);
 	ADS_WREG(CONFIG3,0b11101100);
 	HAL_Delay(100);
-	
-	//ADS_WREG(LOFF,0x03);  //00000011
-	HAL_Delay(10);
 	
 
 	CanaisSet = 0b01100000;
@@ -73,48 +119,37 @@ void ADS_Init(){
 //	ADS_WREG(CH8SET,0b10000001);
 //	HAL_Delay(10);
 
-	ADS_WREG(BIAS_SENSP,0b00000010);
+	ADS_WREG(BIAS_SENSP,0b11111111);
 	HAL_Delay(10);
 
 	ADS_WREG(BIAS_SENSN,0b00000010);
 	HAL_Delay(10);
 
-
-
-	/*
-	ADS_WREG(LOFF_SENSP,0xFF);
-	HAL_Delay(10);
-	ADS_WREG(LOFF_SENSN,0xF2);
-	HAL_Delay(10);
 	
-	ADS_WREG(LOFF_FLIP,0x00);  
-	HAL_Delay(10);
-	
-	//Registradores de somente leitura, nao sei pq ele usa esse comando
-//	ADS_WREG(LOFF_STATP,0xF1);
+//******************LOFF begin************************
+//	ADS_WREG(LOFF,0b00010011);  //00000011
 //	HAL_Delay(10);
-	//ADS_WREG(LOFF_STATN,0x00);
+//
+//
+//	ADS_WREG(CONFIG4,0b00000010);
+//	HAL_Delay(10);
+//
+//
+//	ADS_WREG(LOFF_SENSP,0b11111111);
+//	HAL_Delay(10);
+//	ADS_WREG(LOFF_SENSN,0b00000010);
 //	HAL_Delay(10);
 	
-	ADS_WREG(GPIO,0x00);  
+	//******************LOFF end************************
+	
+	
+	ADS_WREG(WCT1,0b00001011);  //WTC1
 	HAL_Delay(10);
 	
-	ADS_WREG(MISC1,0x00);  //pace detection off
-	HAL_Delay(10);
-	ADS_WREG(MISC2,0x00); //reservado
-	HAL_Delay(10);
-	
-	ADS_WREG(CONFIG4,0b00000010);  //00000010 modo continuo, WCT para RLD off, Lead-off comparador on
-	//ADS_WREG(CONFIG4,0b00001010);//Single-shot mode
-	HAL_Delay(10);
-	
-	ADS_WREG(0x18,0x0A);  //WTC1, 00001010 Channel 2 positive input connected to WCTA amplifier
-	HAL_Delay(10);
-	
-	ADS_WREG(0x19,0xE3); //WCT2, 11100011 100 = Channel 3 positive input connected to WCTB amplifier e
+	ADS_WREG(WCT2,0b11010100); //WCT2, 11100011 100 = Channel 3 positive input connected to WCTB amplifier e
 	//011 = Channel 2 negative input connected to WCTC amplifier
 	HAL_Delay(10);
-	*/
+
 
 	ADS_RREGS(0,17);
 	HAL_Delay(1000);
@@ -158,7 +193,7 @@ void ADS_InitTestInt(void){
 			ADS_WREG(CONFIG2,0b00110000);
 			HAL_Delay(100);
 
-			ADS_WREG(CONFIG3,0b11100000);
+			ADS_WREG(CONFIG3,0b11101100);
 			HAL_Delay(100);
 
 			CanaisSet = 0b01100101;
@@ -192,6 +227,58 @@ void ADS_InitTestInt(void){
 		USB_Print("\n\r**************************************\n\r");
 		HAL_Delay(3000);
 	}
+}
+
+void ADS_LOFF_DC_Resistor(){
+
+	ADS_WREG(LOFF,0b00010011);
+	HAL_Delay(10);
+	ADS_WREG(CONFIG4,0b00000010);
+	HAL_Delay(10);
+	ADS_WREG(LOFF_SENSP,0b11111111);
+	HAL_Delay(10);
+	ADS_WREG(LOFF_SENSN,0b00000010);
+	HAL_Delay(10);
+
+}
+
+void ADS_LOFF_DC_CurrentSource(){
+
+	ADS_WREG(LOFF,0b00001111);
+	HAL_Delay(10);
+	ADS_WREG(CONFIG4,0b00000010);
+	HAL_Delay(10);
+	ADS_WREG(LOFF_SENSP,0b11111111);
+	HAL_Delay(10);
+	ADS_WREG(LOFF_SENSN,0b00000010);
+	HAL_Delay(10);
+
+}
+
+void ADS_LOFF_AC(){
+
+	ADS_WREG(LOFF,0b00000001);
+	HAL_Delay(10);
+	ADS_WREG(CONFIG4,0b00000010);
+	HAL_Delay(10);
+	ADS_WREG(LOFF_SENSP,0b11111111);
+	HAL_Delay(10);
+	ADS_WREG(LOFF_SENSN,0b00000010);
+	HAL_Delay(10);
+
+}
+
+void ADS_LOFF_OFF(){
+
+	ADS_WREG(LOFF,0b00000000);
+	HAL_Delay(10);
+	ADS_WREG(CONFIG4,0b00000000);
+	HAL_Delay(10);
+	ADS_WREG(LOFF_SENSP,0b00000000);
+	HAL_Delay(10);
+	ADS_WREG(LOFF_SENSN,0b00000000);
+	HAL_Delay(10);
+
 }
 
 void ADS_SDATAC(){
@@ -414,7 +501,7 @@ void ADS_updateChannelData(){
 
 //read data
 void ADS_RDATA() {				//  use in Stop Read Continuous mode when DRDY goes low
-	uint8_t inByte,inByte1,inByte2,inByte3;
+	uint8_t inByte,inByte1,inByte2;
 	int i,j;
 	int nchan = 8;	//assume 8 channel.  If needed, it automatically changes to 16 automatically in a later block.
 	

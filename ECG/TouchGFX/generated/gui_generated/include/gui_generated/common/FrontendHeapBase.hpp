@@ -20,8 +20,16 @@
 #include <gui/instrucoes_screen/InstrucoesPresenter.hpp>
 #include <gui/configuracoes_screen/ConfiguracoesView.hpp>
 #include <gui/configuracoes_screen/ConfiguracoesPresenter.hpp>
+#include <gui/configuracoes_ads1198_screen/Configuracoes_ADS1198View.hpp>
+#include <gui/configuracoes_ads1198_screen/Configuracoes_ADS1198Presenter.hpp>
+#include <gui/configuracoes_extras_screen/Configuracoes_ExtrasView.hpp>
+#include <gui/configuracoes_extras_screen/Configuracoes_ExtrasPresenter.hpp>
 #include <gui/cadastro_screen/CadastroView.hpp>
 #include <gui/cadastro_screen/CadastroPresenter.hpp>
+#include <gui/novopaciente_screen/NovoPacienteView.hpp>
+#include <gui/novopaciente_screen/NovoPacientePresenter.hpp>
+#include <gui/screenkeyboard_screen/ScreenKeyboardView.hpp>
+#include <gui/screenkeyboard_screen/ScreenKeyboardPresenter.hpp>
 #include <gui/screen2_screen/Screen2View.hpp>
 #include <gui/screen2_screen/Screen2Presenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
@@ -51,10 +59,14 @@ public:
     typedef touchgfx::meta::TypeList< MENUView,
             touchgfx::meta::TypeList< InstrucoesView,
             touchgfx::meta::TypeList< ConfiguracoesView,
+            touchgfx::meta::TypeList< Configuracoes_ADS1198View,
+            touchgfx::meta::TypeList< Configuracoes_ExtrasView,
             touchgfx::meta::TypeList< CadastroView,
+            touchgfx::meta::TypeList< NovoPacienteView,
+            touchgfx::meta::TypeList< ScreenKeyboardView,
             touchgfx::meta::TypeList< Screen2View,
             touchgfx::meta::TypeList< Screen1View,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::Nil > > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -69,10 +81,14 @@ public:
     typedef touchgfx::meta::TypeList< MENUPresenter,
             touchgfx::meta::TypeList< InstrucoesPresenter,
             touchgfx::meta::TypeList< ConfiguracoesPresenter,
+            touchgfx::meta::TypeList< Configuracoes_ADS1198Presenter,
+            touchgfx::meta::TypeList< Configuracoes_ExtrasPresenter,
             touchgfx::meta::TypeList< CadastroPresenter,
+            touchgfx::meta::TypeList< NovoPacientePresenter,
+            touchgfx::meta::TypeList< ScreenKeyboardPresenter,
             touchgfx::meta::TypeList< Screen2Presenter,
             touchgfx::meta::TypeList< Screen1Presenter,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::Nil > > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

@@ -1,0 +1,11 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+../../TouchGFX/gui/include/gui/configuracoes_extras_screen/Configuracoes_ExtrasView.hpp:11:13:Configuracoes_ExtrasView::~Configuracoes_ExtrasView()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_extras_screen/Configuracoes_ExtrasView.cpp:22:6:virtual void Configuracoes_ExtrasView::tearDownScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_extras_screen/Configuracoes_ExtrasView.cpp:33:6:virtual void Configuracoes_ExtrasView::BatteryLevelSetVisible()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_extras_screen/Configuracoes_ExtrasView.cpp:11:6:virtual void Configuracoes_ExtrasView::setupScreen()	8	static
+../../TouchGFX/gui/include/gui/configuracoes_extras_screen/Configuracoes_ExtrasView.hpp:11:13:virtual Configuracoes_ExtrasView::~Configuracoes_ExtrasView()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Bitmap.hpp:133:14:touchgfx::BitmapId touchgfx::Bitmap::getId() const	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_extras_screen/Configuracoes_ExtrasView.cpp:27:6:virtual void Configuracoes_ExtrasView::TogglePanTompkinsSet()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_extras_screen/Configuracoes_ExtrasView.cpp:6:1:Configuracoes_ExtrasView::Configuracoes_ExtrasView()	8	static

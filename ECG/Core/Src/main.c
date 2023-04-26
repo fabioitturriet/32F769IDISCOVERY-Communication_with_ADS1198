@@ -28,11 +28,14 @@
 #include "../mx25l512/mx25l512.h"
 #include "../otm8009a/otm8009a.h"
 #include "ADS1298.h"
+#include "ESP8266.h"
 #include <string.h>
 #include "stdio.h"
 #include <stdbool.h>
 #include <stdlib.h>
 #include "queue.h"
+#include "panTompkins.h"
+#include <math.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -71,9 +74,29 @@
 
 #define BufferLenPlotECG 250
 
+
+
+
 /* ADS1198 */
 enum InitADS1198 {ECG_12_Lead, Teste_interno, Teste_externo};
-#define initADS1198 Teste_interno
+enum Derivacoes{dev_I, dev_II, dev_III, dev_aVR, dev_aVL, dev_aVF, dev_V1, dev_V2, dev_V3, dev_V4, dev_V5, dev_V6};
+
+#define initADS1198 ECG_12_Lead
+
+
+#define LenDataECGtoESP 6000 // multiplo de 300 amostras
+
+#define ADC_BUF_LEN 10
+#define POST 0
+#define GET 1
+#define PATCH 2
+#define PUT 3
+#define DELETE 4
+#define Observation 6
+#define PATIENT 7
+
+#define BUFF_LEN_AVGR_BATTERY 15
+
 
 /* USER CODE END PD */
 
@@ -83,6 +106,7 @@ enum InitADS1198 {ECG_12_Lead, Teste_interno, Teste_externo};
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+ ADC_HandleTypeDef hadc3;
 
 CRC_HandleTypeDef hcrc;
 
@@ -104,23 +128,24 @@ SPI_HandleTypeDef hspi5;
 DMA_HandleTypeDef hdma_spi5_rx;
 DMA_HandleTypeDef hdma_spi5_tx;
 
+UART_HandleTypeDef huart5;
 UART_HandleTypeDef huart1;
 
 SDRAM_HandleTypeDef hsdram1;
 
-/* Definitions for defaultTask */
-osThreadId_t defaultTaskHandle;
-const osThreadAttr_t defaultTask_attributes = {
-  .name = "defaultTask",
-  .stack_size = 1024 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+/* Definitions for DetectordePicos */
+osThreadId_t DetectordePicosHandle;
+const osThreadAttr_t DetectordePicos_attributes = {
+  .name = "DetectordePicos",
+  .stack_size = 6000 * 4,
+  .priority = (osPriority_t) osPriorityBelowNormal,
 };
 /* Definitions for TouchGFXTask */
 osThreadId_t TouchGFXTaskHandle;
 const osThreadAttr_t TouchGFXTask_attributes = {
   .name = "TouchGFXTask",
   .stack_size = 4096 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+  .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for videoTask */
 osThreadId_t videoTaskHandle;
@@ -129,17 +154,74 @@ const osThreadAttr_t videoTask_attributes = {
   .stack_size = 1000 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for InitESPTask */
+osThreadId_t InitESPTaskHandle;
+const osThreadAttr_t InitESPTask_attributes = {
+  .name = "InitESPTask",
+  .stack_size = 2048 * 4,
+  .priority = (osPriority_t) osPriorityBelowNormal,
+};
+/* Definitions for VerifErrorTask */
+osThreadId_t VerifErrorTaskHandle;
+const osThreadAttr_t VerifErrorTask_attributes = {
+  .name = "VerifErrorTask",
+  .stack_size = 5300 * 4,
+  .priority = (osPriority_t) osPriorityAboveNormal,
+};
+/* Definitions for BuscarRedesTask */
+osThreadId_t BuscarRedesTaskHandle;
+const osThreadAttr_t BuscarRedesTask_attributes = {
+  .name = "BuscarRedesTask",
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for ConectWiFiTask */
+osThreadId_t ConectWiFiTaskHandle;
+const osThreadAttr_t ConectWiFiTask_attributes = {
+  .name = "ConectWiFiTask",
+  .stack_size = 2048 * 4,
+  .priority = (osPriority_t) osPriorityBelowNormal,
+};
+/* Definitions for ECGtoESPTask */
+osThreadId_t ECGtoESPTaskHandle;
+const osThreadAttr_t ECGtoESPTask_attributes = {
+  .name = "ECGtoESPTask",
+  .stack_size = 10000 * 4,
+  .priority = (osPriority_t) osPriorityBelowNormal,
+};
+/* Definitions for TrasmECGOnTask */
+osThreadId_t TrasmECGOnTaskHandle;
+const osThreadAttr_t TrasmECGOnTask_attributes = {
+  .name = "TrasmECGOnTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityBelowNormal,
+};
+/* Definitions for RealiseDataBPMT */
+osThreadId_t RealiseDataBPMTHandle;
+const osThreadAttr_t RealiseDataBPMT_attributes = {
+  .name = "RealiseDataBPMT",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityBelowNormal,
+};
+/* Definitions for GetBatteryTask */
+osThreadId_t GetBatteryTaskHandle;
+const osThreadAttr_t GetBatteryTask_attributes = {
+  .name = "GetBatteryTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* USER CODE BEGIN PV */
 
 
 bool verbose = true;		// torna on/off o envio de msgs para monitor serial
-bool pressbotao = true;
+bool pressbotao = false;
 volatile uint32_t timerPowerDown = 0;
 extern bool intDRDY;
 extern int16_t channelData [16];
 char msg[10];
 uint8_t ADSData [19];
 uint8_t TxBuf[19]= {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+uint8_t DerivSelecionada=0;
 
 
 char errorOffset[120];
@@ -150,6 +232,66 @@ float DerivacoesECG[12];
 
 int16_t SWDviwe;
 HAL_StatusTypeDef res;
+
+
+//***********Variáveis panTompkins**********
+float ImputPanTomp[BufferLenImputPanTompkins];
+uint16_t panTompPointerW = 0;
+uint16_t panTompPointerR = 0;
+bool panTompkON = false;
+uint8_t BPMResultado;
+bool AtualBPM=false;
+
+//***********Variáveis ESP8266**********
+char ESPcaracter;
+uint8_t CountCompare = 0;
+//bool Finalmsg = false;
+uint16_t RecievLen = 0;
+uint8_t ComandoATselect = 0;
+
+char ESPRxData[2048];
+
+int8_t NumeroRedes = 0;
+bool AtualRedesOn = false;
+extern bool ECGOn;
+bool TransmissaoECGtoESPOn = false;
+
+int TransmitECGData[LenDataECGtoESP];
+bool TransmiteECGDataWifiOn = false;
+uint16_t TransmitDataPosition = 0;
+
+bool PopupError=false;
+char BufferErrorPopup[120];
+uint8_t ErrorTentativas = 0;
+
+
+bool StopLoadAnimat = false;
+
+extern struct SSID
+{
+	char NomeRede[32];
+	uint16_t Senha[18];
+};
+
+extern struct SSID Redes[10];
+
+extern uint16_t KeyboardSelection;
+
+//*************battery level*************
+uint8_t Percent_battery = 0;
+bool UpdateBatChargeLevel = false;
+
+
+//**************LEAD OFF*******************
+uint8_t Loff_StatP;
+uint8_t Loff_StatN;
+bool Lead_OFF_Detected = false;
+uint16_t Lead_OFF_Detected_Hold = 0;
+
+//****************FATFS*********************
+//FRESULT fatRes;
+uint32_t numWrittenSD = 0;
+
 
 /* USER CODE END PV */
 
@@ -167,9 +309,19 @@ static void MX_DMA_Init(void);
 static void MX_JPEG_Init(void);
 static void MX_SPI5_Init(void);
 static void MX_USART1_UART_Init(void);
-void StartDefaultTask(void *argument);
+static void MX_UART5_Init(void);
+static void MX_ADC3_Init(void);
+void panTompinksCalculation_Task(void *argument);
 extern void TouchGFX_Task(void *argument);
 extern void videoTaskFunc(void *argument);
+void StartInitESPTask(void *argument);
+void StartVerifErrorTask(void *argument);
+void StartBuscarRedesTask(void *argument);
+void StartConectWiFiTask(void *argument);
+void StartECGtoESPTask(void *argument);
+void StartTrasmECGOnTask(void *argument);
+void StartRealiseDataBPMTask(void *argument);
+void StartGetBatteryChargeTask(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -205,8 +357,6 @@ uint8_t transferSPI(uint8_t send);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-extern xQueueHandle messageQ;
-
 
 uint8_t Red_ADS1198_DMA(void){
 
@@ -233,35 +383,119 @@ void Red_ADS1198_DMA_Complete(void){
 
 	HAL_GPIO_WritePin(ADS_CS_GPIO_Port , ADS_CS_Pin, GPIO_PIN_SET);
 //	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET); teste oscilo
+
+	/*==========================LEAD OFF DETECT BEGIN=============================*/
+	Loff_StatP = (ADSData[0] << 4) | (ADSData[1] >> 4);
+	Loff_StatN = ((ADSData[1] << 4) | (ADSData[2] >> 4) & 0x02);
+
+	if(Lead_OFF_Detected_Hold != (Loff_StatP + Loff_StatN)){
+
+		Lead_OFF_Detected_Hold = Loff_StatP + Loff_StatN;
+
+		Lead_OFF_Detected = true;
+
+	}
+
+	/*==========================LEAD OFF DETECT END=============================*/
+
+	/*==========================DERIVAÇÕES ECG begin=============================*/
 	for(uint8_t i=0; i<8; i++){
 	channelData[i] = (int16_t) ((ADSData[(2*i)+3] << 8) | ADSData[((2*i)+3)+1]);
 
 }
-	/*==========================DERIVAÇÕES ECG begin=============================*/
-	DerivacoesECG[0] = channelData[1]/97729.2036626731 - 0.0000613941357867797; //I
-	DerivacoesECG[1] = channelData[2]/97825.5719151117 + 0.000224890072905381; //II
+
+	DerivacoesECG[0] = channelData[1]/97729.20 - 0.00006139; //I
+	DerivacoesECG[1] = channelData[2]/97825.57 + 0.00022489; //II
 	DerivacoesECG[2] = DerivacoesECG[1]-DerivacoesECG[0]; //III
 	DerivacoesECG[3] = (-DerivacoesECG[0]-DerivacoesECG[1])/2; //aVR
 	DerivacoesECG[4] = DerivacoesECG[0]-DerivacoesECG[1]/2; //aVL
 	DerivacoesECG[5] = DerivacoesECG[1]-DerivacoesECG[0]/2; //aVF
-	DerivacoesECG[6] = 97780.4205760018*channelData[7] + 0.000143177948279719; //V1
-	DerivacoesECG[7] = 97751.4762438389*channelData[3] + 0.000225060539700920; //V2
-	DerivacoesECG[8] = 97729.6286999963*channelData[4] + 0.0000613938687766674; //V3
-	DerivacoesECG[9] = 97732.9255628785*channelData[5] + 0.000583222078656879; //V4
- 	DerivacoesECG[10] = 97754.2848007214*channelData[6] - 0.000112527036767997; //V5
-	DerivacoesECG[11] = 97693.3315403843*channelData[0] + 0.000163777811112788; //V6
+	DerivacoesECG[6] = channelData[7]/97780.42 + 0.00014318; //V1
+	DerivacoesECG[7] = channelData[3]/97751.48 + 0.00022506; //V2
+	DerivacoesECG[8] = channelData[4]/97729.64 + 0.00006139; //V3
+	DerivacoesECG[9] = channelData[5]/97732.93 + 0.00058322; //V4
+ 	DerivacoesECG[10] = channelData[6]/97754.28 - 0.00011253; //V5
+	DerivacoesECG[11] = channelData[0]/97693.33 + 0.00016378; //V6
+	/*==========================DERIVAÇÕES ECG end=============================*/
 
-		/*==========================DERIVAÇÕES ECG begin=============================*/
 
 	escrita++;
 	if(escrita == BufferLenPlotECG){
 		escrita = 0;
 	}
-	valorECG[escrita] = (DerivacoesECG[0]*1000000);
 
-//	sprintf(errorOffset, "%d\r\n", channelData[1]);
-//	USB_Print(errorOffset);
-//	bufclear(errorOffset);
+
+	switch (DerivSelecionada) {
+	case dev_I:
+		valorECG[escrita] = (DerivacoesECG[0]*1000000);
+		break;
+	case dev_II:
+		valorECG[escrita] = (DerivacoesECG[1]*1000000);
+		break;
+	case dev_III:
+		valorECG[escrita] = (DerivacoesECG[2]*1000000);
+		break;
+	case dev_aVR:
+		valorECG[escrita] = (DerivacoesECG[3]*1000000);
+		break;
+	case dev_aVL:
+		valorECG[escrita] = (DerivacoesECG[4]*1000000);
+		break;
+	case dev_aVF:
+		valorECG[escrita] = (DerivacoesECG[5]*1000000);
+		break;
+	case dev_V1:
+		valorECG[escrita] = (DerivacoesECG[6]*1000000);
+		break;
+	case dev_V2:
+		valorECG[escrita] = (DerivacoesECG[7]*1000000);
+		break;
+	case dev_V3:
+		valorECG[escrita] = (DerivacoesECG[8]*1000000);
+		break;
+	case dev_V4:
+		valorECG[escrita] = (DerivacoesECG[9]*1000000);
+		break;
+	case dev_V5:
+		valorECG[escrita] = (DerivacoesECG[10]*1000000);
+		break;
+	case dev_V6:
+		valorECG[escrita] = (DerivacoesECG[11]*1000000);
+		break;
+	default:
+		break;
+	}
+
+	if(TransmiteECGDataWifiOn){
+		TransmitECGData[TransmitDataPosition] = (int) valorECG[escrita]; //transmite a derivacao selecionada na tela
+		TransmitDataPosition++;
+	}
+	if(TransmitDataPosition == LenDataECGtoESP && TransmiteECGDataWifiOn){
+		TransmitDataPosition=0;
+		ECGOn = false;
+		ComandoATselect =10;
+		TransmiteECGDataWifiOn = false;
+		TransmissaoECGtoESPOn = true;
+	}
+
+	/*==========================panTompkins begin=============================*/
+	if(panTompkON){
+		ImputPanTomp[panTompPointerW]=(DerivacoesECG[1]*1000000);
+		panTompPointerW++;
+		if(panTompPointerW == BufferLenImputPanTompkins){
+			panTompPointerW = 0;
+		}
+
+	}
+	/*==========================panTompkins end=============================*/
+
+	/*==========================FATFS begin=============================*/
+	if(pressbotao){
+	numWrittenSD++;
+	//osThreadResume(WrittenSDTaskHandle);
+
+	}
+	/*==========================FATFS end=============================*/
 
 //	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
 }
@@ -269,9 +503,9 @@ void Red_ADS1198_DMA_Complete(void){
 
 void bufclear(char *buf){
 
-	uint8_t len = strlen (buf);
+	uint16_t len = strlen (buf);
 	for(int i=0; i<len; i++){
-		buf = '\0';
+		buf[i] = '\0';
 	}
 }
 
@@ -337,8 +571,11 @@ int main(void)
   MX_JPEG_Init();
   MX_SPI5_Init();
   MX_USART1_UART_Init();
+  MX_UART5_Init();
+  MX_ADC3_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
+
 
   switch (initADS1198){
   case ECG_12_Lead:
@@ -354,7 +591,9 @@ int main(void)
   }
 
 
+  ESP_init();
 
+  HAL_UART_Receive_IT(&huart5, &ESPcaracter, 1);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -377,14 +616,38 @@ int main(void)
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+  /* creation of DetectordePicos */
+  DetectordePicosHandle = osThreadNew(panTompinksCalculation_Task, NULL, &DetectordePicos_attributes);
 
   /* creation of TouchGFXTask */
   TouchGFXTaskHandle = osThreadNew(TouchGFX_Task, NULL, &TouchGFXTask_attributes);
 
   /* creation of videoTask */
   videoTaskHandle = osThreadNew(videoTaskFunc, NULL, &videoTask_attributes);
+
+  /* creation of InitESPTask */
+  InitESPTaskHandle = osThreadNew(StartInitESPTask, NULL, &InitESPTask_attributes);
+
+  /* creation of VerifErrorTask */
+  VerifErrorTaskHandle = osThreadNew(StartVerifErrorTask, NULL, &VerifErrorTask_attributes);
+
+  /* creation of BuscarRedesTask */
+  BuscarRedesTaskHandle = osThreadNew(StartBuscarRedesTask, NULL, &BuscarRedesTask_attributes);
+
+  /* creation of ConectWiFiTask */
+  ConectWiFiTaskHandle = osThreadNew(StartConectWiFiTask, NULL, &ConectWiFiTask_attributes);
+
+  /* creation of ECGtoESPTask */
+  ECGtoESPTaskHandle = osThreadNew(StartECGtoESPTask, NULL, &ECGtoESPTask_attributes);
+
+  /* creation of TrasmECGOnTask */
+  TrasmECGOnTaskHandle = osThreadNew(StartTrasmECGOnTask, NULL, &TrasmECGOnTask_attributes);
+
+  /* creation of RealiseDataBPMT */
+  RealiseDataBPMTHandle = osThreadNew(StartRealiseDataBPMTask, NULL, &RealiseDataBPMT_attributes);
+
+  /* creation of GetBatteryTask */
+  GetBatteryTaskHandle = osThreadNew(StartGetBatteryChargeTask, NULL, &GetBatteryTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -462,6 +725,58 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief ADC3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC3_Init(void)
+{
+
+  /* USER CODE BEGIN ADC3_Init 0 */
+
+  /* USER CODE END ADC3_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC3_Init 1 */
+
+  /* USER CODE END ADC3_Init 1 */
+
+  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  */
+  hadc3.Instance = ADC3;
+  hadc3.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
+  hadc3.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc3.Init.ScanConvMode = ADC_SCAN_DISABLE;
+  hadc3.Init.ContinuousConvMode = DISABLE;
+  hadc3.Init.DiscontinuousConvMode = DISABLE;
+  hadc3.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc3.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc3.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc3.Init.NbrOfConversion = 1;
+  hadc3.Init.DMAContinuousRequests = DISABLE;
+  hadc3.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  if (HAL_ADC_Init(&hadc3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
+  */
+  sConfig.Channel = ADC_CHANNEL_8;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  if (HAL_ADC_ConfigChannel(&hadc3, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC3_Init 2 */
+
+  /* USER CODE END ADC3_Init 2 */
+
 }
 
 /**
@@ -936,6 +1251,41 @@ static void MX_SPI5_Init(void)
 }
 
 /**
+  * @brief UART5 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_UART5_Init(void)
+{
+
+  /* USER CODE BEGIN UART5_Init 0 */
+
+  /* USER CODE END UART5_Init 0 */
+
+  /* USER CODE BEGIN UART5_Init 1 */
+
+  /* USER CODE END UART5_Init 1 */
+  huart5.Instance = UART5;
+  huart5.Init.BaudRate = 9600;
+  huart5.Init.WordLength = UART_WORDLENGTH_8B;
+  huart5.Init.StopBits = UART_STOPBITS_1;
+  huart5.Init.Parity = UART_PARITY_NONE;
+  huart5.Init.Mode = UART_MODE_TX_RX;
+  huart5.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart5.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart5.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart5.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN UART5_Init 2 */
+
+  /* USER CODE END UART5_Init 2 */
+
+}
+
+/**
   * @brief USART1 Initialization Function
   * @param None
   * @retval None
@@ -1061,14 +1411,14 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
   __HAL_RCC_GPIOJ_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOI_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
@@ -1077,16 +1427,19 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOJ, VSYNC_FREQ2_Pin|RENDER_TIME2_Pin|FRAMERATE_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOJ, DSI_RESET_Pin|ADS_CS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOJ, WIFI_RST_Pin|DSI_RESET_Pin|ADS_CS_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, ADS_DAISY_Pin|RENDER_TIME_Pin|VSYNC_FREQ_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(ADS_DAISY_GPIO_Port, ADS_DAISY_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(ADS_RESET_GPIO_Port, ADS_RESET_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(PW_KEY_GPIO_Port, PW_KEY_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(WIFI_CH_PD_GPIO_Port, WIFI_CH_PD_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(ADS_CLKSEL_GPIO_Port, ADS_CLKSEL_Pin, GPIO_PIN_SET);
@@ -1105,6 +1458,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOJ, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : WIFI_RST_Pin */
+  GPIO_InitStruct.Pin = WIFI_RST_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(WIFI_RST_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pin : DSI_RESET_Pin */
   GPIO_InitStruct.Pin = DSI_RESET_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -1117,13 +1477,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : RENDER_TIME_Pin VSYNC_FREQ_Pin */
-  GPIO_InitStruct.Pin = RENDER_TIME_Pin|VSYNC_FREQ_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pin : ADS_DRDY_Pin */
@@ -1144,6 +1497,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(PW_KEY_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : WIFI_CH_PD_Pin */
+  GPIO_InitStruct.Pin = WIFI_CH_PD_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(WIFI_CH_PD_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : ADS_CS_Pin */
   GPIO_InitStruct.Pin = ADS_CS_Pin;
@@ -1797,7 +2157,7 @@ uint8_t transferSPI(uint8_t send){
 //======== USB->USART =======
 void USB_Print(char* string){
 
-	uint8_t len = strlen (string);
+	uint16_t len = strlen (string);
 	HAL_UART_Transmit(&huart1, (uint8_t *)string, len, 1000); //transmite em modo de bloqueio
 
 }
@@ -1865,6 +2225,8 @@ void USB_SendBits(uint8_t b){//recebe um conjunto de bits
 		HAL_UART_Transmit(&huart1, buf, sizeof(buf), 1000);
 }
 
+
+
 /* --------------- Inetrrupts ------------------------------------------*/
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
@@ -1873,11 +2235,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 		//inicio ++;  //media movel
 
-		intDRDY = true;
+		//intDRDY = true;
 		//if(intDRDY){
-		if(pressbotao){
 		Red_ADS1198_DMA();
-		}
+
 		//}
 
 
@@ -1885,28 +2246,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 	if(GPIO_Pin == GPIO_PIN_0){
 
-//		if(pressbotao){
-//			pressbotao = !pressbotao;
-//			//HAL_GPIO_WritePin(PW_KEY_GPIO_Port, PW_KEY_Pin, GPIO_PIN_SET); //liga os circuitos internos do ADS
-//			HAL_Delay(10);
-//
-//
-//
-//			//timerPowerDown = HAL_GetTick();
-//		}else{
-//			pressbotao = !pressbotao;
-//			//if( HAL_GetTick() - timerPowerDown > 1000)
-//			 //   HAL_GPIO_WritePin(PW_KEY_GPIO_Port, PW_KEY_Pin, GPIO_PIN_RESET); //desliga os circuitos internos do ADS
-//		}
-//		pressbotao = !pressbotao;
-		USB_Print("\r\nBotao pressionado! inicio das leituras\r\n");
-		ADS_START();
-		ADS_RDATAC();
-
-
-
+		pressbotao = true;
 	}
-
 }
 
 void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi){
@@ -1916,49 +2257,508 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi){
 	Red_ADS1198_DMA_Complete();
 
 	}
-
-
 }
 
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+  if (huart->Instance == UART5)
+  {
+	  HAL_UART_Receive_IT(&huart5, &ESPcaracter, 1);
+	  ESPRxData[RecievLen++] =  ESPcaracter;
+  }
+}
 
 
 /* USER CODE END 4 */
 
-/* USER CODE BEGIN Header_StartDefaultTask */
+/* USER CODE BEGIN Header_panTompinksCalculation_Task */
 /**
-  * @brief  Function implementing the defaultTask thread.
+  * @brief  Function implementing the DetectordePicos thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
+/* USER CODE END Header_panTompinksCalculation_Task */
+void panTompinksCalculation_Task(void *argument)
 {
   /* USER CODE BEGIN 5 */
-	//intDRDY= true;
-
-
-
+	 osThreadSuspend(DetectordePicosHandle);
   for(;;)
   {
-	//	 if(intDRDY){
-	//			  intDRDY = false;
-
-				  //modo de disparo único
-				  	  		//ADS_RDATA();
-				  	  		//ADS_SendData();
-				  	  		//ADS_START();
-
-
-				  //modo contínuo
-				  			//ADS_updateChannelData();
-				  			//ADS_SendData();
-				  			//xQueueSend(messageQ, &channelData[1], 0);
-
-
-    osDelay(100);
+		  panTompkins();
+		  osThreadSuspend(DetectordePicosHandle);
   }
 
   /* USER CODE END 5 */
+}
+
+/* USER CODE BEGIN Header_StartInitESPTask */
+/**
+* @brief Function implementing the InitESPTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartInitESPTask */
+void StartInitESPTask(void *argument)
+{
+  /* USER CODE BEGIN StartInitESPTask */
+	osThreadSuspend(InitESPTaskHandle);
+  /* Infinite loop */
+  for(;;)
+  {
+	  bufclear(ESPRxData);
+	  RecievLen = 0;
+	  HAL_GPIO_WritePin(WIFI_CH_PD_GPIO_Port, WIFI_CH_PD_Pin, GPIO_PIN_SET); //esp ligado
+	  switch (ComandoATselect)
+	  {
+	  case 0:
+		  SendComandAT("AT+RST\r\n");
+		  osThreadResume(VerifErrorTaskHandle);
+		  break;
+	  case 1:
+		  SendComandAT("AT\r\n");
+		  osThreadResume(VerifErrorTaskHandle);
+		  break;
+	  case 2:
+		  SendComandAT("AT+CWMODE=1\r\n");
+		  osThreadResume(VerifErrorTaskHandle);
+		  break;
+	  case 3:
+		  SendComandAT("AT+CIPMODE=0\r\n");
+		  osThreadResume(VerifErrorTaskHandle);
+		  break;
+	  case 4:
+		  SendComandAT("AT+CIPMUX=0\r\n");
+		  osThreadResume(VerifErrorTaskHandle);
+		  break;
+	  case 5:
+		  osThreadResume(BuscarRedesTaskHandle);
+		  ComandoATselect++;
+		  break;
+	  default:
+		  break;
+	  }
+
+	  osThreadSuspend(InitESPTaskHandle);
+  }
+  /* USER CODE END StartInitESPTask */
+}
+
+/* USER CODE BEGIN Header_StartVerifErrorTask */
+/**
+* @brief Function implementing the VerifErrorTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartVerifErrorTask */
+void StartVerifErrorTask(void *argument)
+{
+  /* USER CODE BEGIN StartVerifErrorTask */
+	uint32_t tick;
+	osThreadSuspend(VerifErrorTaskHandle);
+	/* Infinite loop */
+	for(;;)
+	{
+
+		if(ComandoATselect<10){
+			tick = osKernelGetTickCount();
+			tick += 6000U;                      // delay 3000 ticks periodically
+			osDelayUntil(tick);
+			if(VerificaErro(ESPRxData, "\r\r\n\r\n")){//se ocorreu error
+				ErrorTentativas++;
+				if(ErrorTentativas>2){
+					ComandoATselect = 99;
+					PopupError = true;
+					strcpy(BufferErrorPopup, "Erro de inicialização do ESP\nPor favor, verifique a conexão com o Módulo\ne inicialize o dispositivo novamente");
+				}
+				//ComandoATselect nao sera atualizado
+			}else{//nao ocorreu error
+				ErrorTentativas=0;
+				ComandoATselect++;
+				USB_Print(ESPRxData);
+			}
+			osThreadResume(InitESPTaskHandle);
+		}else if(ComandoATselect==10){
+			tick = osKernelGetTickCount();
+			tick += 8000U;                      // delay 3000 ticks periodically
+			osDelayUntil(tick);
+			if (VerificaErro(ESPRxData, "\r\n\r\n")) {		//se ocorreu error
+				//ComandoATselect nao sera atualizado
+				ErrorTentativas++;
+				if(ErrorTentativas>2){
+					ComandoATselect = 99;
+					PopupError = true;
+					strcpy(BufferErrorPopup, "Erro de conexão com o servidor\n");
+				}
+			} else {				//nao ocorreu error
+				ErrorTentativas=0;
+				ComandoATselect++;
+				USB_Print(ESPRxData);
+			}
+			osThreadResume(ECGtoESPTaskHandle);
+		} else if (ComandoATselect == 11) {
+			tick = osKernelGetTickCount();
+			tick += 2000U;                      // delay 3000 ticks periodically
+			osDelayUntil(tick);
+			if (VerificaErro(ESPRxData, "\r\r\n\r\n")) {	//se ocorreu error
+				//ComandoATselect nao sera atualizado
+				ErrorTentativas++;
+				if(ErrorTentativas>2){
+					ComandoATselect = 99;
+					PopupError = true;
+					strcpy(BufferErrorPopup, "Erro de conexão com o servidor\n");
+				}
+			} else {			//nao ocorreu error
+				ErrorTentativas=0;
+				ComandoATselect++;
+				USB_Print(ESPRxData);
+			}
+			osThreadResume(ECGtoESPTaskHandle);
+		} else if (ComandoATselect == 12) {
+			tick = osKernelGetTickCount();
+			tick += 2000U;                      // delay 3000 ticks periodically
+			osDelayUntil(tick);
+					if (VerificaErro(ESPRxData, "\r\r\n\r\n")) {	//se ocorreu error
+						//ComandoATselect nao sera atualizado
+						ErrorTentativas++;
+						if(ErrorTentativas>2){
+							ComandoATselect = 99;
+							PopupError = true;
+							strcpy(BufferErrorPopup, "Erro de conexão com o servidor\n");
+						}
+					} else {			//nao ocorreu error
+						ErrorTentativas=0;
+						//ComandoATselect++;
+						USB_Print(ESPRxData);
+					}
+					osThreadResume(ECGtoESPTaskHandle);
+		}else if (ComandoATselect == 13) {
+			tick = osKernelGetTickCount();
+			tick += 2000U;                      // delay 3000 ticks periodically
+			osDelayUntil(tick);
+			if (VerificaErro(ESPRxData, "\r\r\n\r\n")) {	//se ocorreu error
+				//ComandoATselect nao sera atualizado
+				ErrorTentativas++;
+				if(ErrorTentativas>2){
+					ComandoATselect = 99;
+					PopupError = true;
+					strcpy(BufferErrorPopup, "Erro de conexão com o servidor\n");
+				}
+			} else {			//nao ocorreu error
+				ErrorTentativas=0;
+				USB_Print(ESPRxData);
+				USB_Print("\n\n\rTransmissao PATCHs concluida");
+			}
+			osThreadResume(ECGtoESPTaskHandle);
+		}else if(ComandoATselect == 14) {
+			ComandoATselect++;
+			osThreadResume(ECGtoESPTaskHandle);
+		}else if(ComandoATselect == 15) {
+			if (VerificaErro(ESPRxData, "\r\r\n\r\n")) {	//se ocorreu error
+							//ComandoATselect nao sera atualizado
+							ErrorTentativas++;
+							if(ErrorTentativas>2){
+								ComandoATselect = 99;
+								PopupError = true;
+								strcpy(BufferErrorPopup, "Erro de conexão com o servidor\n");
+							}
+						} else {			//nao ocorreu error
+							ErrorTentativas=0;
+							ComandoATselect++;
+							USB_Print(ESPRxData);
+						}
+						osThreadResume(ECGtoESPTaskHandle);
+		}
+
+
+		osThreadSuspend(VerifErrorTaskHandle);
+	}
+  /* USER CODE END StartVerifErrorTask */
+}
+
+/* USER CODE BEGIN Header_StartBuscarRedesTask */
+/**
+* @brief Function implementing the BuscarRedesTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartBuscarRedesTask */
+void StartBuscarRedesTask(void *argument)
+{
+  /* USER CODE BEGIN StartBuscarRedesTask */
+	uint32_t tick;
+	osThreadSuspend(BuscarRedesTaskHandle);
+
+  /* Infinite loop */
+  for(;;)
+  {
+	  bufclear(ESPRxData);
+	  RecievLen = 0;
+	  /********* AT+CWLAP **********/
+	  SendComandAT("AT+CWLAP\r\n"); //retorna as redes disponíveis para conexão em ESPRxData
+
+	  //aguarda a respota do ESP
+	  tick = osKernelGetTickCount();
+	  tick += 3000U;                      // delay 3000 ticks periodically
+	  osDelayUntil(tick);
+
+	  NumeroRedes = BuscarRedes(ESPRxData); //verifica erro na resposta do esp, separa as redes, retorna o numero de redes disponiveis
+
+	  if(NumeroRedes == -1){
+			PopupError = true;
+			strcpy(BufferErrorPopup, "Erro ao buscar as redes\nPor favor, tente novamente\n e/ou reinicie o dispositivo");
+	  }
+
+	  AtualRedesOn = true;
+
+	  osThreadSuspend(BuscarRedesTaskHandle);
+  }
+  /* USER CODE END StartBuscarRedesTask */
+}
+
+/* USER CODE BEGIN Header_StartConectWiFiTask */
+/**
+* @brief Function implementing the ConectWiFiTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartConectWiFiTask */
+void StartConectWiFiTask(void *argument)
+{
+  /* USER CODE BEGIN StartConectWiFiTask */
+	uint32_t tick;
+	char data[50];
+	osThreadSuspend(ConectWiFiTaskHandle);
+  /* Infinite loop */
+  for(;;)
+  {
+	  bufclear(ESPRxData);
+	  RecievLen = 0;
+	  ConectarWiFi();
+
+	  //aguarda a respota do ESP
+	  tick = osKernelGetTickCount();
+	  tick += 15000U;                      // delay 3000 ticks periodically
+	  osDelayUntil(tick);
+
+	  if(VerificaErro(ESPRxData, "IP\r\n\r\n")){
+		  USB_Print("Erro de conexão com o Wi-Fi!!!");
+		  strcpy(BufferErrorPopup, "Erro de conexao com o Wi-Fi!!!\nPor favor, verifique a senha\n e tente novamente\n");
+		  PopupError = true;
+	  }else{
+		  sprintf (data, "Conectado em: \"%s\"", Redes[KeyboardSelection].NomeRede);
+		  strcpy(BufferErrorPopup, data);
+		  PopupError = true;
+		  USB_Print(data);
+	  }
+
+	  osThreadSuspend(ConectWiFiTaskHandle);
+  }
+  /* USER CODE END StartConectWiFiTask */
+}
+
+/* USER CODE BEGIN Header_StartECGtoESPTask */
+/**
+* @brief Function implementing the ECGtoESPTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartECGtoESPTask */
+void StartECGtoESPTask(void *argument)
+{
+  /* USER CODE BEGIN StartECGtoESPTask */
+	char jsonobservation[2000];
+	char RequestBuffer[2048];
+	char IDobservation[30];
+	char RotaID[100];
+	char CIPSEND[20];
+	uint16_t NumPartesPatch=20;
+	uint16_t NumPartesPatchEnviados=0;
+
+	uint32_t tick;
+	osThreadSuspend(ECGtoESPTaskHandle);
+  /* Infinite loop */
+  for(;;)
+  {
+	  bufclear(ESPRxData);
+	  RecievLen = 0;
+	  switch (ComandoATselect)
+	  {
+	  case 10:
+		  SendComandAT("AT+CIPSTART=\"TCP\",\"cloudecg-env.eba-mau7x2gw.us-east-1.elasticbeanstalk.com\",80\r\n");
+		  osThreadResume(VerifErrorTaskHandle);
+		  break;
+	  case 11:
+		  constroijsonO(POST,"preliminary", TransmitECGData, jsonobservation, 0); //1min de ECG tem 100 partes de 300 amostras
+		  requesthttp (POST, "/baseR4/Observation", "cloudecg-env.eba-mau7x2gw.us-east-1.elasticbeanstalk.com\r\n", "application/json\r\n","application/json\r\n", strlen(jsonobservation) , jsonobservation, RequestBuffer);
+		  sprintf(CIPSEND, "AT+CIPSEND=%d\r\n", strlen(RequestBuffer));
+		  SendComandAT(CIPSEND);
+		  osThreadResume(VerifErrorTaskHandle);
+		  break;
+	  case 12:
+		  //USB_Print(RequestBuffer);
+		  SendComandAT(RequestBuffer);
+		  tick = osKernelGetTickCount();
+		  tick += 12000U;                      // delay 3000 ticks periodically
+		  osDelayUntil(tick);
+		  USB_Print(ESPRxData);
+
+		  NumPartesPatchEnviados++;
+
+		  if(NumPartesPatchEnviados==1){
+		  ExtrairID(ESPRxData, IDobservation);
+		  strcpy(RotaID, "/baseR4/Observation/");
+	      strcat(RotaID, IDobservation);
+		  USB_Print("\r\n\r\n");
+		  //USB_Print(RotaID);
+		  }
+		  bufclear(ESPRxData);
+		  RecievLen = 0;
+		  if(NumPartesPatchEnviados < NumPartesPatch){
+		  constroijsonO(PATCH,"preliminary", TransmitECGData, jsonobservation, NumPartesPatchEnviados);
+		  requesthttp(PATCH, RotaID, "cloudecg-env.eba-mau7x2gw.us-east-1.elasticbeanstalk.com\r\n", "application/json\r\n","application/json\r\n", strlen(jsonobservation) , jsonobservation, RequestBuffer);
+		  sprintf(CIPSEND, "AT+CIPSEND=%d\r\n", strlen(RequestBuffer));
+		  //USB_Print(RequestBuffer);
+		  SendComandAT(CIPSEND);
+		  osThreadResume(VerifErrorTaskHandle);
+		  }else{
+			  ComandoATselect++;
+     		  constroijsonO(PUT,"\"Final\"\n\r}", TransmitECGData, jsonobservation, NumPartesPatchEnviados);
+     		  requesthttp(PUT, RotaID, "cloudecg-env.eba-mau7x2gw.us-east-1.elasticbeanstalk.com\r\n", "application/json\r\n","application/json\r\n", strlen(jsonobservation) , jsonobservation, RequestBuffer);
+			  sprintf(CIPSEND, "AT+CIPSEND=%d\r\n", strlen(RequestBuffer));
+			  SendComandAT(CIPSEND);
+			  osThreadResume(VerifErrorTaskHandle);
+		  }
+		  break;
+	  case 13:
+		  SendComandAT(RequestBuffer);
+		  tick = osKernelGetTickCount();
+		  tick += 12000U;                      // delay 3000 ticks periodically
+		  osDelayUntil(tick);
+		  USB_Print(ESPRxData);
+	      ADS_START();
+		  ADS_RDATAC();
+		  ECGOn = true;
+		  break;
+	  default:
+		  break;
+	  }
+	  osThreadSuspend(ECGtoESPTaskHandle);
+  }
+  /* USER CODE END StartECGtoESPTask */
+}
+
+/* USER CODE BEGIN Header_StartTrasmECGOnTask */
+/**
+* @brief Function implementing the TrasmECGOnTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTrasmECGOnTask */
+void StartTrasmECGOnTask(void *argument)
+{
+  /* USER CODE BEGIN StartTrasmECGOnTask */
+	osThreadSuspend(TrasmECGOnTaskHandle);
+  /* Infinite loop */
+  for(;;)
+  {
+
+	  if(TransmissaoECGtoESPOn){
+		  TransmissaoECGtoESPOn = false;
+		  ADS_STOP();
+		  osThreadResume(ECGtoESPTaskHandle);
+		  osThreadSuspend(TrasmECGOnTaskHandle);
+	  }
+    osDelay(500);
+  }
+  /* USER CODE END StartTrasmECGOnTask */
+}
+
+/* USER CODE BEGIN Header_StartRealiseDataBPMTask */
+/**
+* @brief Function implementing the RealiseDataBPMT thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartRealiseDataBPMTask */
+void StartRealiseDataBPMTask(void *argument)
+{
+  /* USER CODE BEGIN StartRealiseDataBPMTask */
+  /* Infinite loop */
+	osThreadSuspend(RealiseDataBPMTHandle);
+  for(;;)
+  {
+	  if(panTompPointerR != panTompPointerW){
+		  osThreadFlagsSet(DetectordePicosHandle,1);
+		  osThreadSuspend(RealiseDataBPMTHandle);
+	  }
+
+	  osDelay(100);
+  }
+  /* USER CODE END StartRealiseDataBPMTask */
+}
+
+/* USER CODE BEGIN Header_StartGetBatteryChargeTask */
+/**
+* @brief Function implementing the GetBatteryTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartGetBatteryChargeTask */
+void StartGetBatteryChargeTask(void *argument)
+{
+  /* USER CODE BEGIN StartGetBatteryChargeTask */
+	uint16_t adc_battery_buff[BUFF_LEN_AVGR_BATTERY];
+	uint8_t count_avrg_buff = 0;
+	osThreadSuspend(GetBatteryTaskHandle);
+  /* Infinite loop */
+  for(;;)
+  {
+
+
+	if(count_avrg_buff == BUFF_LEN_AVGR_BATTERY){
+
+		uint16_t avrg_adc_battery = 0;
+		float avrg_battery_charge = 0;
+
+		for(uint8_t i=0; i<BUFF_LEN_AVGR_BATTERY; i++){
+			if(i==0){
+				avrg_adc_battery = adc_battery_buff[i];
+			}else{
+				avrg_adc_battery += adc_battery_buff[i];
+			}
+		}
+
+		avrg_battery_charge = (float)avrg_adc_battery/count_avrg_buff;
+
+		if(avrg_battery_charge > 2150.0 && avrg_battery_charge <2900){
+
+		avrg_battery_charge = 0.00446096*avrg_battery_charge-0.037918; //calibracao ADC baterry
+
+		Percent_battery = (uint8_t) round(100*(avrg_battery_charge - 10.2)/(12.6 - 10.2));
+
+		if(Percent_battery>100){
+			Percent_battery = 100;
+		}
+
+		}else{
+			Percent_battery = 0;
+		}
+
+		count_avrg_buff = 0;
+		UpdateBatChargeLevel = true;
+		osDelay(30000);
+	}else{
+
+		HAL_ADC_Start(&hadc3);
+		HAL_ADC_PollForConversion(&hadc3, 100);
+		adc_battery_buff[count_avrg_buff] = (uint16_t)HAL_ADC_GetValue(&hadc3);
+		HAL_ADC_Stop(&hadc3);
+
+		osDelay(80);
+	}
+	count_avrg_buff++;
+  }
+  /* USER CODE END StartGetBatteryChargeTask */
 }
 
 /* MPU Configuration */

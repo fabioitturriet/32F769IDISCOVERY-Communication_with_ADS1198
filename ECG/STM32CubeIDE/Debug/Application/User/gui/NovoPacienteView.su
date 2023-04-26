@@ -1,0 +1,23 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/novopaciente_screen/NovoPacienteViewBase.hpp:75:18:virtual void NovoPacienteViewBase::InfoSalvar()	0	static
+../../TouchGFX/gui/include/gui/novopaciente_screen/NovoPacienteView.hpp:13:13:NovoPacienteView::~NovoPacienteView()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:59:6:virtual void NovoPacienteView::tearDownScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:155:6:virtual void NovoPacienteView::MaculinoSelected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:160:6:virtual void NovoPacienteView::FemininoSelected()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:54:6:virtual void NovoPacienteView::setupScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:190:6:virtual void NovoPacienteView::LimpaDados()	24	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
+../../TouchGFX/gui/include/gui/novopaciente_screen/NovoPacienteView.hpp:13:13:virtual NovoPacienteView::~NovoPacienteView()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:26:1:NovoPacienteView::NovoPacienteView()	24	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:165:6:void NovoPacienteView::AbrirTeclado()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:110:6:virtual void NovoPacienteView::NewNamePacient()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:119:6:virtual void NovoPacienteView::NewContatoPacient()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:128:6:virtual void NovoPacienteView::NewDataNascDia()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:137:6:virtual void NovoPacienteView::NewDataNascMes()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:146:6:virtual void NovoPacienteView::NewDataNascAno()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:177:6:void NovoPacienteView::FecharTeclado()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:69:6:virtual void NovoPacienteView::SalvarDadosTeclado()	16	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/novopaciente_screen/NovoPacienteView.cpp:228:1:cpp)	0	static
