@@ -40,7 +40,7 @@ public:
     virtual void PBackDeriv();
     virtual void PNextDeriv();
 
-    virtual void PWifiECG();
+    virtual void PSalvarECG();
 
     virtual void PresenterAtualizarBPM();
     virtual void PreStopPanTompkins();
@@ -51,6 +51,11 @@ public:
     void AtualizarIconHeart();
 
     virtual void PreStopLoadingAnimation();
+
+    virtual void PresenterToggleF60();
+    virtual void PresenterToggleFBW();
+
+    virtual void UpdateBatChargeLevel();
 
 private:
     Screen1Presenter();

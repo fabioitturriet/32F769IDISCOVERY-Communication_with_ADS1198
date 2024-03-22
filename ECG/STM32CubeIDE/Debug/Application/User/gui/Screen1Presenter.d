@@ -79,6 +79,8 @@ Application/User/gui/Screen1Presenter.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
@@ -137,9 +139,11 @@ Application/User/gui/Screen1Presenter.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
  ../../TouchGFX/gui/include/gui/containers/ContainerPopup.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerPopupBase.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp \
  ../../TouchGFX/gui/include/gui/containers/ContainerLOFFMatrix.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerLOFFMatrixBase.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp
+ ../../TouchGFX/gui/include/gui/containers/ContainerBatteryCharge.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerBatteryChargeBase.hpp
 ../../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -219,6 +223,8 @@ Application/User/gui/Screen1Presenter.o: \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
@@ -277,6 +283,8 @@ Application/User/gui/Screen1Presenter.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
 ../../TouchGFX/gui/include/gui/containers/ContainerPopup.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerPopupBase.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:
 ../../TouchGFX/gui/include/gui/containers/ContainerLOFFMatrix.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerLOFFMatrixBase.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:
+../../TouchGFX/gui/include/gui/containers/ContainerBatteryCharge.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerBatteryChargeBase.hpp:

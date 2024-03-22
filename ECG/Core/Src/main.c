@@ -20,7 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
-#include "libjpeg.h"
+#include "fatfs.h"
 #include "app_touchgfx.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -36,6 +36,8 @@
 #include "queue.h"
 #include "panTompkins.h"
 #include <math.h>
+#include "ecg_sd.h"
+#include "Filtros.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -86,6 +88,8 @@ enum Derivacoes{dev_I, dev_II, dev_III, dev_aVR, dev_aVL, dev_aVF, dev_V1, dev_V
 
 #define LenDataECGtoESP 6000 // multiplo de 300 amostras
 
+#define SIZEECGEXP 30500
+
 #define ADC_BUF_LEN 10
 #define POST 0
 #define GET 1
@@ -95,7 +99,7 @@ enum Derivacoes{dev_I, dev_II, dev_III, dev_aVR, dev_aVL, dev_aVF, dev_V1, dev_V
 #define Observation 6
 #define PATIENT 7
 
-#define BUFF_LEN_AVGR_BATTERY 15
+#define BUFF_LEN_AVGR_BATTERY 5
 
 
 /* USER CODE END PD */
@@ -117,12 +121,14 @@ DSI_HandleTypeDef hdsi;
 I2C_HandleTypeDef hi2c4;
 
 JPEG_HandleTypeDef hjpeg;
-DMA_HandleTypeDef hdma_jpeg_in;
-DMA_HandleTypeDef hdma_jpeg_out;
 
 LTDC_HandleTypeDef hltdc;
 
 QSPI_HandleTypeDef hqspi;
+
+SD_HandleTypeDef hsd2;
+DMA_HandleTypeDef hdma_sdmmc2_rx;
+DMA_HandleTypeDef hdma_sdmmc2_tx;
 
 SPI_HandleTypeDef hspi5;
 DMA_HandleTypeDef hdma_spi5_rx;
@@ -186,7 +192,7 @@ const osThreadAttr_t ConectWiFiTask_attributes = {
 osThreadId_t ECGtoESPTaskHandle;
 const osThreadAttr_t ECGtoESPTask_attributes = {
   .name = "ECGtoESPTask",
-  .stack_size = 10000 * 4,
+  .stack_size = 8000 * 4,
   .priority = (osPriority_t) osPriorityBelowNormal,
 };
 /* Definitions for TrasmECGOnTask */
@@ -210,14 +216,35 @@ const osThreadAttr_t GetBatteryTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for WrittenSDTask */
+osThreadId_t WrittenSDTaskHandle;
+const osThreadAttr_t WrittenSDTask_attributes = {
+  .name = "WrittenSDTask",
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
+};
+/* Definitions for ExperimentoTask */
+osThreadId_t ExperimentoTaskHandle;
+const osThreadAttr_t ExperimentoTask_attributes = {
+  .name = "ExperimentoTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
+};
+/* Definitions for mainTask */
+osThreadId_t mainTaskHandle;
+const osThreadAttr_t mainTask_attributes = {
+  .name = "mainTask",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* USER CODE BEGIN PV */
 
 
 bool verbose = true;		// torna on/off o envio de msgs para monitor serial
-bool pressbotao = false;
 volatile uint32_t timerPowerDown = 0;
 extern bool intDRDY;
-extern int16_t channelData [16];
+int16_t ECGchannelData[8];
+int16_t ECG_12Dev[ECG_WRITE_DATA_SIZE];
 char msg[10];
 uint8_t ADSData [19];
 uint8_t TxBuf[19]= {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -235,7 +262,7 @@ HAL_StatusTypeDef res;
 
 
 //***********Variáveis panTompkins**********
-float ImputPanTomp[BufferLenImputPanTompkins];
+int ImputPanTomp[BufferLenImputPanTompkins];
 uint16_t panTompPointerW = 0;
 uint16_t panTompPointerR = 0;
 bool panTompkON = false;
@@ -267,6 +294,8 @@ uint8_t ErrorTentativas = 0;
 
 bool StopLoadAnimat = false;
 
+char pacienteID[25];
+
 extern struct SSID
 {
 	char NomeRede[32];
@@ -278,7 +307,7 @@ extern struct SSID Redes[10];
 extern uint16_t KeyboardSelection;
 
 //*************battery level*************
-uint8_t Percent_battery = 0;
+uint8_t Percent_battery = 100;
 bool UpdateBatChargeLevel = false;
 
 
@@ -289,14 +318,31 @@ bool Lead_OFF_Detected = false;
 uint16_t Lead_OFF_Detected_Hold = 0;
 
 //****************FATFS*********************
-//FRESULT fatRes;
-uint32_t numWrittenSD = 0;
+volatile uint16_t counter_circularbuff = 0;
+volatile uint8_t half_buffer_ECG = 0, full_buffer_ECG = 0;
+volatile uint8_t pressbotao = 0;
+volatile uint8_t Start_ECG_to_SD = 0;
+volatile uint8_t start_stop_recordingSD = 0;
+static uint8_t num_packet = 0;
 
+//****************Filtros*********************
+bool Filtro60 = false;
+bool FiltroBW = false;
+
+extern uint8_t first_time_filter_HP;
+extern uint8_t first_time_filter_notch;
+
+//****************Experimento Filtragem*********************
+float ECG_withNoise_EXP[SIZEECGEXP];
+uint8_t Init_exp = 0;
+int Varredura_SD = 0;
+uint8_t Fim_EXP = 0;
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+void PeriphCommonClock_Config(void);
 static void MPU_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_CRC_Init(void);
@@ -311,6 +357,7 @@ static void MX_SPI5_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_UART5_Init(void);
 static void MX_ADC3_Init(void);
+static void MX_SDMMC2_SD_Init(void);
 void panTompinksCalculation_Task(void *argument);
 extern void TouchGFX_Task(void *argument);
 extern void videoTaskFunc(void *argument);
@@ -322,6 +369,9 @@ void StartECGtoESPTask(void *argument);
 void StartTrasmECGOnTask(void *argument);
 void StartRealiseDataBPMTask(void *argument);
 void StartGetBatteryChargeTask(void *argument);
+void StartWrittenSDTask(void *argument);
+void StartExperimentoTask(void *argument);
+void StartmainTask(void *argument);
 
 /* USER CODE BEGIN PFP */
 static void BSP_SDRAM_Initialization_Sequence(SDRAM_HandleTypeDef *hsdram, FMC_SDRAM_CommandTypeDef *Command);
@@ -381,8 +431,13 @@ uint8_t Red_ADS1198_DMA(void){
 
 void Red_ADS1198_DMA_Complete(void){
 
+	float ECG_12Dev_calibration[12];
+
+
 	HAL_GPIO_WritePin(ADS_CS_GPIO_Port , ADS_CS_Pin, GPIO_PIN_SET);
 //	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET); teste oscilo
+
+	if(Init_exp == 0){
 
 	/*==========================LEAD OFF DETECT BEGIN=============================*/
 	Loff_StatP = (ADSData[0] << 4) | (ADSData[1] >> 4);
@@ -400,72 +455,109 @@ void Red_ADS1198_DMA_Complete(void){
 
 	/*==========================DERIVAÇÕES ECG begin=============================*/
 	for(uint8_t i=0; i<8; i++){
-	channelData[i] = (int16_t) ((ADSData[(2*i)+3] << 8) | ADSData[((2*i)+3)+1]);
+	ECGchannelData[i] = (int16_t) ((ADSData[(2*i)+3] << 8) | ADSData[((2*i)+3)+1]);
 
 }
 
-	DerivacoesECG[0] = channelData[1]/97729.20 - 0.00006139; //I
-	DerivacoesECG[1] = channelData[2]/97825.57 + 0.00022489; //II
-	DerivacoesECG[2] = DerivacoesECG[1]-DerivacoesECG[0]; //III
-	DerivacoesECG[3] = (-DerivacoesECG[0]-DerivacoesECG[1])/2; //aVR
-	DerivacoesECG[4] = DerivacoesECG[0]-DerivacoesECG[1]/2; //aVL
-	DerivacoesECG[5] = DerivacoesECG[1]-DerivacoesECG[0]/2; //aVF
-	DerivacoesECG[6] = channelData[7]/97780.42 + 0.00014318; //V1
-	DerivacoesECG[7] = channelData[3]/97751.48 + 0.00022506; //V2
-	DerivacoesECG[8] = channelData[4]/97729.64 + 0.00006139; //V3
-	DerivacoesECG[9] = channelData[5]/97732.93 + 0.00058322; //V4
- 	DerivacoesECG[10] = channelData[6]/97754.28 - 0.00011253; //V5
-	DerivacoesECG[11] = channelData[0]/97693.33 + 0.00016378; //V6
+	ECG_12Dev_calibration[0] = (float) ECGchannelData[1]*10.23 - 61.39;//I
+	ECG_12Dev_calibration[1] = (float) ECGchannelData[2]*10.22 + 224.89;//II
+	ECG_12Dev_calibration[2] = (float) ECG_12Dev_calibration[1]-ECG_12Dev_calibration[0]; //III
+	ECG_12Dev_calibration[3] = (float) (-ECG_12Dev_calibration[0]-ECG_12Dev_calibration[1])/2; //aVR
+	ECG_12Dev_calibration[4] = (float) ECG_12Dev_calibration[0]-ECG_12Dev_calibration[1]/2; //aVL
+	ECG_12Dev_calibration[5] = (float) ECG_12Dev_calibration[1]-ECG_12Dev_calibration[0]/2;//aVF
+	ECG_12Dev_calibration[6] = (float) ECGchannelData[7]*10.23 + 143.18;//V1
+	ECG_12Dev_calibration[7] = (float) ECGchannelData[3]*10.23 + 225.06;//V2
+	ECG_12Dev_calibration[8] = (float) ECGchannelData[4]*10.23 + 61.39;//V3
+	ECG_12Dev_calibration[9] = (float) ECGchannelData[5]*10.23 + 583.22;//V4
+	ECG_12Dev_calibration[10] = (float) ECGchannelData[6]*10.23 - 112.53;//V5
+	ECG_12Dev_calibration[11] = (float) ECGchannelData[0]*10.24 + 163.78;//V6
+
+
+	ECG_12Dev[counter_circularbuff*12] = (int16_t) round(ECG_12Dev_calibration[0]);
+	ECG_12Dev[counter_circularbuff*12+1] = (int16_t) round(ECG_12Dev_calibration[1]);
+	ECG_12Dev[counter_circularbuff*12+2] = (int16_t) round(ECG_12Dev_calibration[2]);
+	ECG_12Dev[counter_circularbuff*12+3] = (int16_t) round(ECG_12Dev_calibration[3]);
+	ECG_12Dev[counter_circularbuff*12+4] = (int16_t) round(ECG_12Dev_calibration[4]);
+	ECG_12Dev[counter_circularbuff*12+5] = (int16_t) round(ECG_12Dev_calibration[5]);
+	ECG_12Dev[counter_circularbuff*12+6] = (int16_t) round(ECG_12Dev_calibration[6]);
+	ECG_12Dev[counter_circularbuff*12+7] = (int16_t) round(ECG_12Dev_calibration[7]);
+	ECG_12Dev[counter_circularbuff*12+8] = (int16_t) round(ECG_12Dev_calibration[8]);
+	ECG_12Dev[counter_circularbuff*12+9] = (int16_t) round(ECG_12Dev_calibration[9]);
+	ECG_12Dev[counter_circularbuff*12+10] = (int16_t) round(ECG_12Dev_calibration[10]);
+	ECG_12Dev[counter_circularbuff*12+11] = (int16_t) round(ECG_12Dev_calibration[11]);
+
+//	DerivacoesECG[0] = channelData[1]/97729.20 - 0.00006139; //I
+//	DerivacoesECG[1] = channelData[2]/97825.57 + 0.00022489; //II
+//	DerivacoesECG[2] = DerivacoesECG[1]-DerivacoesECG[0]; //III
+//	DerivacoesECG[3] = (-DerivacoesECG[0]-DerivacoesECG[1])/2; //aVR
+//	DerivacoesECG[4] = DerivacoesECG[0]-DerivacoesECG[1]/2; //aVL
+//	DerivacoesECG[5] = DerivacoesECG[1]-DerivacoesECG[0]/2; //aVF
+//	DerivacoesECG[6] = channelData[7]/97780.42 + 0.00014318; //V1
+//	DerivacoesECG[7] = channelData[3]/97751.48 + 0.00022506; //V2
+//	DerivacoesECG[8] = channelData[4]/97729.64 + 0.00006139; //V3
+//	DerivacoesECG[9] = channelData[5]/97732.93 + 0.00058322; //V4
+// 	DerivacoesECG[10] = channelData[6]/97754.28 - 0.00011253; //V5
+//	DerivacoesECG[11] = channelData[0]/97693.33 + 0.00016378; //V6
 	/*==========================DERIVAÇÕES ECG end=============================*/
 
-
+	/*==========================EXIBIR ECG begin=============================*/
 	escrita++;
 	if(escrita == BufferLenPlotECG){
 		escrita = 0;
 	}
 
+	if(Filtro60){
+		ECG_12Dev_calibration[1] = notch_rFixo(ECG_12Dev_calibration[1], 1);
+	}
+
+	if(FiltroBW){
+		ECG_12Dev_calibration[1] = passa_altas_IIR(ECG_12Dev_calibration[1], 1);
+	}
 
 	switch (DerivSelecionada) {
 	case dev_I:
-		valorECG[escrita] = (DerivacoesECG[0]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[0];
 		break;
 	case dev_II:
-		valorECG[escrita] = (DerivacoesECG[1]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[1];
 		break;
 	case dev_III:
-		valorECG[escrita] = (DerivacoesECG[2]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[2];
 		break;
 	case dev_aVR:
-		valorECG[escrita] = (DerivacoesECG[3]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[3];
 		break;
 	case dev_aVL:
-		valorECG[escrita] = (DerivacoesECG[4]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[4];
 		break;
 	case dev_aVF:
-		valorECG[escrita] = (DerivacoesECG[5]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[5];
 		break;
 	case dev_V1:
-		valorECG[escrita] = (DerivacoesECG[6]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[6];
 		break;
 	case dev_V2:
-		valorECG[escrita] = (DerivacoesECG[7]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[7];
 		break;
 	case dev_V3:
-		valorECG[escrita] = (DerivacoesECG[8]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[8];
 		break;
 	case dev_V4:
-		valorECG[escrita] = (DerivacoesECG[9]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[9];
 		break;
 	case dev_V5:
-		valorECG[escrita] = (DerivacoesECG[10]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[10];
 		break;
 	case dev_V6:
-		valorECG[escrita] = (DerivacoesECG[11]*1000000);
+		valorECG[escrita] = ECG_12Dev_calibration[11];
 		break;
 	default:
 		break;
 	}
 
+	/*==========================EXIBIR ECG end=============================*/
+
+	/*==========================TRANSMITIR begin=============================*/
 	if(TransmiteECGDataWifiOn){
 		TransmitECGData[TransmitDataPosition] = (int) valorECG[escrita]; //transmite a derivacao selecionada na tela
 		TransmitDataPosition++;
@@ -477,27 +569,66 @@ void Red_ADS1198_DMA_Complete(void){
 		TransmiteECGDataWifiOn = false;
 		TransmissaoECGtoESPOn = true;
 	}
+	/*==========================EXIBIR ECG end=============================*/
+
 
 	/*==========================panTompkins begin=============================*/
 	if(panTompkON){
-		ImputPanTomp[panTompPointerW]=(DerivacoesECG[1]*1000000);
+		ImputPanTomp[panTompPointerW] = (int) ECG_12Dev[counter_circularbuff*12+2];
 		panTompPointerW++;
 		if(panTompPointerW == BufferLenImputPanTompkins){
 			panTompPointerW = 0;
 		}
-
 	}
 	/*==========================panTompkins end=============================*/
 
 	/*==========================FATFS begin=============================*/
-	if(pressbotao){
-	numWrittenSD++;
-	//osThreadResume(WrittenSDTaskHandle);
 
+
+	if(counter_circularbuff == 255)
+	{
+		half_buffer_ECG = 1;
 	}
+
+	if(counter_circularbuff == 511)
+	{
+		counter_circularbuff = 0;
+		full_buffer_ECG = 1;
+	}
+	else
+	{
+		counter_circularbuff++;
+	}
+
 	/*==========================FATFS end=============================*/
 
-//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
+
+	}else{
+		/*==========================Experimento=============================*/
+		escrita++;
+		if(escrita == BufferLenPlotECG){
+			escrita = 0;
+		}
+
+		if(Filtro60){
+			ECG_withNoise_EXP[Varredura_SD] = notch_rFixo(ECG_withNoise_EXP[Varredura_SD], 2);
+		}
+
+		if(FiltroBW){
+			ECG_withNoise_EXP[Varredura_SD] = passa_altas_IIR(ECG_withNoise_EXP[Varredura_SD], 2);
+		}
+
+		valorECG[escrita] = ECG_withNoise_EXP[Varredura_SD];
+
+		Varredura_SD++;
+		if(Varredura_SD == SIZEECGEXP){
+			Fim_EXP = 1;
+		}
+
+
+	}
+
+	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET);
 }
 
 
@@ -553,6 +684,9 @@ int main(void)
   /* Configure the system clock */
   SystemClock_Config();
 
+/* Configure the peripherals common clocks */
+  PeriphCommonClock_Config();
+
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
@@ -566,13 +700,14 @@ int main(void)
   MX_QUADSPI_Init();
   MX_DMA2D_Init();
   MX_I2C4_Init();
-  MX_LIBJPEG_Init();
   MX_DMA_Init();
   MX_JPEG_Init();
   MX_SPI5_Init();
   MX_USART1_UART_Init();
   MX_UART5_Init();
   MX_ADC3_Init();
+  MX_SDMMC2_SD_Init();
+  MX_FATFS_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
 
@@ -592,6 +727,7 @@ int main(void)
 
 
   ESP_init();
+
 
   HAL_UART_Receive_IT(&huart5, &ESPcaracter, 1);
   /* USER CODE END 2 */
@@ -648,6 +784,15 @@ int main(void)
 
   /* creation of GetBatteryTask */
   GetBatteryTaskHandle = osThreadNew(StartGetBatteryChargeTask, NULL, &GetBatteryTask_attributes);
+
+  /* creation of WrittenSDTask */
+  WrittenSDTaskHandle = osThreadNew(StartWrittenSDTask, NULL, &WrittenSDTask_attributes);
+
+  /* creation of ExperimentoTask */
+  ExperimentoTaskHandle = osThreadNew(StartExperimentoTask, NULL, &ExperimentoTask_attributes);
+
+  /* creation of mainTask */
+  mainTaskHandle = osThreadNew(StartmainTask, NULL, &mainTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -722,6 +867,32 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_6) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/**
+  * @brief Peripherals Common Clock Configuration
+  * @retval None
+  */
+void PeriphCommonClock_Config(void)
+{
+  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
+
+  /** Initializes the peripherals clock
+  */
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_LTDC|RCC_PERIPHCLK_SDMMC2
+                              |RCC_PERIPHCLK_CLK48;
+  PeriphClkInitStruct.PLLSAI.PLLSAIN = 384;
+  PeriphClkInitStruct.PLLSAI.PLLSAIR = 7;
+  PeriphClkInitStruct.PLLSAI.PLLSAIQ = 2;
+  PeriphClkInitStruct.PLLSAI.PLLSAIP = RCC_PLLSAIP_DIV8;
+  PeriphClkInitStruct.PLLSAIDivQ = 1;
+  PeriphClkInitStruct.PLLSAIDivR = RCC_PLLSAIDIVR_2;
+  PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48SOURCE_PLLSAIP;
+  PeriphClkInitStruct.Sdmmc2ClockSelection = RCC_SDMMC2CLKSOURCE_CLK48;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   {
     Error_Handler();
   }
@@ -1211,6 +1382,34 @@ static void MX_QUADSPI_Init(void)
 }
 
 /**
+  * @brief SDMMC2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_SDMMC2_SD_Init(void)
+{
+
+  /* USER CODE BEGIN SDMMC2_Init 0 */
+
+  /* USER CODE END SDMMC2_Init 0 */
+
+  /* USER CODE BEGIN SDMMC2_Init 1 */
+
+  /* USER CODE END SDMMC2_Init 1 */
+  hsd2.Instance = SDMMC2;
+  hsd2.Init.ClockEdge = SDMMC_CLOCK_EDGE_RISING;
+  hsd2.Init.ClockBypass = SDMMC_CLOCK_BYPASS_DISABLE;
+  hsd2.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
+  hsd2.Init.BusWide = SDMMC_BUS_WIDE_1B;
+  hsd2.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
+  hsd2.Init.ClockDiv = 0;
+  /* USER CODE BEGIN SDMMC2_Init 2 */
+
+  /* USER CODE END SDMMC2_Init 2 */
+
+}
+
+/**
   * @brief SPI5 Initialization Function
   * @param None
   * @retval None
@@ -1333,15 +1532,15 @@ static void MX_DMA_Init(void)
   /* DMA2_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
-  /* DMA2_Stream1_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream1_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA2_Stream1_IRQn);
   /* DMA2_Stream3_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
   /* DMA2_Stream4_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream4_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream4_IRQn);
+  /* DMA2_Stream5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream5_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream5_IRQn);
 
 }
 
@@ -1411,10 +1610,10 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOG_CLK_ENABLE();
   __HAL_RCC_GPIOJ_CLK_ENABLE();
-  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOI_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
@@ -1471,6 +1670,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
   HAL_GPIO_Init(DSI_RESET_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PI15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_15;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
 
   /*Configure GPIO pins : ADS_DAISY_Pin ADS_RESET_Pin */
   GPIO_InitStruct.Pin = ADS_DAISY_Pin|ADS_RESET_Pin;
@@ -2237,7 +2442,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 		//intDRDY = true;
 		//if(intDRDY){
+		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET);
 		Red_ADS1198_DMA();
+
 
 		//}
 
@@ -2568,7 +2775,6 @@ void StartECGtoESPTask(void *argument)
   /* USER CODE BEGIN StartECGtoESPTask */
 	char jsonobservation[2000];
 	char RequestBuffer[2048];
-	char IDobservation[30];
 	char RotaID[100];
 	char CIPSEND[20];
 	uint16_t NumPartesPatch=20;
@@ -2584,6 +2790,7 @@ void StartECGtoESPTask(void *argument)
 	  switch (ComandoATselect)
 	  {
 	  case 10:
+		  Read_SD_Data(TransmitECGData, "ECG_001", LenDataECGtoESP);
 		  SendComandAT("AT+CIPSTART=\"TCP\",\"cloudecg-env.eba-mau7x2gw.us-east-1.elasticbeanstalk.com\",80\r\n");
 		  osThreadResume(VerifErrorTaskHandle);
 		  break;
@@ -2605,9 +2812,9 @@ void StartECGtoESPTask(void *argument)
 		  NumPartesPatchEnviados++;
 
 		  if(NumPartesPatchEnviados==1){
-		  ExtrairID(ESPRxData, IDobservation);
+		  ExtrairID(ESPRxData, pacienteID);
 		  strcpy(RotaID, "/baseR4/Observation/");
-	      strcat(RotaID, IDobservation);
+	      strcat(RotaID, pacienteID);
 		  USB_Print("\r\n\r\n");
 		  //USB_Print(RotaID);
 		  }
@@ -2665,6 +2872,7 @@ void StartTrasmECGOnTask(void *argument)
 	  if(TransmissaoECGtoESPOn){
 		  TransmissaoECGtoESPOn = false;
 		  ADS_STOP();
+		  ECGOn = false;
 		  osThreadResume(ECGtoESPTaskHandle);
 		  osThreadSuspend(TrasmECGOnTaskHandle);
 	  }
@@ -2708,64 +2916,215 @@ void StartGetBatteryChargeTask(void *argument)
 {
   /* USER CODE BEGIN StartGetBatteryChargeTask */
 	uint16_t adc_battery_buff[BUFF_LEN_AVGR_BATTERY];
-	uint8_t count_avrg_buff = 0;
-	osThreadSuspend(GetBatteryTaskHandle);
+	uint8_t moving_average_index = 0;
+	float avrg_battery_charge = 0.0;
+
+	HAL_ADC_Start(&hadc3);
+	HAL_ADC_PollForConversion(&hadc3, 100);
+	adc_battery_buff[0] = (uint16_t)HAL_ADC_GetValue(&hadc3);
+	HAL_ADC_Stop(&hadc3);
+
+
+	for(uint8_t i=1; i<BUFF_LEN_AVGR_BATTERY; i++){
+		adc_battery_buff[i] = adc_battery_buff[0];
+	}
   /* Infinite loop */
   for(;;)
   {
+		HAL_ADC_Start(&hadc3);
+		HAL_ADC_PollForConversion(&hadc3, 100);
+		adc_battery_buff[moving_average_index] = (uint16_t)HAL_ADC_GetValue(&hadc3);
+		HAL_ADC_Stop(&hadc3);
 
 
-	if(count_avrg_buff == BUFF_LEN_AVGR_BATTERY){
+		moving_average_index++;
 
-		uint16_t avrg_adc_battery = 0;
-		float avrg_battery_charge = 0;
+		if(moving_average_index == BUFF_LEN_AVGR_BATTERY)
+		{
+			moving_average_index = 0;
+		}
+
 
 		for(uint8_t i=0; i<BUFF_LEN_AVGR_BATTERY; i++){
 			if(i==0){
-				avrg_adc_battery = adc_battery_buff[i];
+				avrg_battery_charge = (float) adc_battery_buff[i];
 			}else{
-				avrg_adc_battery += adc_battery_buff[i];
+				avrg_battery_charge += (float) adc_battery_buff[i];
 			}
 		}
 
-		avrg_battery_charge = (float)avrg_adc_battery/count_avrg_buff;
+		avrg_battery_charge = avrg_battery_charge/BUFF_LEN_AVGR_BATTERY;
 
-		if(avrg_battery_charge > 2150.0 && avrg_battery_charge <2900){
+		avrg_battery_charge = 0.0044535*avrg_battery_charge + 0.7291520; //calibracao ADC baterry
 
-		avrg_battery_charge = 0.00446096*avrg_battery_charge-0.037918; //calibracao ADC baterry
-
-		Percent_battery = (uint8_t) round(100*(avrg_battery_charge - 10.2)/(12.6 - 10.2));
-
-		if(Percent_battery>100){
+		if( round(100*(avrg_battery_charge - 10.2)/(12.6 - 10.2)) > 100){
 			Percent_battery = 100;
-		}
-
-		}else{
+		}else if(round(100*(avrg_battery_charge - 10.2)/(12.6 - 10.2)) < 0){
 			Percent_battery = 0;
+		}else{
+			Percent_battery = (uint8_t) round(100*(avrg_battery_charge - 10.2)/(12.6 - 10.2));
 		}
 
-		count_avrg_buff = 0;
 		UpdateBatChargeLevel = true;
 		osDelay(30000);
-	}else{
-
-		HAL_ADC_Start(&hadc3);
-		HAL_ADC_PollForConversion(&hadc3, 100);
-		adc_battery_buff[count_avrg_buff] = (uint16_t)HAL_ADC_GetValue(&hadc3);
-		HAL_ADC_Stop(&hadc3);
-
-		osDelay(80);
-	}
-	count_avrg_buff++;
   }
   /* USER CODE END StartGetBatteryChargeTask */
+}
+
+/* USER CODE BEGIN Header_StartWrittenSDTask */
+/**
+* @brief Function implementing the WrittenSDTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartWrittenSDTask */
+void StartWrittenSDTask(void *argument)
+{
+  /* USER CODE BEGIN StartWrittenSDTask */
+	uint8_t on_off_ECGtoSD = 1;
+
+	  Init_MicroSD();
+	  osThreadSuspend(WrittenSDTaskHandle);
+  /* Infinite loop */
+  for(;;)
+  {
+	//osThreadFlagsWait(0x0010, osFlagsWaitAny, osWaitForever);
+	  if(on_off_ECGtoSD)
+	 	  {
+		  on_off_ECGtoSD = 0;
+	 		  if(start_stop_recordingSD)
+	 		  {
+	 			  ADS_STOP();
+	 			  ECGOn = false;
+//	 			  if(counter_circularbuff<255)
+//	 			  {
+//	 				  write2ecg_file((uint8_t *) ECGchannelData, counter_circularbuff*16);
+//	 			  }
+//	 			  else if(counter_circularbuff>255 && counter_circularbuff<511)
+//	 			  {
+//	 				  write2ecg_file(((uint8_t *) ECGchannelData) + ECG_WRITE_DATA_SIZE, (counter_circularbuff - 255)*16);
+//	 			  }
+	 			  stop_recording();
+	 			  start_stop_recordingSD = 0;
+	 			  ADS_START();
+	 			  ADS_RDATAC();
+	 			  ECGOn = true;
+	 			  TransmissaoECGtoESPOn = true;
+	 			  osThreadSuspend(WrittenSDTaskHandle);
+	 		  }
+	 		  else
+	 		  {
+	 			  ADS_STOP();
+	 			  ECGOn = false;
+	 			  start_newPacient_recording(); //Com o Header incluso
+	 			  start_stop_recordingSD = 1;
+	 			  counter_circularbuff = 0;
+	 			  half_buffer_ECG = 0;
+				  full_buffer_ECG = 0;
+	 			  ADS_START();
+	 			  ADS_RDATAC();
+	 			  ECGOn = true;
+	 		  }
+	 	  }
+	  if(start_stop_recordingSD == 1 && half_buffer_ECG == 1)
+	  {
+		  write2ecg_file((uint8_t *) ECG_12Dev, ECG_WRITE_DATA_SIZE);
+		  half_buffer_ECG = 0;
+	  }
+	  if(start_stop_recordingSD == 1 && full_buffer_ECG == 1)
+	  {
+		  write2ecg_file(((uint8_t *) ECG_12Dev) + ECG_WRITE_DATA_SIZE, ECG_WRITE_DATA_SIZE);
+		  full_buffer_ECG = 0;
+		  num_packet++;
+		  if(num_packet == 60)
+		  {
+			  on_off_ECGtoSD = 1;
+		  }
+	  }
+    osDelay(1);
+  }
+  /* USER CODE END StartWrittenSDTask */
+}
+
+/* USER CODE BEGIN Header_StartExperimentoTask */
+/**
+* @brief Function implementing the ExperimentoTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartExperimentoTask */
+void StartExperimentoTask(void *argument)
+{
+  /* USER CODE BEGIN StartExperimentoTask */
+	osThreadSuspend(ExperimentoTaskHandle);
+
+	  ADS_STOP();
+	  ECGOn = false;
+
+	  first_time_filter_HP = 0;
+	  first_time_filter_notch = 0;
+
+	  Init_exp = 1;
+	  //DataToSD_Clean_ECG
+	  //DataToSD_BWSignal0dB
+	  //DataToSD_BWeECG_0dB
+	  Read_SD_Data(ECG_withNoise_EXP, "DataToSD_Clean_ECG", 4*SIZEECGEXP);
+	  ADS_START();
+	  ADS_RDATAC();
+	  ECGOn = true;
+
+  /* Infinite loop */
+  for(;;)
+  {
+	  if(Fim_EXP){
+		  Fim_EXP = 0;
+		  ADS_STOP();
+		  ECGOn = false;
+		  //CleanECG_Filtrado_MCU
+		  CreatNewFile_write("CleanECG_Filtrado_MCU_60Hz"); //sem o Header
+		  Write_File((uint8_t *) ECG_withNoise_EXP, 4*SIZEECGEXP);
+		  Init_exp = 0;
+		  osThreadSuspend(ExperimentoTaskHandle);
+	  }
+    osDelay(1);
+  }
+  /* USER CODE END StartExperimentoTask */
+}
+
+/* USER CODE BEGIN Header_StartmainTask */
+/**
+* @brief Function implementing the mainTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartmainTask */
+void StartmainTask(void *argument)
+{
+  /* USER CODE BEGIN StartmainTask */
+  /* Infinite loop */
+  for(;;)
+  {
+	  if(Start_ECG_to_SD == 1){
+		  Start_ECG_to_SD = 0;
+		  osThreadResume(WrittenSDTaskHandle);
+	  }
+
+	  if(pressbotao == 1){
+		  pressbotao = 0;
+		  osThreadResume(ExperimentoTaskHandle);
+	  }
+
+
+    osDelay(1);
+  }
+  /* USER CODE END StartmainTask */
 }
 
 /* MPU Configuration */
 
 void MPU_Config(void)
 {
-  MPU_Region_InitTypeDef MPU_InitStruct = {0};
+ MPU_Region_InitTypeDef MPU_InitStruct = {0};
 
   /* Disables the MPU */
   HAL_MPU_Disable();
@@ -2774,7 +3133,7 @@ void MPU_Config(void)
   */
   MPU_InitStruct.Enable = MPU_REGION_ENABLE;
   MPU_InitStruct.Number = MPU_REGION_NUMBER0;
-  MPU_InitStruct.BaseAddress = 0x20000000;
+  MPU_InitStruct.BaseAddress = 0x0;
   MPU_InitStruct.Size = MPU_REGION_SIZE_512KB;
   MPU_InitStruct.SubRegionDisable = 0x0;
   MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL0;

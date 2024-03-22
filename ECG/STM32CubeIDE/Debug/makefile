@@ -10,21 +10,24 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include Utilities/subdir.mk
--include Middlewares/LibJPEG/subdir.mk
 -include Middlewares/FreeRTOS/subdir.mk
+-include Middlewares/FatFs/subdir.mk
 -include Drivers/STM32F7xx_HAL_Driver/subdir.mk
 -include Drivers/CMSIS/subdir.mk
 -include Drivers/BSP/Components/subdir.mk
 -include Application/User/gui/subdir.mk
 -include Application/User/generated/subdir.mk
 -include Application/User/biblioteca_panTompkins/subdir.mk
+-include Application/User/biblioteca_SDCard/subdir.mk
+-include Application/User/biblioteca_Filtros/subdir.mk
 -include Application/User/biblioteca_ESP01/subdir.mk
 -include Application/User/biblioteca_ADS1198/subdir.mk
 -include Application/User/UartRingBuffer/subdir.mk
 -include Application/User/TouchGFX/target/generated/subdir.mk
 -include Application/User/TouchGFX/target/subdir.mk
 -include Application/User/TouchGFX/App/subdir.mk
--include Application/User/LIBJPEG/App/subdir.mk
+-include Application/User/FATFS/Target/subdir.mk
+-include Application/User/FATFS/App/subdir.mk
 -include Application/User/subdir.mk
 -include Application/Startup/subdir.mk
 -include objects.mk

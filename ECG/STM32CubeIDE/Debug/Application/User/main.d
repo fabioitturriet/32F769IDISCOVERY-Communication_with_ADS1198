@@ -37,6 +37,8 @@ Application/User/main.o: D:/ProjetoSTM32ECG/ECG/Core/Src/main.c \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
@@ -56,17 +58,23 @@ Application/User/main.o: D:/ProjetoSTM32ECG/ECG/Core/Src/main.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- ../../LIBJPEG/App/libjpeg.h \
- ../../Middlewares/Third_Party/LibJPEG/include/jpeglib.h \
- ../../LIBJPEG/Target/jconfig.h ../../LIBJPEG/Target/jdata_conf.h \
- ../../LIBJPEG/Target/jmorecfg.h ../../TouchGFX/App/app_touchgfx.h \
+ ../../FATFS/App/fatfs.h ../../Middlewares/Third_Party/FatFs/src/ff.h \
+ ../../Middlewares/Third_Party/FatFs/src/integer.h \
+ ../../FATFS/Target/ffconf.h ../../FATFS/Target/bsp_driver_sd.h \
+ ../../FATFS/Target/fatfs_platform.h \
+ ../../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
+ ../../Middlewares/Third_Party/FatFs/src/diskio.h \
+ ../../Middlewares/Third_Party/FatFs/src/ff.h \
+ ../../FATFS/Target/sd_diskio.h ../../TouchGFX/App/app_touchgfx.h \
  ../../Drivers/BSP/Components/Common/../mx25l512/mx25l512.h \
  ../../Drivers/BSP/Components/Common/../otm8009a/otm8009a.h \
  D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_ADS1198/ADS1298.h \
  D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_ESP01/ESP8266.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_panTompkins/panTompkins.h
+ D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_panTompkins/panTompkins.h \
+ D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_SDCard/ecg_sd.h \
+ D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_Filtros/Filtros.h
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../../Core/Inc/stm32f7xx_hal_conf.h:
@@ -105,6 +113,8 @@ Application/User/main.o: D:/ProjetoSTM32ECG/ECG/Core/Src/main.c \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
@@ -124,11 +134,16 @@ Application/User/main.o: D:/ProjetoSTM32ECG/ECG/Core/Src/main.c \
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
-../../LIBJPEG/App/libjpeg.h:
-../../Middlewares/Third_Party/LibJPEG/include/jpeglib.h:
-../../LIBJPEG/Target/jconfig.h:
-../../LIBJPEG/Target/jdata_conf.h:
-../../LIBJPEG/Target/jmorecfg.h:
+../../FATFS/App/fatfs.h:
+../../Middlewares/Third_Party/FatFs/src/ff.h:
+../../Middlewares/Third_Party/FatFs/src/integer.h:
+../../FATFS/Target/ffconf.h:
+../../FATFS/Target/bsp_driver_sd.h:
+../../FATFS/Target/fatfs_platform.h:
+../../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h:
+../../Middlewares/Third_Party/FatFs/src/diskio.h:
+../../Middlewares/Third_Party/FatFs/src/ff.h:
+../../FATFS/Target/sd_diskio.h:
 ../../TouchGFX/App/app_touchgfx.h:
 ../../Drivers/BSP/Components/Common/../mx25l512/mx25l512.h:
 ../../Drivers/BSP/Components/Common/../otm8009a/otm8009a.h:
@@ -137,3 +152,5 @@ D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_ESP01/ESP8266.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_panTompkins/panTompkins.h:
+D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_SDCard/ecg_sd.h:
+D:/ProjetoSTM32ECG/ECG/STM32CubeIDE/Application/User/biblioteca_Filtros/Filtros.h:

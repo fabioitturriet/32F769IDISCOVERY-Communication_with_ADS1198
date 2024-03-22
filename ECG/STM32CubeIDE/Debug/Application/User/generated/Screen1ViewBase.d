@@ -78,6 +78,8 @@ Application/User/generated/Screen1ViewBase.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
@@ -136,9 +138,11 @@ Application/User/generated/Screen1ViewBase.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
  ../../TouchGFX/gui/include/gui/containers/ContainerPopup.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerPopupBase.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp \
  ../../TouchGFX/gui/include/gui/containers/ContainerLOFFMatrix.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerLOFFMatrixBase.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp \
+ ../../TouchGFX/gui/include/gui/containers/ContainerBatteryCharge.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerBatteryChargeBase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
  ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp \
  ../../TouchGFX/generated/images/include/BitmapDatabase.hpp
@@ -220,6 +224,8 @@ Application/User/generated/Screen1ViewBase.o: \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
@@ -278,9 +284,11 @@ Application/User/generated/Screen1ViewBase.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
 ../../TouchGFX/gui/include/gui/containers/ContainerPopup.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerPopupBase.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:
 ../../TouchGFX/gui/include/gui/containers/ContainerLOFFMatrix.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerLOFFMatrixBase.hpp:
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:
+../../TouchGFX/gui/include/gui/containers/ContainerBatteryCharge.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerBatteryChargeBase.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
 ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:
 ../../TouchGFX/generated/images/include/BitmapDatabase.hpp:

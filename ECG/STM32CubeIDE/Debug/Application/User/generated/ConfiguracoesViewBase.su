@@ -19,7 +19,7 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<ConfiguracoesPresenter>::~View()	0	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_screen/ConfiguracoesViewBase.hpp:19:13:ConfiguracoesViewBase::~ConfiguracoesViewBase()	0	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/configuracoes_screen/ConfiguracoesViewBase.cpp:57:6:virtual void ConfiguracoesViewBase::setupScreen()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/configuracoes_screen/ConfiguracoesViewBase.cpp:58:6:virtual void ConfiguracoesViewBase::setupScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<ConfiguracoesViewBase, const touchgfx::AbstractButton&>::~Callback()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = ConfiguracoesViewBase; T1 = const touchgfx::AbstractButton&]	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = ConfiguracoesViewBase; T1 = const touchgfx::AbstractButton&]	0	static
@@ -28,7 +28,7 @@ D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/configuracoes_screen
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<ConfiguracoesPresenter>::~View()	8	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_screen/ConfiguracoesViewBase.hpp:19:13:virtual ConfiguracoesViewBase::~ConfiguracoesViewBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/configuracoes_screen/ConfiguracoesViewBase.cpp:62:6:void ConfiguracoesViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/configuracoes_screen/ConfiguracoesViewBase.cpp:63:6:void ConfiguracoesViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:36:7:touchgfx::Widget::Widget()	0	static

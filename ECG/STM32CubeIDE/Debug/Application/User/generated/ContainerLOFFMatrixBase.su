@@ -26,4 +26,4 @@ D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/containers/Container
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:34:5:touchgfx::BoxWithBorder::BoxWithBorder()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:35:18:virtual void touchgfx::ToggleButton::setBitmaps(const touchgfx::Bitmap&, const touchgfx::Bitmap&)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:32:7:touchgfx::ToggleButton::ToggleButton()	8	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/containers/ContainerLOFFMatrixBase.cpp:9:1:ContainerLOFFMatrixBase::ContainerLOFFMatrixBase()	200	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/containers/ContainerLOFFMatrixBase.cpp:9:1:ContainerLOFFMatrixBase::ContainerLOFFMatrixBase()	208	static

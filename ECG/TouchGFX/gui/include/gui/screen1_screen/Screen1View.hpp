@@ -25,7 +25,7 @@ public:
 
     virtual void AtualizaTextDerv();
 
-	virtual void WifiECG();
+	virtual void SalvarECG();
 
     virtual void FechaPopup();
     virtual void FechaPopup1();
@@ -36,10 +36,17 @@ public:
 
     virtual void AbreStatLead();
 
+    virtual void PrintScreen();
+
+    virtual void ToggleFiltro60();
+    virtual void ToggleFiltroBW();
+
 	void AtualizaBPM();
 	void AtualizaIconHeart();
 
 	virtual void StopLoadingAnimation();
+
+	virtual void UpdateBatteryChargeLevel();
 protected:
 };
 

@@ -52,6 +52,9 @@ public:
     // Screen1
     void gotoScreen1ScreenNoTransition();
 
+    // Configuracoes_SDCard
+    void gotoConfiguracoes_SDCardScreenNoTransition();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -88,6 +91,9 @@ protected:
 
     // Screen1
     void gotoScreen1ScreenNoTransitionImpl();
+
+    // Configuracoes_SDCard
+    void gotoConfiguracoes_SDCardScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

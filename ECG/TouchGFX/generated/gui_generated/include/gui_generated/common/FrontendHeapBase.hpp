@@ -34,6 +34,8 @@
 #include <gui/screen2_screen/Screen2Presenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
+#include <gui/configuracoes_sdcard_screen/Configuracoes_SDCardView.hpp>
+#include <gui/configuracoes_sdcard_screen/Configuracoes_SDCardPresenter.hpp>
 
 
 /**
@@ -66,7 +68,8 @@ public:
             touchgfx::meta::TypeList< ScreenKeyboardView,
             touchgfx::meta::TypeList< Screen2View,
             touchgfx::meta::TypeList< Screen1View,
-            touchgfx::meta::Nil > > > > > > > > >
+            touchgfx::meta::TypeList< Configuracoes_SDCardView,
+            touchgfx::meta::Nil > > > > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -88,7 +91,8 @@ public:
             touchgfx::meta::TypeList< ScreenKeyboardPresenter,
             touchgfx::meta::TypeList< Screen2Presenter,
             touchgfx::meta::TypeList< Screen1Presenter,
-            touchgfx::meta::Nil > > > > > > > > >
+            touchgfx::meta::TypeList< Configuracoes_SDCardPresenter,
+            touchgfx::meta::Nil > > > > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

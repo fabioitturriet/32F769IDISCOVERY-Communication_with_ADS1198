@@ -48,9 +48,9 @@ void Screen1Presenter::PBackDeriv()
 	model->BackDerivSelect();
 }
 
-void Screen1Presenter::PWifiECG()
+void Screen1Presenter::PSalvarECG()
 {
-	model->TransmiteWifiECG();
+	model->SalvarECGnoSD();
 }
 
 void Screen1Presenter::PresenterAtualizarBPM()
@@ -84,4 +84,19 @@ void Screen1Presenter::PreStopLoadingAnimation()
 void Screen1Presenter::UpdateMatrixLOFF()
 {
 	view.MUpdateMatrixLOFF();
+}
+
+void Screen1Presenter::PresenterToggleF60()
+{
+	model->ToggleFIltro60();
+}
+
+void Screen1Presenter::PresenterToggleFBW()
+{
+	model->ToggleFIltroBW();
+}
+
+void Screen1Presenter::UpdateBatChargeLevel()
+{
+	view.UpdateBatteryChargeLevel();
 }

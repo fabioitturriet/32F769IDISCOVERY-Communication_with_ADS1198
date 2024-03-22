@@ -304,6 +304,18 @@
     <Filter Include="Source Files\generated\gui_generated\configuracoes_ads1198_screen">
       <UniqueIdentifier>9A39DF62-1EA8-1286-D75B-CFC77A980D5A</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\configuracoes_sdcard_screen">
+      <UniqueIdentifier>4E4BD820-FC19-0A54-585C-EA40026A766D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\configuracoes_sdcard_screen">
+      <UniqueIdentifier>EF42B3C9-BA48-9E75-0965-554AEE326B55</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\configuracoes_sdcard_screen">
+      <UniqueIdentifier>26177A81-28CD-6922-1778-A9F4321FFAE7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\configuracoes_sdcard_screen">
+      <UniqueIdentifier>2034BE48-B949-39AB-E5D3-9F62F47ADD15</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -464,6 +476,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ContainerLOFFMatrixBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuracoes_sdcard_screen\Configuracoes_SDCardPresenter.cpp">
+      <Filter>Source Files\gui\configuracoes_sdcard_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuracoes_sdcard_screen\Configuracoes_SDCardView.cpp">
+      <Filter>Source Files\gui\configuracoes_sdcard_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\configuracoes_sdcard_screen\Configuracoes_SDCardViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\configuracoes_sdcard_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1041,6 +1062,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ContainerLOFFMatrixBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuracoes_sdcard_screen\Configuracoes_SDCardPresenter.hpp">
+      <Filter>Header Files\gui\configuracoes_sdcard_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuracoes_sdcard_screen\Configuracoes_SDCardView.hpp">
+      <Filter>Header Files\gui\configuracoes_sdcard_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuracoes_sdcard_screen\Configuracoes_SDCardViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\configuracoes_sdcard_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -110,8 +110,7 @@ KEEP extern const touchgfx::GlyphNode glyphs_arial_28_4bpp[] FONT_TABLE_LOCATION
     { 12899, 0x00BA,  10,  11,  21,   0,  10,   0,   0, 0x00 },
     { 12954, 0x00BF,  13,  21,  15,   2,  17,   0,   0, 0x00 },
     { 13101, 0x00D7,  12,  12,  16,   2,  16,   0,   0, 0x00 },
-    { 13173, 0x00ED,   6,  20,  20,   2,   8,   0,   0, 0x00 },
-    { 13233, 0x00F7,  14,  11,  15,   1,  15,   0,   0, 0x00 },
+    { 13173, 0x00F7,  14,  11,  15,   1,  15,   0,   0, 0x00 },
     {     0, 0x201D,   8,   7,  20,   1,   9,   0,   0, 0x00 },
     {    28, 0x2022,   8,   7,  13,   1,  10,   0,   0, 0x00 },
     {    56, 0x20AC,  17,  20,  20,  -1,  16,   0,   0, 0x00 }
@@ -139,6 +138,6 @@ touchgfx::GeneratedFont& getFont_arial_28_4bpp();
 
 touchgfx::GeneratedFont& getFont_arial_28_4bpp()
 {
-    static touchgfx::GeneratedFont arial_28_4bpp(glyphs_arial_28_4bpp, 111, 28, 6, 4, 1, 2, 1, unicodes_arial_28_4bpp, kerning_arial_28_4bpp, 63, 0, 0, &arial_contextualFormsTable);
+    static touchgfx::GeneratedFont arial_28_4bpp(glyphs_arial_28_4bpp, 110, 28, 6, 4, 1, 2, 1, unicodes_arial_28_4bpp, kerning_arial_28_4bpp, 63, 0, 0, &arial_contextualFormsTable);
     return arial_28_4bpp;
 }

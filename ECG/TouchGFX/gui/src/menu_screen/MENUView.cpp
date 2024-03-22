@@ -4,6 +4,7 @@
 
 
 extern bool BatteryChargeLevelVisibleSet;
+extern bool UpdateBatChargeLevel;
 
 MENUView::MENUView()
 {
@@ -14,8 +15,13 @@ void MENUView::setupScreen()
 {
     MENUViewBase::setupScreen();
 
-    if (BatteryChargeLevelVisibleSet) containerBatteryCharge1.setVisible(true);
-    else containerBatteryCharge1.setVisible(false);
+    if (BatteryChargeLevelVisibleSet){
+    	containerBatteryCharge1.setVisible(true);
+    	UpdateBatChargeLevel = true;
+    }
+    else {
+    	containerBatteryCharge1.setVisible(false);
+        }
 }
 
 void MENUView::tearDownScreen()

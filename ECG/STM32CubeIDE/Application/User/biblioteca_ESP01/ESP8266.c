@@ -34,6 +34,7 @@ struct SSID Redes[10];
 struct Cadastro
 {
 	uint16_t nome[32];
+	uint16_t sobrenome[32];
 	uint16_t contato[32];
 	uint16_t genero;
 	uint16_t NascDia[3];
@@ -58,6 +59,7 @@ void ESP_init()
 {
 	for(uint8_t i=0; i<32;i++){
 		NewPacient.nome[i] = 0;
+		NewPacient.sobrenome[i] = 0;
 		NewPacient.contato[i] = 0;
 	}
 	for(uint8_t i=0; i<3;i++){

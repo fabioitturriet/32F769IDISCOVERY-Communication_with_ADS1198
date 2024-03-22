@@ -21,7 +21,7 @@ Configuracoes_ADS1198ViewBase::Configuracoes_ADS1198ViewBase() :
     voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID));
     voltar.setAction(buttonCallback);
 
-    FreqAmostragem.setXY(18, 90);
+    FreqAmostragem.setXY(65, 90);
     FreqAmostragem.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     FreqAmostragem.setLinespacing(0);
     FreqAmostragem.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UBY0));
@@ -49,7 +49,7 @@ Configuracoes_ADS1198ViewBase::Configuracoes_ADS1198ViewBase() :
     textArea1_4.setLinespacing(0);
     textArea1_4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9M2J));
 
-    GanhoCanais.setXY(59, 170);
+    GanhoCanais.setXY(90, 170);
     GanhoCanais.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     GanhoCanais.setLinespacing(0);
     GanhoCanais.setTypedText(touchgfx::TypedText(T___SINGLEUSE_G1L5));
@@ -57,7 +57,7 @@ Configuracoes_ADS1198ViewBase::Configuracoes_ADS1198ViewBase() :
     barra_divisoria_1.setPosition(21, 161, 775, 2);
     barra_divisoria_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 
-    EntradaCanais.setXY(45, 252);
+    EntradaCanais.setXY(90, 252);
     EntradaCanais.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     EntradaCanais.setLinespacing(0);
     EntradaCanais.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5AGV));
@@ -85,7 +85,7 @@ Configuracoes_ADS1198ViewBase::Configuracoes_ADS1198ViewBase() :
     radioButton125SPS.setSelected(false);
     radioButton125SPS.setDeselectionEnabled(false);
 
-    textArea.setXY(123, 8);
+    textArea.setXY(218, 10);
     textArea.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea.setLinespacing(0);
     textArea.setTypedText(touchgfx::TypedText(T___SINGLEUSE_72N9));
@@ -195,7 +195,7 @@ Configuracoes_ADS1198ViewBase::Configuracoes_ADS1198ViewBase() :
     textArea3_3.setLinespacing(0);
     textArea3_3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QBZD));
 
-    LoffDetect.setXY(25, 332);
+    LoffDetect.setXY(18, 340);
     LoffDetect.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     LoffDetect.setLinespacing(0);
     LoffDetect.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XTRL));

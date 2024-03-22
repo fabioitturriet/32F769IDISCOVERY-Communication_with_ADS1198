@@ -1,0 +1,7 @@
+../Application/User/biblioteca_SDCard/ecg_sd.c:69:6:Init_MicroSD	8	static
+../Application/User/biblioteca_SDCard/ecg_sd.c:155:6:stop_recording	8	static
+../Application/User/biblioteca_SDCard/ecg_sd.c:181:6:Read_SD_Data	16	static
+../Application/User/biblioteca_SDCard/ecg_sd.c:203:6:CreatNewFile_write	8	static
+../Application/User/biblioteca_SDCard/ecg_sd.c:86:6:start_newPacient_recording	24	static
+../Application/User/biblioteca_SDCard/ecg_sd.c:217:6:Write_File	8	static
+../Application/User/biblioteca_SDCard/ecg_sd.c:138:6:write2ecg_file	16	static

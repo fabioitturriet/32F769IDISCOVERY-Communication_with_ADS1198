@@ -10,6 +10,7 @@ KEEP extern const touchgfx::KerningNode kerning_arial_27_4bpp[] FONT_KERNING_LOC
     { 0x0056, -2 },  // (First char = [0x0056, V], Second char = [0x002E, .], Kerning dist = -2)
     { 0x0072, -1 },  // (First char = [0x0072, r], Second char = [0x002E, .], Kerning dist = -1)
     { 0x0076, -2 },  // (First char = [0x0076, v], Second char = [0x002E, .], Kerning dist = -2)
+    { 0x0079, -2 },  // (First char = [0x0079, y], Second char = [0x002E, .], Kerning dist = -2)
     { 0x0031, -2 },  // (First char = [0x0031, 1], Second char = [0x0031, 1], Kerning dist = -2)
     { 0x0054, -3 },  // (First char = [0x0054, T], Second char = [0x003A, :], Kerning dist = -3)
     { 0x0056, -1 },  // (First char = [0x0056, V], Second char = [0x003A, :], Kerning dist = -1)
@@ -35,4 +36,7 @@ KEEP extern const touchgfx::KerningNode kerning_arial_27_4bpp[] FONT_KERNING_LOC
     { 0x0054, -3 },  // (First char = [0x0054, T], Second char = [0x0073, s], Kerning dist = -3)
     { 0x0054, -1 },  // (First char = [0x0054, T], Second char = [0x0075, u], Kerning dist = -1)
     { 0x0056, -1 },  // (First char = [0x0056, V], Second char = [0x0075, u], Kerning dist = -1)
+    { 0x004C, -1 },  // (First char = [0x004C, L], Second char = [0x0079, y], Kerning dist = -1)
+    { 0x0054, -1 },  // (First char = [0x0054, T], Second char = [0x0079, y], Kerning dist = -1)
+    { 0x0056, -1 },  // (First char = [0x0056, V], Second char = [0x0079, y], Kerning dist = -1)
 };

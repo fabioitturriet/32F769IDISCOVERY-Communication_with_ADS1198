@@ -25,7 +25,7 @@ Screen1ViewBase::Screen1ViewBase() :
     dynamicGraph1.setPosition(0, 0, 800, 480);
     dynamicGraph1.setGraphAreaMargin(36, 0, 0, 0);
     dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
-    dynamicGraph1.setGraphRangeY(-1250, 1250);
+    dynamicGraph1.setGraphRangeY(-1125, 1125);
 
     dynamicGraph1MinorXAxisGrid.setScale(1);
     dynamicGraph1MinorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(97, 97, 97));
@@ -55,10 +55,10 @@ Screen1ViewBase::Screen1ViewBase() :
 
     dynamicGraph1Line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     dynamicGraph1Line1.setPainter(dynamicGraph1Line1Painter);
-    dynamicGraph1Line1.setLineWidth(2);
+    dynamicGraph1Line1.setLineWidth(1);
     dynamicGraph1.addGraphElement(dynamicGraph1Line1);
 
-    box3.setPosition(0, -2, 800, 37);
+    box3.setPosition(0, 0, 800, 37);
     box3.setColor(touchgfx::Color::getColorFromRGB(219, 219, 219));
 
     boxWithBorder1.setPosition(630, 41, 164, 85);
@@ -149,16 +149,12 @@ Screen1ViewBase::Screen1ViewBase() :
     buttoBackDeriv.setIconXY(22, 15);
     buttoBackDeriv.setAction(buttonCallback);
 
-    buttonTransmit.setXY(534, 420);
-    buttonTransmit.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    buttonTransmit.setLabelText(touchgfx::TypedText(T___SINGLEUSE_0VZY));
-    buttonTransmit.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonTransmit.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonTransmit.setAction(buttonCallback);
-
-    scalableImage4_1.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_WI_FI_50_ID));
-    scalableImage4_1.setPosition(715, 429, 41, 43);
-    scalableImage4_1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    buttonSalvar.setXY(550, 420);
+    buttonSalvar.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    buttonSalvar.setLabelText(touchgfx::TypedText(T___SINGLEUSE_0VZY));
+    buttonSalvar.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonSalvar.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonSalvar.setAction(buttonCallback);
 
     containerLoadingAnimation1.setXY(704, 418);
     containerLoadingAnimation1.setVisible(false);
@@ -194,6 +190,27 @@ Screen1ViewBase::Screen1ViewBase() :
     buttonOpenStatLead.setIconXY(14, 14);
     buttonOpenStatLead.setAction(buttonCallback);
 
+    box4.setPosition(333, 41, 217, 72);
+    box4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+
+    toggleFiltro60Hz.setXY(441, 75);
+    toggleFiltro60Hz.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_SMALL_BUTTON_ON_ID));
+    toggleFiltro60Hz.setAction(buttonCallback);
+
+    textArea7.setXY(471, 45);
+    textArea7.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea7.setLinespacing(0);
+    textArea7.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HI3G));
+
+    toggleFiltroBW.setXY(338, 75);
+    toggleFiltroBW.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_SMALL_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_SMALL_BUTTON_ON_ID));
+    toggleFiltroBW.setAction(buttonCallback);
+
+    textArea8.setXY(366, 45);
+    textArea8.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea8.setLinespacing(0);
+    textArea8.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2BYX));
+
     containerLOFFMatrix1.setXY(224, 69);
     containerLOFFMatrix1.setVisible(false);
 
@@ -202,6 +219,16 @@ Screen1ViewBase::Screen1ViewBase() :
     buttonFechaStatLead.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_48_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_REMOVE_48_ID));
     buttonFechaStatLead.setIconXY(0, 0);
     buttonFechaStatLead.setAction(buttonCallback);
+
+    buttonPrtSc.setXY(7, 128);
+    buttonPrtSc.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_ICON_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_CAPTURAR_ID), touchgfx::Bitmap(BITMAP_CAPTURAR_ID));
+    buttonPrtSc.setIconXY(0, 0);
+    buttonPrtSc.setAction(buttonCallback);
+
+    containerBatteryCharge1.setXY(670, 0);
+
+    image1.setXY(723, 431);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_BLUE_ICONS_INBOX_48_ID));
 
     add(__background);
     add(box1);
@@ -225,8 +252,7 @@ Screen1ViewBase::Screen1ViewBase() :
     add(textoffset);
     add(buttonNextDeriv);
     add(buttoBackDeriv);
-    add(buttonTransmit);
-    add(scalableImage4_1);
+    add(buttonSalvar);
     add(containerLoadingAnimation1);
     add(buttonFechaPopup);
     add(buttonFechaPopup1);
@@ -234,8 +260,16 @@ Screen1ViewBase::Screen1ViewBase() :
     add(scalableImage8);
     add(containerPopup1);
     add(buttonOpenStatLead);
+    add(box4);
+    add(toggleFiltro60Hz);
+    add(textArea7);
+    add(toggleFiltroBW);
+    add(textArea8);
     add(containerLOFFMatrix1);
     add(buttonFechaStatLead);
+    add(buttonPrtSc);
+    add(containerBatteryCharge1);
+    add(image1);
 }
 
 void Screen1ViewBase::setupScreen()
@@ -243,6 +277,7 @@ void Screen1ViewBase::setupScreen()
     containerLoadingAnimation1.initialize();
     containerPopup1.initialize();
     containerLOFFMatrix1.initialize();
+    containerBatteryCharge1.initialize();
 }
 
 void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -292,12 +327,12 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //Call BackDeriv
         BackDeriv();
     }
-    else if (&src == &buttonTransmit)
+    else if (&src == &buttonSalvar)
     {
-        //TransmiteWifiECG
-        //When buttonTransmit clicked call virtual function
-        //Call WifiECG
-        WifiECG();
+        //SalvarECG
+        //When buttonSalvar clicked call virtual function
+        //Call SalvarECG
+        SalvarECG();
     }
     else if (&src == &buttonFechaPopup1)
     {
@@ -313,12 +348,33 @@ void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //Call AbreStatLead
         AbreStatLead();
     }
+    else if (&src == &toggleFiltro60Hz)
+    {
+        //ToggleFiltro60
+        //When toggleFiltro60Hz clicked call virtual function
+        //Call ToggleFiltro60
+        ToggleFiltro60();
+    }
+    else if (&src == &toggleFiltroBW)
+    {
+        //ToggleFiltro60BW
+        //When toggleFiltroBW clicked call virtual function
+        //Call ToggleFiltroBW
+        ToggleFiltroBW();
+    }
     else if (&src == &buttonFechaStatLead)
     {
         //FechaJanelaStatLead
         //When buttonFechaStatLead clicked call virtual function
         //Call FechaStatLead
         FechaStatLead();
+    }
+    else if (&src == &buttonPrtSc)
+    {
+        //PrintScreen
+        //When buttonPrtSc clicked call virtual function
+        //Call PrintScreen
+        PrintScreen();
     }
 }
 

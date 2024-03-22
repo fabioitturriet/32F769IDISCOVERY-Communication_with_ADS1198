@@ -158,9 +158,9 @@
           {
             "Type": "TextArea",
             "Name": "textArea2",
-            "X": 96,
+            "X": 59,
             "Y": 71,
-            "Width": 609,
+            "Width": 682,
             "Height": 40,
             "TextId": "__SingleUse_IJ05",
             "TextRotation": "0",
@@ -176,8 +176,8 @@
             "Name": "containerBatteryCharge1",
             "X": 654,
             "Y": 11,
-            "Width": 135,
-            "Height": 40,
+            "Width": 124,
+            "Height": 37,
             "CustomContainerDefinitionName": "ContainerBatteryCharge"
           }
         ],
@@ -333,7 +333,7 @@
             "Type": "TextArea",
             "Name": "textArea2",
             "X": 308,
-            "Width": 185,
+            "Width": 230,
             "Height": 52,
             "TextId": "__SingleUse_F1Q4",
             "TextRotation": "0",
@@ -389,9 +389,9 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 255,
-            "Y": 12,
-            "Width": 290,
+            "X": 319,
+            "Y": 22,
+            "Width": 162,
             "Height": 52,
             "TextId": "__SingleUse_B0FN",
             "TextRotation": "0",
@@ -427,7 +427,7 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonFiltros",
+            "Name": "buttonSDcard",
             "X": 285,
             "Y": 256,
             "Width": 230,
@@ -518,6 +518,18 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Configuracoes_Extras"
             }
+          },
+          {
+            "InteractionName": "InteractionSDCard",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonSDcard"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuracoes_SDCard"
+            }
           }
         ]
       },
@@ -548,9 +560,9 @@
           {
             "Type": "TextArea",
             "Name": "FreqAmostragem",
-            "X": 18,
+            "X": 65,
             "Y": 90,
-            "Width": 173,
+            "Width": 126,
             "Height": 62,
             "TextId": "__SingleUse_UBY0",
             "TextRotation": "0",
@@ -641,9 +653,9 @@
           {
             "Type": "TextArea",
             "Name": "GanhoCanais",
-            "X": 59,
+            "X": 90,
             "Y": 170,
-            "Width": 132,
+            "Width": 101,
             "Height": 62,
             "TextId": "__SingleUse_G1L5",
             "TextRotation": "0",
@@ -670,9 +682,9 @@
           {
             "Type": "TextArea",
             "Name": "EntradaCanais",
-            "X": 45,
+            "X": 90,
             "Y": 252,
-            "Width": 146,
+            "Width": 101,
             "Height": 62,
             "TextId": "__SingleUse_5AGV",
             "TextRotation": "0",
@@ -751,9 +763,9 @@
           {
             "Type": "TextArea",
             "Name": "textArea",
-            "X": 123,
-            "Y": 8,
-            "Width": 552,
+            "X": 218,
+            "Y": 10,
+            "Width": 364,
             "Height": 52,
             "TextId": "__SingleUse_72N9",
             "TextRotation": "0",
@@ -1043,7 +1055,7 @@
             "Name": "textArea3_2",
             "X": 456,
             "Y": 270,
-            "Width": 138,
+            "Width": 126,
             "Height": 27,
             "TextId": "__SingleUse_KWMU",
             "TextRotation": "0",
@@ -1059,7 +1071,7 @@
             "Name": "textArea3_3",
             "X": 653,
             "Y": 270,
-            "Width": 146,
+            "Width": 144,
             "Height": 27,
             "TextId": "__SingleUse_QBZD",
             "TextRotation": "0",
@@ -1073,10 +1085,10 @@
           {
             "Type": "TextArea",
             "Name": "LoffDetect",
-            "X": 25,
-            "Y": 332,
-            "Width": 166,
-            "Height": 93,
+            "X": 18,
+            "Y": 340,
+            "Width": 173,
+            "Height": 62,
             "TextId": "__SingleUse_XTRL",
             "TextRotation": "0",
             "Color": {
@@ -1172,7 +1184,7 @@
             "Name": "textArea4_2",
             "X": 366,
             "Y": 338,
-            "Width": 182,
+            "Width": 184,
             "Height": 55,
             "TextId": "__SingleUse_O517",
             "TextRotation": "0",
@@ -1188,8 +1200,8 @@
             "Name": "textArea4_3",
             "X": 618,
             "Y": 338,
-            "Width": 94,
-            "Height": 55,
+            "Width": 158,
+            "Height": 27,
             "TextId": "__SingleUse_274B",
             "TextRotation": "0",
             "Color": {
@@ -1204,7 +1216,7 @@
             "Name": "textArea4_4",
             "X": 474,
             "Y": 429,
-            "Width": 100,
+            "Width": 112,
             "Height": 27,
             "TextId": "__SingleUse_0LF8",
             "TextRotation": "0",
@@ -1640,7 +1652,7 @@
             "Type": "TextArea",
             "Name": "textArea3",
             "X": 251,
-            "Width": 298,
+            "Width": 345,
             "Height": 52,
             "TextId": "__SingleUse_6LB2",
             "TextRotation": "0",
@@ -1669,7 +1681,7 @@
             "Name": "textArea4",
             "X": 467,
             "Y": 113,
-            "Width": 229,
+            "Width": 233,
             "Height": 32,
             "TextId": "__SingleUse_0ZJL",
             "TextRotation": "0",
@@ -1939,7 +1951,7 @@
             "Type": "TextArea",
             "Name": "textArea2",
             "X": 98,
-            "Y": 106,
+            "Y": 103,
             "Width": 103,
             "Height": 40,
             "TextId": "__SingleUse_NAFB",
@@ -1954,8 +1966,8 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 215,
-            "Width": 370,
+            "X": 213,
+            "Width": 375,
             "Height": 52,
             "TextId": "__SingleUse_XZ6Q",
             "TextRotation": "0",
@@ -1970,8 +1982,8 @@
             "Type": "TextArea",
             "Name": "textArea3",
             "X": 69,
-            "Y": 170,
-            "Width": 132,
+            "Y": 200,
+            "Width": 130,
             "Height": 40,
             "TextId": "__SingleUse_MARS",
             "TextRotation": "0",
@@ -1986,7 +1998,7 @@
             "Type": "TextArea",
             "Name": "textArea4",
             "X": 75,
-            "Y": 233,
+            "Y": 263,
             "Width": 126,
             "Height": 40,
             "TextId": "__SingleUse_CLV6",
@@ -2001,10 +2013,9 @@
           {
             "Type": "TextArea",
             "Name": "textArea5",
-            "X": 12,
-            "Y": 293,
-            "Width": 189,
-            "Height": 77,
+            "Y": 360,
+            "Width": 201,
+            "Height": 40,
             "TextId": "__SingleUse_H0MB",
             "TextRotation": "0",
             "Color": {
@@ -2017,7 +2028,7 @@
             "Type": "TextArea",
             "Name": "textArea6",
             "X": 271,
-            "Y": 233,
+            "Y": 263,
             "Width": 29,
             "Height": 40,
             "TextId": "__SingleUse_ZZGE",
@@ -2033,7 +2044,7 @@
             "Type": "TextArea",
             "Name": "textArea7",
             "X": 395,
-            "Y": 233,
+            "Y": 263,
             "Width": 22,
             "Height": 40,
             "TextId": "__SingleUse_5HVZ",
@@ -2049,7 +2060,7 @@
             "Type": "TextArea",
             "Name": "textArea9",
             "X": 271,
-            "Y": 338,
+            "Y": 368,
             "Width": 8,
             "Height": 32,
             "TextId": "__SingleUse_A5LR",
@@ -2065,7 +2076,7 @@
             "Type": "TextArea",
             "Name": "textArea10",
             "X": 341,
-            "Y": 338,
+            "Y": 368,
             "Width": 8,
             "Height": 32,
             "TextId": "__SingleUse_ORLE",
@@ -2078,10 +2089,26 @@
             "AutoSize": true
           },
           {
+            "Type": "TextArea",
+            "Name": "textArea11",
+            "X": 39,
+            "Y": 151,
+            "Width": 162,
+            "Height": 40,
+            "TextId": "__SingleUse_4DSK",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
             "Type": "Box",
             "Name": "box2",
             "X": 215,
-            "Y": 106,
+            "Y": 103,
             "Width": 450,
             "Height": 40,
             "Color": {
@@ -2094,7 +2121,7 @@
             "Type": "TextArea",
             "Name": "textNome",
             "X": 229,
-            "Y": 108,
+            "Y": 105,
             "Width": 423,
             "Height": 36,
             "TextId": "__SingleUse_EEPL",
@@ -2113,7 +2140,77 @@
             "Type": "FlexButton",
             "Name": "flexButtonNome",
             "X": 215,
-            "Y": 106,
+            "Y": 103,
+            "Width": 450,
+            "Height": 40,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 450,
+                "Height": 40,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Box",
+            "Name": "box8",
+            "X": 215,
+            "Y": 151,
+            "Width": 450,
+            "Height": 40,
+            "Color": {
+              "Red": 87,
+              "Green": 87,
+              "Blue": 87
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textSobrenome",
+            "X": 229,
+            "Y": 153,
+            "Width": 423,
+            "Height": 36,
+            "TextId": "__SingleUse_EY6W",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 32
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButtonSobrenome",
+            "X": 215,
+            "Y": 151,
             "Width": 450,
             "Height": 40,
             "Alpha": 0,
@@ -2151,7 +2248,7 @@
             "Type": "Box",
             "Name": "box3",
             "X": 215,
-            "Y": 170,
+            "Y": 200,
             "Width": 571,
             "Height": 40,
             "Color": {
@@ -2164,7 +2261,7 @@
             "Type": "TextArea",
             "Name": "textContato",
             "X": 229,
-            "Y": 170,
+            "Y": 200,
             "Width": 543,
             "Height": 40,
             "TextId": "__SingleUse_XBH8",
@@ -2183,7 +2280,7 @@
             "Type": "FlexButton",
             "Name": "flexButtonContato",
             "X": 215,
-            "Y": 170,
+            "Y": 200,
             "Width": 571,
             "Height": 40,
             "Alpha": 0,
@@ -2221,7 +2318,7 @@
             "Type": "RadioButton",
             "Name": "radioButtonSexoM",
             "X": 221,
-            "Y": 228,
+            "Y": 258,
             "Width": 50,
             "Height": 50,
             "Deselectable": true,
@@ -2235,7 +2332,7 @@
             "Type": "RadioButton",
             "Name": "radioButtonSexoF",
             "X": 345,
-            "Y": 228,
+            "Y": 258,
             "Width": 50,
             "Height": 50,
             "Deselectable": true,
@@ -2249,7 +2346,7 @@
             "Type": "Box",
             "Name": "box5",
             "X": 215,
-            "Y": 330,
+            "Y": 360,
             "Width": 50,
             "Height": 40,
             "Color": {
@@ -2262,7 +2359,7 @@
             "Type": "TextArea",
             "Name": "textDataNascDia",
             "X": 223,
-            "Y": 337,
+            "Y": 367,
             "Width": 42,
             "Height": 33,
             "TextId": "__SingleUse_S06B",
@@ -2281,7 +2378,7 @@
             "Type": "FlexButton",
             "Name": "flexButtonNascimentoDia",
             "X": 215,
-            "Y": 331,
+            "Y": 361,
             "Width": 50,
             "Height": 39,
             "Alpha": 0,
@@ -2319,7 +2416,7 @@
             "Type": "Box",
             "Name": "box6",
             "X": 285,
-            "Y": 330,
+            "Y": 360,
             "Width": 50,
             "Height": 40,
             "Color": {
@@ -2332,7 +2429,7 @@
             "Type": "TextArea",
             "Name": "textDataNascMes",
             "X": 292,
-            "Y": 334,
+            "Y": 364,
             "Width": 44,
             "Height": 36,
             "TextId": "__SingleUse_P6FV",
@@ -2351,7 +2448,7 @@
             "Type": "FlexButton",
             "Name": "flexButtonNascimentoMes",
             "X": 286,
-            "Y": 331,
+            "Y": 361,
             "Width": 50,
             "Height": 39,
             "Alpha": 0,
@@ -2389,7 +2486,7 @@
             "Type": "Box",
             "Name": "box7",
             "X": 353,
-            "Y": 331,
+            "Y": 361,
             "Width": 73,
             "Height": 39,
             "Color": {
@@ -2402,7 +2499,7 @@
             "Type": "TextArea",
             "Name": "textDataNascAno",
             "X": 357,
-            "Y": 334,
+            "Y": 364,
             "Width": 69,
             "Height": 36,
             "TextId": "__SingleUse_EE5V",
@@ -2421,7 +2518,7 @@
             "Type": "FlexButton",
             "Name": "flexButtonNascimentoAno",
             "X": 353,
-            "Y": 330,
+            "Y": 360,
             "Width": 73,
             "Height": 40,
             "Alpha": 0,
@@ -2662,6 +2759,17 @@
               "Type": "ActionCustom",
               "FunctionName": "LimpaDados"
             }
+          },
+          {
+            "InteractionName": "NewSobrenomePacient",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButtonSobrenome"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "NewSobrenomePacient"
+            }
           }
         ]
       },
@@ -2735,7 +2843,7 @@
             "Name": "textArea2",
             "X": 25,
             "Y": 188,
-            "Width": 186,
+            "Width": 243,
             "Height": 32,
             "TextId": "__SingleUse_L09I",
             "TextRotation": "0",
@@ -2886,9 +2994,9 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 169,
-            "Y": 10,
-            "Width": 462,
+            "X": 286,
+            "Y": 19,
+            "Width": 228,
             "Height": 52,
             "TextId": "__SingleUse_CCNK",
             "TextRotation": "0",
@@ -2946,7 +3054,7 @@
             "Name": "textArea2",
             "X": 106,
             "Y": 86,
-            "Width": 244,
+            "Width": 220,
             "Height": 40,
             "TextId": "__SingleUse_ZY60",
             "TextRotation": "0",
@@ -3091,7 +3199,7 @@
             "Name": "textArea6",
             "X": 195,
             "Y": 270,
-            "Width": 89,
+            "Width": 87,
             "Height": 31,
             "TextId": "__SingleUse_LAYJ",
             "TextRotation": "0",
@@ -3159,93 +3267,6 @@
               "Blue": 255
             },
             "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea3_1",
-            "X": 106,
-            "Y": 323,
-            "Width": 209,
-            "Height": 40,
-            "TextId": "__SingleUse_B947",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "RadioButton",
-            "Name": "radioButton6",
-            "X": 147,
-            "Y": 381,
-            "Width": 44,
-            "Height": 44,
-            "Selected": true,
-            "FileNameSelected": "__designer\\Blue_Radio_buttons_Radio_Round_button_active.png",
-            "FileNameSelectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_normal.png",
-            "FileNameUnselected": "__designer\\Blue_Radio_buttons_Radio_Round_button_inactive.png",
-            "FileNameUnselectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_pressed.png",
-            "RadioButtonGroup": "radioButtonGroup3",
-            "Style": "Style3"
-          },
-          {
-            "Type": "RadioButton",
-            "Name": "radioButton7",
-            "X": 424,
-            "Y": 381,
-            "Width": 44,
-            "Height": 44,
-            "FileNameSelected": "__designer\\Blue_Radio_buttons_Radio_Round_button_active.png",
-            "FileNameSelectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_normal.png",
-            "FileNameUnselected": "__designer\\Blue_Radio_buttons_Radio_Round_button_inactive.png",
-            "FileNameUnselectedPressed": "__designer\\Blue_Radio_buttons_Radio_Round_button_pressed.png",
-            "RadioButtonGroup": "radioButtonGroup3",
-            "Style": "Style3"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea9",
-            "X": 193,
-            "Y": 388,
-            "Width": 205,
-            "Height": 31,
-            "TextId": "__SingleUse_VBHY",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea9_1",
-            "X": 469,
-            "Y": 388,
-            "Width": 72,
-            "Height": 31,
-            "TextId": "__SingleUse_Y3JJ",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "ScalableImage",
-            "Name": "scalableImage1",
-            "X": 62,
-            "Y": 327,
-            "Width": 32,
-            "Height": 32,
-            "Filename": "icons8-wi-fi-50.png",
-            "ScalingAlgorithm": "Nearest-neighbor"
           }
         ],
         "Interactions": [
@@ -3331,8 +3352,8 @@
             "Height": 480,
             "DataSeed": -49451018,
             "NumberOfValues": 800,
-            "MaxY": 1250.0,
-            "MinY": -1250.0,
+            "MaxY": 1125.0,
+            "MinY": -1125.0,
             "Precision": "1",
             "LastIndex": 799,
             "XAxisScale": 1.0,
@@ -3341,7 +3362,7 @@
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
-                "LineWidth": 2,
+                "LineWidth": 1,
                 "Color": {
                   "Red": 255
                 }
@@ -3391,7 +3412,6 @@
           {
             "Type": "Box",
             "Name": "box3",
-            "Y": -2,
             "Width": 800,
             "Height": 37,
             "Color": {
@@ -3419,7 +3439,7 @@
             "Name": "textArea1",
             "X": 119,
             "Y": 1,
-            "Width": 130,
+            "Width": 106,
             "Height": 38,
             "TextId": "__SingleUse_XRTL",
             "TextRotation": "0",
@@ -3449,7 +3469,7 @@
             "Name": "textArea3",
             "X": 133,
             "Y": 426,
-            "Width": 129,
+            "Width": 115,
             "Height": 48,
             "TextId": "__SingleUse_NFTU",
             "TextRotation": "0",
@@ -3460,7 +3480,7 @@
             "Name": "textArea4",
             "X": 459,
             "Y": 3,
-            "Width": 187,
+            "Width": 146,
             "Height": 32,
             "TextId": "__SingleUse_T06K",
             "TextRotation": "0",
@@ -3628,8 +3648,8 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonTransmit",
-            "X": 534,
+            "Name": "buttonSalvar",
+            "X": 550,
             "Y": 420,
             "Width": 170,
             "Height": 60,
@@ -3648,16 +3668,6 @@
             },
             "TextRotation": "0",
             "Style": "Style4"
-          },
-          {
-            "Type": "ScalableImage",
-            "Name": "scalableImage4_1",
-            "X": 715,
-            "Y": 429,
-            "Width": 41,
-            "Height": 43,
-            "Filename": "icons8-wi-fi-50.png",
-            "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
             "Type": "CustomContainerInstance",
@@ -3767,6 +3777,63 @@
             "IconWidth": 32
           },
           {
+            "Type": "Box",
+            "Name": "box4",
+            "X": 333,
+            "Y": 41,
+            "Width": 217,
+            "Height": 72,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleFiltro60Hz",
+            "X": 441,
+            "Y": 75,
+            "Width": 96,
+            "Height": 38,
+            "Pressed": "__designer\\Blue_Togglebars_Toggle_round_small_button_ON.png",
+            "Released": "__designer\\Blue_Togglebars_Toggle_round_small_button_OFF.png",
+            "Style": "Style5"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea7",
+            "X": 471,
+            "Y": 45,
+            "Width": 36,
+            "Height": 27,
+            "TextId": "__SingleUse_HI3G",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleFiltroBW",
+            "X": 338,
+            "Y": 75,
+            "Width": 96,
+            "Height": 38,
+            "Pressed": "__designer\\Blue_Togglebars_Toggle_round_small_button_ON.png",
+            "Released": "__designer\\Blue_Togglebars_Toggle_round_small_button_OFF.png",
+            "Style": "Style5"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea8",
+            "X": 366,
+            "Y": 45,
+            "Width": 38,
+            "Height": 27,
+            "TextId": "__SingleUse_2BYX",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
             "Type": "CustomContainerInstance",
             "Name": "containerLOFFMatrix1",
             "X": 224,
@@ -3790,6 +3857,38 @@
             "IconReleased": "__designer\\Dark_Icons_Remove_48.png",
             "IconHeight": 48,
             "IconWidth": 48
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonPrtSc",
+            "X": 7,
+            "Y": 128,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_icon_button.png",
+            "IconPressed": "capturar.png",
+            "IconReleased": "capturar.png",
+            "IconHeight": 60,
+            "IconWidth": 60,
+            "ButtonStyle": "Style1"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "containerBatteryCharge1",
+            "X": 670,
+            "Width": 124,
+            "Height": 37,
+            "CustomContainerDefinitionName": "ContainerBatteryCharge"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 723,
+            "Y": 431,
+            "Width": 46,
+            "Height": 39,
+            "RelativeFilename": "__designer\\Blue_Icons_Inbox_48.png"
           }
         ],
         "Interactions": [
@@ -3873,14 +3972,14 @@
             }
           },
           {
-            "InteractionName": "TransmiteWifiECG",
+            "InteractionName": "SalvarECG",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonTransmit"
+              "TriggerComponent": "buttonSalvar"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "WifiECG"
+              "FunctionName": "SalvarECG"
             }
           },
           {
@@ -3926,6 +4025,189 @@
               "Type": "ActionCustom",
               "FunctionName": "AbreStatLead"
             }
+          },
+          {
+            "InteractionName": "PrintScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonPrtSc"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "PrintScreen"
+            }
+          },
+          {
+            "InteractionName": "ToggleFiltro60",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleFiltro60Hz"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ToggleFiltro60"
+            }
+          },
+          {
+            "InteractionName": "ToggleFiltro60BW",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleFiltroBW"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ToggleFiltroBW"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Configuracoes_SDCard",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 20,
+              "Green": 61,
+              "Blue": 89
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea",
+            "X": 273,
+            "Y": 10,
+            "Width": 255,
+            "Height": 52,
+            "TextId": "__SingleUse_CRG0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "barra_divisoria",
+            "X": 21,
+            "Y": 80,
+            "Width": 775,
+            "Height": 2,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "voltar",
+            "X": 12,
+            "Y": 10,
+            "Width": 50,
+            "Height": 48,
+            "Pressed": "Dark_Icons_Back_arrow_edit.png",
+            "Released": "Dark_Icons_Back_arrow_edit.png"
+          },
+          {
+            "Type": "ScrollList",
+            "Name": "scrollList2",
+            "X": 37,
+            "Y": 99,
+            "Width": 400,
+            "Height": 357,
+            "ItemTemplateName": "ContainerConexaoWIFI",
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 445,
+            "Y": 136,
+            "Width": 351,
+            "Height": 37,
+            "TextId": "__SingleUse_CFQJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "UseBuffer": true,
+              "BufferSize": 30
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 445,
+            "Y": 99,
+            "Width": 95,
+            "Height": 32,
+            "TextId": "__SingleUse_MY2A",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 609,
+            "Y": 396,
+            "Width": 170,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_Edge_small_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_Edge_small.png",
+            "TextId": "__SingleUse_1PNT",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Style": "Style4"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "containerLoadingAnimation1",
+            "X": 540,
+            "Y": 396,
+            "Width": 62,
+            "Height": 62,
+            "Visible": false,
+            "CustomContainerDefinitionName": "ContainerLoadingAnimation"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InteractionVoltar",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "voltar"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuracoes"
+            }
           }
         ]
       }
@@ -3954,7 +4236,7 @@
             "Y": 24,
             "Width": 422,
             "Height": 33,
-            "TextId": "__SingleUse_N733",
+            "TextId": "__SingleUse_GIV2",
             "TextRotation": "0"
           },
           {
@@ -4087,14 +4369,14 @@
       },
       {
         "Name": "ContainerBatteryCharge",
-        "Width": 135,
-        "Height": 40,
+        "Width": 124,
+        "Height": 37,
         "Components": [
           {
             "Type": "Box",
             "Name": "box1",
-            "Width": 135,
-            "Height": 40,
+            "Width": 124,
+            "Height": 37,
             "Color": {
               "Red": 219,
               "Green": 219,
@@ -4104,8 +4386,7 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 7,
-            "Y": 5,
+            "Y": 3,
             "Width": 76,
             "Height": 30,
             "TextId": "__SingleUse_YB8A",
@@ -4118,8 +4399,8 @@
           {
             "Type": "ScalableImage",
             "Name": "scalableImage1",
-            "X": 83,
-            "Y": 5,
+            "X": 76,
+            "Y": 3,
             "Width": 45,
             "Height": 30,
             "Filename": "bateria.png",

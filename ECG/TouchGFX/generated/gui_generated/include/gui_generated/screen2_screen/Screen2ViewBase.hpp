@@ -13,7 +13,6 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/RadioButton.hpp>
-#include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/widgets/RadioButtonGroup.hpp>
 
 class Screen2ViewBase : public touchgfx::View<Screen2Presenter>
@@ -70,15 +69,8 @@ protected:
     touchgfx::Box barra_divisoria_1_1;
     touchgfx::TextArea textArea7;
     touchgfx::TextArea textArea8;
-    touchgfx::TextArea textArea3_1;
-    touchgfx::RadioButton radioButton6;
-    touchgfx::RadioButton radioButton7;
-    touchgfx::TextArea textArea9;
-    touchgfx::TextArea textArea9_1;
-    touchgfx::ScalableImage scalableImage1;
     touchgfx::RadioButtonGroup<2> radioButtonGroup1;
     touchgfx::RadioButtonGroup<3> radioButtonGroup2;
-    touchgfx::RadioButtonGroup<2> radioButtonGroup3;
 
 private:
 

@@ -6,57 +6,84 @@
   <Texts>
     <TextGroup Id="derivacoes">
       <Text Id="IDdev12" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. V6</Translation>
+        <Translation Language="GB">Lead V6</Translation>
       </Text>
       <Text Id="IDdev11" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. V5</Translation>
+        <Translation Language="GB">Lead V5</Translation>
       </Text>
       <Text Id="IDdev10" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. V4</Translation>
+        <Translation Language="GB">Lead V4</Translation>
       </Text>
       <Text Id="IDdev9" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. V3</Translation>
+        <Translation Language="GB">Lead V3</Translation>
       </Text>
       <Text Id="IDdev8" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. V2</Translation>
+        <Translation Language="GB">Lead V2</Translation>
       </Text>
       <Text Id="IDdev7" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. V1</Translation>
+        <Translation Language="GB">Lead V1</Translation>
       </Text>
       <Text Id="IDdev6" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. aVF</Translation>
+        <Translation Language="GB">Lead aVF</Translation>
       </Text>
       <Text Id="IDdev5" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. aVL</Translation>
+        <Translation Language="GB">Lead aVL</Translation>
       </Text>
       <Text Id="IDdev4" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. aVR</Translation>
+        <Translation Language="GB">Lead aVR</Translation>
       </Text>
       <Text Id="IDdev3" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. III</Translation>
+        <Translation Language="GB">Lead III</Translation>
       </Text>
       <Text Id="IDdev2" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. II</Translation>
+        <Translation Language="GB">Lead II</Translation>
       </Text>
       <Text Id="IDdev1" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. I</Translation>
+        <Translation Language="GB">Lead I</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Group1">
       <Text Id="ResourceId4" Alignment="Left" TypographyId="lista">
-        <Translation Language="GB">Coloque o paciente na posição supina </Translation>
+        <Translation Language="GB">Place the patient in the supine position</Translation>
       </Text>
       <Text Id="ResourceId3" Alignment="Left" TypographyId="lista">
-        <Translation Language="GB">Oriente o paciente sobre o exame</Translation>
+        <Translation Language="GB">Instruct the patient about the exam</Translation>
       </Text>
       <Text Id="ResourceId2" Alignment="Left" TypographyId="lista">
-        <Translation Language="GB">Limpe a pele e aplique o gel condutor</Translation>
+        <Translation Language="GB">Clean the skin and apply the conductive gel</Translation>
       </Text>
       <Text Id="ResourceId1" Alignment="Left" TypographyId="lista">
-        <Translation Language="GB">conecte os eletrodos nestas áreas</Translation>
+        <Translation Language="GB">connect the electrodes in these areas</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_1PNT" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Transmit</Translation>
+      </Text>
+      <Text Id="__SingleUse_MY2A" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Patient:</Translation>
+      </Text>
+      <Text Id="__SingleUse_CFQJ" Alignment="Left" TypographyId="subtitulo">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_CRG0" Alignment="Left" TypographyId="menus">
+        <Translation Language="GB">SD card files</Translation>
+      </Text>
+      <Text Id="__SingleUse_GIV2" Alignment="Left" TypographyId="lista">
+        <Translation Language="GB" />
+      </Text>
+      <Text Id="__SingleUse_2BYX" Alignment="Left" TypographyId="configuracoes1">
+        <Translation Language="GB">BW</Translation>
+      </Text>
+      <Text Id="__SingleUse_HI3G" Alignment="Center" TypographyId="configuracoes1">
+        <Translation Language="GB">PLI</Translation>
+      </Text>
+      <Text Id="__SingleUse_EY6W" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4DSK" Alignment="Left" TypographyId="subtitulo">
+        <Translation Language="GB">last name:</Translation>
+      </Text>
       <Text Id="__SingleUse_XPBB" Alignment="Left" TypographyId="Configuracoes">
         <Translation Language="GB">V6</Translation>
       </Text>
@@ -103,49 +130,40 @@
         <Translation Language="GB">Extras</Translation>
       </Text>
       <Text Id="__SingleUse_5VKY" Alignment="Center" TypographyId="subtitulo">
-        <Translation Language="GB">Filtros</Translation>
+        <Translation Language="GB">SD Card</Translation>
       </Text>
       <Text Id="__SingleUse_9P11" Alignment="Center" TypographyId="subtitulo">
         <Translation Language="GB">ADS1198</Translation>
       </Text>
       <Text Id="__SingleUse_B0FN" Alignment="Left" TypographyId="menus">
-        <Translation Language="GB">Configurações</Translation>
+        <Translation Language="GB">Settings</Translation>
       </Text>
       <Text Id="__SingleUse_0LF8" Alignment="Left" TypographyId="configuracoes1">
-        <Translation Language="GB">Fonte AC</Translation>
+        <Translation Language="GB">AC source</Translation>
       </Text>
       <Text Id="__SingleUse_274B" Alignment="Left" TypographyId="configuracoes1">
-        <Translation Language="GB">Fonte de&#10;corrente</Translation>
+        <Translation Language="GB">Current source</Translation>
       </Text>
       <Text Id="__SingleUse_O517" Alignment="Left" TypographyId="configuracoes1">
-        <Translation Language="GB">Resistor de&#10;pull-up/pull-down</Translation>
+        <Translation Language="GB">Pull-up/pull-down&#10;resistor</Translation>
       </Text>
       <Text Id="__SingleUse_2FTC" Alignment="Left" TypographyId="configuracoes1">
         <Translation Language="GB">Off</Translation>
       </Text>
       <Text Id="__SingleUse_XTRL" Alignment="Right" TypographyId="Configuracoes">
-        <Translation Language="GB">Métodos de&#10;detecção de &#10;eletrodo OFF:</Translation>
+        <Translation Language="GB">OFF electrode&#10;methods:</Translation>
       </Text>
       <Text Id="__SingleUse_YB8A" Alignment="Right" TypographyId="bateria">
         <Translation Language="GB">&lt;value&gt;%</Translation>
       </Text>
-      <Text Id="__SingleUse_Y3JJ" Alignment="Left" TypographyId="Configuracoes">
-        <Translation Language="GB">Todas</Translation>
-      </Text>
-      <Text Id="__SingleUse_VBHY" Alignment="Left" TypographyId="Configuracoes">
-        <Translation Language="GB">Dev. selecionada</Translation>
-      </Text>
-      <Text Id="__SingleUse_B947" Alignment="Left" TypographyId="subtitulo">
-        <Translation Language="GB">Transmissão:</Translation>
-      </Text>
       <Text Id="__SingleUse_N0Y2" Alignment="Left" TypographyId="Configuracoes">
-        <Translation Language="GB">1 hora</Translation>
+        <Translation Language="GB">1 hour</Translation>
       </Text>
       <Text Id="__SingleUse_W39F" Alignment="Left" TypographyId="Configuracoes">
         <Translation Language="GB">1 min.</Translation>
       </Text>
       <Text Id="__SingleUse_LAYJ" Alignment="Left" TypographyId="Configuracoes">
-        <Translation Language="GB">12 seg.</Translation>
+        <Translation Language="GB">12 sec.</Translation>
       </Text>
       <Text Id="__SingleUse_ML9K" Alignment="Left" TypographyId="Configuracoes">
         <Translation Language="GB">3 Dev.</Translation>
@@ -154,19 +172,19 @@
         <Translation Language="GB">12 Dev.</Translation>
       </Text>
       <Text Id="__SingleUse_FC9F" Alignment="Left" TypographyId="subtitulo">
-        <Translation Language="GB">Duração:</Translation>
+        <Translation Language="GB">Duration:</Translation>
       </Text>
       <Text Id="__SingleUse_ZY60" Alignment="Left" TypographyId="subtitulo">
-        <Translation Language="GB">Tipo de Exame:</Translation>
+        <Translation Language="GB">Type of exam:</Translation>
       </Text>
       <Text Id="__SingleUse_GXG2" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Paciente</Translation>
+        <Translation Language="GB">Patient</Translation>
       </Text>
       <Text Id="__SingleUse_6536" Alignment="Left" TypographyId="Typography_03">
         <Translation Language="GB">BPM</Translation>
       </Text>
       <Text Id="__SingleUse_QRPU" Alignment="Center" TypographyId="Mode">
-        <Translation Language="GB">Limpar Dados</Translation>
+        <Translation Language="GB">Clear data</Translation>
       </Text>
       <Text Id="__SingleUse_EE5V" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -181,7 +199,7 @@
         <Translation Language="GB">/</Translation>
       </Text>
       <Text Id="__SingleUse_X5T1" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Salvar</Translation>
+        <Translation Language="GB">Save</Translation>
       </Text>
       <Text Id="__SingleUse_S06B" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -196,40 +214,40 @@
         <Translation Language="GB">M</Translation>
       </Text>
       <Text Id="__SingleUse_CLV6" Alignment="Left" TypographyId="subtitulo">
-        <Translation Language="GB">Gênero:</Translation>
+        <Translation Language="GB">Gender:</Translation>
       </Text>
       <Text Id="__SingleUse_H0MB" Alignment="Right" TypographyId="subtitulo">
-        <Translation Language="GB">Data de&#10;nascimento:</Translation>
+        <Translation Language="GB">date of birth:</Translation>
       </Text>
       <Text Id="__SingleUse_MARS" Alignment="Left" TypographyId="subtitulo">
-        <Translation Language="GB">Contato:</Translation>
+        <Translation Language="GB">Contact:</Translation>
       </Text>
       <Text Id="__SingleUse_EEPL" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_XZ6Q" Alignment="Left" TypographyId="menus">
-        <Translation Language="GB">Cadastro Paciente</Translation>
+        <Translation Language="GB">Patient registration</Translation>
       </Text>
       <Text Id="__SingleUse_NAFB" Alignment="Left" TypographyId="subtitulo">
-        <Translation Language="GB">Nome:</Translation>
+        <Translation Language="GB">Name:</Translation>
       </Text>
       <Text Id="__SingleUse_F41R" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Novo Paciente</Translation>
+        <Translation Language="GB">New Patient</Translation>
       </Text>
       <Text Id="__SingleUse_OVUX" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_QBZD" Alignment="Left" TypographyId="configuracoes1">
-        <Translation Language="GB">Ruído Interno</Translation>
+        <Translation Language="GB">Internal noise</Translation>
       </Text>
       <Text Id="__SingleUse_0VZY" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Transmitir</Translation>
+        <Translation Language="GB">Save Exam</Translation>
       </Text>
       <Text Id="__SingleUse_L09I" Alignment="Left" TypographyId="Lista2">
-        <Translation Language="GB">Digite a senha:</Translation>
+        <Translation Language="GB">Type the password:</Translation>
       </Text>
       <Text Id="__SingleUse_N43D" Alignment="Left" TypographyId="subtitulo">
-        <Translation Language="GB">Rede selecionada: &lt;value&gt;</Translation>
+        <Translation Language="GB">selected network: &lt;value&gt;</Translation>
       </Text>
       <Text Id="AlphaMode" Alignment="Center" TypographyId="Mode">
         <Translation Language="GB">123</Translation>
@@ -241,25 +259,25 @@
         <Translation Language="GB">&lt;placeholder&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_HKYG" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Salvar</Translation>
+        <Translation Language="GB">Save</Translation>
       </Text>
       <Text Id="__SingleUse_T6Y1" Alignment="Center" TypographyId="titulo">
         <Translation Language="GB">Wi-Fi</Translation>
       </Text>
       <Text Id="__SingleUse_0ZJL" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Redes disponíveis</Translation>
+        <Translation Language="GB">Available networks</Translation>
       </Text>
       <Text Id="__SingleUse_KWMU" Alignment="Left" TypographyId="configuracoes1">
-        <Translation Language="GB">Teste Interno</Translation>
+        <Translation Language="GB">Internal test</Translation>
       </Text>
       <Text Id="__SingleUse_ZYMX" Alignment="Left" TypographyId="configuracoes1">
-        <Translation Language="GB">Modo Normal</Translation>
+        <Translation Language="GB">Normal mode</Translation>
       </Text>
       <Text Id="__SingleUse_AAKT" Alignment="Center" TypographyId="Lista2">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_6LB2" Alignment="Left" TypographyId="menus">
-        <Translation Language="GB">Conexão Wi-Fi</Translation>
+        <Translation Language="GB">Connection Wi-Fi</Translation>
       </Text>
       <Text Id="__SingleUse_8O3B" Alignment="Left" TypographyId="paciente">
         <Translation Language="GB">Offset</Translation>
@@ -286,16 +304,16 @@
         <Translation Language="GB">12</Translation>
       </Text>
       <Text Id="__SingleUse_72N9" Alignment="Left" TypographyId="menus">
-        <Translation Language="GB">Configurações do ADS1198</Translation>
+        <Translation Language="GB">ADS1198 Settings</Translation>
       </Text>
       <Text Id="__SingleUse_F1Q4" Alignment="Left" TypographyId="menus">
-        <Translation Language="GB">Intruções</Translation>
+        <Translation Language="GB">Instructions</Translation>
       </Text>
       <Text Id="__SingleUse_5AGV" Alignment="Right" TypographyId="Configuracoes">
-        <Translation Language="GB">Entrada dos&#10;canais:</Translation>
+        <Translation Language="GB">Channel&#10;input:</Translation>
       </Text>
       <Text Id="__SingleUse_G1L5" Alignment="Right" TypographyId="Configuracoes">
-        <Translation Language="GB">Ganho dos&#10;canais:</Translation>
+        <Translation Language="GB">Channel&#10;gain:</Translation>
       </Text>
       <Text Id="__SingleUse_9M2J" Alignment="Left" TypographyId="configuracoes1">
         <Translation Language="GB">125SPS</Translation>
@@ -310,22 +328,19 @@
         <Translation Language="GB">1kSPS</Translation>
       </Text>
       <Text Id="__SingleUse_UBY0" Alignment="Right" TypographyId="Configuracoes">
-        <Translation Language="GB" Alignment="Right">Frequência de&#10;amostragem:</Translation>
-      </Text>
-      <Text Id="__SingleUse_N733" Alignment="Center" TypographyId="lista">
-        <Translation Language="GB">text area</Translation>
+        <Translation Language="GB" Alignment="Right">Sampling &#10;frequency:</Translation>
       </Text>
       <Text Id="__SingleUse_IJ05" Alignment="Center" TypographyId="subtitulo">
-        <Translation Language="GB">Sistema de assistência médica remota </Translation>
+        <Translation Language="GB">ECG Device for Remote Medical Assistance</Translation>
       </Text>
       <Text Id="__SingleUse_FDRA" Alignment="Center" TypographyId="menus">
-        <Translation Language="GB">Cadastro</Translation>
+        <Translation Language="GB">Register</Translation>
       </Text>
       <Text Id="__SingleUse_T06K" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">20/03/23 17:00</Translation>
+        <Translation Language="GB">06/06 11:08</Translation>
       </Text>
       <Text Id="__SingleUse_NFTU" Alignment="Left" TypographyId="Typography_02">
-        <Translation Language="GB">Deriv. I</Translation>
+        <Translation Language="GB">Lead I</Translation>
       </Text>
       <Text Id="__SingleUse_1XTZ" Alignment="Center" TypographyId="Typography_BPM">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -334,19 +349,19 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_P6FT" Alignment="Center" TypographyId="subtitulo">
-        <Translation Language="GB">Iniciar</Translation>
+        <Translation Language="GB">Start</Translation>
       </Text>
       <Text Id="__SingleUse_CCNK" Alignment="Left" TypographyId="menus">
-        <Translation Language="GB">Configurações do ECG</Translation>
+        <Translation Language="GB">ECG Setup</Translation>
       </Text>
       <Text Id="__SingleUse_A6V4" Alignment="Center" TypographyId="menus">
-        <Translation Language="GB">Configurações</Translation>
+        <Translation Language="GB">Settings</Translation>
       </Text>
       <Text Id="__SingleUse_BK3R" Alignment="Center" TypographyId="menus">
-        <Translation Language="GB">Instruções</Translation>
+        <Translation Language="GB">Instructions</Translation>
       </Text>
       <Text Id="__SingleUse_NZSU" Alignment="Center" TypographyId="menus">
-        <Translation Language="GB">Exame</Translation>
+        <Translation Language="GB">Exam</Translation>
       </Text>
       <Text Id="__SingleUse_2B6S" Alignment="Center" TypographyId="titulo">
         <Translation Language="GB">CardIoT</Translation>

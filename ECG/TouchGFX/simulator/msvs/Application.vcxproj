@@ -64,6 +64,9 @@
     <ClCompile Include="..\..\generated\gui_generated\src\configuracoes_extras_screen\Configuracoes_ExtrasViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\ContainerLOFFMatrix.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\ContainerLOFFMatrixBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\configuracoes_sdcard_screen\Configuracoes_SDCardPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\configuracoes_sdcard_screen\Configuracoes_SDCardView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\configuracoes_sdcard_screen\Configuracoes_SDCardViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -259,6 +262,9 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuracoes_extras_screen\Configuracoes_ExtrasViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\ContainerLOFFMatrix.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ContainerLOFFMatrixBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\configuracoes_sdcard_screen\Configuracoes_SDCardPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\configuracoes_sdcard_screen\Configuracoes_SDCardView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuracoes_sdcard_screen\Configuracoes_SDCardViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

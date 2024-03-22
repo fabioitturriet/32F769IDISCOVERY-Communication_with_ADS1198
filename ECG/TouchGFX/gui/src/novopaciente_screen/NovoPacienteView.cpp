@@ -2,12 +2,13 @@
 
 #include <string.h>
 
-enum Dado {NOME, CONTATO, NASC_DIA, NASC_MES, NASC_ANO};
+enum Dado {NOME, SOBRENOME, CONTATO, NASC_DIA, NASC_MES, NASC_ANO};
 
 extern "C" {
 struct Cadastro
 {
 	uint16_t nome[32];
+	uint16_t sobrenome[32];
 	uint16_t contato[32];
 	uint16_t genero;
 	uint16_t NascDia[3];
@@ -20,7 +21,6 @@ extern struct Cadastro NewPacient;
 
 
 
-
 uint8_t DadoSelecionado;
 
 NovoPacienteView::NovoPacienteView()
@@ -30,6 +30,8 @@ NovoPacienteView::NovoPacienteView()
 
 	Unicode::strncpy(textNomeBuffer, NewPacient.nome, Unicode::strlen(NewPacient.nome)+1);
 	textNomeBuffer[Unicode::strlen(NewPacient.nome)+2] = 0;
+	Unicode::strncpy(textSobrenomeBuffer, NewPacient.sobrenome, Unicode::strlen(NewPacient.sobrenome)+1);
+	textNomeBuffer[Unicode::strlen(NewPacient.sobrenome)+2] = 0;
 	Unicode::strncpy(textContatoBuffer, NewPacient.contato, Unicode::strlen(NewPacient.contato)+1);
 	textContatoBuffer[Unicode::strlen(NewPacient.contato)+2] = 0;
 	Unicode::strncpy(textDataNascDiaBuffer, NewPacient.NascDia, Unicode::strlen(NewPacient.NascDia)+1);
@@ -48,17 +50,17 @@ NovoPacienteView::NovoPacienteView()
 	}
 
 
-    add(keyboard); //add
+	add(keyboard); //add
 }
 
 void NovoPacienteView::setupScreen()
 {
-    NovoPacienteViewBase::setupScreen();
+	NovoPacienteViewBase::setupScreen();
 }
 
 void NovoPacienteView::tearDownScreen()
 {
-    NovoPacienteViewBase::tearDownScreen();
+	NovoPacienteViewBase::tearDownScreen();
 }
 
 void NovoPacienteView::SalvarCadastro()
@@ -76,6 +78,12 @@ void NovoPacienteView::SalvarDadosTeclado()
 		Unicode::strncpy(textNomeBuffer, NewPacient.nome, Unicode::strlen(NewPacient.nome)+1);
 		textNomeBuffer[Unicode::strlen(NewPacient.nome)+2] = 0;
 		textNome.invalidate();
+		break;
+	case SOBRENOME:
+		Unicode::strncpy(NewPacient.sobrenome, buff,Unicode::strlen(buff)+1);
+		Unicode::strncpy(textSobrenomeBuffer, NewPacient.sobrenome, Unicode::strlen(NewPacient.sobrenome)+1);
+		textNomeBuffer[Unicode::strlen(NewPacient.sobrenome)+2] = 0;
+		textSobrenome.invalidate();
 		break;
 	case CONTATO:
 		Unicode::strncpy(NewPacient.contato, buff,Unicode::strlen(buff)+1);
@@ -114,6 +122,15 @@ void NovoPacienteView::NewNamePacient()
 	}
 	AbrirTeclado();
 	DadoSelecionado = NOME;
+}
+
+void NovoPacienteView::NewSobrenomePacient()
+{
+	if(NewPacient.sobrenome[0]!= 0){
+		keyboard.setDataBuffer(NewPacient.sobrenome);
+	}
+	AbrirTeclado();
+	DadoSelecionado = SOBRENOME;
 }
 
 void NovoPacienteView::NewContatoPacient()

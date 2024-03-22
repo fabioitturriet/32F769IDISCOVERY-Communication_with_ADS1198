@@ -63,6 +63,14 @@
  extern osThreadId_t CalculaBPMHandle;
  extern osThreadId_t GetBatteryTaskHandle;
 
+ extern bool Filtro60;
+ extern bool FiltroBW;
+
+ extern uint8_t first_time_filter_HP;
+ extern uint8_t first_time_filter_notch;
+
+ extern volatile uint8_t Start_ECG_to_SD;
+
  int conta;
 
  extern "C" {
@@ -178,7 +186,6 @@ void Model::M_1kSPS_selected()
 	FS = 1000;
 //	WINDOWSIZE = (uint8_t) ((float)FS * 0.15 + 10);
 //	BUFFSIZE = FS + FS/2;
-	osThreadResume(GetBatteryTaskHandle); //debug
 }
 
 void Model::M_500SPS_selected()
@@ -290,7 +297,7 @@ void Model::AjusteEscala()
 			MediaOffset+= (int) valorECG[i];
 		}
 	}
-	OffsetExibe=MediaOffset/BufferLenPlotECG;
+	OffsetExibe=MediaOffset/BufferLenPlotECG + 420;
 	//	SetMaxEscala = MediaEscala + 2000;
 	//	SetMinEscala = MediaEscala - 500;
 
@@ -359,10 +366,12 @@ void Model::MConnectWifi()
 	osThreadResume(ConectWiFiTaskHandle);
 }
 
-void Model::TransmiteWifiECG()
+void Model::SalvarECGnoSD()
 {
-	TransmiteECGDataWifiOn = true;
-	osThreadResume(TrasmECGOnTaskHandle);
+// transmite WiFi
+//	TransmiteECGDataWifiOn = true;
+//	osThreadResume(TrasmECGOnTaskHandle);
+	Start_ECG_to_SD = 1;
 }
 
 void Model::CalcularBPM()
@@ -405,4 +414,17 @@ void Model::Set_LOFF_DCSource()
 void Model::Set_LOFF_AC()
 {
 	ADS_LOFF_AC();
+}
+
+void Model::ToggleFIltro60()
+{
+	first_time_filter_notch = 0;
+	Filtro60 = !Filtro60;
+}
+
+void Model::ToggleFIltroBW()
+{
+	first_time_filter_HP = 0;
+	FiltroBW = !FiltroBW;
+
 }

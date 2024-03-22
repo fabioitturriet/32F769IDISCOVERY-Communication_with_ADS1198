@@ -60,7 +60,7 @@ MENUViewBase::MENUViewBase() :
     scalableImage2.setPosition(24, 209, 176, 227);
     scalableImage2.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
-    textArea2.setXY(96, 71);
+    textArea2.setXY(59, 71);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(244, 180, 26));
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IJ05));

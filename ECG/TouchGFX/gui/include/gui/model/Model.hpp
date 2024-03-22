@@ -51,7 +51,7 @@ public:
 
     void MConnectWifi();
 
-    void TransmiteWifiECG();
+    void SalvarECGnoSD();
 
     void CalcularBPM();
     void StopPanTompkins();
@@ -60,6 +60,9 @@ public:
     void Set_LOFF_DCResistor();
     void Set_LOFF_DCSource();
     void Set_LOFF_AC();
+
+    void ToggleFIltro60();
+    void ToggleFIltroBW();
 protected:
     ModelListener* modelListener;
 };

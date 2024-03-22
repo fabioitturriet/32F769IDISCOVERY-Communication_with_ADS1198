@@ -16,7 +16,7 @@ ConfiguracoesViewBase::ConfiguracoesViewBase() :
     box1.setPosition(0, 0, 800, 480);
     box1.setColor(touchgfx::Color::getColorFromRGB(20, 61, 89));
 
-    textArea1.setXY(255, 12);
+    textArea1.setXY(319, 22);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_B0FN));
@@ -28,11 +28,12 @@ ConfiguracoesViewBase::ConfiguracoesViewBase() :
     buttonADS1198.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonADS1198.setAction(buttonCallback);
 
-    buttonFiltros.setXY(285, 256);
-    buttonFiltros.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_MEDIUM_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_MEDIUM_PRESSED_ID));
-    buttonFiltros.setLabelText(touchgfx::TypedText(T___SINGLEUSE_5VKY));
-    buttonFiltros.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonFiltros.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonSDcard.setXY(285, 256);
+    buttonSDcard.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_MEDIUM_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_MEDIUM_PRESSED_ID));
+    buttonSDcard.setLabelText(touchgfx::TypedText(T___SINGLEUSE_5VKY));
+    buttonSDcard.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonSDcard.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonSDcard.setAction(buttonCallback);
 
     voltar.setXY(12, 10);
     voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID));
@@ -49,7 +50,7 @@ ConfiguracoesViewBase::ConfiguracoesViewBase() :
     add(box1);
     add(textArea1);
     add(buttonADS1198);
-    add(buttonFiltros);
+    add(buttonSDcard);
     add(voltar);
     add(buttonExtras);
 }
@@ -67,6 +68,13 @@ void ConfiguracoesViewBase::buttonCallbackHandler(const touchgfx::AbstractButton
         //When buttonADS1198 clicked change screen to Configuracoes_ADS1198
         //Go to Configuracoes_ADS1198 with no screen transition
         application().gotoConfiguracoes_ADS1198ScreenNoTransition();
+    }
+    else if (&src == &buttonSDcard)
+    {
+        //InteractionSDCard
+        //When buttonSDcard clicked change screen to Configuracoes_SDCard
+        //Go to Configuracoes_SDCard with no screen transition
+        application().gotoConfiguracoes_SDCardScreenNoTransition();
     }
     else if (&src == &voltar)
     {

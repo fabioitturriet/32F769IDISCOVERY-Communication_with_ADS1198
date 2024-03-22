@@ -93,6 +93,8 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h \
+ ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi_ex.h \
  ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
@@ -195,6 +197,9 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
  ../../TouchGFX/gui/include/gui/containers/ContainerLOFFMatrix.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerLOFFMatrixBase.hpp \
+ ../../TouchGFX/gui/include/gui/configuracoes_sdcard_screen/Configuracoes_SDCardView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_sdcard_screen/Configuracoes_SDCardViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/configuracoes_sdcard_screen/Configuracoes_SDCardPresenter.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp \
  ../../TouchGFX/target/generated/STM32DMA.hpp \
@@ -294,6 +299,8 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pwr_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_qspi.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_sd.h:
+../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_sdmmc.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_spi_ex.h:
 ../../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h:
@@ -396,6 +403,9 @@ Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
 ../../TouchGFX/gui/include/gui/containers/ContainerLOFFMatrix.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/ContainerLOFFMatrixBase.hpp:
+../../TouchGFX/gui/include/gui/configuracoes_sdcard_screen/Configuracoes_SDCardView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_sdcard_screen/Configuracoes_SDCardViewBase.hpp:
+../../TouchGFX/gui/include/gui/configuracoes_sdcard_screen/Configuracoes_SDCardPresenter.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp:
 ../../TouchGFX/target/generated/STM32DMA.hpp:

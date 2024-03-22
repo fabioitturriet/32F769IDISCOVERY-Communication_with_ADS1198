@@ -1,0 +1,13 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/configuracoes_sdcard_screen/Configuracoes_SDCardViewBase.hpp:26:18:virtual void Configuracoes_SDCardViewBase::scrollList2UpdateItem(ContainerConexaoWIFI&, int16_t)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_sdcard_screen/Configuracoes_SDCardView.cpp:13:6:virtual void Configuracoes_SDCardView::tearDownScreen()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:79:7:touchgfx::DrawableListItems<ContainerConexaoWIFI, 10>::~DrawableListItems()	16	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:101:21:int16_t touchgfx::DrawableListItems<TYPE, SIZE>::getNumberOfDrawables() [with TYPE = ContainerConexaoWIFI; int SIZE = 10]	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_sdcard_screen/Configuracoes_SDCardView.cpp:8:6:virtual void Configuracoes_SDCardView::setupScreen()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:79:7:virtual touchgfx::DrawableListItems<ContainerConexaoWIFI, 10>::~DrawableListItems()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:82:23:touchgfx::Drawable* touchgfx::DrawableListItems<TYPE, SIZE>::getDrawable(int16_t) [with TYPE = ContainerConexaoWIFI; int SIZE = 10]	8	static
+../../TouchGFX/gui/include/gui/configuracoes_sdcard_screen/Configuracoes_SDCardView.hpp:11:13:Configuracoes_SDCardView::~Configuracoes_SDCardView()	8	static
+../../TouchGFX/gui/include/gui/configuracoes_sdcard_screen/Configuracoes_SDCardView.hpp:11:13:virtual Configuracoes_SDCardView::~Configuracoes_SDCardView()	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/gui/src/configuracoes_sdcard_screen/Configuracoes_SDCardView.cpp:3:1:Configuracoes_SDCardView::Configuracoes_SDCardView()	8	static

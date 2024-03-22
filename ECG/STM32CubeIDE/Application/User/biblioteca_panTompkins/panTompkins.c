@@ -176,7 +176,7 @@ extern void USB_Print(char* string);
 
 extern uint16_t panTompPointerR;
 extern uint16_t panTompPointerW;
-extern float ImputPanTomp[BufferLenImputPanTompkins];
+extern int ImputPanTomp[BufferLenImputPanTompkins];
 extern osMessageQueueId_t DetectionPicosRHandle;
 extern uint8_t BPMResultado;
 extern osThreadId_t RealiseDataBPMTHandle;
@@ -225,7 +225,7 @@ dataType input()
 		 	 osThreadFlagsWait(1, 0, osWaitForever);
 		 }
 		 if(panTompkON){
-			 num = (int) ImputPanTomp[panTompPointerR];
+			 num = ImputPanTomp[panTompPointerR];
 			 panTompPointerR++;
 		 	 	 if(panTompPointerR == BufferLenImputPanTompkins){
 		 	 		 panTompPointerR = 0;

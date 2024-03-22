@@ -17,6 +17,7 @@ public:
     virtual void SalvarCadastro();
 
     virtual void NewNamePacient();
+    virtual void NewSobrenomePacient();
 	virtual void NewContatoPacient();
 	virtual void NewDataNascDia();
 	virtual void NewDataNascMes();

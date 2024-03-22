@@ -82,6 +82,11 @@ public:
         // Override and implement this function in NovoPaciente
     }
 
+    virtual void NewSobrenomePacient()
+    {
+        // Override and implement this function in NovoPaciente
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -102,9 +107,13 @@ protected:
     touchgfx::TextArea textArea7;
     touchgfx::TextArea textArea9;
     touchgfx::TextArea textArea10;
+    touchgfx::TextArea textArea11;
     touchgfx::Box box2;
     touchgfx::TextAreaWithOneWildcard textNome;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger > flexButtonNome;
+    touchgfx::Box box8;
+    touchgfx::TextAreaWithOneWildcard textSobrenome;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger > flexButtonSobrenome;
     touchgfx::Box box3;
     touchgfx::TextAreaWithOneWildcard textContato;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger > flexButtonContato;
@@ -130,6 +139,8 @@ protected:
      */
     static const uint16_t TEXTNOME_SIZE = 32;
     touchgfx::Unicode::UnicodeChar textNomeBuffer[TEXTNOME_SIZE];
+    static const uint16_t TEXTSOBRENOME_SIZE = 32;
+    touchgfx::Unicode::UnicodeChar textSobrenomeBuffer[TEXTSOBRENOME_SIZE];
     static const uint16_t TEXTCONTATO_SIZE = 32;
     touchgfx::Unicode::UnicodeChar textContatoBuffer[TEXTCONTATO_SIZE];
     static const uint16_t TEXTDATANASCDIA_SIZE = 3;

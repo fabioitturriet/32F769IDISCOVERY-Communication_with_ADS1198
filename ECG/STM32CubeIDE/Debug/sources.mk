@@ -33,13 +33,16 @@ CPP_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Application/Startup \
-Application/User/LIBJPEG/App \
+Application/User/FATFS/App \
+Application/User/FATFS/Target \
 Application/User/TouchGFX/App \
 Application/User/TouchGFX/target \
 Application/User/TouchGFX/target/generated \
 Application/User/UartRingBuffer \
 Application/User/biblioteca_ADS1198 \
 Application/User/biblioteca_ESP01 \
+Application/User/biblioteca_Filtros \
+Application/User/biblioteca_SDCard \
 Application/User/biblioteca_panTompkins \
 Application/User \
 Application/User/generated \
@@ -47,7 +50,7 @@ Application/User/gui \
 Drivers/BSP/Components \
 Drivers/CMSIS \
 Drivers/STM32F7xx_HAL_Driver \
+Middlewares/FatFs \
 Middlewares/FreeRTOS \
-Middlewares/LibJPEG \
 Utilities \
 

@@ -8,12 +8,12 @@
 
 ContainerBatteryChargeBase::ContainerBatteryChargeBase()
 {
-    setWidth(135);
-    setHeight(40);
-    box1.setPosition(0, 0, 135, 40);
+    setWidth(124);
+    setHeight(37);
+    box1.setPosition(0, 0, 124, 37);
     box1.setColor(touchgfx::Color::getColorFromRGB(219, 219, 219));
 
-    textArea1.setPosition(7, 5, 76, 30);
+    textArea1.setPosition(0, 3, 76, 30);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1.setLinespacing(0);
     textArea1Buffer[0] = 0;
@@ -21,7 +21,7 @@ ContainerBatteryChargeBase::ContainerBatteryChargeBase()
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YB8A));
 
     scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_BATERIA_ID));
-    scalableImage1.setPosition(83, 5, 45, 30);
+    scalableImage1.setPosition(76, 3, 45, 30);
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
     add(box1);

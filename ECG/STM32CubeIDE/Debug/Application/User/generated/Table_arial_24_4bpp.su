@@ -1,2 +1,2 @@
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/fonts/src/Table_arial_24_4bpp.cpp:66:179:void __tcf_0()	0	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/fonts/src/Table_arial_24_4bpp.cpp:64:26:touchgfx::GeneratedFont& getFont_arial_24_4bpp()	64	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/fonts/src/Table_arial_24_4bpp.cpp:64:179:void __tcf_0()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/fonts/src/Table_arial_24_4bpp.cpp:62:26:touchgfx::GeneratedFont& getFont_arial_24_4bpp()	64	static

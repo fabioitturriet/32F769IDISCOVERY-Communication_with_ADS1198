@@ -17,7 +17,7 @@ Screen2ViewBase::Screen2ViewBase() :
     box1.setPosition(0, 0, 800, 480);
     box1.setColor(touchgfx::Color::getColorFromRGB(20, 61, 89));
 
-    textArea1.setXY(169, 10);
+    textArea1.setXY(286, 19);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CCNK));
@@ -105,35 +105,6 @@ Screen2ViewBase::Screen2ViewBase() :
     textArea8.setLinespacing(0);
     textArea8.setTypedText(touchgfx::TypedText(T___SINGLEUSE_N0Y2));
 
-    textArea3_1.setXY(106, 323);
-    textArea3_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea3_1.setLinespacing(0);
-    textArea3_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_B947));
-
-    radioButton6.setXY(147, 381);
-    radioButton6.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID));
-    radioButton6.setSelected(true);
-    radioButton6.setDeselectionEnabled(false);
-
-    radioButton7.setXY(424, 381);
-    radioButton7.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_RADIO_BUTTONS_RADIO_ROUND_BUTTON_NORMAL_ID));
-    radioButton7.setSelected(false);
-    radioButton7.setDeselectionEnabled(false);
-
-    textArea9.setXY(193, 388);
-    textArea9.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea9.setLinespacing(0);
-    textArea9.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VBHY));
-
-    textArea9_1.setXY(469, 388);
-    textArea9_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea9_1.setLinespacing(0);
-    textArea9_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y3JJ));
-
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_WI_FI_50_ID));
-    scalableImage1.setPosition(62, 327, 32, 32);
-    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-
     add(__background);
     add(box1);
     add(textArea1);
@@ -155,19 +126,11 @@ Screen2ViewBase::Screen2ViewBase() :
     add(barra_divisoria_1_1);
     add(textArea7);
     add(textArea8);
-    add(textArea3_1);
-    add(radioButton6);
-    add(radioButton7);
-    add(textArea9);
-    add(textArea9_1);
-    add(scalableImage1);
     radioButtonGroup1.add(radioButton1);
     radioButtonGroup1.add(radioButton2);
     radioButtonGroup2.add(radioButton3);
     radioButtonGroup2.add(radioButton4);
     radioButtonGroup2.add(radioButton5);
-    radioButtonGroup3.add(radioButton6);
-    radioButtonGroup3.add(radioButton7);
     radioButtonGroup1.setRadioButtonSelectedHandler(radioButtonSelectedCallback);
 }
 

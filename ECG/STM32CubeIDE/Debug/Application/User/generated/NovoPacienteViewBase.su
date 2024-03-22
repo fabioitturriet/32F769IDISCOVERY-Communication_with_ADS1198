@@ -41,7 +41,8 @@
 ../../TouchGFX/generated/gui_generated/include/gui_generated/novopaciente_screen/NovoPacienteViewBase.hpp:70:18:virtual void NovoPacienteViewBase::SalvarDadosTeclado()	0	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/novopaciente_screen/NovoPacienteViewBase.hpp:75:18:virtual void NovoPacienteViewBase::InfoSalvar()	0	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/novopaciente_screen/NovoPacienteViewBase.hpp:80:18:virtual void NovoPacienteViewBase::LimpaDados()	0	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/NovoPacienteViewBase.cpp:228:6:virtual void NovoPacienteViewBase::setupScreen()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/novopaciente_screen/NovoPacienteViewBase.hpp:85:18:virtual void NovoPacienteViewBase::NewSobrenomePacient()	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/NovoPacienteViewBase.cpp:254:6:virtual void NovoPacienteViewBase::setupScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<touchgfx::RadioButtonGroup<2>, const touchgfx::AbstractButton&, void, void>::~Callback()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:53:13:touchgfx::RadioButtonGroup<CAPACITY>::~RadioButtonGroup() [with short unsigned int CAPACITY = 2]	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:35:7:touchgfx::ClickButtonTrigger::~ClickButtonTrigger()	0	static
@@ -75,15 +76,15 @@ D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/
 ../../TouchGFX/generated/gui_generated/include/gui_generated/novopaciente_screen/NovoPacienteViewBase.hpp:24:13:virtual NovoPacienteViewBase::~NovoPacienteViewBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp:99:18:virtual void touchgfx::AbstractButtonContainer::executeAction()	8	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/NovoPacienteViewBase.cpp:272:6:void NovoPacienteViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	0	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/NovoPacienteViewBase.cpp:311:6:void NovoPacienteViewBase::radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton&)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/NovoPacienteViewBase.cpp:298:6:void NovoPacienteViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	0	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/NovoPacienteViewBase.cpp:344:6:void NovoPacienteViewBase::radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton&)	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:227:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonDeselectedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 2]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:111:18:virtual void touchgfx::TextArea::setBaselineY(int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:47:18:virtual void touchgfx::ClickButtonTrigger::handleClickEvent(const touchgfx::ClickEvent&)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:63:18:void touchgfx::RadioButtonGroup<CAPACITY>::add(touchgfx::RadioButton&) [with short unsigned int CAPACITY = 2]	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:153:18:bool touchgfx::RadioButtonGroup<CAPACITY>::getDeselectionEnabled() const [with short unsigned int CAPACITY = 2]	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:202:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonClickedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 2]	16	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/NovoPacienteViewBase.cpp:233:6:void NovoPacienteViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/NovoPacienteViewBase.cpp:259:6:void NovoPacienteViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:46:36:virtual touchgfx::TextArea::BoundingArea touchgfx::TextAreaWithWildcardBase::calculateBoundingArea() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	16	static
@@ -96,4 +97,4 @@ D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:132:10:void touchgfx::ButtonWithLabel::updateTextPosition()	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:44:5:touchgfx::BoxWithBorderButtonStyle<T>::BoxWithBorderButtonStyle() [with T = touchgfx::ClickButtonTrigger]	16	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:94:10:void touchgfx::BoxWithBorderButtonStyle<T>::setBoxWithBorderColors(touchgfx::colortype, touchgfx::colortype, touchgfx::colortype, touchgfx::colortype) [with T = touchgfx::ClickButtonTrigger]	4	static
-D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/NovoPacienteViewBase.cpp:9:1:NovoPacienteViewBase::NovoPacienteViewBase()	224	static
+D:/ProjetoSTM32ECG/ECG/TouchGFX/generated/gui_generated/src/novopaciente_screen/NovoPacienteViewBase.cpp:9:1:NovoPacienteViewBase::NovoPacienteViewBase()	240	static

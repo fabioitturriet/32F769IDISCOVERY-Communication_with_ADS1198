@@ -31,7 +31,7 @@ protected:
     touchgfx::Box box1;
     touchgfx::TextArea textArea1;
     touchgfx::ButtonWithLabel buttonADS1198;
-    touchgfx::ButtonWithLabel buttonFiltros;
+    touchgfx::ButtonWithLabel buttonSDcard;
     touchgfx::Button voltar;
     touchgfx::ButtonWithLabel buttonExtras;
 

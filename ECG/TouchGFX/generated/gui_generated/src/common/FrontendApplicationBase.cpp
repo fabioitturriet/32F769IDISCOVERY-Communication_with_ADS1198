@@ -29,6 +29,8 @@
 #include <gui/screen2_screen/Screen2Presenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
+#include <gui/configuracoes_sdcard_screen/Configuracoes_SDCardView.hpp>
+#include <gui/configuracoes_sdcard_screen/Configuracoes_SDCardPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -186,4 +188,17 @@ void FrontendApplicationBase::gotoScreen1ScreenNoTransition()
 void FrontendApplicationBase::gotoScreen1ScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// Configuracoes_SDCard
+
+void FrontendApplicationBase::gotoConfiguracoes_SDCardScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoConfiguracoes_SDCardScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoConfiguracoes_SDCardScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<Configuracoes_SDCardView, Configuracoes_SDCardPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

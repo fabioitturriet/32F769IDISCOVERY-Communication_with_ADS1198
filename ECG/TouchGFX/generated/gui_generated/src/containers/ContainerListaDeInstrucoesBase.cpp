@@ -16,7 +16,7 @@ ContainerListaDeInstrucoesBase::ContainerListaDeInstrucoesBase()
     textArea1.setPosition(73, 24, 422, 33);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_N733));
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_GIV2));
 
     image2.setXY(-134, 78);
     image2.setBitmap(touchgfx::Bitmap(BITMAP_BLUE_DIVIDERS_DIVIDER_ROUND_LONG_ID));

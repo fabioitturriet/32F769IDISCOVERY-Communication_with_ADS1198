@@ -22,55 +22,60 @@ NovoPacienteViewBase::NovoPacienteViewBase() :
     voltar.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_BACK_ARROW_EDIT_ID));
     voltar.setAction(buttonCallback);
 
-    textArea2.setXY(98, 106);
+    textArea2.setXY(98, 103);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NAFB));
 
-    textArea1.setXY(215, 0);
+    textArea1.setXY(213, 0);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_XZ6Q));
 
-    textArea3.setXY(69, 170);
+    textArea3.setXY(69, 200);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea3.setLinespacing(0);
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MARS));
 
-    textArea4.setXY(75, 233);
+    textArea4.setXY(75, 263);
     textArea4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea4.setLinespacing(0);
     textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CLV6));
 
-    textArea5.setPosition(12, 293, 189, 77);
+    textArea5.setPosition(0, 360, 201, 40);
     textArea5.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea5.setLinespacing(0);
     textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_H0MB));
 
-    textArea6.setXY(271, 233);
+    textArea6.setXY(271, 263);
     textArea6.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea6.setLinespacing(0);
     textArea6.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZZGE));
 
-    textArea7.setXY(395, 233);
+    textArea7.setXY(395, 263);
     textArea7.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea7.setLinespacing(0);
     textArea7.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5HVZ));
 
-    textArea9.setXY(271, 338);
+    textArea9.setXY(271, 368);
     textArea9.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea9.setLinespacing(0);
     textArea9.setTypedText(touchgfx::TypedText(T___SINGLEUSE_A5LR));
 
-    textArea10.setXY(341, 338);
+    textArea10.setXY(341, 368);
     textArea10.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea10.setLinespacing(0);
     textArea10.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ORLE));
 
-    box2.setPosition(215, 106, 450, 40);
+    textArea11.setXY(39, 151);
+    textArea11.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea11.setLinespacing(0);
+    textArea11.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4DSK));
+
+    box2.setPosition(215, 103, 450, 40);
     box2.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
 
-    textNome.setPosition(229, 108, 423, 36);
+    textNome.setPosition(229, 105, 423, 36);
     textNome.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textNome.setLinespacing(0);
     textNomeBuffer[0] = 0;
@@ -80,14 +85,31 @@ NovoPacienteViewBase::NovoPacienteViewBase() :
     flexButtonNome.setBoxWithBorderPosition(0, 0, 450, 40);
     flexButtonNome.setBorderSize(5);
     flexButtonNome.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    flexButtonNome.setPosition(215, 106, 450, 40);
+    flexButtonNome.setPosition(215, 103, 450, 40);
     flexButtonNome.setAlpha(0);
     flexButtonNome.setAction(flexButtonCallback);
 
-    box3.setPosition(215, 170, 571, 40);
+    box8.setPosition(215, 151, 450, 40);
+    box8.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
+
+    textSobrenome.setPosition(229, 153, 423, 36);
+    textSobrenome.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textSobrenome.setLinespacing(0);
+    textSobrenomeBuffer[0] = 0;
+    textSobrenome.setWildcard(textSobrenomeBuffer);
+    textSobrenome.setTypedText(touchgfx::TypedText(T___SINGLEUSE_EY6W));
+
+    flexButtonSobrenome.setBoxWithBorderPosition(0, 0, 450, 40);
+    flexButtonSobrenome.setBorderSize(5);
+    flexButtonSobrenome.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    flexButtonSobrenome.setPosition(215, 151, 450, 40);
+    flexButtonSobrenome.setAlpha(0);
+    flexButtonSobrenome.setAction(flexButtonCallback);
+
+    box3.setPosition(215, 200, 571, 40);
     box3.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
 
-    textContato.setPosition(229, 170, 543, 40);
+    textContato.setPosition(229, 200, 543, 40);
     textContato.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textContato.setLinespacing(0);
     textContatoBuffer[0] = 0;
@@ -97,24 +119,24 @@ NovoPacienteViewBase::NovoPacienteViewBase() :
     flexButtonContato.setBoxWithBorderPosition(0, 0, 571, 40);
     flexButtonContato.setBorderSize(5);
     flexButtonContato.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    flexButtonContato.setPosition(215, 170, 571, 40);
+    flexButtonContato.setPosition(215, 200, 571, 40);
     flexButtonContato.setAlpha(0);
     flexButtonContato.setAction(flexButtonCallback);
 
-    radioButtonSexoM.setXY(221, 228);
+    radioButtonSexoM.setXY(221, 258);
     radioButtonSexoM.setBitmaps(touchgfx::Bitmap(BITMAP_RADIOBUTTON_UNSELECTED_RELEASED_ID), touchgfx::Bitmap(BITMAP_RADIOBUTTON_UNSELECTED_RELEASED_ID), touchgfx::Bitmap(BITMAP_RADIOBUTTON_SELECTED_RELEASED_ID), touchgfx::Bitmap(BITMAP_RADIOBUTTON_SELECTED_RELEASED_ID));
     radioButtonSexoM.setSelected(false);
     radioButtonSexoM.setDeselectionEnabled(true);
 
-    radioButtonSexoF.setXY(345, 228);
+    radioButtonSexoF.setXY(345, 258);
     radioButtonSexoF.setBitmaps(touchgfx::Bitmap(BITMAP_RADIOBUTTON_UNSELECTED_RELEASED_ID), touchgfx::Bitmap(BITMAP_RADIOBUTTON_UNSELECTED_RELEASED_ID), touchgfx::Bitmap(BITMAP_RADIOBUTTON_SELECTED_RELEASED_ID), touchgfx::Bitmap(BITMAP_RADIOBUTTON_SELECTED_RELEASED_ID));
     radioButtonSexoF.setSelected(false);
     radioButtonSexoF.setDeselectionEnabled(true);
 
-    box5.setPosition(215, 330, 50, 40);
+    box5.setPosition(215, 360, 50, 40);
     box5.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
 
-    textDataNascDia.setPosition(223, 337, 42, 33);
+    textDataNascDia.setPosition(223, 367, 42, 33);
     textDataNascDia.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textDataNascDia.setLinespacing(0);
     textDataNascDiaBuffer[0] = 0;
@@ -124,14 +146,14 @@ NovoPacienteViewBase::NovoPacienteViewBase() :
     flexButtonNascimentoDia.setBoxWithBorderPosition(0, 0, 50, 39);
     flexButtonNascimentoDia.setBorderSize(5);
     flexButtonNascimentoDia.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    flexButtonNascimentoDia.setPosition(215, 331, 50, 39);
+    flexButtonNascimentoDia.setPosition(215, 361, 50, 39);
     flexButtonNascimentoDia.setAlpha(0);
     flexButtonNascimentoDia.setAction(flexButtonCallback);
 
-    box6.setPosition(285, 330, 50, 40);
+    box6.setPosition(285, 360, 50, 40);
     box6.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
 
-    textDataNascMes.setPosition(292, 334, 44, 36);
+    textDataNascMes.setPosition(292, 364, 44, 36);
     textDataNascMes.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textDataNascMes.setLinespacing(0);
     textDataNascMesBuffer[0] = 0;
@@ -141,14 +163,14 @@ NovoPacienteViewBase::NovoPacienteViewBase() :
     flexButtonNascimentoMes.setBoxWithBorderPosition(0, 0, 50, 39);
     flexButtonNascimentoMes.setBorderSize(5);
     flexButtonNascimentoMes.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    flexButtonNascimentoMes.setPosition(286, 331, 50, 39);
+    flexButtonNascimentoMes.setPosition(286, 361, 50, 39);
     flexButtonNascimentoMes.setAlpha(0);
     flexButtonNascimentoMes.setAction(flexButtonCallback);
 
-    box7.setPosition(353, 331, 73, 39);
+    box7.setPosition(353, 361, 73, 39);
     box7.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
 
-    textDataNascAno.setPosition(357, 334, 69, 36);
+    textDataNascAno.setPosition(357, 364, 69, 36);
     textDataNascAno.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textDataNascAno.setLinespacing(0);
     textDataNascAnoBuffer[0] = 0;
@@ -158,7 +180,7 @@ NovoPacienteViewBase::NovoPacienteViewBase() :
     flexButtonNascimentoAno.setBoxWithBorderPosition(0, 0, 73, 40);
     flexButtonNascimentoAno.setBorderSize(5);
     flexButtonNascimentoAno.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    flexButtonNascimentoAno.setPosition(353, 330, 73, 40);
+    flexButtonNascimentoAno.setPosition(353, 360, 73, 40);
     flexButtonNascimentoAno.setAlpha(0);
     flexButtonNascimentoAno.setAction(flexButtonCallback);
 
@@ -199,9 +221,13 @@ NovoPacienteViewBase::NovoPacienteViewBase() :
     add(textArea7);
     add(textArea9);
     add(textArea10);
+    add(textArea11);
     add(box2);
     add(textNome);
     add(flexButtonNome);
+    add(box8);
+    add(textSobrenome);
+    add(flexButtonSobrenome);
     add(box3);
     add(textContato);
     add(flexButtonContato);
@@ -277,6 +303,13 @@ void NovoPacienteViewBase::flexButtonCallbackHandler(const touchgfx::AbstractBut
         //When flexButtonNome clicked call virtual function
         //Call NewNamePacient
         NewNamePacient();
+    }
+    else if (&src == &flexButtonSobrenome)
+    {
+        //NewSobrenomePacient
+        //When flexButtonSobrenome clicked call virtual function
+        //Call NewSobrenomePacient
+        NewSobrenomePacient();
     }
     else if (&src == &flexButtonContato)
     {

@@ -21,7 +21,10 @@
 #include <gui/containers/ContainerLoadingAnimation.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
 #include <gui/containers/ContainerPopup.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
 #include <gui/containers/ContainerLOFFMatrix.hpp>
+#include <gui/containers/ContainerBatteryCharge.hpp>
+#include <touchgfx/widgets/Image.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -53,7 +56,7 @@ public:
         // Override and implement this function in Screen1
     }
 
-    virtual void WifiECG()
+    virtual void SalvarECG()
     {
         // Override and implement this function in Screen1
     }
@@ -74,6 +77,21 @@ public:
     }
 
     virtual void AbreStatLead()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void PrintScreen()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void ToggleFiltro60()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void ToggleFiltroBW()
     {
         // Override and implement this function in Screen1
     }
@@ -114,8 +132,7 @@ protected:
     touchgfx::TextArea textoffset;
     touchgfx::ButtonWithIcon buttonNextDeriv;
     touchgfx::ButtonWithIcon buttoBackDeriv;
-    touchgfx::ButtonWithLabel buttonTransmit;
-    touchgfx::ScalableImage scalableImage4_1;
+    touchgfx::ButtonWithLabel buttonSalvar;
     ContainerLoadingAnimation containerLoadingAnimation1;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger > buttonFechaPopup;
     touchgfx::ButtonWithIcon buttonFechaPopup1;
@@ -123,8 +140,16 @@ protected:
     touchgfx::ScalableImage scalableImage8;
     ContainerPopup containerPopup1;
     touchgfx::ButtonWithIcon buttonOpenStatLead;
+    touchgfx::Box box4;
+    touchgfx::ToggleButton toggleFiltro60Hz;
+    touchgfx::TextArea textArea7;
+    touchgfx::ToggleButton toggleFiltroBW;
+    touchgfx::TextArea textArea8;
     ContainerLOFFMatrix containerLOFFMatrix1;
     touchgfx::ButtonWithIcon buttonFechaStatLead;
+    touchgfx::ButtonWithIcon buttonPrtSc;
+    ContainerBatteryCharge containerBatteryCharge1;
+    touchgfx::Image image1;
 
     /*
      * Wildcard Buffers

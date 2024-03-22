@@ -4,12 +4,21 @@
 #include <gui/containers/ContainerLoadingAnimation.hpp>
 #include <gui/containers/ContainerPopup.hpp>
 #include <gui/containers/ContainerLOFFMatrix.hpp>
+#include <gui/containers/ContainerBatteryCharge.hpp>
+
 #include <cstring>
+
+#include <stdio.h>
 
 
  extern bool PanTompkinsAlgorithmSet;
  extern __IO uint8_t DerivSelecionada;
  extern __IO uint16_t BPMResultado;
+ extern UART_HandleTypeDef huart1;
+ extern bool BatteryChargeLevelVisibleSet;
+ extern bool UpdateBatChargeLevel;
+
+
  extern "C" {
  enum Derivacoes{dev_I, dev_II, dev_III, dev_aVR, dev_aVL, dev_aVF, dev_V1, dev_V2, dev_V3, dev_V4, dev_V5, dev_V6};
 
@@ -58,6 +67,14 @@ void Screen1View::setupScreen()
     	textArea2.invalidate();
     }
 
+    if (BatteryChargeLevelVisibleSet){
+    	containerBatteryCharge1.setVisible(true);
+    	UpdateBatChargeLevel = true;
+    }
+    else {
+    	containerBatteryCharge1.setVisible(false);
+        }
+
 }
 
 void Screen1View::tearDownScreen()
@@ -100,14 +117,14 @@ void Screen1View::NextDeriv()
 	AtualizaTextDerv();
 }
 
-void Screen1View::WifiECG()
+void Screen1View::SalvarECG()
 {
-	presenter->PreStopPanTompkins();
-	scalableImage4_1.setVisible(false);
-	containerLoadingAnimation1.setVisible(true);
-	containerLoadingAnimation1.StartLoadingAnim();
-	containerLoadingAnimation1.invalidate();
-	presenter->PWifiECG();
+//	presenter->PreStopPanTompkins();
+//	scalableImage4_1.setVisible(false);
+//	containerLoadingAnimation1.setVisible(true);
+//	containerLoadingAnimation1.StartLoadingAnim();
+//	containerLoadingAnimation1.invalidate();
+	presenter->PSalvarECG();
 }
 
 void Screen1View::AtualizaTextDerv()
@@ -205,11 +222,11 @@ void Screen1View::PopUp()
 
 void Screen1View::StopLoadingAnimation()
 {
-	scalableImage4_1.setVisible(true);
-	scalableImage4_1.invalidate();
-	containerLoadingAnimation1.StopLoadingAnim();
-	containerLoadingAnimation1.setVisible(false);
-	containerLoadingAnimation1.invalidate();
+//	scalableImage4_1.setVisible(true);
+//	scalableImage4_1.invalidate();
+//	containerLoadingAnimation1.StopLoadingAnim();
+//	containerLoadingAnimation1.setVisible(false);
+//	containerLoadingAnimation1.invalidate();
 }
 
 void Screen1View::MUpdateMatrixLOFF()
@@ -232,4 +249,43 @@ void Screen1View::AbreStatLead()
 	containerLOFFMatrix1.invalidate();
 	buttonFechaStatLead.setVisible(true);
 	buttonFechaStatLead.invalidate();
+}
+
+void Screen1View::PrintScreen()
+{
+	uint16_t* fb;
+	char msg[10];
+	uint32_t display_size = 832*480;
+	StopData();
+	fb = (uint16_t*) touchgfx::HAL::getInstance()->lockFrameBuffer();
+	for(uint32_t i=0; i<display_size; i++){
+	sprintf(msg, "%d\r\n", fb[i]);
+	uint8_t len = strlen (msg);
+	HAL_UART_Transmit(&huart1,(uint8_t *)msg, len, 0x1000);
+	}
+	touchgfx::HAL::getInstance()->unlockFrameBuffer();
+
+}
+
+void Screen1View::ToggleFiltro60()
+{
+	if(toggleFiltro60Hz.getState()){
+		presenter->PresenterToggleF60();
+	}else{
+		presenter->PresenterToggleF60();
+	}
+}
+
+void Screen1View::ToggleFiltroBW()
+{
+	if(toggleFiltroBW.getState()){
+		presenter->PresenterToggleFBW();
+	}else{
+		presenter->PresenterToggleFBW();
+	}
+}
+
+void Screen1View::UpdateBatteryChargeLevel()
+{
+	containerBatteryCharge1.SetChargeLevelBattery();
 }
