@@ -115,7 +115,7 @@ https://www.youtube.com/watch?v=MUZj4YwKVac -> Adicionando biblioteca no cubeIDE
 
 https://www.youtube.com/watch?v=x_5rYfAyqq0 -> SPI e DMA 
 
-https://e2e.ti.com/support/data-converters-group/data-converters/f/data-converters-forum/252003/ads1298-signals-offset -> Ajuste de offset para cada canal deverá ser realizado (utilizar na cadeira de instrumentação)
+https://e2e.ti.com/support/data-converters-group/data-converters/f/data-converters-forum/252003/ads1298-signals-offset -> Ajuste de offset para cada canal
 
 https://www.youtube.com/watch?v=Zqwq9nzTNF8 -> Recursos avançados de depuração: SWV
 
@@ -124,5 +124,3 @@ ________________________________________________________________________________
 
 - Retirada do curto entre AVSS e DGND nos pinos 32 e 33 respectivamente.
 - Pace_outP e Pace_outN expostos para processos de calibração
-- Ver a posssibilidade de trocar de SPI para se comunicar com o ADS (utilização SPI com DMA diferentes para o ADS e o cartão MicroSD)
-
